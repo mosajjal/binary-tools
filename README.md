@@ -31,6 +31,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`        |Static  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [iodine](https://github.com/yarrick/iodine)               |0.7.0      |`iodine(d)`         |Static  |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](https://github.com/koct9i/ioping)                |0.9        |`ioping`            |Static  |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
+| [jq](https://github.com/stedolan/jq)                      |1.6        |`jq`                |Static  |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](https://github.com/ilai-deutel/kibi)               |0.1.2      |`kibi`              |Static  |`9f8f7f02b4f5201a3197292b7daa7af448c93b7f6fdf36e82e17f9c0be8f38d5` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.3      |`micro`             |Static  |`1df43d0b8406e4e6f1b492ea5e84c1d840ae879bd5a853ee62445b40f4a752c4` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       |0.5.0      |`miniserve`         |Static  |`c166074940074bfc121d1ebd2848b750f679404f11492fcfeae5adc3fbb6effc` |
