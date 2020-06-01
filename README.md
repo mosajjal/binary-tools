@@ -35,7 +35,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Kibi](https://github.com/ilai-deutel/kibi)               |0.1.2      |`kibi`              |Static  |`9f8f7f02b4f5201a3197292b7daa7af448c93b7f6fdf36e82e17f9c0be8f38d5` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.3      |`micro`             |Static  |`1df43d0b8406e4e6f1b492ea5e84c1d840ae879bd5a853ee62445b40f4a752c4` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       |0.5.0      |`miniserve`         |Static  |`c166074940074bfc121d1ebd2848b750f679404f11492fcfeae5adc3fbb6effc` |
-| [Nano](https://www.nano-editor.org/)                      |2.7.0      |`nano`              |Static  |`82e4571b6dfb107959a81b4958f2d5aeed8d554e7ade3a81b0e32669e31866c5` |
+| [Nano](https://www.nano-editor.org/)                      |4.9.3      |`nano`              |Static  |`1d1d02ca3928c6035ae03cfc61f3c83f5fe6efc1fb8a2a5db76c6f6b79ab188d` |
 | [NetCat](https://www.freebsd.org/cgi/man.cgi?query=netcat)|1.68       |`nc`                |Static  |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`              |Static  |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](https://github.com/justjanne/powerline-go) |1.17.0     |`pline-go`          |Static  |`259002eca93a337fb609f326fe2cca15316d496803def33f5ffa26415e146e18` |
