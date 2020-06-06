@@ -10,3 +10,8 @@
 *    `astraceroute`, an autonomous system (AS) trace route utility
 
 Source: [Netsniff website](http://netsniff-ng.org/)
+
+
+## I'm getting GeoIP errors
+
+* install `geoip-database-extra` package in Arch. Similar packages are available for most distributions.
