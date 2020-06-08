@@ -71,9 +71,8 @@ to download these binaries, you can use the shortned URL format
 
 # Custom Architectures
 
-by default, the URL mapper will point to `x64` folder. If a new folder gets added (`arm` for example), the URL will work like this:
+URL shortner for custom architectures have been disabled temporarily due to malicious use. It will be available again soon :)
 
-`wget n0p.me/bin/arm/FILENAME`
 
 # What is it for
 
