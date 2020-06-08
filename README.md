@@ -83,3 +83,11 @@ by default, the URL mapper will point to `x64` folder. If a new folder gets adde
 * Use inside servers with no internet connectivity (`scp`/`docker cp` and run)
 * To build the leanest possible Containers out of statically linked binaries rather than a distro image
 
+
+# A note on Pypack
+
+`pypack` is a great tool to get the latest version of Python running on a Linux machine (CentOS/RHEL 5 or above, libc required). The archive containers a `venv`-like folder with a `python` binary suited to emulate a `virtualenv` but with a full Python, dependency libraries and headers included. The packed version also includes the latest version of pip `python -m pip` and the latest version of `requests` library. 
+
+URL to download the latest `pypack`: [latest](https://n0p.me/pypack/latest) (Python 3.8.3 with the latest `pip` and `requests` as of 2020-06-08)
+
+NOTE: `pypack` is in alpha and it's not tested on all major distros.
