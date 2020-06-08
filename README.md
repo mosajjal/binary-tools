@@ -89,4 +89,14 @@ URL shortner for custom architectures have been disabled temporarily due to mali
 
 URL to download the latest `pypack`: [latest](https://n0p.me/pypack/latest) (Python 3.8.3 with the latest `pip` and `requests` as of 2020-06-08)
 
+## Howto
+
+* `cd` to your target parent directory (`~` for example)
+* `wget n0p.me/pypack/latest -O latest.tar.gz`
+* `tar xf latest.tar.gz`
+* `cd py*-env`
+* `./python -V`
+
+you can rename and move the folder `py*-env` later on as well with no effect on your packes etc.
+
 NOTE: `pypack` is in alpha and it's not tested on all major distros.
