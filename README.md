@@ -12,7 +12,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [3proxy](https://github.com/z3APA3A/3proxy)               |0.9-devel  |`3proxy`            |Static  |`473caf301da2308794a5e29bd2abcee8e89179700e57a4dd03858ada112fb155` |
 | [Bandwhich](https://github.com/imsnif/bandwhich)          |0.12.0     |`bandwhich`         |Static  |`2a282d185468296db05d35d2b0d53d43d1023e789938648cd319a19b82eb3d3e` |
 | [Bed](https://github.com/itchyny/bed)                     |0.2.0      |`bed`               |Static  |`0f96ef70fa54f34a3fb95690ed2ddec9e39320110e91b3687eef4606a5a3e810` |
-| [Brook](https://github.com/txthinking/brook)              |20181212   |`brook`             |Static  |`b71e4178afe52f604aea52cc41a22ea66912fec076d0ba3fd114537da0521937` |
+| [Brook](https://github.com/txthinking/brook)              |20200502   |`brook`             |Static  |`22df036928cfb6b611c98b9bb0120c67fde17fd3b7953799793e2d2d7890e9b3` |
 | [BusyBox](https://busybox.net)                            |1.29.2     |`busybox`           |Static  |`8ad26029498257b01b7a2078f4cd14e9dd0785ce47417609c698ac95f82eb152` |
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        |2.0        |`corkscrew`         |Static  |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](https://github.com/curl/curl)                      |7.70.0     |`curl`              |Static  |`55e066fbc83aa4b0f9ea45840111dbd5c2ceeeed1e030abc856b82d41f38ed7e` |
