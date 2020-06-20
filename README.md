@@ -41,7 +41,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`              |Static  |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](https://github.com/justjanne/powerline-go) |1.17.0     |`pline-go`          |Static  |`259002eca93a337fb609f326fe2cca15316d496803def33f5ffa26415e146e18` |
 | [rg](https://github.com/BurntSushi/ripgrep)               |12.0.1     |`rg`                |Static  |`c7c550d4a267ac8b4e70f8f78e299c3d455a808eac58bb0ef466d3c3153502b8` |
-| [scp](https://github.com/mkj/dropbear)                    |2019.78    |`scp`                |Static  |`a941d10a04999160bcbcc29bc0c158b192eba6605c17adfe05b77852db6be272` |
+| [scp](https://github.com/mkj/dropbear)                    |2019.78    |`scp`               |Static  |`a941d10a04999160bcbcc29bc0c158b192eba6605c17adfe05b77852db6be272` |
 | [sd](https://github.com/chmln/sd)                         |0.7.5      |`sd`                |Static  |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`             |Static  |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
 | [strace](https://github.com/strace/strace)                |4.7.0      |`strace`            |Static  |`a697a395c1307bee9c22e73d1095a92920cbafe62eac4b062fcada601ca7f146` |
