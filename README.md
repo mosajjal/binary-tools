@@ -46,6 +46,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`             |Static  |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
 | [strace](https://github.com/strace/strace)                |4.7.0      |`strace`            |Static  |`a697a395c1307bee9c22e73d1095a92920cbafe62eac4b062fcada601ca7f146` |
 | [TCPDump](https://www.tcpdump.org/)                       |4.7.4      |`tcpdump`           |Static  |`1d6ce1e13c9821767729fc6ca354d714fc44abdd448beb8ab05217e3d8d97e16` |
+| [Wireshark](x64/wireshark/README.md)                      |2.6.17     |`wireshark/*`       |Static  |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [WG Tools](https://github.com/WireGuard/wireguard-tools)  |0.3.0      |`wg-user`           |Static  |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [zenith](https://github.com/bvaisvil/zenith)              |0.8.2      |`zenith`            |Static  |`473caf301da2308794a5e29bd2abcee8e89179700e57a4dd03858ada112fb155` |
 | [Zgrab/2](https://github.com/zmap/zgrab2)                 |0.1.3      |`zgrab, zgrab2`     |Static  |`adc9df896d21e057bac82af28db3933f3f979312fc013e563037a419c33db159` |
