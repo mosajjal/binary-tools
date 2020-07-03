@@ -18,7 +18,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [curl](https://github.com/curl/curl)                      |7.70.0     |`curl`              |Static  |`55e066fbc83aa4b0f9ea45840111dbd5c2ceeeed1e030abc856b82d41f38ed7e` |
 | [Darkhttpd](https://github.com/ryanmjacobs/darkhttpd)     |1.12       |`dh`                |Static  |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
 | [DnsMonster](https://github.com/mosajjal/dnsmonster)      |0.1        |`dnsmonster`        |Dynamic |`16d34541caf060eb2c039688724665c794df88fc16f94933e5e11340c43b6245` |
-| [Dropbear](https://github.com/mkj/dropbear)               |2019.78    |`dropbear, dbclient`|Static  |`8fece11f872ff1f1e279113198e69dcdafc98e6fc84fd369224895a263683c24` |
+| [Dropbear](x64/dropbear/README.md)                        |2020.80    |`dropbear/*`        |Static  |`8fece11f872ff1f1e279113198e69dcdafc98e6fc84fd369224895a263683c24` |
 | [Dead Simple VPN](https://github.com/jedisct1/dsvpn)      |0.1.3      |`dsvpn`             |Static  |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
 | [fd](https://github.com/sharkdp/fd)                       |8.0.0      |`fd`                |Static  |`ea999610cba167475df50f57b79efb2e24139414b9507bb1498c740458671656` |
 | [ffuf](https://github.com/ffuf/ffuf)                      |1.0.2      |`ffuf`              |Static  |`cd5fc6d70d841a377762fa7cfb144b62ebc84e459181a2eee27b06a54198aef1` |
@@ -42,7 +42,6 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`              |Static  |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](https://github.com/justjanne/powerline-go) |1.17.0     |`pline-go`          |Static  |`259002eca93a337fb609f326fe2cca15316d496803def33f5ffa26415e146e18` |
 | [rg](https://github.com/BurntSushi/ripgrep)               |12.0.1     |`rg`                |Static  |`c7c550d4a267ac8b4e70f8f78e299c3d455a808eac58bb0ef466d3c3153502b8` |
-| [scp](https://github.com/mkj/dropbear)                    |2019.78    |`scp`               |Static  |`a941d10a04999160bcbcc29bc0c158b192eba6605c17adfe05b77852db6be272` |
 | [sd](https://github.com/chmln/sd)                         |0.7.5      |`sd`                |Static  |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`             |Static  |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
 | [strace](https://github.com/strace/strace)                |4.7.0      |`strace`            |Static  |`a697a395c1307bee9c22e73d1095a92920cbafe62eac4b062fcada601ca7f146` |
