@@ -17,7 +17,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        |2.0        |`corkscrew`         |Static  |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](https://github.com/curl/curl)                      |7.70.0     |`curl`              |Static  |`55e066fbc83aa4b0f9ea45840111dbd5c2ceeeed1e030abc856b82d41f38ed7e` |
 | [Darkhttpd](https://github.com/ryanmjacobs/darkhttpd)     |1.12       |`dh`                |Static  |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [DnsMonster](https://github.com/mosajjal/dnsmonster)      |0.1        |`dnsmonster`        |Dynamic |`16d34541caf060eb2c039688724665c794df88fc16f94933e5e11340c43b6245` |
+| [DnsMonster](https://github.com/mosajjal/dnsmonster)      |0.1        |`dnsmonster`        |Static |`a746915f6f15d50105d8df6a998f5f975f44f430203da6d4a64dbbed67e5b873` |
 | [Dropbear](x64/dropbear/README.md)                        |2020.80    |`dropbear/*`        |Static  |`ae8e3785ea25b9743c5b2a672d7d7871b697ec48ee1c35920b9a2e4e36307542` |
 | [Dead Simple VPN](https://github.com/jedisct1/dsvpn)      |0.1.3      |`dsvpn`             |Static  |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
 | [fd](https://github.com/sharkdp/fd)                       |8.0.0      |`fd`                |Static  |`ea999610cba167475df50f57b79efb2e24139414b9507bb1498c740458671656` |
