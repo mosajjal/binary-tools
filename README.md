@@ -26,7 +26,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |2.0.1      |`gotop`       |`dc4950e4fb5292f0bfd3a3210efdf9de6d80b54db1caf1810352fd52f093878b` |
-| [Htop](https://hisham.hm/htop/)                           |1.0.3      |`htop`        |`fdc8a9f15a67f2e1eb7481b87ea80428d3439507a69aa0064967fc58796c79a3` |
+| [Htop](https://hisham.hm/htop/)                           |2.2.0      |`htop`        |`1eae247aaf7abc7ebcef5d83ff4c971fbf5dca8464e6cafff02788bbc37939a1` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    |3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [iodine](https://github.com/yarrick/iodine)               |0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
