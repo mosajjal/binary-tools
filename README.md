@@ -36,6 +36,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Micro](https://github.com/zyedidia/micro)                |2.0.3      |`micro`       |`1df43d0b8406e4e6f1b492ea5e84c1d840ae879bd5a853ee62445b40f4a752c4` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       |0.5.0      |`miniserve`   |`c166074940074bfc121d1ebd2848b750f679404f11492fcfeae5adc3fbb6effc` |
 | [Nano](https://www.nano-editor.org/)                      |4.9.3      |`nano`        |`1d1d02ca3928c6035ae03cfc61f3c83f5fe6efc1fb8a2a5db76c6f6b79ab188d` |
+| [ncdu](https://dev.yorhel.nl/ncdu/changes)                |1.15.1     |`ncdu`        |`80611d8df5416ae2ae9c7a957f1dfc8f2b9ff4ee41fbbc7ed84de8b34c99813c' |
 | [NetCat](https://www.freebsd.org/cgi/man.cgi?query=netcat)|1.68       |`nc`          |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [Netsniff](x64/netsniff/README.md)                        |0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
 | [ngrep](https://github.com/jpr5/ngrep/)                   |1.47.1-git |`ngrep`       |`7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
