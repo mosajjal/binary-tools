@@ -57,7 +57,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 
 
 
-# Filename map (ARM)
+# Filename map (ARM5)
 
 |Software                                     |Version  |Filename   |SHA256                                                             |
 |---------------------------------------------|---------|-----------|-------------------------------------------------------------------|
