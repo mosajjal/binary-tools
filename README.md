@@ -40,6 +40,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [NetCat](https://www.freebsd.org/cgi/man.cgi?query=netcat)|1.68       |`nc`          |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [Netsniff](x64/netsniff/README.md)                        |0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
 | [ngrep](https://github.com/jpr5/ngrep/)                   |1.47.1-git |`ngrep`       |`7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
+| [nmap](https://nmap.org/)                                 |6.01       |`nmap, nping` |`887142f220ea39b1da973bf3ca5d1ba54fede048f7d3a1d72745e9fc8a8d7fdd` |
 | [Nomino](https://github.com/yaa110/nomino)                |0.4.2      |`nomino`      |`f4d77664b2128e001d41a206049de4f001aebf55a94651128fd0d27fe7ba2a3d` |
 | [packetq](https://www.dns-oarc.net/tools/packetq)         |1.4.2      |`packetq`     |`4acc685405445a5c46b0a8949d1227d5fea085f8f76308be013f5ccb6867158e` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
