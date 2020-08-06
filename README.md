@@ -33,7 +33,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [IOPing](https://github.com/koct9i/ioping)                |0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jq](https://github.com/stedolan/jq)                      |1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](https://github.com/ilai-deutel/kibi)               |0.1.2      |`kibi`        |`9f8f7f02b4f5201a3197292b7daa7af448c93b7f6fdf36e82e17f9c0be8f38d5` |
-| [merino](https://github.com/ajmwagar/merino)              |0.1.3      |`merino`      |`651fb0fc89aa614a23bb6908d5a1bd580be3fd2b38cae6e2a95a1f4ceb6ecb8a` |
+| [merino](https://github.com/ajmwagar/merino)              |0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.3      |`micro`       |`1df43d0b8406e4e6f1b492ea5e84c1d840ae879bd5a853ee62445b40f4a752c4` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       |0.5.0      |`miniserve`   |`c166074940074bfc121d1ebd2848b750f679404f11492fcfeae5adc3fbb6effc` |
 | [Nano](https://www.nano-editor.org/)                      |4.9.3      |`nano`        |`1d1d02ca3928c6035ae03cfc61f3c83f5fe6efc1fb8a2a5db76c6f6b79ab188d` |
