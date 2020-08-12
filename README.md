@@ -23,6 +23,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fd](https://github.com/sharkdp/fd)                       |8.0.0      |`fd`          |`ea999610cba167475df50f57b79efb2e24139414b9507bb1498c740458671656` |
 | [ffuf](https://github.com/ffuf/ffuf)                      |1.0.2      |`ffuf`        |`cd5fc6d70d841a377762fa7cfb144b62ebc84e459181a2eee27b06a54198aef1` |
 | [Fish](https://github.com/fish-shell/fish-shell)          |3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
+| [frp](https://github.com/fatedier/frp)                    |0.33.0     |`frpc/frps`   |`2ebab4a316c9654159329b459717a34e4e70f2ba5d44a092b8e27dc794a20340` |
 | [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |2.0.1      |`gotop`       |`dc4950e4fb5292f0bfd3a3210efdf9de6d80b54db1caf1810352fd52f093878b` |
@@ -51,7 +52,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`       |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
 | [strace](https://github.com/strace/strace)                |4.7.0      |`strace`      |`a697a395c1307bee9c22e73d1095a92920cbafe62eac4b062fcada601ca7f146` |
 | [TCPDump](https://www.tcpdump.org/)                       |4.7.4      |`tcpdump`     |`1d6ce1e13c9821767729fc6ca354d714fc44abdd448beb8ab05217e3d8d97e16` |
-| [termshark](https://github.com/gcla/termshark)            |2.1.1      |`termshark`   |`61ece21de905dc5bd34dd7d09ec724d181284b30492afbfde97ff4124bce25ad`  |
+| [termshark](https://github.com/gcla/termshark)            |2.1.1      |`termshark`   |`61ece21de905dc5bd34dd7d09ec724d181284b30492afbfde97ff4124bce25ad` |
 | [tmux](https://github.com/tmux/tmux)                      |3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [Wireshark](x64/wireshark/README.md)                      |2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [WG Tools](https://github.com/WireGuard/wireguard-tools)  |0.3.0      |`wg-user`     |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
