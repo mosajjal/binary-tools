@@ -56,7 +56,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [tmux](https://github.com/tmux/tmux)                      |3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [Wireshark](x64/wireshark/README.md)                      |2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [WG Tools](https://github.com/WireGuard/wireguard-tools)  |0.3.0      |`wg-user`     |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
-| [zenith](https://github.com/bvaisvil/zenith)              |0.8.2      |`zenith`      |`473caf301da2308794a5e29bd2abcee8e89179700e57a4dd03858ada112fb155` |
+| [zenith](https://github.com/bvaisvil/zenith)              |0.10.0     |`zenith`      |`042c44feb042f1b326fc7242cddd3a63cc7e028172d02ddbae939b8be7bb73e2` |
 | [Zmap](x64/zmap/README.md)                                |2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
 
 
