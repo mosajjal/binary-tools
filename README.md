@@ -10,9 +10,9 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |Software                                                   |Version    |Filename      |SHA256                                                             |
 |-----------------------------------------------------------|-----------|--------------|-------------------------------------------------------------------|
 | [3proxy](https://github.com/z3APA3A/3proxy)               |0.9-devel  |`3proxy`      |`473caf301da2308794a5e29bd2abcee8e89179700e57a4dd03858ada112fb155` |
-| [Bandwhich](https://github.com/imsnif/bandwhich)          |0.12.0     |`bandwhich`   |`2a282d185468296db05d35d2b0d53d43d1023e789938648cd319a19b82eb3d3e` |
+| [Bandwhich](https://github.com/imsnif/bandwhich)          |0.16.0     |`bandwhich`   |`d8d9e1d6fba1cda20e9223c24e55dfb6ca019eeeba9110cccfa7ad5ef4c53bdb` |
 | [Bed](https://github.com/itchyny/bed)                     |0.2.0      |`bed`         |`0f96ef70fa54f34a3fb95690ed2ddec9e39320110e91b3687eef4606a5a3e810` |
-| [Brook](https://github.com/txthinking/brook)              |20200502   |`brook`       |`22df036928cfb6b611c98b9bb0120c67fde17fd3b7953799793e2d2d7890e9b3` |
+| [Brook](https://github.com/txthinking/brook)              |20200901   |`brook`       |`f0d8514515830943b1d50b33b48cd379a0e714233c9a8c212b17daa8112fe1d1` |
 | [BusyBox](https://busybox.net)                            |1.32.0     |`busybox`     |`bd9e3bdfad5ff8399f713f12c3fc86a89dc88ef0de6be51bbcc2be75b4d1e628` |
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        |2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](https://github.com/curl/curl)                      |7.70.0     |`curl`        |`55e066fbc83aa4b0f9ea45840111dbd5c2ceeeed1e030abc856b82d41f38ed7e` |
@@ -26,7 +26,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [frp](https://github.com/fatedier/frp)                    |0.33.0     |`frpc/frps`   |`2ebab4a316c9654159329b459717a34e4e70f2ba5d44a092b8e27dc794a20340` |
 | [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
-| [Gotop](https://github.com/cjbassi/gotop)                 |2.0.1      |`gotop`       |`dc4950e4fb5292f0bfd3a3210efdf9de6d80b54db1caf1810352fd52f093878b` |
+| [Gotop](https://github.com/cjbassi/gotop)                 |3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
 | [Htop](https://hisham.hm/htop/)                           |2.2.0      |`htop`        |`1eae247aaf7abc7ebcef5d83ff4c971fbf5dca8464e6cafff02788bbc37939a1` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    |3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
