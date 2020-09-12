@@ -53,6 +53,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [sd](https://github.com/chmln/sd)                         |0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`       |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
 | [strace](https://github.com/strace/strace)                |5.8        |`strace`      |`b4d1ddfc047cc73250bc7dbc42e591563aea21a2195c800497c27e22c20e06ba` |
+| [suricata](https://github.com/OISF/suricata)              |6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](https://www.tcpdump.org/)                       |4.7.4      |`tcpdump`     |`1d6ce1e13c9821767729fc6ca354d714fc44abdd448beb8ab05217e3d8d97e16` |
 | [termshark](https://github.com/gcla/termshark)            |2.1.1      |`termshark`   |`61ece21de905dc5bd34dd7d09ec724d181284b30492afbfde97ff4124bce25ad` |
 | [tmux](https://github.com/tmux/tmux)                      |3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
