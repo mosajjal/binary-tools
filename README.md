@@ -37,7 +37,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Kibi](https://github.com/ilai-deutel/kibi)               |0.1.2      |`kibi`        |`9f8f7f02b4f5201a3197292b7daa7af448c93b7f6fdf36e82e17f9c0be8f38d5` |
 | [merino](https://github.com/ajmwagar/merino)              |0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.6      |`micro`       |`987f909f8d08d9c62a58f8e6a5ae19a220d2db5b18a98df98c584d81ce4b9117` |
-| [Miniserve](https://github.com/svenstaro/miniserve)       |0.8.0      |`miniserve`   |`9f6d92a7643717a5be4487894a427cfa2d4c61d40213257d0aae16731708575b` |
+| [Miniserve](https://github.com/svenstaro/miniserve)       |0.10.0     |`miniserve`   |`6e39d0a189c9ed40c425e991b0a913cf29029bc37ba7ace5064b2da2c4c6a924` |
 | [Nano](https://www.nano-editor.org/)                      |4.9.3      |`nano`        |`1d1d02ca3928c6035ae03cfc61f3c83f5fe6efc1fb8a2a5db76c6f6b79ab188d` |
 | [ncdu](https://dev.yorhel.nl/ncdu/changes)                |1.15.1     |`ncdu`        |`80611d8df5416ae2ae9c7a957f1dfc8f2b9ff4ee41fbbc7ed84de8b34c99813c` |
 | [NetCat](https://www.freebsd.org/cgi/man.cgi?query=netcat)|1.68       |`nc`          |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
