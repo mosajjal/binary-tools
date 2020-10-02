@@ -10,7 +10,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |Software                                                   |Version    |Filename      |SHA256                                                             |
 |-----------------------------------------------------------|-----------|--------------|-------------------------------------------------------------------|
 | [3proxy](https://github.com/z3APA3A/3proxy)               |0.9-devel  |`3proxy`      |`473caf301da2308794a5e29bd2abcee8e89179700e57a4dd03858ada112fb155` |
-| [Bandwhich](https://github.com/imsnif/bandwhich)          |0.16.0     |`bandwhich`   |`d8d9e1d6fba1cda20e9223c24e55dfb6ca019eeeba9110cccfa7ad5ef4c53bdb` |
+| [Bandwhich](https://github.com/imsnif/bandwhich)          |0.19.0     |`bandwhich`   |`758ffe287b4d677fbff1f41414e7ac923fd55c04840af10406a9d795196aeb5c` |
 | [Bed](https://github.com/itchyny/bed)                     |0.2.0      |`bed`         |`0f96ef70fa54f34a3fb95690ed2ddec9e39320110e91b3687eef4606a5a3e810` |
 | [Brook](https://github.com/txthinking/brook)              |20200901   |`brook`       |`f0d8514515830943b1d50b33b48cd379a0e714233c9a8c212b17daa8112fe1d1` |
 | [BusyBox](https://busybox.net)                            |1.32.0     |`busybox`     |`bd9e3bdfad5ff8399f713f12c3fc86a89dc88ef0de6be51bbcc2be75b4d1e628` |
