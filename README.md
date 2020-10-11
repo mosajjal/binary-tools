@@ -34,7 +34,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [iodine](https://github.com/yarrick/iodine)               |0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](https://github.com/koct9i/ioping)                |0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jq](https://github.com/stedolan/jq)                      |1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
-| [Kibi](https://github.com/ilai-deutel/kibi)               |0.1.2      |`kibi`        |`9f8f7f02b4f5201a3197292b7daa7af448c93b7f6fdf36e82e17f9c0be8f38d5` |
+| [Kibi](https://github.com/ilai-deutel/kibi)               |0.2.1      |`kibi`        |`1bc39b782edd0fec51b379cc36a73131720260da64734872f4c9733b04f6061e` |
 | [logtop](https://github.com/JulienPalard/logtop)          |a0935ab    |`logtop`      |`6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
 | [merino](https://github.com/ajmwagar/merino)              |0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.7      |`micro`       |`0746eedb954cb240d938f485e93f135590315297dfee6993519ed334cd21ab8f` |
