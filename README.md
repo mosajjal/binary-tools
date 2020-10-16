@@ -27,7 +27,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
-| [Htop](https://hisham.hm/htop/)                           |2.2.0      |`htop`        |`1eae247aaf7abc7ebcef5d83ff4c971fbf5dca8464e6cafff02788bbc37939a1` |
+| [Htop](https://hisham.hm/htop/)                           |3.0.2      |`htop`        |`13dfb7ab0827df767849060ecde239ed90e009dbf21d5bb20c18c542f1d07acd` |
 | [httpdump](https://github.com/hsiafan/httpdump)           |52b113d    |`httpdump`    |`e89034e16be47dc78805cd3c03b009d20ebe05ace30fbd9e3e43d29588242c89` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    |3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
