@@ -58,7 +58,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [TCPDump](https://www.tcpdump.org/)                       |4.9.3      |`tcpdump`     |`dddcdbacd304c7f642c798a42b374a2a583168d9142ee0cd122a0d38d0a30efd` |
 | [termshark](https://github.com/gcla/termshark)            |2.1.1      |`termshark`   |`61ece21de905dc5bd34dd7d09ec724d181284b30492afbfde97ff4124bce25ad` |
 | [tmux](https://github.com/tmux/tmux)                      |3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
-| [vim](https://www.vim.org/)                               |7.4        |`vim`         |`48e1496ad6dea4b00412305d3e31b4b31ee53b6de7d7e9b76bcfdf530773d997` |
+| [vim](https://www.vim.org/)                               |8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                      |2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [WG Tools](https://github.com/WireGuard/wireguard-tools)  |0.3.0      |`wg-user`     |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [xxd](https://linux.die.net/man/1/xxd)                    |1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
