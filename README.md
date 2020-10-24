@@ -37,6 +37,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [jq](https://github.com/stedolan/jq)                      |1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](https://github.com/ilai-deutel/kibi)               |0.2.1      |`kibi`        |`1bc39b782edd0fec51b379cc36a73131720260da64734872f4c9733b04f6061e` |
 | [logtop](https://github.com/JulienPalard/logtop)          |a0935ab    |`logtop`      |`6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
+| [memcached-util](https://github.com/me-io/memcached-util) |0.0.1      |`memcd-util`  |`e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
 | [merino](https://github.com/ajmwagar/merino)              |0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](https://github.com/zyedidia/micro)                |2.0.7      |`micro`       |`0746eedb954cb240d938f485e93f135590315297dfee6993519ed334cd21ab8f` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       |0.10.0     |`miniserve`   |`6e39d0a189c9ed40c425e991b0a913cf29029bc37ba7ace5064b2da2c4c6a924` |
