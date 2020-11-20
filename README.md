@@ -47,7 +47,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Netsniff](x64/netsniff/README.md)                        |0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
 | [ngrep](https://github.com/jpr5/ngrep/)                   |1.47.1-git |`ngrep`       |`7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
 | [nmap](https://nmap.org/)                                 |7.91       |`nmap, nping` |`f584966010a883169dc1322d0e7f0506f94b2ae133dbd960e0ff48186f4084f9` |
-| [Nomino](https://github.com/yaa110/nomino)                |0.4.2      |`nomino`      |`f4d77664b2128e001d41a206049de4f001aebf55a94651128fd0d27fe7ba2a3d` |
+| [Nomino](https://github.com/yaa110/nomino)                |0.4.4      |`nomino`      |`a1614191545d4be5161fb3d3f2ef6eeb312800c9cacf3a2e0da8f7ea0ac62c34` |
 | [packetq](https://www.dns-oarc.net/tools/packetq)         |1.4.3      |`packetq`     |`08ffbf29b1403c4c69f99631dc3a96139307bc52e36e2b448e932102a9e32d09` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](https://github.com/justjanne/powerline-go) |1.17.0     |`pline-go`    |`259002eca93a337fb609f326fe2cca15316d496803def33f5ffa26415e146e18` |
