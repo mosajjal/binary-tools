@@ -20,7 +20,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [DnsMonster](https://github.com/mosajjal/dnsmonster)      |0.1        |`dnsmonster`  |`a746915f6f15d50105d8df6a998f5f975f44f430203da6d4a64dbbed67e5b873` |
 | [Dropbear](x64/dropbear/README.md)                        |2020.80    |`dropbear/*`  |`ae8e3785ea25b9743c5b2a672d7d7871b697ec48ee1c35920b9a2e4e36307542` |
 | [Dead Simple VPN](https://github.com/jedisct1/dsvpn)      |0.1.3      |`dsvpn`       |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
-| [es-dump](https://github.com/mosajjal/elasticdump)        |0.0.1      |`es-dump`     |`6d1acdff73c363ff04d0dacee63157ee73c7a5fd7d8dcec10fdeafd171f80ddc` |
+| [es-dump](https://github.com/mosajjal/elasticdump)        |0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
 | [fd](https://github.com/sharkdp/fd)                       |8.0.0      |`fd`          |`ea999610cba167475df50f57b79efb2e24139414b9507bb1498c740458671656` |
 | [ffuf](https://github.com/ffuf/ffuf)                      |1.0.2      |`ffuf`        |`cd5fc6d70d841a377762fa7cfb144b62ebc84e459181a2eee27b06a54198aef1` |
 | [Fish](https://github.com/fish-shell/fish-shell)          |3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
