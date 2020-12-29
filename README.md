@@ -11,7 +11,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |-----------------------------------------------------------|-----------|--------------|-------------------------------------------------------------------|
 | [3proxy](https://github.com/z3APA3A/3proxy)               |0.9        |`3proxy`      |`0355c14aaa6da41bba468ec29f0bec7fbf16c810bff94923e5175b84fd7ee97c` |
 | [Bandwhich](https://github.com/imsnif/bandwhich)          |0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
-| [Bed](https://github.com/itchyny/bed)                     |0.2.0      |`bed`         |`0f96ef70fa54f34a3fb95690ed2ddec9e39320110e91b3687eef4606a5a3e810` |
+| [Bed](https://github.com/itchyny/bed)                     |0.2.1      |`bed`         |`1d95960996391c09663920bc22e81f786b601eaff88ffca2a256b67f38283897` |
 | [Brook](https://github.com/txthinking/brook)              |20210101   |`brook`       |`af6d7d716b1c85e0bc4fd5ba1d61ef44cafc701e86cca720363cd405bb38dc78` |
 | [BusyBox](https://busybox.net)                            |1.32.0     |`busybox`     |`bd9e3bdfad5ff8399f713f12c3fc86a89dc88ef0de6be51bbcc2be75b4d1e628` |
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        |2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
@@ -29,7 +29,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
 | [Htop](https://hisham.hm/htop/)                           |3.0.3      |`htop`        |`2def922d74c35dce45a51ef78ffc6f7d9d4f2f7d78367965c15b7e38400a8f1c` |
-| [httpdump](https://github.com/hsiafan/httpdump)           |52b113d    |`httpdump`    |`e89034e16be47dc78805cd3c03b009d20ebe05ace30fbd9e3e43d29588242c89` |
+| [httpdump](https://github.com/hsiafan/httpdump)           |d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    |3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [iodine](https://github.com/yarrick/iodine)               |0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
