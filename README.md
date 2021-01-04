@@ -58,7 +58,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [strace](https://github.com/strace/strace)                |5.8        |`strace`      |`b4d1ddfc047cc73250bc7dbc42e591563aea21a2195c800497c27e22c20e06ba` |
 | [suricata](https://github.com/OISF/suricata)              |6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](https://www.tcpdump.org/)                       |4.9.3      |`tcpdump`     |`dddcdbacd304c7f642c798a42b374a2a583168d9142ee0cd122a0d38d0a30efd` |
-| [termshark](https://github.com/gcla/termshark)            |2.1.1      |`termshark`   |`61ece21de905dc5bd34dd7d09ec724d181284b30492afbfde97ff4124bce25ad` |
+| [termshark](https://github.com/gcla/termshark)            |2.2.0      |`termshark`   |`d6b0c97a64f8780c616edbf4da5b10d3cdb8f260746b6e9dc13613af6f96d9cd` |
 | [tmux](https://github.com/tmux/tmux)                      |3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [vim](https://www.vim.org/)                               |8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                      |2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
