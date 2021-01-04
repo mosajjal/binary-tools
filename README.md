@@ -54,7 +54,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [pv](https://github.com/icetee/pv)                        |1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [rg](https://github.com/BurntSushi/ripgrep)               |12.1.1     |`rg`          |`40fd7bf567924b8a34e00193cd41c759ba6249a2b519d12d8ea8d142eab40559` |
 | [sd](https://github.com/chmln/sd)                         |0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
-| [Socat](http://www.dest-unreach.org/socat/)               |1.7.3.0    |`socat`       |`1de1e64b1617aa8a2138711f76e44cf207bc4c903b54fc092828d18310f02838` |
+| [Socat](http://www.dest-unreach.org/socat/)               |1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
 | [strace](https://github.com/strace/strace)                |5.8        |`strace`      |`b4d1ddfc047cc73250bc7dbc42e591563aea21a2195c800497c27e22c20e06ba` |
 | [suricata](https://github.com/OISF/suricata)              |6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](https://www.tcpdump.org/)                       |4.9.3      |`tcpdump`     |`dddcdbacd304c7f642c798a42b374a2a583168d9142ee0cd122a0d38d0a30efd` |
