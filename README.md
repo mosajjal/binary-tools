@@ -50,7 +50,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Nomino](https://github.com/yaa110/nomino)                |0.4.4      |`nomino`      |`a1614191545d4be5161fb3d3f2ef6eeb312800c9cacf3a2e0da8f7ea0ac62c34` |
 | [packetq](https://www.dns-oarc.net/tools/packetq)         |1.4.3      |`packetq`     |`08ffbf29b1403c4c69f99631dc3a96139307bc52e36e2b448e932102a9e32d09` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
-| [Powerline-go](https://github.com/justjanne/powerline-go) |1.17.0     |`pline-go`    |`259002eca93a337fb609f326fe2cca15316d496803def33f5ffa26415e146e18` |
+| [Powerline-go](https://github.com/justjanne/powerline-go) |1.20.0     |`pline-go`    |`4523309d14584e714fd10f2fb80bc1a8070137676436e27ee2aa7da0a7963a12` |
 | [pv](https://github.com/icetee/pv)                        |1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [rg](https://github.com/BurntSushi/ripgrep)               |12.1.1     |`rg`          |`40fd7bf567924b8a34e00193cd41c759ba6249a2b519d12d8ea8d142eab40559` |
 | [sd](https://github.com/chmln/sd)                         |0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
