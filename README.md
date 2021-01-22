@@ -24,7 +24,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fd](https://github.com/sharkdp/fd)                       |8.0.0      |`fd`          |`ea999610cba167475df50f57b79efb2e24139414b9507bb1498c740458671656` |
 | [ffuf](https://github.com/ffuf/ffuf)                      |1.0.2      |`ffuf`        |`cd5fc6d70d841a377762fa7cfb144b62ebc84e459181a2eee27b06a54198aef1` |
 | [Fish](https://github.com/fish-shell/fish-shell)          |3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
-| [frp](https://github.com/fatedier/frp)                    |0.34.3     |`frpc/frps`   |`309d562aaeb19900556bfc59a8d87fcbeaf34d4bf0ea570a3246ef0be1e0f93c` |
+| [frp](https://github.com/fatedier/frp)                    |0.35.0     |`frpc/frps`   |`54a3147c7a2540f2d915fedffdae9c6614cc9fb07ddfe6a0107bc2b4eaadb46d` |
 | [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
