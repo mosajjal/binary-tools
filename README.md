@@ -15,7 +15,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Brook](https://github.com/txthinking/brook)              |20210101   |`brook`       |`af6d7d716b1c85e0bc4fd5ba1d61ef44cafc701e86cca720363cd405bb38dc78` |
 | [BusyBox](https://busybox.net)                            |1.33.0     |`busybox`     |`f218943a14301312b07bb238cc3b2be8eebc6cef7ba04213e31d55a45230a4e0` |
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        |2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
-| [curl](https://github.com/curl/curl)                      |7.70.0     |`curl`        |`55e066fbc83aa4b0f9ea45840111dbd5c2ceeeed1e030abc856b82d41f38ed7e` |
+| [curl](https://github.com/curl/curl)                      |7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
 | [Darkhttpd](https://github.com/ryanmjacobs/darkhttpd)     |1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
 | [DnsMonster](https://github.com/mosajjal/dnsmonster)      |0.8.2      |`dnsmonster`  |`995c0740a43b4606e2ace7c80ffbc8b1310c020f66e611ba157c0c0592819aba` |
 | [Dropbear](x64/dropbear/README.md)                        |2020.80    |`dropbear/*`  |`ae8e3785ea25b9743c5b2a672d7d7871b697ec48ee1c35920b9a2e4e36307542` |
