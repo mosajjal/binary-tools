@@ -10,6 +10,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |Software                                                   |Version    |Filename      |SHA256                                                             |
 |-----------------------------------------------------------|-----------|--------------|-------------------------------------------------------------------|
 | [3proxy](https://github.com/z3APA3A/3proxy)               |0.9        |`3proxy`      |`0355c14aaa6da41bba468ec29f0bec7fbf16c810bff94923e5175b84fd7ee97c` |
+| [amass](https://github.com/OWASP/Amass)                   |3.11.2     |`amass`       |`2e5a8403e037631b3b12bbdaada7e8fb758140f2e4baaebde83a4431541d7372` |
 | [Bandwhich](https://github.com/imsnif/bandwhich)          |0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [Bed](https://github.com/itchyny/bed)                     |0.2.1      |`bed`         |`1d95960996391c09663920bc22e81f786b601eaff88ffca2a256b67f38283897` |
 | [Brook](https://github.com/txthinking/brook)              |20210101   |`brook`       |`af6d7d716b1c85e0bc4fd5ba1d61ef44cafc701e86cca720363cd405bb38dc78` |
