@@ -25,7 +25,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](https://github.com/ffuf/ffuf)                      |1.2.1      |`ffuf`        |`9c7605d51d75a8678fce1100fbc43bf241c3e68296055ea3a89f409dbfa8a78f` |
 | [Fish](https://github.com/fish-shell/fish-shell)          |3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
 | [frp](https://github.com/fatedier/frp)                    |0.35.0     |`frpc/frps`   |`54a3147c7a2540f2d915fedffdae9c6614cc9fb07ddfe6a0107bc2b4eaadb46d` |
-| [Fzf](https://github.com/junegunn/fzf)                    |0.21.1     |`fzf`         |`25a26b370a0d2bb97b5a7b282032a453b12e28ff058056a198fb1d7508af044b` |
+| [Fzf](https://github.com/junegunn/fzf)                    |0.25.1     |`fzf`         |`13eccaac89de63f6400c807d8de744af7799e0475e106a1394dc631833ba7dad` |
 | [Gost](https://github.com/ginuerzh/gost)                  |2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 |3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
 | [Htop](https://hisham.hm/htop/)                           |3.0.3      |`htop`        |`2def922d74c35dce45a51ef78ffc6f7d9d4f2f7d78367965c15b7e38400a8f1c` |
