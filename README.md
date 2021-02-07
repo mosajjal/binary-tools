@@ -32,6 +32,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [httpdump](https://github.com/hsiafan/httpdump)           |d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    |3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [ICMP Tunnel](https://github.com/DhavalKapil/icmptunnel)  |1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
+| [inlets](https://github.com/inlets/inlets)                |3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
 | [iodine](https://github.com/yarrick/iodine)               |0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](https://github.com/koct9i/ioping)                |0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jq](https://github.com/stedolan/jq)                      |1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
@@ -47,7 +48,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Netsniff](x64/netsniff/README.md)                        |0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
 | [ngrep](https://github.com/jpr5/ngrep/)                   |1.47.1-git |`ngrep`       |`7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
 | [nmap](https://nmap.org/)                                 |7.91       |`nmap, nping` |`f584966010a883169dc1322d0e7f0506f94b2ae133dbd960e0ff48186f4084f9` |
-| [Nomino](https://github.com/yaa110/nomino)                |0.4.4      |`nomino`      |`a1614191545d4be5161fb3d3f2ef6eeb312800c9cacf3a2e0da8f7ea0ac62c34` |
+| [Nomino](https://github.com/yaa110/nomino)                |0.4.5      |`nomino`      |`da96b5bfba1a28351262310decf49dd8a733965361c0bc96d29d9d4d47da5805` |
 | [packetq](https://www.dns-oarc.net/tools/packetq)         |1.4.3      |`packetq`     |`08ffbf29b1403c4c69f99631dc3a96139307bc52e36e2b448e932102a9e32d09` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     |1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](https://github.com/justjanne/powerline-go) |1.20.0     |`pline-go`    |`4523309d14584e714fd10f2fb80bc1a8070137676436e27ee2aa7da0a7963a12` |
