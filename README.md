@@ -73,16 +73,17 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 
 # Filename map (ARM5)
 
-|Software                                     | Version  |Filename   |SHA256                                                             |
-|---------------------------------------------|----------|-----------|-------------------------------------------------------------------|
-| [Brook](https://github.com/txthinking/brook)| 20200701 |`brook`    |`268e1e0dfa9b129f83559f6959096fdfba5a6870c019c0666d90f3457cc9cb4f` |
-| [Busybox](https://busybox.net)              | 1.28.1   |`busybox`  |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
-| [curl](https://github.com/curl/curl)        | 7.74.0   |`curl`     |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
-| [frp](https://github.com/fatedier/frp)      | 0.33.0   |`frpc/frps`|`d2c90458d552cfa79b44885515a500c1920a8ae5928001af05c476580e57bd51` |
-| [Gotop](https://github.com/cjbassi/gotop)   | 3.0.0    |`gotop`    |`450565e4cd4b6d317d760f572c992ee2d01d2d65433fbcc7558a7515b75cc3f8` |
-| [pv](https://linux.die.net/man/1/pv)        | 1.6.0    |`pv`       |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
-| [Strace](https://github.com/strace/strace)  | 4.10     |`strace`   |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
-| [TCPDump](https://www.tcpdump.org/)         | 4.7.4    |`tcpdump`  |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
+|Software                                             | Version  |Filename    |SHA256                                                             |
+|-----------------------------------------------------|----------|------------|-------------------------------------------------------------------|
+| [Brook](https://github.com/txthinking/brook)        | 20200701 |`brook`     |`268e1e0dfa9b129f83559f6959096fdfba5a6870c019c0666d90f3457cc9cb4f` |
+| [Busybox](https://busybox.net)                      | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
+| [curl](https://github.com/curl/curl)                | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
+| [DnsMonster](https://github.com/mosajjal/dnsmonster)| 0.8.2    |`dnsmonster`|`cc6956280029469cd13ac15068daa4ef9b1a12d543158991c650aef1191c262c` |
+| [frp](https://github.com/fatedier/frp)              | 0.33.0   |`frpc/frps` |`d2c90458d552cfa79b44885515a500c1920a8ae5928001af05c476580e57bd51` |
+| [Gotop](https://github.com/cjbassi/gotop)           | 3.0.0    |`gotop`     |`450565e4cd4b6d317d760f572c992ee2d01d2d65433fbcc7558a7515b75cc3f8` |
+| [pv](https://linux.die.net/man/1/pv)                | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
+| [Strace](https://github.com/strace/strace)          | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
+| [TCPDump](https://www.tcpdump.org/)                 | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 
 
 # Shortened URL
