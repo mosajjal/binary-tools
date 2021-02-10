@@ -68,7 +68,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Wireshark](x64/wireshark/README.md)                      | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [WG Tools](https://github.com/WireGuard/wireguard-tools)  | 0.3.0      |`wg-user`     |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [xxd](https://linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
-| [zenith](https://github.com/bvaisvil/zenith)              | 0.10.0     |`zenith`      |`042c44feb042f1b326fc7242cddd3a63cc7e028172d02ddbae939b8be7bb73e2` |
+| [zenith](https://github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
 | [Zmap](x64/zmap/README.md)                                | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
 
 
