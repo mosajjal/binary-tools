@@ -29,6 +29,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Fzf](https://github.com/junegunn/fzf)                    | 0.25.1     |`fzf`         |`13eccaac89de63f6400c807d8de744af7799e0475e106a1394dc631833ba7dad` |
 | [Gost](https://github.com/ginuerzh/gost)                  | 2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [Gotop](https://github.com/cjbassi/gotop)                 | 3.0.0      |`gotop`       |`55c7c9e930e9ff81e66fd8b214e883751af5f97f6247171c79a1066de0f71310` |
+| [grex](https://github.com/pemistahl/grex/)                | 1.1.0      |`grex`        |`a966fd591b68c44fb1297932716dfa2b60853970d9ffb225e17b6e3f76b1abcc` |
 | [Htop](https://hisham.hm/htop/)                           | 3.0.3      |`htop`        |`2def922d74c35dce45a51ef78ffc6f7d9d4f2f7d78367965c15b7e38400a8f1c` |
 | [httpdump](https://github.com/hsiafan/httpdump)           | d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
 | [httptunnel](https://www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
