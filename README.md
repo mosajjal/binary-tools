@@ -44,7 +44,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [merino](https://github.com/ajmwagar/merino)              | 0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](https://github.com/zyedidia/micro)                | 2.0.7      |`micro`       |`0746eedb954cb240d938f485e93f135590315297dfee6993519ed334cd21ab8f` |
 | [Miniserve](https://github.com/svenstaro/miniserve)       | 0.10.3     |`miniserve`   |`0dd49fb4e0f16a299eb95e8828f9274196d81e2a8278c85343cbe62e0fc22f5d` |
-| [Nano](https://www.nano-editor.org/)                      | 4.9.3      |`nano`        |`1d1d02ca3928c6035ae03cfc61f3c83f5fe6efc1fb8a2a5db76c6f6b79ab188d` |
+| [Nano](https://www.nano-editor.org/)                      | 5.5        |`nano`        |`bf2218f7e430f8326fd8f3492fece2d18bf976788ea222fa3ab2be3d174d1864` |
 | [ncdu](https://dev.yorhel.nl/ncdu/changes)                | 1.15.1     |`ncdu`        |`80611d8df5416ae2ae9c7a957f1dfc8f2b9ff4ee41fbbc7ed84de8b34c99813c` |
 | [NetCat](https://www.freebsd.org/cgi/man.cgi?query=netcat)| 1.68       |`nc`          |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [Netsniff](x64/netsniff/README.md)                        | 0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
