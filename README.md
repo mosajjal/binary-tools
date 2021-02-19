@@ -53,7 +53,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Nomino](https://github.com/yaa110/nomino)                | 0.4.5      |`nomino`      |`da96b5bfba1a28351262310decf49dd8a733965361c0bc96d29d9d4d47da5805` |
 | [packetq](https://www.dns-oarc.net/tools/packetq)         | 1.4.3      |`packetq`     |`08ffbf29b1403c4c69f99631dc3a96139307bc52e36e2b448e932102a9e32d09` |
 | [PassiveDNS](https://github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
-| [Powerline-go](https://github.com/justjanne/powerline-go) | 1.20.0     |`pline-go`    |`4523309d14584e714fd10f2fb80bc1a8070137676436e27ee2aa7da0a7963a12` |
+| [Powerline-go](https://github.com/justjanne/powerline-go) | 1.21.0     |`pline-go`    |`ba4991e93da1ca3253d163c50d75a3da698228559d566908a30a85e4543a9b57` |
 | [pv](https://github.com/icetee/pv)                        | 1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [rargs](https://github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
 | [redir](https://github.com/troglobit/redir)               | 3.3        |`redir`       |`488b759c62a5ac09c452ec91e91fa5b4751bf46f18583c3f6ace62f78217a699` |
