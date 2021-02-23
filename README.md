@@ -13,7 +13,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [amass](https://github.com/OWASP/Amass)                   | 3.11.2     |`amass`       |`2e5a8403e037631b3b12bbdaada7e8fb758140f2e4baaebde83a4431541d7372` |
 | [Bandwhich](https://github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [Bed](https://github.com/itchyny/bed)                     | 0.2.1      |`bed`         |`1d95960996391c09663920bc22e81f786b601eaff88ffca2a256b67f38283897` |
-| [Brook](https://github.com/txthinking/brook)              | 20210101   |`brook`       |`af6d7d716b1c85e0bc4fd5ba1d61ef44cafc701e86cca720363cd405bb38dc78` |
+| [Brook](https://github.com/txthinking/brook)              | 20210214   |`brook`       |`154ffe6c13617a17fbd6f560c1f8c3e732f2e92bc2cf08692e236f57777e14d2` |
 | [BusyBox](https://busybox.net)                            | 1.33.0     |`busybox`     |`f218943a14301312b07bb238cc3b2be8eebc6cef7ba04213e31d55a45230a4e0` |
 | [Corkscrew](https://github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](https://github.com/curl/curl)                      | 7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
