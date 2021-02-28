@@ -65,6 +65,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [suricata](https://github.com/OISF/suricata)              | 6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](https://www.tcpdump.org/)                       | 4.99.0     |`tcpdump`     |`bfe6ef23bf03fa284b0c6e699834c18af12701628d381af0b4681705349976cc` |
 | [termshark](https://github.com/gcla/termshark)            | 2.2.0      |`termshark`   |`d6b0c97a64f8780c616edbf4da5b10d3cdb8f260746b6e9dc13613af6f96d9cd` |
+| [tiny](https://github.com/osa1/tiny)                      | 0.8.0      |`tiny`        |`b1d1e6eaf890208449954675b2a19989bc1644120a6e371715640160cffae046` |
 | [tmux](https://github.com/tmux/tmux)                      | 3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [vim](https://www.vim.org/)                               | 8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                      | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
