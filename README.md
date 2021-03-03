@@ -71,10 +71,10 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [tmux](https://github.com/tmux/tmux)                      | 3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [vim](https://www.vim.org/)                               | 8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                      | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
+| [wireguard](https://github.com/WireGuard/wireguard-tools) |1.0.20210223|`wg`          |`c39781ecd9d71a5874342ea9dbfcba775625de25defff17cc24197f3bccd1de2` |
 | [xxd](https://linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [zenith](https://github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
 | [Zmap](x64/zmap/README.md)                                | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
-
 
 # Filename map (ARM5)
 
