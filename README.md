@@ -13,6 +13,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [amass](https://github.com/OWASP/Amass)                   | 3.11.2     |`amass`       |`2e5a8403e037631b3b12bbdaada7e8fb758140f2e4baaebde83a4431541d7372` |
 | [Bandwhich](https://github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [Bed](https://github.com/itchyny/bed)                     | 0.2.1      |`bed`         |`1d95960996391c09663920bc22e81f786b601eaff88ffca2a256b67f38283897` |
+| [boringtun](https://github.com/cloudflare/boringtun)      | 0.3.0      |`boringtun`   |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [bit](https://github.com/chriswalz/bit)                   | 1.0.1      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](https://github.com/txthinking/brook)              | 20210214   |`brook`       |`154ffe6c13617a17fbd6f560c1f8c3e732f2e92bc2cf08692e236f57777e14d2` |
 | [BusyBox](https://busybox.net)                            | 1.33.0     |`busybox`     |`f218943a14301312b07bb238cc3b2be8eebc6cef7ba04213e31d55a45230a4e0` |
@@ -70,7 +71,6 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [tmux](https://github.com/tmux/tmux)                      | 3.2-rc     |`tmux`        |`cf2956316dee0eb3dedd1402d79a241067f966402d7bc1092ff05741182db728` |
 | [vim](https://www.vim.org/)                               | 8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                      | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
-| [WG Tools](https://github.com/WireGuard/wireguard-tools)  | 0.3.0      |`wg-user`     |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [xxd](https://linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [zenith](https://github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
 | [Zmap](x64/zmap/README.md)                                | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
