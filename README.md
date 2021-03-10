@@ -86,6 +86,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Darkhttpd](https://github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [DnsMonster](https://github.com/mosajjal/dnsmonster) | 0.8.2    |`dnsmonster`|`cc6956280029469cd13ac15068daa4ef9b1a12d543158991c650aef1191c262c` |
 | [fd](https://github.com/sharkdp/fd)                  | 8.2.1    |`fd`        |`88e589d99c6a40465361c5aeaa577d07ce7df9e7daa79f4272e0f0f6b5218dcc` |
+| [ffuf](https://github.com/ffuf/ffuf/)                | 1.2.1    |`ffuf`      |`bb0dd76c5e0c7ee85f1b0ab5d96fe5534da5568938b850a407ab41784976c321` |
 | [frp](https://github.com/fatedier/frp)               | 0.33.0   |`frpc/frps` |`d2c90458d552cfa79b44885515a500c1920a8ae5928001af05c476580e57bd51` |
 | [Gotop](https://github.com/cjbassi/gotop)            | 3.0.0    |`gotop`     |`450565e4cd4b6d317d760f572c992ee2d01d2d65433fbcc7558a7515b75cc3f8` |
 | [pv](https://linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
