@@ -89,6 +89,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](https://github.com/ffuf/ffuf/)                | 1.2.1    |`ffuf`      |`bb0dd76c5e0c7ee85f1b0ab5d96fe5534da5568938b850a407ab41784976c321` |
 | [frp](https://github.com/fatedier/frp)               | 0.33.0   |`frpc/frps` |`d2c90458d552cfa79b44885515a500c1920a8ae5928001af05c476580e57bd51` |
 | [Gotop](https://github.com/cjbassi/gotop)            | 3.0.0    |`gotop`     |`450565e4cd4b6d317d760f572c992ee2d01d2d65433fbcc7558a7515b75cc3f8` |
+| [micro](https://github.com/zyedidia/micro)           | 2.0.8    |`micro`     |`1ae3463decbdd4e7b1926011e4096a81d05f53503380a6e41abc50b210b13b1e` |
 | [pv](https://linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [Strace](https://github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](https://www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
