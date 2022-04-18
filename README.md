@@ -20,7 +20,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](//github.com/curl/curl)                      | 7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)     | 1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.1      |`dnsmonster`  |`9cdc659c01a896aeaa8fb8c61caaddc51161ef3c18fa5051c74eef154e2ad0e5` |
+| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.3      |`dnsmonster`  |`6022e2e3ac0698108edc627b296fd10bbf3103ea92cc49fc9cd534041dff8690` |
 | [dnspot](//github.com/mosajjal/dnspot)              | 0.0.3      |`dnspot`      |`d365b212f9651adb0abb96e578c258bd010ad2bc959261211ce284c02792c52c` |
 | [doggo](//github.com/mr-karan/doggo)                | 0.4.2      |`doggo`       |`5c7d439d9a265549c5022fd92588d7bca8c603f942984018298ed00e21bb64a6` |
 | [Dropbear](x64/dropbear/README.md)                  | 2020.80    |`dropbear/*`  |`ae8e3785ea25b9743c5b2a672d7d7871b697ec48ee1c35920b9a2e4e36307542` |
