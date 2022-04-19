@@ -65,6 +65,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [PassiveDNS](//github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](//github.com/justjanne/powerline-go) | 1.21.0     |`pline-go`    |`ba4991e93da1ca3253d163c50d75a3da698228559d566908a30a85e4543a9b57` |
 | [pv](//github.com/icetee/pv)                        | 1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
+| [q](//github.com/natesales/q)                       | 0.5.8      |`q`           |`17e7bba131f80b39c8771d8e229b8df5b78d9848ce80d0736151389a8beaab7d` |
 | [rargs](//github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
 | [redir](//github.com/troglobit/redir)               | 3.3        |`redir`       |`488b759c62a5ac09c452ec91e91fa5b4751bf46f18583c3f6ace62f78217a699` |
 | [rg](//github.com/BurntSushi/ripgrep)               | 13.0.0     |`rg`          |`e88f01d13835f1511da72961ea429c6375b1d33dd4d01cf810cc6a9855f1e7d9` |
