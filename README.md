@@ -86,6 +86,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [xsv](//github.com/BurntSushi/xsv)                  | 0.13.0     |`xsv`         |`34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
 | [xxd](//linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [zenith](//github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
+| [zellij](//github.com/zellij-org/zellij)            | 0.29.1     |`zellij`      |`6ac3dafd09c3c43010dc110673a40801d8bdc8ce7d30d576a2b269c345e0c490` |
 | [Zmap](x64/zmap/README.md)                          | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
 
 # Filename map (ARM5)
