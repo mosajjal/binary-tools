@@ -105,6 +105,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Fzf](//github.com/junegunn/fzf)               | 0.29.0   |`fzf`       |`535735ba06b4e5d0c218887efc75764a3e0d7aeaf237ae1ec680113e74a2abc3` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
+| [httpx](//github.com/projectdiscovery/httpx)   | 1.2.1    |`httpx`     |`17d0922bdbbb6d3cf4ac3bddd73e4845d7b99061db79962798563820c2b3bbe3` |
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.27.4   |`lazygit`   |`02f2e3d89144fefb7af52a2adaabaec631a77d45215a6a8f965120a0cf9b3f8a` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
 | [miniserve](//github.com/svenstaro/miniserve)  | 0.15.0   |`miniserve` |`4058cdc897995a98fcc73e63f64306d94382d8efef5af316fdfc28cf28afc119` |
