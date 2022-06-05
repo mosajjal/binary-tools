@@ -41,6 +41,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Htop](//hisham.hm/htop/)                           | 3.0.3      |`htop`        |`2def922d74c35dce45a51ef78ffc6f7d9d4f2f7d78367965c15b7e38400a8f1c` |
 | [httpdump](//github.com/hsiafan/httpdump)           | d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
+| [httpx](//github.com/projectdiscovery/httpx)        | 1.2.1      |`httpx`       |`5868db79a0b70472442707f5e935002ffd409b4c1d406c990c3881e30ef4c63e` |
 | [hx](//github.com/sitkevij/hex)                     | 0.4.1      |`hx`          |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)  | 1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [inlets](//github.com/inlets/inlets)                | 3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
