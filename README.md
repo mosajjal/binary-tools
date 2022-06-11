@@ -114,6 +114,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 | [termshark](//github.com/gcla/termshark)       | 2.3.0    |`termshark` |`b78db57837bcea0cf35390a75da06e832838bba95e130c1f78a3a0f7e9e3d5cc` |
+| [termsvg](//github.com/MrMarble/termsvg)       | 0.6.1    |`termvg`    |`730e0796f91280ecfbcf509e7a683996a5760fed93c233c7bc222c3523c1a3b9` |
 | [wg-go](//github.com/WireGuard/wireguard-go)   | 0.0.2022 |`wg-go`     |`356544b5f2c3d4f4eff60b81e3362db72f8dac29c71f3e83caad9f6cee029954` |
 
 # Shortened URL
