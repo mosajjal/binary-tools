@@ -47,6 +47,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [inlets](//github.com/inlets/inlets)                | 3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
 | [iodine](//github.com/yarrick/iodine)               | 0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](//github.com/koct9i/ioping)                | 0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
+| [jj](//github.com/tidwall/jj)                       | 1.9.2      |`jj`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [jq](//github.com/stedolan/jq)                      | 1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](//github.com/ilai-deutel/kibi)               | 0.2.2      |`kibi`        |`f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
 | [lazygit](//github.com/jesseduffield/lazygit)       | 0.31.4     |`lazygit`     |`aa24dba16a2b3986d8b537a58a35962cbd756f6af596598aee1d266c66f73282` |
