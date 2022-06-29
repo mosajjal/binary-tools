@@ -108,6 +108,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.2.1    |`ffuf`      |`bb0dd76c5e0c7ee85f1b0ab5d96fe5534da5568938b850a407ab41784976c321` |
 | [frp](//github.com/fatedier/frp)               | 0.37.1   |`frpc/frps` |`6e86c6567d2ae13c60c73ce8e164d8184317d2df1a4bf06798ba1ec937ea1538` |
 | [Fzf](//github.com/junegunn/fzf)               | 0.29.0   |`fzf`       |`535735ba06b4e5d0c218887efc75764a3e0d7aeaf237ae1ec680113e74a2abc3` |
+| [gojq](//github.com/itchyny/gojq)              | 0.12.8   |`gojq`      |`fd6134a01358a633c780160317a596612e3b777d5ee6c04ccfc7f2d3a7ef78ed` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
 | [httpx](//github.com/projectdiscovery/httpx)   | 1.2.1    |`httpx`     |`17d0922bdbbb6d3cf4ac3bddd73e4845d7b99061db79962798563820c2b3bbe3` |
