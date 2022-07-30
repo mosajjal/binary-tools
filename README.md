@@ -16,7 +16,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Bandwhich](//github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [Bed](//github.com/itchyny/bed)                     | 0.2.2      |`bed`         |`8304a53751909ffc48bfd0068ce6270e2d31cc52660599365444ac196c8fb98a` |
 | [boringtun](//github.com/cloudflare/boringtun)      | 0.3.0      |`boringtun`   |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
-| [bit](//github.com/chriswalz/bit)                   | 1.0.1      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
+| [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](//github.com/txthinking/brook)              | 20210701   |`brook`       |`467c6f7769b2b8e1cf8dbf3173e2595d861323baaddab34b51e8b291e3885844` |
 | [busybox](//busybox.net)                            | 1.35.0     |`busybox`     |`adc719974134562effee93f714a10acb7738803879c6c0ba8cb41d4b6453971e` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
