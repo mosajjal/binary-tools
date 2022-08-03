@@ -34,7 +34,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
 | [frp](//github.com/fatedier/frp)                    | 0.39.1     |`frpc/frps`   |`f98fb7cda89a88e6c82f9e062b6c6c6a5dcc815472584557a3b6372daf8a16ae` |
-| [Fzf](//github.com/junegunn/fzf)                    | 0.29.0     |`fzf`         |`635a548b037c9d33c6560167030839e44d4c5b164eabcbb9b635bad1d1541ac7` |
+| [Fzf](//github.com/junegunn/fzf)                    | 0.31.0     |`fzf`         |`d017b3c183422c6e4439b26830cd5d9de24011762af3d50aace28bb24e192599` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.7.1      |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.8     |`gojq`        |`002131c74841da3171325a04b4cf7dff8b18371c5f9574948989e2a35461c440` |
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
