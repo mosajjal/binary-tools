@@ -31,7 +31,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [evtx](//github.com/omerbenamram/evtx)              | 0.6.9      |`evtx`        |`919f0227ba1351711a7a99b76384dafc37400a0fc4778812e4b6fbe166816bff` |
 | [fd](//github.com/sharkdp/fd)                       | 8.4.0      |`fd`          |`55eb97a8d2ab0dd11c7de55f1c8fdc06934d01c9996dc93babd560e3ee80249d` |
 | [fq](//github.com/wader/fq)                         | 0.0.5      |`fq`          |`9249008ff26a3ca1b20dfd19c28f64c01aa1646a4f483cada0ccb57c0a97bf65` |
-| [ffuf](//github.com/ffuf/ffuf)                      | 1.2.1      |`ffuf`        |`9c7605d51d75a8678fce1100fbc43bf241c3e68296055ea3a89f409dbfa8a78f` |
+| [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
 | [frp](//github.com/fatedier/frp)                    | 0.39.1     |`frpc/frps`   |`f98fb7cda89a88e6c82f9e062b6c6c6a5dcc815472584557a3b6372daf8a16ae` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.29.0     |`fzf`         |`635a548b037c9d33c6560167030839e44d4c5b164eabcbb9b635bad1d1541ac7` |
