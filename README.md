@@ -104,7 +104,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [curl](//github.com/curl/curl)                 | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.8.2    |`dnsmonster`|`cc6956280029469cd13ac15068daa4ef9b1a12d543158991c650aef1191c262c` |
-| [fd](//github.com/sharkdp/fd)                  | 8.3.0    |`fd`        |`12fbc248ee2868645d7e8aab55de37e9df229a1c893b97a1c4c1939c049ca574` |
+| [fd](//github.com/sharkdp/fd)                  | 8.4.0    |`fd`        |`94a1c9c34c55f57512631670e03c3aa6e051979a3b164a40b02c1309ac8f6b72` |
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.2.1    |`ffuf`      |`bb0dd76c5e0c7ee85f1b0ab5d96fe5534da5568938b850a407ab41784976c321` |
 | [frp](//github.com/fatedier/frp)               | 0.37.1   |`frpc/frps` |`6e86c6567d2ae13c60c73ce8e164d8184317d2df1a4bf06798ba1ec937ea1538` |
 | [Fzf](//github.com/junegunn/fzf)               | 0.29.0   |`fzf`       |`535735ba06b4e5d0c218887efc75764a3e0d7aeaf237ae1ec680113e74a2abc3` |
