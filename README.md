@@ -29,7 +29,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Dead Simple VPN](//github.com/jedisct1/dsvpn)      | 0.1.3      |`dsvpn`       |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
 | [es-dump](//github.com/mosajjal/elasticdump)        | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
 | [evtx](//github.com/omerbenamram/evtx)              | 0.6.9      |`evtx`        |`919f0227ba1351711a7a99b76384dafc37400a0fc4778812e4b6fbe166816bff` |
-| [fd](//github.com/sharkdp/fd)                       | 8.3.2      |`fd`          |`4518d2f10ab02198b4c95d6125714c5ba5caaa7d7c55b47d17bd3330dd18264d` |
+| [fd](//github.com/sharkdp/fd)                       | 8.4.0      |`fd`          |`55eb97a8d2ab0dd11c7de55f1c8fdc06934d01c9996dc93babd560e3ee80249d` |
 | [fq](//github.com/wader/fq)                         | 0.0.5      |`fq`          |`9249008ff26a3ca1b20dfd19c28f64c01aa1646a4f483cada0ccb57c0a97bf65` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 1.2.1      |`ffuf`        |`9c7605d51d75a8678fce1100fbc43bf241c3e68296055ea3a89f409dbfa8a78f` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
