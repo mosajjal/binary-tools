@@ -107,7 +107,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fd](//github.com/sharkdp/fd)                  | 8.4.0    |`fd`        |`94a1c9c34c55f57512631670e03c3aa6e051979a3b164a40b02c1309ac8f6b72` |
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
 | [frp](//github.com/fatedier/frp)               | 0.44.0   |`frpc/frps` |`ba66e7afc21ce0ad938b2640669b07111c588682676a6ebb851bfd424683d302` |
-| [Fzf](//github.com/junegunn/fzf)               | 0.29.0   |`fzf`       |`535735ba06b4e5d0c218887efc75764a3e0d7aeaf237ae1ec680113e74a2abc3` |
+| [Fzf](//github.com/junegunn/fzf)               | 0.31.0   |`fzf`       |`87750748b9253dafa36d99450a2ba2f6ecb4fdd00cd31fdbfec2782f0091656b` |
 | [gojq](//github.com/itchyny/gojq)              | 0.12.8   |`gojq`      |`fd6134a01358a633c780160317a596612e3b777d5ee6c04ccfc7f2d3a7ef78ed` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
