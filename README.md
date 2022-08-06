@@ -56,6 +56,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [lazygit](//github.com/jesseduffield/lazygit)       | 0.31.4     |`lazygit`     |`aa24dba16a2b3986d8b537a58a35962cbd756f6af596598aee1d266c66f73282` |
 | [lnav](//github.com/tstack/lnav)                    | 0.10.1     |`lnav`        |`da493e2dacc03868570ee81044bc675ac1b144128049ece9229b27c6ffa5f3eb` |
 | [logtop](//github.com/JulienPalard/logtop)          | a0935ab    |`logtop`      |`6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
+| [massren](//github.com/laurent22/massren)           | 1.5.6      |`massren`     |`5a6e090f05f095b2c99c37971e6c8d07069a71845a3d4e5c4bc4513d4858e6e1` |
 | [memcached-util](//github.com/me-io/memcached-util) | 0.0.1      |`memcd-util`  |`e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
 | [merino](//github.com/ajmwagar/merino)              | 0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](//github.com/zyedidia/micro)                | 2.0.10     |`micro`       |`fcf9292c67f37c7f84f5edd0b4844ab43388bde369454960aad499579bc7b394` |
