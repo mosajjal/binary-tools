@@ -86,7 +86,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [termshark](//github.com/gcla/termshark)            | 2.3.0      |`termshark`   |`3db8e9494994e09eafaef6f0ef4854794b6dd56efdeb666c4468bce0814e9d80` |
 | [termsvg](//github.com/MrMarble/termsvg)            | 0.6.1      |`termvg`      |`538d1e1732eb74f7038b8805f31bb83d6a5a9362d211ea267b6e007c93f6fbf2` |
 | [tiny](//github.com/osa1/tiny)                      | 0.10.0     |`tiny`        |`af1bbf306f60896284c91087466b88611dad8a4b5d44c0d61fa71dc368c0e2bc` |
-| [tmux](//github.com/tmux/tmux)                      | 3.4 next    |`tmux`        |`c21d30764db2c5885e1fa42556f3c2cbfd4861876d88accab3f3abd607cc7561` |
+| [tmux](//github.com/tmux/tmux)                      | 3.4 next   |`tmux`        |`c21d30764db2c5885e1fa42556f3c2cbfd4861876d88accab3f3abd607cc7561` |
 | [vim](//www.vim.org/)                               | 8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
 | [Wireshark](x64/wireshark/README.md)                | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [wireguard](//github.com/WireGuard/wireguard-tools) |1.0.20210223|`wg`          |`c39781ecd9d71a5874342ea9dbfcba775625de25defff17cc24197f3bccd1de2` |
@@ -94,7 +94,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [xsv](//github.com/BurntSushi/xsv)                  | 0.13.0     |`xsv`         |`34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
 | [xxd](//linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [zenith](//github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
-| [zellij](//github.com/zellij-org/zellij)            | 0.29.1     |`zellij`      |`6ac3dafd09c3c43010dc110673a40801d8bdc8ce7d30d576a2b269c345e0c490` |
+| [zellij](//github.com/zellij-org/zellij)            | 0.31.1     |`zellij`      |`32552b0b035fbb8ebc2bbaba68fc5677c2a16cc1c19464417c41d5a635cdf13f` |
 | [Zmap](x64/zmap/README.md)                          | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
 
 # Filename map (ARM5)
