@@ -128,7 +128,10 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 
 to download these binaries, you can use the shortned URL format 
 
-`wget n0p.me/bin/FILENAME`
+```
+wget n0p.me/bin/FILENAME
+curl -LO n0p.me/bin/FILENAME
+```
 
 # Custom Architectures
 
