@@ -26,7 +26,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.5      |`dnsmonster`  |`cda1a4ffd58bc3f33914bfbc575538fc066efaa728d43671a80aefeb7ef1782b` |
 | [dnspot](//github.com/mosajjal/dnspot)              | 0.0.3      |`dnspot`      |`d365b212f9651adb0abb96e578c258bd010ad2bc959261211ce284c02792c52c` |
 | [doggo](//github.com/mr-karan/doggo)                | 0.5.4      |`doggo`       |`21c7cd607c6633cd78ce2f618f2e530b7a6a78f879a0d299f1ef7445fce3d5c8` |
-| [Dropbear](x64/dropbear/README.md)                  | 2020.80    |`dropbear/*`  |`ae8e3785ea25b9743c5b2a672d7d7871b697ec48ee1c35920b9a2e4e36307542` |
+| [Dropbear](x64/dropbear/README.md)                  | 2022.82    |`dropbear/*`  |`b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
 | [Dead Simple VPN](//github.com/jedisct1/dsvpn)      | 0.1.3      |`dsvpn`       |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
 | [es-dump](//github.com/mosajjal/elasticdump)        | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
 | [evtx](//github.com/omerbenamram/evtx)              | 0.6.9      |`evtx`        |`919f0227ba1351711a7a99b76384dafc37400a0fc4778812e4b6fbe166816bff` |
