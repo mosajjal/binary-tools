@@ -42,7 +42,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [gron](//github.com/tomnomnom/gron)                 | 0.7.1      |`gron`        |`b56ed481a1478ae5c50f6f8cba6a9ca1e124351323904cce0c2af8f11dfdb32b` |
 | [grex](//github.com/pemistahl/grex/)                | 1.3.0      |`grex`        |`218224ae03e6d5228eb75590a95f735c906ae602bbf60a127e79b339a78f542c` |
 | [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
-| [httpdump](//github.com/hsiafan/httpdump)           | d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
+| [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [httpx](//github.com/projectdiscovery/httpx)        | 1.2.1      |`httpx`       |`5868db79a0b70472442707f5e935002ffd409b4c1d406c990c3881e30ef4c63e` |
 | [hx](//github.com/sitkevij/hex)                     | 0.4.1      |`hx`          |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
