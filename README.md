@@ -39,7 +39,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.9     |`gojq`        |`002131c74841da3171325a04b4cf7dff8b18371c5f9574948989e2a35461c440` |
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
-| [gron](//github.com/tomnomnom/gron)                 | 0.6.1      |`gron`        |`6d691edfd3b73af33ea19688faa38c6b05b46fccda4de6c540ac2859dc4164d9` |
+| [gron](//github.com/tomnomnom/gron)                 | 0.7.1      |`gron`        |`b56ed481a1478ae5c50f6f8cba6a9ca1e124351323904cce0c2af8f11dfdb32b` |
 | [grex](//github.com/pemistahl/grex/)                | 1.3.0      |`grex`        |`218224ae03e6d5228eb75590a95f735c906ae602bbf60a127e79b339a78f542c` |
 | [Htop](//hisham.hm/htop/)                           | 3.0.3      |`htop`        |`2def922d74c35dce45a51ef78ffc6f7d9d4f2f7d78367965c15b7e38400a8f1c` |
 | [httpdump](//github.com/hsiafan/httpdump)           | d2e0dea    |`httpdump`    |`52a81df445fe67e40c10b7974a894116d01658dc2de7a5d3069132b016be8ad6` |
