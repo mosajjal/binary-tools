@@ -87,7 +87,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [termsvg](//github.com/MrMarble/termsvg)            | 0.6.1      |`termvg`      |`538d1e1732eb74f7038b8805f31bb83d6a5a9362d211ea267b6e007c93f6fbf2` |
 | [tiny](//github.com/osa1/tiny)                      | 0.10.0     |`tiny`        |`af1bbf306f60896284c91087466b88611dad8a4b5d44c0d61fa71dc368c0e2bc` |
 | [tmux](//github.com/tmux/tmux)                      | 3.4 next   |`tmux`        |`c21d30764db2c5885e1fa42556f3c2cbfd4861876d88accab3f3abd607cc7561` |
-| [vim](//www.vim.org/)                               | 8.2.1855   |`vim`         |`a216c9cb3e50e8ce86fc3b4dbafced5ba7a083a71c72b4a7477c8f17185dbf78` |
+| [vim](//www.vim.org/)                               | 9.0.363    |`vim`         |`d39479629cc1b5f7d1f62f07e0211b1fe994f04af27e02ab680cdbf1f79fae9a` |
 | [Wireshark](x64/wireshark/README.md)                | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [wireguard](//github.com/WireGuard/wireguard-tools) |1.0.20210223|`wg`          |`c39781ecd9d71a5874342ea9dbfcba775625de25defff17cc24197f3bccd1de2` |
 | [wireguard-go](//github.com/WireGuard/wireguard-go) |0.0.20220316|`wg-go`       |`356544b5f2c3d4f4eff60b81e3362db72f8dac29c71f3e83caad9f6cee029954` |
