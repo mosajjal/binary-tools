@@ -53,7 +53,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [jj](//github.com/tidwall/jj)                       | 1.9.2      |`jj`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [jq](//github.com/stedolan/jq)                      | 1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](//github.com/ilai-deutel/kibi)               | 0.2.2      |`kibi`        |`f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
-| [lazygit](//github.com/jesseduffield/lazygit)       | 0.31.4     |`lazygit`     |`aa24dba16a2b3986d8b537a58a35962cbd756f6af596598aee1d266c66f73282` |
+| [lazygit](//github.com/jesseduffield/lazygit)       | 0.35       |`lazygit`     |`29cefe88483ee13d4af9938f69c335296d8d92d9ce4b5adfc1343aecde2015ab` |
 | [lnav](//github.com/tstack/lnav)                    | 0.10.1     |`lnav`        |`da493e2dacc03868570ee81044bc675ac1b144128049ece9229b27c6ffa5f3eb` |
 | [logtop](//github.com/JulienPalard/logtop)          | a0935ab    |`logtop`      |`6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
 | [massren](//github.com/laurent22/massren)           | 1.5.6      |`massren`     |`5a6e090f05f095b2c99c37971e6c8d07069a71845a3d4e5c4bc4513d4858e6e1` |
