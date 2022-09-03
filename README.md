@@ -54,12 +54,12 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [jq](//github.com/stedolan/jq)                      | 1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [Kibi](//github.com/ilai-deutel/kibi)               | 0.2.2      |`kibi`        |`f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
 | [lazygit](//github.com/jesseduffield/lazygit)       | 0.35       |`lazygit`     |`29cefe88483ee13d4af9938f69c335296d8d92d9ce4b5adfc1343aecde2015ab` |
-| [lnav](//github.com/tstack/lnav)                    | 0.10.1     |`lnav`        |`da493e2dacc03868570ee81044bc675ac1b144128049ece9229b27c6ffa5f3eb` |
+| [lnav](//github.com/tstack/lnav)                    | 0.11.0     |`lnav`        |`377240d781abaa54930636f36cfeb91cc337ee80b3688049b45d7bcae2a376e2` |
 | [logtop](//github.com/JulienPalard/logtop)          | a0935ab    |`logtop`      |`6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
 | [massren](//github.com/laurent22/massren)           | 1.5.6      |`massren`     |`5a6e090f05f095b2c99c37971e6c8d07069a71845a3d4e5c4bc4513d4858e6e1` |
 | [memcached-util](//github.com/me-io/memcached-util) | 0.0.1      |`memcd-util`  |`e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
 | [merino](//github.com/ajmwagar/merino)              | 0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
-| [Micro](//github.com/zyedidia/micro)                | 2.0.10     |`micro`       |`fcf9292c67f37c7f84f5edd0b4844ab43388bde369454960aad499579bc7b394` |
+| [Micro](//github.com/zyedidia/micro)                | 2.0.11     |`micro`       |`662fdfaf74f62478f605c8683c09e27e3c9902b329b7097e7eedb802cd229b60` |
 | [Miniserve](//github.com/svenstaro/miniserve)       | 0.18.0     |`miniserve`   |`9d12b4b6f648739af99590dfd676c748f1410c844624c7ec04b90210ea659bc4` |
 | [mylg](//github.com/svenstaro/miniserve)            | 0.2.6      |`mylg`        |`6a75b46987617266d8b37b64ff7eba3df8e587b69c5d262a7a1e76945fa3e956` |
 | [Nano](//www.nano-editor.org/)                      | 6.0        |`nano`        |`829654501194ffe98050cd86adaba747fd571d7c36a3744526df74a0362881fb` |
