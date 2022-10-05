@@ -101,7 +101,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 
 |Software                                        | Version  |Filename    |SHA256                                                             |
 |------------------------------------------------|----------|------------|-------------------------------------------------------------------|
-| [Brook](//github.com/txthinking/brook)         | 20210701 |`brook`     |`afafedb73165b8a5c691d29dce319b0fad684948941f66e064190498ab0be066` |
+| [Brook](//github.com/txthinking/brook)         | 20211010 |`brook`     |`18e9e7f7dbe0cbcdeed6c4c76c9bb09653926aea47f2ba5fa4cb1deef19cbf3b` |
 | [Busybox](//busybox.net)                       | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
 | [curl](//github.com/curl/curl)                 | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
