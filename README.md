@@ -69,6 +69,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ngrep](//github.com/jpr5/ngrep/)                   | 1.47.1-git |`ngrep`       |`7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
 | [nmap](//nmap.org/)                                 | 7.91       |`nmap, nping` |`f584966010a883169dc1322d0e7f0506f94b2ae133dbd960e0ff48186f4084f9` |
 | [nomino](//github.com/yaa110/nomino)                | 1.1.0      |`nomino`      |`eb0560be96a592d8ade485516c404df9557d80059ba4f1290178201c2aa49873` |
+| [openrsync](//github.com/kristapsdz/openrsync)      | f50d0f8    |`openrsync`   |`f2394b8337eac1c53c83576be0f9c969480bb5a212d60939de815d271d5a1549` |
 | [packetq](//www.dns-oarc.net/tools/packetq)         | 1.7.1      |`packetq`     |`53faee4aa896c6760af2fe03a95b8d311ce9c7461dfc0d658569bb7fef007a8f` |
 | [PassiveDNS](//github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](//github.com/justjanne/powerline-go) | 1.21.0     |`pline-go`    |`ba4991e93da1ca3253d163c50d75a3da698228559d566908a30a85e4543a9b57` |
@@ -117,6 +118,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.27.4   |`lazygit`   |`02f2e3d89144fefb7af52a2adaabaec631a77d45215a6a8f965120a0cf9b3f8a` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
 | [miniserve](//github.com/svenstaro/miniserve)  | 0.15.0   |`miniserve` |`4058cdc897995a98fcc73e63f64306d94382d8efef5af316fdfc28cf28afc119` |
+| [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
