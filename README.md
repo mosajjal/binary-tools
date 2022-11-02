@@ -81,7 +81,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [sd](//github.com/chmln/sd)                         | 0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [Socat](http://www.dest-unreach.org/socat/)         | 1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
 | [sslsplit](//github.com/droe/sslsplit/)             | 0.5.5      |`sslsplit`    |`36c45ed304c4bed4147da62a5128c27cb9f51de078a66f8521aa04d82d17b3eb` |
-| [strace](//github.com/strace/strace)                | 5.13       |`strace`      |`e0c37153a22d1f831dce0468a7d0bd29d7242d4d3ddfb563fadc3514ba987e28` |
+| [strace](//github.com/strace/strace)                | 6.0        |`strace`      |`2e0e5afb5118ec912fdaa86a8595d0fc764415f3cfc71ebc2a2f8a0e1fee21c7` |
 | [suricata](//github.com/OISF/suricata)              | 6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](//www.tcpdump.org/)                       | 4.99.0     |`tcpdump`     |`bfe6ef23bf03fa284b0c6e699834c18af12701628d381af0b4681705349976cc` |
 | [termshark](//github.com/gcla/termshark)            | 2.4.0      |`termshark`   |`616a7b4b15463286a1cfcd61c22c944724df63c7a11532fab353a059dd29aa5f` |
