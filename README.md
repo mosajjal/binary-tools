@@ -87,6 +87,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [termshark](//github.com/gcla/termshark)            | 2.4.0      |`termshark`   |`616a7b4b15463286a1cfcd61c22c944724df63c7a11532fab353a059dd29aa5f` |
 | [termsvg](//github.com/MrMarble/termsvg)            | 0.6.1      |`termvg`      |`538d1e1732eb74f7038b8805f31bb83d6a5a9362d211ea267b6e007c93f6fbf2` |
 | [tiny](//github.com/osa1/tiny)                      | 0.10.0     |`tiny`        |`af1bbf306f60896284c91087466b88611dad8a4b5d44c0d61fa71dc368c0e2bc` |
+| [tor](x64/tor/README.md)                            | 0.4.8.0    |`tor/*`       |`49ff0b8a390fce04058c8c8b2d8772dbfad7da2b4258e741327e4429c6d10577` |
 | [tmux](//github.com/tmux/tmux)                      | 3.4 next   |`tmux`        |`8b453e21cd449b01f6f1b616e87d1bf0d11eeca6a564de2e6321c49c45e55bd2` |
 | [vim](//www.vim.org/)                               | 9.0.363    |`vim`         |`d39479629cc1b5f7d1f62f07e0211b1fe994f04af27e02ab680cdbf1f79fae9a` |
 | [Wireshark](x64/wireshark/README.md)                | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
