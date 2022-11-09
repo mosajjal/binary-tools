@@ -136,6 +136,18 @@ wget n0p.me/bin/FILENAME
 curl -LO n0p.me/bin/FILENAME
 ```
 
+## New method of downloading binaries (EXPERIMENTAL)
+
+I built a new method to download the same binaries via pure HTTP (with optional HTTPS), in case CA certificates are not available or you don't have the ability to force redirect. `bin.n0p.me` is design to solve those issues. I might turn this off if it costs me too much though :D 
+
+use:
+```
+wget bin.n0p.me/FILENAME     (downloads x64 version)
+wget bin.n0p.me/x64/FILENAME (downloads x64 version)
+wget bin.n0p.me/arm/FILENAME (downloads arm version)
+```
+
+
 # Custom Architectures
 
 URL shortner for custom architectures have been disabled temporarily due to malicious use. It will be available again soon :)
