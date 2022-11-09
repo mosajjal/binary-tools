@@ -34,7 +34,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fq](//github.com/wader/fq)                         | 0.10.0     |`fq`          |`bc29fe3eadfdb21f6c0332f012723d0bca1345629601754a9e49bcf810c4315f` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
-| [frp](//github.com/fatedier/frp)                    | 0.44.0     |`frpc/frps`   |`2beb2872c09ebba8110422707587c23b389a472d8b5e932d3e10aabe82b5235c` |
+| [frp](//github.com/fatedier/frp)                    | 0.45.0     |`frpc/frps`   |`a96172538eaf980f550623700af18bfdd43aa99360fbaa6965fc4a19992e7e47` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.31.0     |`fzf`         |`d017b3c183422c6e4439b26830cd5d9de24011762af3d50aace28bb24e192599` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.9     |`gojq`        |`002131c74841da3171325a04b4cf7dff8b18371c5f9574948989e2a35461c440` |
@@ -110,7 +110,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.7    |`dnsmonster`|`712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
 | [fd](//github.com/sharkdp/fd)                  | 8.5.2    |`fd`        |`c462d7d041a6e677bdf42f6b2a940094d77f0985e3ce51aa68a18302adea7e1e` |
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
-| [frp](//github.com/fatedier/frp)               | 0.44.0   |`frpc/frps` |`ba66e7afc21ce0ad938b2640669b07111c588682676a6ebb851bfd424683d302` |
+| [frp](//github.com/fatedier/frp)               | 0.45.0   |`frpc/frps` |`2d280ce6acfb5641c65f8e09db6f4dde7430112147a193d93b14d30795a8b65a` |
 | [Fzf](//github.com/junegunn/fzf)               | 0.31.0   |`fzf`       |`87750748b9253dafa36d99450a2ba2f6ecb4fdd00cd31fdbfec2782f0091656b` |
 | [gojq](//github.com/itchyny/gojq)              | 0.12.8   |`gojq`      |`fd6134a01358a633c780160317a596612e3b777d5ee6c04ccfc7f2d3a7ef78ed` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
