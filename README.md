@@ -37,7 +37,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [frp](//github.com/fatedier/frp)                    | 0.45.0     |`frpc/frps`   |`a96172538eaf980f550623700af18bfdd43aa99360fbaa6965fc4a19992e7e47` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.31.0     |`fzf`         |`d017b3c183422c6e4439b26830cd5d9de24011762af3d50aace28bb24e192599` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
-| [gojq](//github.com/itchyny/gojq)                   | 0.12.9     |`gojq`        |`002131c74841da3171325a04b4cf7dff8b18371c5f9574948989e2a35461c440` |
+| [gojq](//github.com/itchyny/gojq)                   | 0.12.9     |`gojq`        |`b4f383fb0c4bc62319f2543ce874169cec2d1c6faa3e335362d7f84dc6357382` |
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
 | [gron](//github.com/tomnomnom/gron)                 | 0.7.1      |`gron`        |`b56ed481a1478ae5c50f6f8cba6a9ca1e124351323904cce0c2af8f11dfdb32b` |
 | [grex](//github.com/pemistahl/grex/)                | 1.3.0      |`grex`        |`218224ae03e6d5228eb75590a95f735c906ae602bbf60a127e79b339a78f542c` |
@@ -112,7 +112,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
 | [frp](//github.com/fatedier/frp)               | 0.45.0   |`frpc/frps` |`2d280ce6acfb5641c65f8e09db6f4dde7430112147a193d93b14d30795a8b65a` |
 | [Fzf](//github.com/junegunn/fzf)               | 0.31.0   |`fzf`       |`87750748b9253dafa36d99450a2ba2f6ecb4fdd00cd31fdbfec2782f0091656b` |
-| [gojq](//github.com/itchyny/gojq)              | 0.12.8   |`gojq`      |`fd6134a01358a633c780160317a596612e3b777d5ee6c04ccfc7f2d3a7ef78ed` |
+| [gojq](//github.com/itchyny/gojq)              | 0.12.9   |`gojq`      |`8dfecf4a0866398f5a3419684557e0cc2f75ea8f00943b0773208bea14a951f3` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
 | [httpx](//github.com/projectdiscovery/httpx)   | 1.2.1    |`httpx`     |`17d0922bdbbb6d3cf4ac3bddd73e4845d7b99061db79962798563820c2b3bbe3` |
