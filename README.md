@@ -30,7 +30,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Dead Simple VPN](//github.com/jedisct1/dsvpn)      | 0.1.3      |`dsvpn`       |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
 | [es-dump](//github.com/mosajjal/elasticdump)        | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
 | [evtx](//github.com/omerbenamram/evtx)              | 0.8.9      |`evtx`        |`a8fe17a0c1abe805d34498d8d5f46ed5e23cb46d73002ef7b9a8d3cd3a3ae873` |
-| [fd](//github.com/sharkdp/fd)                       | 8.4.0      |`fd`          |`55eb97a8d2ab0dd11c7de55f1c8fdc06934d01c9996dc93babd560e3ee80249d` |
+| [fd](//github.com/sharkdp/fd)                       | 8.5.2      |`fd`          |`4ada2c00e596d9a7d7e15dcefb7e951dcbd526ce1f4cf1ba02bd3c2612f0f377` |
 | [fq](//github.com/wader/fq)                         | 0.0.9      |`fq`          |`9b981722397623d964fe4ff807628b406bbfb804abd5834c7a8655b26684004e` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
@@ -108,7 +108,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [curl](//github.com/curl/curl)                 | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.7    |`dnsmonster`|`712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
-| [fd](//github.com/sharkdp/fd)                  | 8.4.0    |`fd`        |`94a1c9c34c55f57512631670e03c3aa6e051979a3b164a40b02c1309ac8f6b72` |
+| [fd](//github.com/sharkdp/fd)                  | 8.5.2    |`fd`        |`c462d7d041a6e677bdf42f6b2a940094d77f0985e3ce51aa68a18302adea7e1e` |
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
 | [frp](//github.com/fatedier/frp)               | 0.44.0   |`frpc/frps` |`ba66e7afc21ce0ad938b2640669b07111c588682676a6ebb851bfd424683d302` |
 | [Fzf](//github.com/junegunn/fzf)               | 0.31.0   |`fzf`       |`87750748b9253dafa36d99450a2ba2f6ecb4fdd00cd31fdbfec2782f0091656b` |
