@@ -23,7 +23,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](//github.com/curl/curl)                      | 7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)     | 1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.5      |`dnsmonster`  |`cda1a4ffd58bc3f33914bfbc575538fc066efaa728d43671a80aefeb7ef1782b` |
+| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.7      |`dnsmonster`  |`dd6d48ea79b09d7ed49fa667d00fbd8b6e2013ee9b9afa84209e5ef75c7e11ad ` |
 | [dnspot](//github.com/mosajjal/dnspot)              | 0.0.3      |`dnspot`      |`d365b212f9651adb0abb96e578c258bd010ad2bc959261211ce284c02792c52c` |
 | [doggo](//github.com/mr-karan/doggo)                | 0.5.4      |`doggo`       |`21c7cd607c6633cd78ce2f618f2e530b7a6a78f879a0d299f1ef7445fce3d5c8` |
 | [Dropbear](x64/dropbear/README.md)                  | 2022.82    |`dropbear/*`  |`b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
@@ -107,7 +107,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Busybox](//busybox.net)                       | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
 | [curl](//github.com/curl/curl)                 | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
-| [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.5    |`dnsmonster`|`014c98669e4ee57a33287f5eb8b4e340e1ba7bfffc22c281fdab552a0fcae8f9` |
+| [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.7    |`dnsmonster`|`712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
 | [fd](//github.com/sharkdp/fd)                  | 8.4.0    |`fd`        |`94a1c9c34c55f57512631670e03c3aa6e051979a3b164a40b02c1309ac8f6b72` |
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
 | [frp](//github.com/fatedier/frp)               | 0.44.0   |`frpc/frps` |`ba66e7afc21ce0ad938b2640669b07111c588682676a6ebb851bfd424683d302` |
