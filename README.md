@@ -170,28 +170,26 @@ URL shortner for custom architectures have been disabled temporarily due to mali
 `pypack` is a great tool to get the latest version of Python running on a Linux machine (CentOS/RHEL 5 or above, libc required). The archive containers a `venv`-like folder with a `python` binary suited to emulate a `virtualenv` but with a full Python, dependency libraries and headers included.
 
 The packed version also includes the following packages:
- - `pip==v21.1.2`
- - `awscli==1.19.97`
- - `botocore==1.20.97`
- - `build==0.4.0`
- - `certifi==2021.5.30`
- - `chardet==4.0.0`
- - `colorama==0.4.3`
- - `docutils==0.15.2`
- - `idna==2.10`
- - `jmespath==0.10.0`
- - `packaging==20.9`
- - `pep517==0.10.0`
+ - `awscli==1.27.20`
+ - `botocore==1.29.20`
+ - `build==0.9.0`
+ - `certifi==2022.9.24`
+ - `charset-normalizer==2.1.1`
+ - `colorama==0.4.4`
+ - `docutils==0.16`
+ - `idna==3.4`
+ - `jmespath==1.0.1`
+ - `packaging==21.3`
+ - `pep517==0.13.0`
  - `pyasn1==0.4.8`
- - `pyparsing==2.4.7`
- - `python-dateutil==2.8.1`
+ - `pyparsing==3.0.9`
+ - `python-dateutil==2.8.2`
  - `PyYAML==5.4.1`
- - `requests==2.25.1`
+ - `requests==2.28.1`
  - `rsa==4.7.2`
- - `s3transfer==0.4.2`
+ - `s3transfer==0.6.0`
  - `six==1.16.0`
- - `toml==0.10.2`
- - `urllib3==1.26.5`
+ - `urllib3==1.26.13`
 
 URL to download the latest `pypack`: [latest](https://n0p.me/pypack/latest) (Python 3.10.0b2)
 
