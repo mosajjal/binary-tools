@@ -62,7 +62,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Micro](//github.com/zyedidia/micro)                | 2.0.11     |`micro`       |`662fdfaf74f62478f605c8683c09e27e3c9902b329b7097e7eedb802cd229b60` |
 | [Miniserve](//github.com/svenstaro/miniserve)       | 0.22.0     |`miniserve`   |`11632208b525a264420c1390cebc7e8bb63c8cca93b3c18f4124ecebb49b0c62` |
 | [mylg](//github.com/mehrdadrad/mylg)                | 0.2.6      |`mylg`        |`6a75b46987617266d8b37b64ff7eba3df8e587b69c5d262a7a1e76945fa3e956` |
-| [Nano](//www.nano-editor.org/)                      | 6.4        |`nano`        |`ced71fe655797fa7098652b2df36de669b1856e46e92f1766bb95f00d41092e5` |
+| [Nano](//www.nano-editor.org/)                      | 7.1        |`nano`        |`13a0ac2a8225f266bd1275d20fdc0c66859c41e426f651319b154b43ad979a2e` |
 | [ncdu](//dev.yorhel.nl/ncdu/changes)                | 1.15.1     |`ncdu`        |`80611d8df5416ae2ae9c7a957f1dfc8f2b9ff4ee41fbbc7ed84de8b34c99813c` |
 | [NetCat](//www.freebsd.org/cgi/man.cgi?query=netcat)| 1.68       |`nc`          |`6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [Netsniff](x64/netsniff/README.md)                  | 0.6.7      |`netsniff/*`  |`2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
