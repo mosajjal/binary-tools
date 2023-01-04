@@ -19,11 +19,11 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [boringtun](//github.com/cloudflare/boringtun)      | 0.3.0      |`boringtun`   |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
 | [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](//github.com/txthinking/brook)              | 20221212   |`brook`       |`c14e29cfc1de7a514de9934e04c88f40e40a295aca22204b964e4c19ffb3c69c` |
-| [busybox](//busybox.net)                            | 1.35.0     |`busybox`     |`adc719974134562effee93f714a10acb7738803879c6c0ba8cb41d4b6453971e` |
+| [busybox](//busybox.net)                            | 1.36.0     |`busybox`     |`6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](//github.com/curl/curl)                      | 7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)     | 1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.7      |`dnsmonster`  |`dd6d48ea79b09d7ed49fa667d00fbd8b6e2013ee9b9afa84209e5ef75c7e11ad ` |
+| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.7      |`dnsmonster`  |`dd6d48ea79b09d7ed49fa667d00fbd8b6e2013ee9b9afa84209e5ef75c7e11ad` |
 | [dnspot](//github.com/mosajjal/dnspot)              | 0.0.3      |`dnspot`      |`d365b212f9651adb0abb96e578c258bd010ad2bc959261211ce284c02792c52c` |
 | [doggo](//github.com/mr-karan/doggo)                | 0.5.4      |`doggo`       |`21c7cd607c6633cd78ce2f618f2e530b7a6a78f879a0d299f1ef7445fce3d5c8` |
 | [Dropbear](x64/dropbear/README.md)                  | 2022.82    |`dropbear/*`  |`b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
