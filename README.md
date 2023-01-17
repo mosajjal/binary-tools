@@ -44,7 +44,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
-| [httpx](//github.com/projectdiscovery/httpx)        | 1.2.4      |`httpx`       |`a7077870f4ed70cf837dfbeb2fca4c896703bde807d0a553347c1d3239c4aa20` |
+| [httpx](//github.com/projectdiscovery/httpx)        | 1.2.6      |`httpx`       |`b017f0e0f40495e94e714f2d8b83e2642055422b8ac7ba0775cf6f55bf53ee16` |
 | [hex](//github.com/sitkevij/hex)                    | 0.4.1      |`hex`         |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)  | 1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [inlets](//github.com/inlets/inlets)                | 3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
@@ -100,7 +100,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [xsv](//github.com/BurntSushi/xsv)                  | 0.13.0     |`xsv`         |`34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
 | [xxd](//linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [zenith](//github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
-| [zellij](//github.com/zellij-org/zellij)            | 0.31.1     |`zellij`      |`32552b0b035fbb8ebc2bbaba68fc5677c2a16cc1c19464417c41d5a635cdf13f` |
+| [zellij](//github.com/zellij-org/zellij)            | 0.34.4     |`zellij`      |`ab3b66e27020c92a5a0a84a840e3673f4ac43f35aa754b6cd4cad59dee5811b8` |
 | [Zmap](x64/zmap/README.md)                          | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
 
 # Filename map (ARM5)
@@ -119,7 +119,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [gojq](//github.com/itchyny/gojq)              | 0.12.9   |`gojq`      |`8dfecf4a0866398f5a3419684557e0cc2f75ea8f00943b0773208bea14a951f3` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
-| [httpx](//github.com/projectdiscovery/httpx)   | 1.2.1    |`httpx`     |`17d0922bdbbb6d3cf4ac3bddd73e4845d7b99061db79962798563820c2b3bbe3` |
+| [httpx](//github.com/projectdiscovery/httpx)   | 1.2.6    |`httpx`     |`ed65560bd6c574673f4fa9a88a3873e708e3a9266e69a71bfd578c6a73eed41c` |
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.27.4   |`lazygit`   |`02f2e3d89144fefb7af52a2adaabaec631a77d45215a6a8f965120a0cf9b3f8a` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
 | [miniserve](//github.com/svenstaro/miniserve)  | 0.15.0   |`miniserve` |`4058cdc897995a98fcc73e63f64306d94382d8efef5af316fdfc28cf28afc119` |
