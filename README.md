@@ -45,7 +45,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [httpx](//github.com/projectdiscovery/httpx)        | 1.2.4      |`httpx`       |`a7077870f4ed70cf837dfbeb2fca4c896703bde807d0a553347c1d3239c4aa20` |
-| [hx](//github.com/sitkevij/hex)                     | 0.4.1      |`hx`          |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
+| [hex](//github.com/sitkevij/hex)                    | 0.4.1      |`hex`         |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)  | 1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [inlets](//github.com/inlets/inlets)                | 3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
 | [iodine](//github.com/yarrick/iodine)               | 0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
