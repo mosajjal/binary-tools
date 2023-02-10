@@ -41,6 +41,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
 | [gron](//github.com/tomnomnom/gron)                 | 0.7.1      |`gron`        |`b56ed481a1478ae5c50f6f8cba6a9ca1e124351323904cce0c2af8f11dfdb32b` |
 | [grex](//github.com/pemistahl/grex/)                | 1.4.1      |`grex`        |`7ce6b6bff5386aa9d8d7305483d484d5a31856bd31d71696739d27992c30746c` |
+| [gum](//github.com/charmbracelet/gum)               | 0.9.0      |`gum`         |`9e378242c4b548fb239a7985b2eebefb3b2631d94f449bd1b123709de26a6511` |
 | [helix](//github.com/helix-editor/helix)            | 22.12      |`hx`          |`27c6b053cefb4700e26842ecdb17045be1508b2d0bbf02659a53099b7e8db5c4` |
 | [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
@@ -120,6 +121,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [gojq](//github.com/itchyny/gojq)              | 0.12.11  |`gojq`      |`7803046ff422ea9cf6fd7d322686f0eb5bead50a486d10416e8c349020a78b22` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
+| [gum](//github.com/charmbracelet/gum)          | 0.9.0    |`gum`       |`757fc0f130eac8d44b8bb0965b9b20d013391f88f32f7a57a091885ebb5ffc44` |
 | [httpx](//github.com/projectdiscovery/httpx)   | 1.2.6    |`httpx`     |`ed65560bd6c574673f4fa9a88a3873e708e3a9266e69a71bfd578c6a73eed41c` |
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.27.4   |`lazygit`   |`02f2e3d89144fefb7af52a2adaabaec631a77d45215a6a8f965120a0cf9b3f8a` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
