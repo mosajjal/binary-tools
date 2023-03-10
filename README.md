@@ -62,7 +62,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [memcached-util](//github.com/me-io/memcached-util) | 0.0.1      |`memcd-util`  |`e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
 | [merino](//github.com/ajmwagar/merino)              | 0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
 | [Micro](//github.com/zyedidia/micro)                | 2.0.11     |`micro`       |`662fdfaf74f62478f605c8683c09e27e3c9902b329b7097e7eedb802cd229b60` |
-| [Miniserve](//github.com/svenstaro/miniserve)       | 0.22.0     |`miniserve`   |`11632208b525a264420c1390cebc7e8bb63c8cca93b3c18f4124ecebb49b0c62` |
+| [Miniserve](//github.com/svenstaro/miniserve)       | 0.23.0     |`miniserve`   |`122576cc150d0487d349f19e0b02243823d5d8697ac4d6fdab7e0dfcd81dc34c` |
 | [mylg](//github.com/mehrdadrad/mylg)                | 0.2.6      |`mylg`        |`6a75b46987617266d8b37b64ff7eba3df8e587b69c5d262a7a1e76945fa3e956` |
 | [Nano](//www.nano-editor.org/)                      | 7.1        |`nano`        |`13a0ac2a8225f266bd1275d20fdc0c66859c41e426f651319b154b43ad979a2e` |
 | [ncdu](//dev.yorhel.nl/ncdu/changes)                | 1.15.1     |`ncdu`        |`80611d8df5416ae2ae9c7a957f1dfc8f2b9ff4ee41fbbc7ed84de8b34c99813c` |
@@ -125,7 +125,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [httpx](//github.com/projectdiscovery/httpx)   | 1.2.6    |`httpx`     |`ed65560bd6c574673f4fa9a88a3873e708e3a9266e69a71bfd578c6a73eed41c` |
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.27.4   |`lazygit`   |`02f2e3d89144fefb7af52a2adaabaec631a77d45215a6a8f965120a0cf9b3f8a` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
-| [miniserve](//github.com/svenstaro/miniserve)  | 0.15.0   |`miniserve` |`4058cdc897995a98fcc73e63f64306d94382d8efef5af316fdfc28cf28afc119` |
+| [miniserve](//github.com/svenstaro/miniserve)  | 0.23.0   |`miniserve` |`07b7953c0b1902763581cccc7e7c8875a64b6b6368f7543085e16ea05d577fa1` |
 | [onionpipe](//github.com/cmars/onionpipe)      | 1.0.13   |`onionpipe` |`c4d47d24e9a72eb8be2a83bbb389bbd531360f0598452291e3b9998513b17df7` |
 | [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
