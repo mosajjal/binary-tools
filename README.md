@@ -12,11 +12,11 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [amicontained](//github.com/genuinetools/)          | 0.4.9      |`amicontained`|`38af6bd80d8cca3147d72ccccf97576d501d67118a4f6190f64c094fe18fc7a4` |
 | [amass](//github.com/OWASP/Amass)                   | 3.21.2     |`amass`       |`72c29280a4c704edcaf2dd0bc61f6805f8b0364da7fb8fbeaa2fa036f6c317ec` |
 | [atop](//github.com/Atoptool/atop)                  | 2.8.1      |`atop`        |`cc8b410f283680c91ffb4fea1263c177e8e819a15d3a1b51c71c9ce9b3ec9abd` |
-| [avml](//github.com/microsoft/avml)                 | 0.9.1      |`avml`        |`4bf480de022decdfb11ad24330d3a4c7fd150ed62c6a1842e7f98d2e972ab3ea` |
+| [avml](//github.com/microsoft/avml)                 | 0.11.2     |`avml`        |`4bf480de022decdfb11ad24330d3a4c7fd150ed62c6a1842e7f98d2e972ab3ea` |
 | [Bandwhich](//github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [bbe](/sourceforge.net/projects/bbe-)               | 0.2.2      |`bbe`         |`89971b77f088c224e8ed0e8abb75784aa8e450192f2072eeb9aa2fb0fee5ff76` |
 | [Bed](//github.com/itchyny/bed)                     | 0.2.2      |`bed`         |`8304a53751909ffc48bfd0068ce6270e2d31cc52660599365444ac196c8fb98a` |
-| [boringtun](//github.com/cloudflare/boringtun)      | 0.3.0      |`boringtun`   |`c0c14adbb1b3822ee49b30b0bfc133714a84a90588fd8fb974e673ca5b326fd1` |
+| [boringtun](//github.com/cloudflare/boringtun)      | 0.5.2      |`boringtun`   |`d04f73e2a5d35022da53c7d4648820bf4dc08bbd660bc30e291d0aa7fc28c7fd` |
 | [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](//github.com/txthinking/brook)              | 20230401   |`brook`       |`16ba4eae1ac535b59e09c6552d064c5af1eb6ea36509685584aba57d8b2d3537` |
 | [busybox](//busybox.net)                            | 1.36.0     |`busybox`     |`6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
