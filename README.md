@@ -28,8 +28,8 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [doggo](//github.com/mr-karan/doggo)                | 0.5.4      |`doggo`       |`21c7cd607c6633cd78ce2f618f2e530b7a6a78f879a0d299f1ef7445fce3d5c8` |
 | [Dropbear](x64/dropbear/README.md)                  | 2022.82    |`dropbear/*`  |`b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
 | [Dead Simple VPN](//github.com/jedisct1/dsvpn)      | 0.1.3      |`dsvpn`       |`84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
-| [es-dump](//github.com/mosajjal/elasticdump)        | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
-| [evtx](//github.com/omerbenamram/evtx)              | 0.8.9      |`evtx`        |`a8fe17a0c1abe805d34498d8d5f46ed5e23cb46d73002ef7b9a8d3cd3a3ae873` |
+| [es-dump](//github.com/mosajjal/go-exp)             | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
+| [evtx](//github.com/omerbenamram/evtx)              | 0.9.1      |`evtx`        |`a9a70961a8a492562e243aebb9ba1cb7d3a58728485b231955a77231efece4ae` |
 | [fd](//github.com/sharkdp/fd)                       | 8.6.0      |`fd`          |`702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
 | [fq](//github.com/wader/fq)                         | 0.10.0     |`fq`          |`bc29fe3eadfdb21f6c0332f012723d0bca1345629601754a9e49bcf810c4315f` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
