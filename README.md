@@ -34,7 +34,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fq](//github.com/wader/fq)                         | 0.5.0      |`fq`          |`8fdf5658ecfa59f3f3400d2382f817a3d26cacfede564f461051ef527c2382f7` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 2.2.0      |`ffuf`        |`71a88fa3c626d7c9f32f9d09319da82fc8ecbc717e2e3a36172616fc2f690a40` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
-| [frp](//github.com/fatedier/frp)                    | 0.46.1     |`frpc/frps`   |`4635e206316fb90a2c93deda6568f12aae9296a0bf1231177a050d411b2868e8` |
+| [frp](//github.com/fatedier/frp)                    | 0.48.0     |`frpc/frps`   |`3ad7826ba5154d328320361fa4f8817bf5b39e55962cdfc569c0326ddfc24740` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.36.0     |`fzf`         |`faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.11    |`gojq`        |`0674002c44dd682e5e0e61cd30b39720fb04918c6d7b1ae16db131ee0e867f66` |
