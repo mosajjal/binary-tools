@@ -31,8 +31,8 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [es-dump](//github.com/mosajjal/go-exp)             | 0.0.1      |`es-dump`     |`f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
 | [evtx](//github.com/omerbenamram/evtx)              | 0.9.1      |`evtx`        |`a9a70961a8a492562e243aebb9ba1cb7d3a58728485b231955a77231efece4ae` |
 | [fd](//github.com/sharkdp/fd)                       | 8.6.0      |`fd`          |`702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
-| [fq](//github.com/wader/fq)                         | 0.10.0     |`fq`          |`bc29fe3eadfdb21f6c0332f012723d0bca1345629601754a9e49bcf810c4315f` |
-| [ffuf](//github.com/ffuf/ffuf)                      | 1.5.0      |`ffuf`        |`84a1aad61e9b056e17ceeb6903d243b3375925bf337c22a6b315474ecfc1dec4` |
+| [fq](//github.com/wader/fq)                         | 0.5.0      |`fq`          |`8fdf5658ecfa59f3f3400d2382f817a3d26cacfede564f461051ef527c2382f7` |
+| [ffuf](//github.com/ffuf/ffuf)                      | 2.2.0      |`ffuf`        |`71a88fa3c626d7c9f32f9d09319da82fc8ecbc717e2e3a36172616fc2f690a40` |
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
 | [frp](//github.com/fatedier/frp)                    | 0.46.1     |`frpc/frps`   |`4635e206316fb90a2c93deda6568f12aae9296a0bf1231177a050d411b2868e8` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.36.0     |`fzf`         |`faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
@@ -46,7 +46,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
-| [httpx](//github.com/projectdiscovery/httpx)        | 1.2.6      |`httpx`       |`b017f0e0f40495e94e714f2d8b83e2642055422b8ac7ba0775cf6f55bf53ee16` |
+| [httpx](//github.com/projectdiscovery/httpx)        | 1.2.9      |`httpx`       |`21438df6740c059743c7df493add8b34f104cc7b117abb42e8cabb874fd64b96` |
 | [hex](//github.com/sitkevij/hex)                    | 0.4.1      |`hex`         |`54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)  | 1.0.0-alpha|`icmptunnel`  |`ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [inlets](//github.com/inlets/inlets)                | 3.0        |`inlets`      |`6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
