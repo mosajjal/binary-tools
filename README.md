@@ -11,7 +11,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [3proxy](//github.com/z3APA3A/3proxy)               | 0.9 3      |`3proxy`      |`7c5a2814658e776c648d84b3087d47bbc0e6fd6191f3983947ebb0c88bd5b443` |
 | [amicontained](//github.com/genuinetools/)          | 0.4.9      |`amicontained`|`38af6bd80d8cca3147d72ccccf97576d501d67118a4f6190f64c094fe18fc7a4` |
 | [amass](//github.com/OWASP/Amass)                   | 3.21.2     |`amass`       |`72c29280a4c704edcaf2dd0bc61f6805f8b0364da7fb8fbeaa2fa036f6c317ec` |
-| [atop](//github.com/Atoptool/atop)                  | 2.7.1      |`atop`        |`61a8e982d8e88fdd803700aead53479e6f749c26e6be4697363c1b3dcc9b1e98` |
+| [atop](//github.com/Atoptool/atop)                  | 2.8.1      |`atop`        |`cc8b410f283680c91ffb4fea1263c177e8e819a15d3a1b51c71c9ce9b3ec9abd` |
 | [avml](//github.com/microsoft/avml)                 | 0.9.1      |`avml`        |`e62e091cf6ab23eecc8e7a6abd7d25cf67a3cfd1e4db967e33f5a4327b5194b9` |
 | [Bandwhich](//github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
 | [bbe](/sourceforge.net/projects/bbe-)               | 0.2.2      |`bbe`         |`89971b77f088c224e8ed0e8abb75784aa8e450192f2072eeb9aa2fb0fee5ff76` |
