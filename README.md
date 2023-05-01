@@ -102,6 +102,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [wireguard-go](//github.com/WireGuard/wireguard-go) |0.0.20220316|`wg-go`       |`356544b5f2c3d4f4eff60b81e3362db72f8dac29c71f3e83caad9f6cee029954` |
 | [xsv](//github.com/BurntSushi/xsv)                  | 0.13.0     |`xsv`         |`34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
 | [xxd](//linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
+| [yq](//github.com/mikefarah/yq)                     | 4.33.3     |`yq`          |`264c27738cdf9a5ae633fa7b2885d866ce49632649abe016a2344000459aa479` |
 | [zenith](//github.com/bvaisvil/zenith)              | 0.12.0     |`zenith`      |`38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
 | [zellij](//github.com/zellij-org/zellij)            | 0.34.4     |`zellij`      |`ab3b66e27020c92a5a0a84a840e3673f4ac43f35aa754b6cd4cad59dee5811b8` |
 | [Zmap](x64/zmap/README.md)                          | 2.1.1      |`zmap/*`      |`c2a22f83eca87ba131f289a2ebcbf4dbb14326a7841d313c90aa40160db0569f` |
