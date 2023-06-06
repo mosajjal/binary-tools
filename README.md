@@ -76,7 +76,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [openrsync](//github.com/kristapsdz/openrsync)      | f50d0f8    |`openrsync`   |`f2394b8337eac1c53c83576be0f9c969480bb5a212d60939de815d271d5a1549` |
 | [packetq](//www.dns-oarc.net/tools/packetq)         | 1.7.1      |`packetq`     |`53faee4aa896c6760af2fe03a95b8d311ce9c7461dfc0d658569bb7fef007a8f` |
 | [PassiveDNS](//github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
-| [Powerline-go](//github.com/justjanne/powerline-go) | 1.21.0     |`pline-go`    |`ba4991e93da1ca3253d163c50d75a3da698228559d566908a30a85e4543a9b57` |
+| [Powerline-go](//github.com/justjanne/powerline-go) | 1.24.0     |`pline-go`    |`9c24bfab41676905336bded0eb198b18c2f79dc7f952a936693c470403893891` |
 | [pv](//github.com/icetee/pv)                        | 1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [q](//github.com/natesales/q)                       | 0.11.1     |`q`           |`879624def623dac1e94cb1daf29c38399cd49bc9d7abdf781d5af22986595e22` |
 | [rargs](//github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
@@ -130,6 +130,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [miniserve](//github.com/svenstaro/miniserve)  | 0.23.0   |`miniserve` |`07b7953c0b1902763581cccc7e7c8875a64b6b6368f7543085e16ea05d577fa1` |
 | [onionpipe](//github.com/cmars/onionpipe)      | 1.0.13   |`onionpipe` |`c4d47d24e9a72eb8be2a83bbb389bbd531360f0598452291e3b9998513b17df7` |
 | [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
+| [pline-go](//github.com/justjanne/powerline-go)| 1.24.0   |`pline-go`  |`b9b781bcca9deb402df444b816b19436414d045857bda40e31e8f8c0bd1de3d4` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [q](//github.com/natesales/q)                  | 0.11.1   |`q`         |`ed2cdae450691df282529eec5e00c720a2e835c9fd797215b9695230fc668eea` |
 | [singbox](//github.com/SagerNet/sing-box)      | 1.1.2    |`singbox`   |`035dca8b6b38e6fa7eb2a7dbb2884ad00fbfebc2dbeee4d911ed6c843d04f10d` |
