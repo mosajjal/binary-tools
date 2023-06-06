@@ -83,7 +83,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [redir](//github.com/troglobit/redir)               | 3.3        |`redir`       |`488b759c62a5ac09c452ec91e91fa5b4751bf46f18583c3f6ace62f78217a699` |
 | [rg](//github.com/BurntSushi/ripgrep)               | 13.0.0     |`rg`          |`e88f01d13835f1511da72961ea429c6375b1d33dd4d01cf810cc6a9855f1e7d9` |
 | [sd](//github.com/chmln/sd)                         | 0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
-| [singbox](//github.com/SagerNet/sing-box)           | 1.1.2      |`singbox`     |`5be915031eea637c0046f1f8b118290e8c68665f1f393527735d4e24a054c3f4` |
+| [singbox](//github.com/SagerNet/sing-box)           | 1.2.7      |`singbox`     |`7004fff582498df54628d6511194caf435c791126dca228edfc4c459495c704a` |
 | [Socat](http://www.dest-unreach.org/socat/)         | 1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
 | [sslh](//github.com/yrutschle/sslh/)                | 2.0-rc1    |`sslh`        |`79d1b72f49084ee4abe669d4ecc8d3d906c43d3e690a86eec5d6efba1f5d7d4d` |
 | [sslsplit](//github.com/droe/sslsplit/)             | 0.5.5      |`sslsplit`    |`36c45ed304c4bed4147da62a5128c27cb9f51de078a66f8521aa04d82d17b3eb` |
@@ -133,7 +133,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [pline-go](//github.com/justjanne/powerline-go)| 1.24.0   |`pline-go`  |`b9b781bcca9deb402df444b816b19436414d045857bda40e31e8f8c0bd1de3d4` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [q](//github.com/natesales/q)                  | 0.11.1   |`q`         |`ed2cdae450691df282529eec5e00c720a2e835c9fd797215b9695230fc668eea` |
-| [singbox](//github.com/SagerNet/sing-box)      | 1.1.2    |`singbox`   |`035dca8b6b38e6fa7eb2a7dbb2884ad00fbfebc2dbeee4d911ed6c843d04f10d` |
+| [singbox](//github.com/SagerNet/sing-box)      | 1.2.7    |`singbox`   |`2fbe1f762899b50249cb6dfb331557fbb170a79cfcea18793f2bf53c8a61acdf` |
 | [sniproxy](//github.com/mosajjal/sniproxy)     | 2.0.3    |`sniproxy`  |`703c40b7af210adc0db7857b60666337a41d2f943a95cf419dfaac41f65ab5f5` |
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
