@@ -87,7 +87,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Socat](http://www.dest-unreach.org/socat/)         | 1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
 | [sslh](//github.com/yrutschle/sslh/)                | 2.0-rc1    |`sslh`        |`79d1b72f49084ee4abe669d4ecc8d3d906c43d3e690a86eec5d6efba1f5d7d4d` |
 | [sslsplit](//github.com/droe/sslsplit/)             | 0.5.5      |`sslsplit`    |`36c45ed304c4bed4147da62a5128c27cb9f51de078a66f8521aa04d82d17b3eb` |
-| [sniproxy](//github.com/mosajjal/sniproxy)          | 2.0.0      |`sniproxy`    |`89b6decb24489d98aaea6b6f7e248597597dce3984e92d784a4f850a8fa55ae8` |
+| [sniproxy](//github.com/mosajjal/sniproxy)          | 2.0.3      |`sniproxy`    |`42e38d27f79c3a061a506c9ad744ecedb45489c5c2b4bb1e45bcbc8a62b1ae9a` |
 | [strace](//github.com/strace/strace)                | 6.0        |`strace`      |`2e0e5afb5118ec912fdaa86a8595d0fc764415f3cfc71ebc2a2f8a0e1fee21c7` |
 | [suricata](//github.com/OISF/suricata)              | 6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
 | [TCPDump](//www.tcpdump.org/)                       | 4.99.0     |`tcpdump`     |`bfe6ef23bf03fa284b0c6e699834c18af12701628d381af0b4681705349976cc` |
@@ -132,7 +132,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [singbox](//github.com/SagerNet/sing-box)      | 1.1.2    |`singbox`   |`035dca8b6b38e6fa7eb2a7dbb2884ad00fbfebc2dbeee4d911ed6c843d04f10d` |
-| [sniproxy](//github.com/mosajjal/sniproxy)     | 2.0.0    |`sniproxy`  |`85f5469f86b000645e6f1487f146246fc90321c08aff27e71dbbe63510ef61ee` |
+| [sniproxy](//github.com/mosajjal/sniproxy)     | 2.0.3    |`sniproxy`  |`703c40b7af210adc0db7857b60666337a41d2f943a95cf419dfaac41f65ab5f5` |
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 | [termshark](//github.com/gcla/termshark)       | 2.4.0    |`termshark` |`73f9b3115379a372115ecd9b466861fd7e9b1f23f5bb000a8ea5171e6d07df14` |
