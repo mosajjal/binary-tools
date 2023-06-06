@@ -78,7 +78,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [PassiveDNS](//github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](//github.com/justjanne/powerline-go) | 1.21.0     |`pline-go`    |`ba4991e93da1ca3253d163c50d75a3da698228559d566908a30a85e4543a9b57` |
 | [pv](//github.com/icetee/pv)                        | 1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
-| [q](//github.com/natesales/q)                       | 0.8.2      |`q`           |`a9ff71f7b74cd120f993e092ada0869b5ac8271f7504ad63a059952fac833bed` |
+| [q](//github.com/natesales/q)                       | 0.11.1     |`q`           |`879624def623dac1e94cb1daf29c38399cd49bc9d7abdf781d5af22986595e22` |
 | [rargs](//github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
 | [redir](//github.com/troglobit/redir)               | 3.3        |`redir`       |`488b759c62a5ac09c452ec91e91fa5b4751bf46f18583c3f6ace62f78217a699` |
 | [rg](//github.com/BurntSushi/ripgrep)               | 13.0.0     |`rg`          |`e88f01d13835f1511da72961ea429c6375b1d33dd4d01cf810cc6a9855f1e7d9` |
@@ -131,6 +131,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [onionpipe](//github.com/cmars/onionpipe)      | 1.0.13   |`onionpipe` |`c4d47d24e9a72eb8be2a83bbb389bbd531360f0598452291e3b9998513b17df7` |
 | [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
+| [q](//github.com/natesales/q)                  | 0.11.1   |`q`         |`ed2cdae450691df282529eec5e00c720a2e835c9fd797215b9695230fc668eea` |
 | [singbox](//github.com/SagerNet/sing-box)      | 1.1.2    |`singbox`   |`035dca8b6b38e6fa7eb2a7dbb2884ad00fbfebc2dbeee4d911ed6c843d04f10d` |
 | [sniproxy](//github.com/mosajjal/sniproxy)     | 2.0.3    |`sniproxy`  |`703c40b7af210adc0db7857b60666337a41d2f943a95cf419dfaac41f65ab5f5` |
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
