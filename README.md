@@ -99,7 +99,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [vim](//www.vim.org/)                               | 9.0.363    |`vim`         |`d39479629cc1b5f7d1f62f07e0211b1fe994f04af27e02ab680cdbf1f79fae9a` |
 | [Wireshark](x64/wireshark/README.md)                | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [wireguard](//github.com/WireGuard/wireguard-tools) |1.0.20210223|`wg`          |`c39781ecd9d71a5874342ea9dbfcba775625de25defff17cc24197f3bccd1de2` |
-| [wireguard-go](//github.com/WireGuard/wireguard-go) |0.0.20220316|`wg-go`       |`356544b5f2c3d4f4eff60b81e3362db72f8dac29c71f3e83caad9f6cee029954` |
+| [wireguard-go](//github.com/WireGuard/wireguard-go) |0.0.20230223|`wg-go`       |`0100854e2df6b633e92d860697c59e21ee19c97baefb652f25f1e1ccd5b633ad` |
 | [xsv](//github.com/BurntSushi/xsv)                  | 0.13.0     |`xsv`         |`34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
 | [xxd](//linux.die.net/man/1/xxd)                    | 1.10       |`xxd`         |`3720dcc2ac553bf72a9d656e3b2475eb687e53ab88fc42be7e16350c8a96c358` |
 | [yq](//github.com/mikefarah/yq)                     | 4.33.3     |`yq`          |`264c27738cdf9a5ae633fa7b2885d866ce49632649abe016a2344000459aa479` |
@@ -137,7 +137,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 | [termshark](//github.com/gcla/termshark)       | 2.4.0    |`termshark` |`73f9b3115379a372115ecd9b466861fd7e9b1f23f5bb000a8ea5171e6d07df14` |
 | [termsvg](//github.com/MrMarble/termsvg)       | 0.6.1    |`termvg`    |`730e0796f91280ecfbcf509e7a683996a5760fed93c233c7bc222c3523c1a3b9` |
-| [wg-go](//github.com/WireGuard/wireguard-go)   | 0.0.2022 |`wg-go`     |`356544b5f2c3d4f4eff60b81e3362db72f8dac29c71f3e83caad9f6cee029954` |
+| [wg-go](//github.com/WireGuard/wireguard-go)   |0.0.2023  |`wg-go`     |`a1e9a13aa4a2c3be5cd08df8a3c1275754075ea4b6486b7f9dcca351e63a8512` |
 
 # Shortened URL
 
