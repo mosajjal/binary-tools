@@ -42,7 +42,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [gron](//github.com/tomnomnom/gron)                 | 0.7.1      |`gron`        |`b56ed481a1478ae5c50f6f8cba6a9ca1e124351323904cce0c2af8f11dfdb32b` |
 | [grex](//github.com/pemistahl/grex/)                | 1.4.1      |`grex`        |`7ce6b6bff5386aa9d8d7305483d484d5a31856bd31d71696739d27992c30746c` |
 | [gum](//github.com/charmbracelet/gum)               | 0.9.0      |`gum`         |`9e378242c4b548fb239a7985b2eebefb3b2631d94f449bd1b123709de26a6511` |
-| [helix](//github.com/helix-editor/helix)            | 22.12      |`hx`          |`27c6b053cefb4700e26842ecdb17045be1508b2d0bbf02659a53099b7e8db5c4` |
+| [helix](//github.com/helix-editor/helix)            | 23.05      |`hx`          |`78939f99451a5bbdfe777861bf225c2b46b22e45fd08eed56a241b4eae532381` |
 | [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
