@@ -64,7 +64,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [massren](//github.com/laurent22/massren)           | 1.5.6      |`massren`     |`5a6e090f05f095b2c99c37971e6c8d07069a71845a3d4e5c4bc4513d4858e6e1` |
 | [memcached-util](//github.com/me-io/memcached-util) | 0.0.1      |`memcd-util`  |`e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
 | [merino](//github.com/ajmwagar/merino)              | 0.1.3      |`merino`      |`ed7cbf41d9b526cca0c97b28d0608358704868814ee8e7591a62e98e2f580f5b` |
-| [Micro](//github.com/zyedidia/micro)                | 2.0.11     |`micro`       |`662fdfaf74f62478f605c8683c09e27e3c9902b329b7097e7eedb802cd229b60` |
+| [micro](//github.com/zyedidia/micro)                | 2.0.12     |`micro`       |`7b5d435d7ba4298b582a3171bbcc4dbffdb6e2f06ca169aa44827c797323fbb2` |
 | [Miniserve](//github.com/svenstaro/miniserve)       | 0.23.0     |`miniserve`   |`122576cc150d0487d349f19e0b02243823d5d8697ac4d6fdab7e0dfcd81dc34c` |
 | [mylg](//github.com/mehrdadrad/mylg)                | 0.2.6      |`mylg`        |`6a75b46987617266d8b37b64ff7eba3df8e587b69c5d262a7a1e76945fa3e956` |
 | [Nano](//www.nano-editor.org/)                      | 7.1        |`nano`        |`13a0ac2a8225f266bd1275d20fdc0c66859c41e426f651319b154b43ad979a2e` |
