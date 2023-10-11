@@ -10,21 +10,21 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |-----------------------------------------------------|------------|--------------|-------------------------------------------------------------------|
 | [3proxy](//github.com/z3APA3A/3proxy)               | 0.9 3      |`3proxy`      |`7c5a2814658e776c648d84b3087d47bbc0e6fd6191f3983947ebb0c88bd5b443` |
 | [amicontained](//github.com/genuinetools/)          | 0.4.9      |`amicontained`|`38af6bd80d8cca3147d72ccccf97576d501d67118a4f6190f64c094fe18fc7a4` |
-| [amass](//github.com/OWASP/Amass)                   | 3.21.2     |`amass`       |`72c29280a4c704edcaf2dd0bc61f6805f8b0364da7fb8fbeaa2fa036f6c317ec` |
+| [amass](//github.com/OWASP/Amass)                   | 4.2.0      |`amass`       |`58c1de78683fc12b154323b31ccf2b2d16a5d89f3d140947e757072ebf36210c` |
 | [atop](//github.com/Atoptool/atop)                  | 2.8.1      |`atop`        |`cc8b410f283680c91ffb4fea1263c177e8e819a15d3a1b51c71c9ce9b3ec9abd` |
 | [avml](//github.com/microsoft/avml)                 | 0.11.2     |`avml`        |`4bf480de022decdfb11ad24330d3a4c7fd150ed62c6a1842e7f98d2e972ab3ea` |
-| [Bandwhich](//github.com/imsnif/bandwhich)          | 0.20.0     |`bandwhich`   |`3783fde8c8f1364709116d0c9f09b79a4e521f13da61f50a4b2b72db34860d9a` |
+| [Bandwhich](//github.com/imsnif/bandwhich)          | 0.21.0     |`bandwhich`   |`7859a66e10721d4edb6f07a6bbb9d1b28a5608fc05db5b56991ebe1c1d25bf9f` |
 | [bbe](/sourceforge.net/projects/bbe-)               | 0.2.2      |`bbe`         |`89971b77f088c224e8ed0e8abb75784aa8e450192f2072eeb9aa2fb0fee5ff76` |
-| [Bed](//github.com/itchyny/bed)                     | 0.2.2      |`bed`         |`8304a53751909ffc48bfd0068ce6270e2d31cc52660599365444ac196c8fb98a` |
+| [Bed](//github.com/itchyny/bed)                     | 0.2.4      |`bed`         |`aa9c8b41de14ea3c510961879a524331379ad3193cb53d28a459b8fffface136` |
 | [boringtun](//github.com/cloudflare/boringtun)      | 0.5.2      |`boringtun`   |`d04f73e2a5d35022da53c7d4648820bf4dc08bbd660bc30e291d0aa7fc28c7fd` |
 | [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](//github.com/txthinking/brook)              | 20230601   |`brook`       |`74151b5ba7b42e69fab1b3de39d294339d2e0f903a0098dce9a76e7be0765f5b` |
 | [busybox](//busybox.net)                            | 1.36.0     |`busybox`     |`6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
-| [curl](//github.com/curl/curl)                      | 7.74.0     |`curl`        |`c2615ffceae19b82aced0ad4c4d1eb0adb4b6c2d5355b205da38c36464768d0c` |
+| [curl](//github.com/curl/curl)                      | 8.3.0      |`curl`        |`0642743842b5076e0ca1557c703f1fec6e3465bfda47b24366c4c31e9db2da3d` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)     | 1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.7      |`dnsmonster`  |`dd6d48ea79b09d7ed49fa667d00fbd8b6e2013ee9b9afa84209e5ef75c7e11ad` |
-| [dnspot](//github.com/mosajjal/dnspot)              | 0.0.3      |`dnspot`      |`d365b212f9651adb0abb96e578c258bd010ad2bc959261211ce284c02792c52c` |
+| [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.9      |`dnsmonster`  |`fe659b9a5c2dbb108779ec302e9e9ebd8e9d77161834df84d04802936d4f46d0` |
+| [dnspot](//github.com/mosajjal/dnspot)              | 0.1.0      |`dnspot/*`    |`e5242710ba34fa9b89421067925d0deb8d3380c1ac6128f8223daeefdbab00f2` |
 | [dnstrace](//github.com/rs/dnstrace)                | 1.4.3      |`dnstrace`    |`c975ea5c6e5480caf2d9746c6d6fb35340f9c540123868d61eaca12815b30125` |
 | [doggo](//github.com/mr-karan/doggo)                | 0.5.4      |`doggo`       |`21c7cd607c6633cd78ce2f618f2e530b7a6a78f879a0d299f1ef7445fce3d5c8` |
 | [Dropbear](x64/dropbear/README.md)                  | 2022.82    |`dropbear/*`  |`b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
@@ -116,7 +116,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |------------------------------------------------|----------|------------|-------------------------------------------------------------------|
 | [Brook](//github.com/txthinking/brook)         | 20230606 |`brook`     |`f9f6cce8a9fd5743fccee723a01e3467c581b5b177bb0377672778e83d4ee96e` |
 | [Busybox](//busybox.net)                       | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
-| [curl](//github.com/curl/curl)                 | 7.74.0   |`curl`      |`6595fcbb28a37347f47764e16353ceb5fdcb2d4e01fe1b9f0c4786edf85643f3` |
+| [curl](//github.com/curl/curl)                 | 8.3.0    |`curl`      |`51cd2f08ab1431d256049da118fe79e3934aa2263c89f0f9498985b4f1fd6e6e` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.7    |`dnsmonster`|`712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
 | [fd](//github.com/sharkdp/fd)                  | 8.6.0    |`fd`        |`debb8b2e7d90d834eafa2007f881ee9016792b72c90bef638bf6d7d8aa3d79c6` |
