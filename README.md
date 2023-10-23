@@ -79,6 +79,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [packetq](//www.dns-oarc.net/tools/packetq)         | 1.7.1      |`packetq`     |`53faee4aa896c6760af2fe03a95b8d311ce9c7461dfc0d658569bb7fef007a8f` |
 | [PassiveDNS](//github.com/gamelinux/passivedns)     | 1.2.1      |`pdns`        |`a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](//github.com/justjanne/powerline-go) | 1.24.0     |`pline-go`    |`9c24bfab41676905336bded0eb198b18c2f79dc7f952a936693c470403893891` |
+| [pueue](//github.com/Nukesor/pueue)                 | 3.3.0      |`pueue(d)`    |`70ef6e7b811b851addc85c50defce9eaa37f29f670536287f5df984a175f85af` |
 | [pv](//github.com/icetee/pv)                        | 1.6.6      |`pv`          |`40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [q](//github.com/natesales/q)                       | 0.11.1     |`q`           |`879624def623dac1e94cb1daf29c38399cd49bc9d7abdf781d5af22986595e22` |
 | [rargs](//github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
@@ -135,6 +136,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [onionpipe](//github.com/cmars/onionpipe)      | 1.0.13   |`onionpipe` |`c4d47d24e9a72eb8be2a83bbb389bbd531360f0598452291e3b9998513b17df7` |
 | [openrsync](//github.com/kristapsdz/openrsync) | f50d0f8  |`openrsync` |`ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
 | [pline-go](//github.com/justjanne/powerline-go)| 1.24.0   |`pline-go`  |`b9b781bcca9deb402df444b816b19436414d045857bda40e31e8f8c0bd1de3d4` |
+| [pueue](//github.com/Nukesor/pueue)            | 3.3.0    |`pueue(d)`  |`7e4b52e376dffbb9342951d0fd14f5fb3d0eb24faa5e7b30dfdb2d490e69c30a` |
 | [pv](//linux.die.net/man/1/pv)                 | 1.6.0    |`pv`        |`f2d0b4fdba5929270832e4a6920aff1feb2ec6ae3a576fc2c9a45e7c1e72715b` |
 | [q](//github.com/natesales/q)                  | 0.11.1   |`q`         |`ed2cdae450691df282529eec5e00c720a2e835c9fd797215b9695230fc668eea` |
 | [singbox](//github.com/SagerNet/sing-box)      | 1.2.7    |`singbox`   |`2fbe1f762899b50249cb6dfb331557fbb170a79cfcea18793f2bf53c8a61acdf` |
