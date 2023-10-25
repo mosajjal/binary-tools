@@ -55,7 +55,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [iodine](//github.com/yarrick/iodine)               | 0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](//github.com/koct9i/ioping)                | 0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jj](//github.com/tidwall/jj)                       | 1.9.2      |`jj`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
-| [jq](//github.com/stedolan/jq)                      | 1.6        |`jq`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
+| [jq](//github.com/stedolan/jq)                      | 1.7        |`jq`          |`7c2c5549d3559c4aff5714201ef5e87a22abe2b36bdb9eb51b670d57ff3e96bc` |
 | [Kibi](//github.com/ilai-deutel/kibi)               | 0.2.2      |`kibi`        |`f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
 | [kmon](//github.com/orhun/kmon)                     | 1.6.3      |`kmon`        |`dcdc7db06055ba4c395f3bbc6475a28732d4cca0352d59c5b9a71deaa4567884` |
 | [lazygit](//github.com/jesseduffield/lazygit)       | 0.38.2     |`lazygit`     |`865c1d334e8bad35ef3ed40a17b47c4b4e020f7bf80532bbb93a7219244fe239` |
@@ -130,6 +130,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [gron](//github.com/tomnomnom/gron)            | 0.6.1    |`gron`      |`ef36405d62a11b7a55a1a3c3e90de5f3f996a82c4a02dbb49cf1b4d69856d3eb` |
 | [gum](//github.com/charmbracelet/gum)          | 0.9.0    |`gum`       |`757fc0f130eac8d44b8bb0965b9b20d013391f88f32f7a57a091885ebb5ffc44` |
 | [httpx](//github.com/projectdiscovery/httpx)   | 1.2.6    |`httpx`     |`ed65560bd6c574673f4fa9a88a3873e708e3a9266e69a71bfd578c6a73eed41c` |
+| [jq](//github.com/stedolan/jq)                 | 1.7      |`jq`        |`5c8750905fdcdd7452706ec1694c644a490089dfca907f4273d845d124fc51e6` |
 | [lazygit](//github.com/jesseduffield/lazygit)  | 0.38.2   |`lazygit`   |`865c1d334e8bad35ef3ed40a17b47c4b4e020f7bf80532bbb93a7219244fe239` |
 | [micro](//github.com/zyedidia/micro)           | 2.0.10   |`micro`     |`3cff01cca730497da36d447a5664aa4f3da8df396ff6d612c581151bae75ec8d` |
 | [miniserve](//github.com/svenstaro/miniserve)  | 0.23.0   |`miniserve` |`07b7953c0b1902763581cccc7e7c8875a64b6b6368f7543085e16ea05d577fa1` |
