@@ -37,6 +37,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
 | [frp](//github.com/fatedier/frp)                    | 0.48.0     |`frpc/frps`   |`3ad7826ba5154d328320361fa4f8817bf5b39e55962cdfc569c0326ddfc24740` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.36.0     |`fzf`         |`faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
+| [gobuster](//github.com/OJ/gobuster)                | 3.6.0      |`gobuster`    |`03850ca391f7cffd9c9ff7a723476ad1d99f9eb810817648b38e943d5cbc3c20` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.11    |`gojq`        |`0674002c44dd682e5e0e61cd30b39720fb04918c6d7b1ae16db131ee0e867f66` |
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
