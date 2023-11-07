@@ -89,6 +89,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [sd](//github.com/chmln/sd)                         | 0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [singbox](//github.com/SagerNet/sing-box)           | 1.2.7      |`singbox`     |`7004fff582498df54628d6511194caf435c791126dca228edfc4c459495c704a` |
 | [Socat](http://www.dest-unreach.org/socat/)         | 1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
+| [sshx](//github.com/ekzhang/sshx/)                  | 0.2        |`sshx/server` |`e010b77cd6ad79d14a47c9ae119280dbe76be670f7c50c4b64b7d1357ba04bd9` |
 | [sslh](//github.com/yrutschle/sslh/)                | 2.0-rc1    |`sslh`        |`79d1b72f49084ee4abe669d4ecc8d3d906c43d3e690a86eec5d6efba1f5d7d4d` |
 | [sslsplit](//github.com/droe/sslsplit/)             | 0.5.5      |`sslsplit`    |`36c45ed304c4bed4147da62a5128c27cb9f51de078a66f8521aa04d82d17b3eb` |
 | [sniproxy](//github.com/mosajjal/sniproxy)          | 2.0.3      |`sniproxy`    |`42e38d27f79c3a061a506c9ad744ecedb45489c5c2b4bb1e45bcbc8a62b1ae9a` |
