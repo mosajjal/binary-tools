@@ -85,7 +85,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [q](//github.com/natesales/q)                       | 0.11.1     |`q`           |`879624def623dac1e94cb1daf29c38399cd49bc9d7abdf781d5af22986595e22` |
 | [rargs](//github.com/lotabout/rargs)                | 0.3.0      |`rargs`       |`4bfd341af2bff8697b959aa8b3fe3b01c309cf5735f01467efc588f7eca4fb91` |
 | [redir](//github.com/troglobit/redir)               | 3.3        |`redir`       |`488b759c62a5ac09c452ec91e91fa5b4751bf46f18583c3f6ace62f78217a699` |
-| [rg](//github.com/BurntSushi/ripgrep)               | 13.0.0     |`rg`          |`e88f01d13835f1511da72961ea429c6375b1d33dd4d01cf810cc6a9855f1e7d9` |
+| [rg](//github.com/BurntSushi/ripgrep)               | 14.0.0     |`rg`          |`91259dbc14eae06336b2469e2ab5b39acc219717bdea198f13cf63f0873a1dc3` |
 | [sd](//github.com/chmln/sd)                         | 0.7.5      |`sd`          |`b51812016c252de2a978d3dc63c4d5dfd42b77d9f167007296f6ae3a37283456` |
 | [singbox](//github.com/SagerNet/sing-box)           | 1.2.7      |`singbox`     |`7004fff582498df54628d6511194caf435c791126dca228edfc4c459495c704a` |
 | [Socat](http://www.dest-unreach.org/socat/)         | 1.7.4.0    |`socat`       |`d374222b5e7b5a43748136e541331ee1b083fca9d0f9afd3035ab4a00065f6ea` |
