@@ -21,7 +21,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Brook](//github.com/txthinking/brook)              | 20230601   |`brook`       |`74151b5ba7b42e69fab1b3de39d294339d2e0f903a0098dce9a76e7be0765f5b` |
 | [busybox](//busybox.net)                            | 1.36.0     |`busybox`     |`6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
-| [curl](//github.com/curl/curl)                      | 8.3.0      |`curl`        |`0642743842b5076e0ca1557c703f1fec6e3465bfda47b24366c4c31e9db2da3d` |
+| [curl](//github.com/curl/curl)                      | 8.5.0      |`curl`        |`84056e941ce6d0456a84798ca3f3d94a2defd5b62d7cad66bdbfbc562518ccf8` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)     | 1.12       |`dh`          |`76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
 | [dnsmonster](//github.com/mosajjal/dnsmonster)      | 0.9.9      |`dnsmonster`  |`fe659b9a5c2dbb108779ec302e9e9ebd8e9d77161834df84d04802936d4f46d0` |
 | [dnspot](//github.com/mosajjal/dnspot)              | 0.1.0      |`dnspot/*`    |`e5242710ba34fa9b89421067925d0deb8d3380c1ac6128f8223daeefdbab00f2` |
@@ -120,7 +120,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 |------------------------------------------------|----------|------------|-------------------------------------------------------------------|
 | [Brook](//github.com/txthinking/brook)         | 20230606 |`brook`     |`f9f6cce8a9fd5743fccee723a01e3467c581b5b177bb0377672778e83d4ee96e` |
 | [Busybox](//busybox.net)                       | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
-| [curl](//github.com/curl/curl)                 | 8.3.0    |`curl`      |`51cd2f08ab1431d256049da118fe79e3934aa2263c89f0f9498985b4f1fd6e6e` |
+| [curl](//github.com/curl/curl)                 | 8.5.0    |`curl`      |`bff1af137c3a1dfff6fcc3046dc0d21a2eb7a04f21713004fdc2b23da1a60f95` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [DnsMonster](//github.com/mosajjal/dnsmonster) | 0.9.7    |`dnsmonster`|`712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
 | [fd](//github.com/sharkdp/fd)                  | 8.6.0    |`fd`        |`debb8b2e7d90d834eafa2007f881ee9016792b72c90bef638bf6d7d8aa3d79c6` |
