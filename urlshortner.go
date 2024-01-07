@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 	"strings"
@@ -25,12 +24,10 @@ func handleURL(c *gin.Context, folders ...string) {
 		if folder == "" {
 			continue
 		}
-		fmt.Println(path)
 		path = path + folder + "/"
 	}
 
 	u := baseURL + path + c.Param("binary") + "?raw=true"
-	fmt.Println(u)
 	resp, err := http.Get(u)
 	if err != nil {
 		c.Err()
