@@ -102,6 +102,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [tinyproxy](//github.com/tinyproxy/tinyproxy)       | 1.11.1     |`tinyproxy`   |`d08f163bb4e3f1a2cf0bb3d48b19530d2611b716c05dfef24bd972802097e6c0` |
 | [tor](x64/tor/README.md)                            | 0.4.8.0    |`tor/*`       |`49ff0b8a390fce04058c8c8b2d8772dbfad7da2b4258e741327e4429c6d10577` |
 | [tmux](//github.com/tmux/tmux)                      | 3.4 next   |`tmux`        |`8b453e21cd449b01f6f1b616e87d1bf0d11eeca6a564de2e6321c49c45e55bd2` |
+| [ugrep](//github.com/Genivia/ugrep)                 | 6.0        |`ugrep`       |`a9f76a2d141ba7ea6087c89ed674ef6f67df5c869f28ffb14fbb6fc86969888a` |
 | [vi](//github.com/johnsonjh/OpenVi)                 | 7.4.23     |`vi`          |`4c72fbeafa69afc0e6fadd8aa11a75830bff87c8e1680d2348e4baedaa64ce4f` |
 | [vim](//www.vim.org/)                               | 9.0.363    |`vim`         |`d39479629cc1b5f7d1f62f07e0211b1fe994f04af27e02ab680cdbf1f79fae9a` |
 | [Wireshark](x64/wireshark/README.md)                | 2.6.17     |`wireshark/*` |`e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
