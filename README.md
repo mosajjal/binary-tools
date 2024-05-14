@@ -95,6 +95,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [sniproxy](//github.com/mosajjal/sniproxy)          | 2.0.3      |`sniproxy`    |`42e38d27f79c3a061a506c9ad744ecedb45489c5c2b4bb1e45bcbc8a62b1ae9a` |
 | [strace](//github.com/strace/strace)                | 6.0        |`strace`      |`2e0e5afb5118ec912fdaa86a8595d0fc764415f3cfc71ebc2a2f8a0e1fee21c7` |
 | [suricata](//github.com/OISF/suricata)              | 6.0.0-rc1  |`suricata`    |`2ec601a5e759eb7fae84f964a2a5442161a886a83a40b8f58d1605dcd63f4133` |
+| [superfile](//github.com/MHNightCat/superfile)      | 1.1.2      |`superfile`   |`29561fe0a80798bbec08e2071a4af1bad8302fad1f6c42c3853b768c0560615d` |
 | [TCPDump](//www.tcpdump.org/)                       | 4.99.0     |`tcpdump`     |`bfe6ef23bf03fa284b0c6e699834c18af12701628d381af0b4681705349976cc` |
 | [termshark](//github.com/gcla/termshark)            | 2.4.0      |`termshark`   |`616a7b4b15463286a1cfcd61c22c944724df63c7a11532fab353a059dd29aa5f` |
 | [termsvg](//github.com/MrMarble/termsvg)            | 0.6.1      |`termvg`      |`538d1e1732eb74f7038b8805f31bb83d6a5a9362d211ea267b6e007c93f6fbf2` |
@@ -146,6 +147,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [q](//github.com/natesales/q)                  | 0.11.1   |`q`         |`ed2cdae450691df282529eec5e00c720a2e835c9fd797215b9695230fc668eea` |
 | [singbox](//github.com/SagerNet/sing-box)      | 1.2.7    |`singbox`   |`2fbe1f762899b50249cb6dfb331557fbb170a79cfcea18793f2bf53c8a61acdf` |
 | [sniproxy](//github.com/mosajjal/sniproxy)     | 2.0.3    |`sniproxy`  |`703c40b7af210adc0db7857b60666337a41d2f943a95cf419dfaac41f65ab5f5` |
+| [superfile](//github.com/MHNightCat/superfile) | 1.1.2    |`superfile` |`c78946c1d934175d6b3ad945c3c240be93bdbf368eb36e6e564c513786d32bb6` |
 | [Strace](//github.com/strace/strace)           | 4.10     |`strace`    |`9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d` |
 | [TCPDump](//www.tcpdump.org/)                  | 4.7.4    |`tcpdump`   |`f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 | [termshark](//github.com/gcla/termshark)       | 2.4.0    |`termshark` |`73f9b3115379a372115ecd9b466861fd7e9b1f23f5bb000a8ea5171e6d07df14` |
