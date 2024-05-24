@@ -56,6 +56,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [iodine](//github.com/yarrick/iodine)               | 0.7.0      |`iodine(d)`   |`5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
 | [IOPing](//github.com/koct9i/ioping)                | 0.9        |`ioping`      |`76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jj](//github.com/tidwall/jj)                       | 1.9.2      |`jj`          |`c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
+| [jaq](//github.com/01mf02/jaq)                      | 1.4.0      |`jaq`         |`fce247e4b9693ff260293bdb7d4ef564f765ed6fe889c42cebfd5d2e36b591bf` |
 | [jq](//github.com/stedolan/jq)                      | 1.7        |`jq`          |`7c2c5549d3559c4aff5714201ef5e87a22abe2b36bdb9eb51b670d57ff3e96bc` |
 | [Kibi](//github.com/ilai-deutel/kibi)               | 0.2.2      |`kibi`        |`f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
 | [kmon](//github.com/orhun/kmon)                     | 1.6.3      |`kmon`        |`dcdc7db06055ba4c395f3bbc6475a28732d4cca0352d59c5b9a71deaa4567884` |
