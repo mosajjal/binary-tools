@@ -18,7 +18,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [Bed](//github.com/itchyny/bed)                     | 0.2.4      |`bed`         |`aa9c8b41de14ea3c510961879a524331379ad3193cb53d28a459b8fffface136` |
 | [boringtun](//github.com/cloudflare/boringtun)      | 0.5.2      |`boringtun`   |`d04f73e2a5d35022da53c7d4648820bf4dc08bbd660bc30e291d0aa7fc28c7fd` |
 | [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
-| [Brook](//github.com/txthinking/brook)              | 20230601   |`brook`       |`74151b5ba7b42e69fab1b3de39d294339d2e0f903a0098dce9a76e7be0765f5b` |
+| [Brook](//github.com/txthinking/brook)              | 20240606   |`brook`       |`10a424503a6cdf242d6d09a7d07f12bdac145e4098a765da8aca5807c1e2319d` |
 | [busybox](//busybox.net)                            | 1.36.0     |`busybox`     |`6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)        | 2.0        |`corkscrew`   |`f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
 | [curl](//github.com/curl/curl)                      | 8.5.0      |`curl`        |`84056e941ce6d0456a84798ca3f3d94a2defd5b62d7cad66bdbfbc562518ccf8` |
@@ -122,7 +122,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 
 |Software                                        | Version  |Filename    |SHA256                                                             |
 |------------------------------------------------|----------|------------|-------------------------------------------------------------------|
-| [Brook](//github.com/txthinking/brook)         | 20230606 |`brook`     |`f9f6cce8a9fd5743fccee723a01e3467c581b5b177bb0377672778e83d4ee96e` |
+| [Brook](//github.com/txthinking/brook)         | 20240606 |`brook`     |`d1a202d45c6d8bcb68a86cd69ee5c6422bb433e8556d2a429b0d59030a957185 ` |
 | [Busybox](//busybox.net)                       | 1.28.1   |`busybox`   |`ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a` |
 | [curl](//github.com/curl/curl)                 | 8.5.0    |`curl`      |`bff1af137c3a1dfff6fcc3046dc0d21a2eb7a04f21713004fdc2b23da1a60f95` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)| 1.12     |`dh`        |`ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
