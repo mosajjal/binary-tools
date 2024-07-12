@@ -38,6 +38,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [frp](//github.com/fatedier/frp)                    | 0.48.0     |`frpc/frps`   |`3ad7826ba5154d328320361fa4f8817bf5b39e55962cdfc569c0326ddfc24740` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.36.0     |`fzf`         |`faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
 | [gobuster](//github.com/OJ/gobuster)                | 3.6.0      |`gobuster`    |`03850ca391f7cffd9c9ff7a723476ad1d99f9eb810817648b38e943d5cbc3c20` |
+| [ghfs](//github.com/mjpclab/go-http-file-server)    | 1.18.1     |`ghfs`        |`413af9ebef95ba8f328ac7e183785c651c685991ed5363ff8f81974803af4e19` |
 | [Gost](//github.com/ginuerzh/gost)                  | 2.11.3     |`gost`        |`4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
 | [gojq](//github.com/itchyny/gojq)                   | 0.12.11    |`gojq`        |`0674002c44dd682e5e0e61cd30b39720fb04918c6d7b1ae16db131ee0e867f66` |
 | [Gotop](//github.com/xxxserxxx/gotop/)              | 4.1.2      |`gotop`       |`b97fec8eccdfb36a1a11610f2e104b8d7295ec4e53b6ccffb9cc0d41fb0e92b1` |
@@ -130,6 +131,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [ffuf](//github.com/ffuf/ffuf/)                | 1.5.0    |`ffuf`      |`57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c` |
 | [frp](//github.com/fatedier/frp)               | 0.46.1   |`frpc/frps` |`8cb7d8f8ba0febe5bdc063e92d21bbf844a8d8d5e4b87444e3a68df08c329f32` |
 | [fzf](//github.com/junegunn/fzf)               | 0.36.0   |`fzf`       |`5c005276492bebb582cf4dd64b976f2479078b58b9ac3fbc1e1c473ef2dfb919` |
+| [ghfs](//github.com/mjpclab/go-http-file-server)| 1.18.1  |`ghfs`      |`7db7adf117572db3c3305f9602504b9823613bc3f8150fd1b36c996c0a52d230` |
 | [gojq](//github.com/itchyny/gojq)              | 0.12.11  |`gojq`      |`7803046ff422ea9cf6fd7d322686f0eb5bead50a486d10416e8c349020a78b22` |
 | [Gotop](//github.com/xxxserxxx/gotop/)         | 4.1.2    |`gotop`     |`5dbb0455747cd79ebb6f989c22a58fc29ab4e819c31ff8de895fee815659f530` |
 | [goss](//github.com/cakturk/go-netstat)        | e5b49ef  |`goss`      |`6acf137ff77aa8cbdf5028646c0b481cd2c85d280c49baa71bee3c9117bc9088` |
