@@ -179,11 +179,6 @@ wget bin.n0p.me/arm/FILENAME (downloads arm version)
 ```
 
 
-# Custom Architectures
-
-URL shortner for custom architectures have been disabled temporarily due to malicious use. It will be available again soon :)
-
-
 # What is it for
 
 * Testing the tools before searching for them in your package manager (yum, apt, pacman)
