@@ -15,7 +15,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [avml](//github.com/microsoft/avml)                 | 0.11.2     |`avml`        |`4bf480de022decdfb11ad24330d3a4c7fd150ed62c6a1842e7f98d2e972ab3ea` |
 | [Bandwhich](//github.com/imsnif/bandwhich)          | 0.21.0     |`bandwhich`   |`7859a66e10721d4edb6f07a6bbb9d1b28a5608fc05db5b56991ebe1c1d25bf9f` |
 | [bbe](https://sourceforge.net/projects/bbe-)        | 0.2.2      |`bbe`         |`89971b77f088c224e8ed0e8abb75784aa8e450192f2072eeb9aa2fb0fee5ff76` |
-| [Bed](//github.com/itchyny/bed)                     | 0.2.4      |`bed`         |`aa9c8b41de14ea3c510961879a524331379ad3193cb53d28a459b8fffface136` |
+| [Bed](//github.com/itchyny/bed)                     | 0.2.8      |`bed`         |`b86e6e1d95286ccd482cdbe81b0d06c8d5b36eafbe77fb8aace69f30e6dc3916` |
 | [boringtun](//github.com/cloudflare/boringtun)      | 0.5.2      |`boringtun`   |`d04f73e2a5d35022da53c7d4648820bf4dc08bbd660bc30e291d0aa7fc28c7fd` |
 | [bit](//github.com/chriswalz/bit)                   | 1.1.2      |`bit`         |`36d7cbcc72bad679b09892694509bc9b823461c75d94ce2122b2135f3aa2c943` |
 | [Brook](//github.com/txthinking/brook)              | 20240606   |`brook`       |`10a424503a6cdf242d6d09a7d07f12bdac145e4098a765da8aca5807c1e2319d` |
