@@ -34,7 +34,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [fd](//github.com/sharkdp/fd)                       | 8.6.0      |`fd`          |`702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
 | [fq](//github.com/wader/fq)                         | 0.5.0      |`fq`          |`8fdf5658ecfa59f3f3400d2382f817a3d26cacfede564f461051ef527c2382f7` |
 | [ffuf](//github.com/ffuf/ffuf)                      | 2.2.0      |`ffuf`        |`71a88fa3c626d7c9f32f9d09319da82fc8ecbc717e2e3a36172616fc2f690a40` |
-| [Fish](//github.com/fish-shell/fish-shell)          | 3.1.0      |`fish`        |`97afe2224ec19eaa42ba461cc86924405d6de90ba3927a406f4f6de052d40432` |
+| [Fish](//github.com/fish-shell/fish-shell)          | 4.0.2      |`fish`        |`0ca6d261fb30c58bd2865a6ca9629c3274eafbe772058bdf5ee9ee7a8da7d42b` |
 | [frp](//github.com/fatedier/frp)                    | 0.48.0     |`frpc/frps`   |`3ad7826ba5154d328320361fa4f8817bf5b39e55962cdfc569c0326ddfc24740` |
 | [Fzf](//github.com/junegunn/fzf)                    | 0.36.0     |`fzf`         |`faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
 | [gobuster](//github.com/OJ/gobuster)                | 3.6.0      |`gobuster`    |`03850ca391f7cffd9c9ff7a723476ad1d99f9eb810817648b38e943d5cbc3c20` |
@@ -47,7 +47,7 @@ All binaries have been stripped and packed with [upx](https://github.com/upx/upx
 | [grex](//github.com/pemistahl/grex/)                | 1.4.1      |`grex`        |`7ce6b6bff5386aa9d8d7305483d484d5a31856bd31d71696739d27992c30746c` |
 | [gum](//github.com/charmbracelet/gum)               | 0.9.0      |`gum`         |`9e378242c4b548fb239a7985b2eebefb3b2631d94f449bd1b123709de26a6511` |
 | [helix](//github.com/helix-editor/helix)            | 23.05      |`hx`          |`78939f99451a5bbdfe777861bf225c2b46b22e45fd08eed56a241b4eae532381` |
-| [Htop](//hisham.hm/htop/)                           | 3.2.1      |`htop`        |`47defa0f42cd0ab0e8fb2f0172c2cd03640ed1edca1c12fdeb9f1e69a5f3fbc7` |
+| [Htop](//hisham.hm/htop/)                           | 3.4.1      |`htop`        |`27718be4110e5f0a64b863e396bdbccc28c3df3f8df48ccfcff2609b8efb38e2` |
 | [httpdump](//github.com/hsiafan/httpdump)           | 49c42ed    |`httpdump`    |`6c28c74991064f13cbe51bf186d8837de65e1f5ff62ba74ea2cf634702a4ae2a` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)    | 3.3.git    |`httptunnel-*`|`df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [httpx](//github.com/projectdiscovery/httpx)        | 1.2.9      |`httpx`       |`21438df6740c059743c7df493add8b34f104cc7b117abb42e8cabb874fd64b96` |
