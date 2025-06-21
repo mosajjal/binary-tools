@@ -85,6 +85,7 @@ The categories are AI-generated so expect mistakes.
 | [packetq](//www.dns-oarc.net/tools/packetq)          | 1.7.1        | `packetq`      | DNS, Analysis           | `53faee4aa896c6760af2fe03a95b8d311ce9c7461dfc0d658569bb7fef007a8f` |
 | [PassiveDNS](//github.com/gamelinux/passivedns)      | 1.2.1        | `pdns`         | DNS, Monitoring         | `a483ea315434df4239b4bea76772c1aadc1a060e2e1f34d4ec344c18abf75945` |
 | [Powerline-go](//github.com/justjanne/powerline-go)  | 1.24.0       | `pline-go`     | Shell, Prompt           | `9c24bfab41676905336bded0eb198b18c2f79dc7f952a936693c470403893891` |
+| [ptunnel-ng](//github.com/utoni/ptunnel-ng)          | v1.43        | `ptunnel-ng`   | ICMP, Tunnel            | `2f532e801289e3d45ca65c09a03b70e584da31b4b746b63e940460e90d15cd9b` |
 | [pueue](//github.com/Nukesor/pueue)                  | 3.3.0        | `pueue(d)`     | Task, CLI               | `70ef6e7b811b851addc85c50defce9eaa37f29f670536287f5df984a175f85af` |
 | [pv](//github.com/icetee/pv)                         | 1.6.6        | `pv`           | Files, Monitoring       | `40d92cdfb23485f0641c2dd6dd853d78b3528e3a0ef041e2a3e39ce696226c6e` |
 | [q](//github.com/natesales/q)                        | 0.11.1       | `q`            | DNS, CLI                | `879624def623dac1e94cb1daf29c38399cd49bc9d7abdf781d5af22986595e22` |
