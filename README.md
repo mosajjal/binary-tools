@@ -57,7 +57,7 @@ The categories are AI-generated so expect mistakes.
 | [hex](//github.com/sitkevij/hex)                     | 0.4.1        | `hex`          | Editor, Binary          | `54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)   | 1.0.0-alpha  | `icmptunnel`   | Tunneling, Networking   | `ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
 | [inlets](//github.com/inlets/inlets)                 | 3.0          | `inlets`       | Proxy, Tunneling        | `6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
-| [iodine](//github.com/yarrick/iodine)                | 0.7.0        | `iodine(d)`    | DNS, Tunneling          | `5d1f1bf326f75119b933631fefb16e6b792274af0d58325143696e557b7d9ce2` |
+| [iodine](//github.com/yarrick/iodine)                | 0.8.0        | `iodine(d)`    | DNS, Tunneling          | `f7c0fc5a86d3d35f17226260b5025cb5a0f943792c7537db91d6d59af64174a3` |
 | [IOPing](//github.com/koct9i/ioping)                 | 0.9          | `ioping`       | Disk, Benchmark         | `76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
 | [jj](//github.com/tidwall/jj)                        | 1.9.2        | `jj`           | JSON, CLI               | `c0b392f4e29bb568e3c4918a77a8a082ffc39cd9ebc06627d37b962ebc8f7928` |
 | [jaq](//github.com/01mf02/jaq)                       | 1.4.0        | `jaq`          | JSON, CLI               | `fce247e4b9693ff260293bdb7d4ef564f765ed6fe889c42cebfd5d2e36b591bf` |
