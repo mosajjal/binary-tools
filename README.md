@@ -37,7 +37,7 @@ The categories are AI-generated so expect mistakes.
 | [fd](//github.com/sharkdp/fd)                        | 8.6.0        | `fd`           | Search, CLI             | `702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
 | [fq](//github.com/wader/fq)                          | 0.5.0        | `fq`           | JSON, CLI               | `8fdf5658ecfa59f3f3400d2382f817a3d26cacfede564f461051ef527c2382f7` |
 | [ffuf](//github.com/ffuf/ffuf)                       | 2.2.0        | `ffuf`         | Fuzzing, Web            | `71a88fa3c626d7c9f32f9d09319da82fc8ecbc717e2e3a36172616fc2f690a40` |
-| [Fish](//github.com/fish-shell/fish-shell)           | 4.0.2        | `fish`         | Shell, CLI              | `0ca6d261fb30c58bd2865a6ca9629c3274eafbe772058bdf5ee9ee7a8da7d42b` |
+| [fish](//github.com/fish-shell/fish-shell)           | 4.5.0        | `fish`         | Shell, CLI              | `9c0a5ea141e1f1267684b6763c1f595e0e3f3816ef5919acdc4c3dec1d7cb4c7` |
 | [frp](//github.com/fatedier/frp)                     | 0.48.0       | `frpc/frps`    | Proxy, Tunneling        | `3ad7826ba5154d328320361fa4f8817bf5b39e55962cdfc569c0326ddfc24740` |
 | [Fzf](//github.com/junegunn/fzf)                     | 0.36.0       | `fzf`          | Search, CLI             | `faa1094e20772cd6148cad80f613bc75ae1bf51a8f1cade22ba7b5d919fc9409` |
 | [gobuster](//github.com/OJ/gobuster)                 | 3.6.0        | `gobuster`     | Fuzzing, Web            | `03850ca391f7cffd9c9ff7a723476ad1d99f9eb810817648b38e943d5cbc3c20` |
@@ -136,6 +136,7 @@ The categories are AI-generated so expect mistakes.
 | [dnstt](//bamsoftware.com/software/dnstt/)       | 1.20241021 | `dnstt_*`    | DNS, Tunneling         | `c934950025cd6748e0e3b2da38b34ae01da113a673b10db8cbbcfde05fe0b174`  |
 | [fd](//github.com/sharkdp/fd)                    | 8.6.0      | `fd`         | Search, CLI            | `debb8b2e7d90d834eafa2007f881ee9016792b72c90bef638bf6d7d8aa3d79c6`  |
 | [ffuf](//github.com/ffuf/ffuf/)                  | 1.5.0      | `ffuf`       | Fuzzing, Web           | `57bceb8460c4d0b9fa5b7d6ce96819ee8f80f51765cf69d7c797bfa7de37963c`  |
+| [fish](//github.com/fish-shell/fish-shell)       | 4.5.0      | `fish`       | Shell, CLI             | `73f33a66929a13987a35a20da4852f67f9fde1e3d4e4b4700ee230950ef614d2` |
 | [frp](//github.com/fatedier/frp)                 | 0.46.1     | `frpc/frps`  | Proxy, Tunneling       | `8cb7d8f8ba0febe5bdc063e92d21bbf844a8d8d5e4b87444e3a68df08c329f32`  |
 | [fzf](//github.com/junegunn/fzf)                 | 0.36.0     | `fzf`        | Search, CLI            | `5c005276492bebb582cf4dd64b976f2479078b58b9ac3fbc1e1c473ef2dfb919`  |
 | [ghfs](//github.com/mjpclab/go-http-file-server) | 1.18.1     | `ghfs`       | Fileserver, HTTP       | `7db7adf117572db3c3305f9602504b9823613bc3f8150fd1b36c996c0a52d230`  |
