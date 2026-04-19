@@ -161,6 +161,7 @@ The categories are AI-generated so expect mistakes.
 | [spp](//github.com/esrrhs/spp/)                  | 0.6        | `spp`        | Proxy, Networking      | `af77efb343243b394326289659485295531198c94afa057e2670d1361d1d9373`  |
 | [superfile](//github.com/MHNightCat/superfile)   | 1.1.2      | `superfile`  | Files, CLI             | `c78946c1d934175d6b3ad945c3c240be93bdbf368eb36e6e564c513786d32bb6`  |
 | [Strace](//github.com/strace/strace)             | 4.10       | `strace`     | Debugging, System      | `9fc5d32b2681827b876b4466565b03ed002d90945253fb7c7745051a2870c79d`  |
+| [tang](//github.com/latchset/tang)               | 15         | `tangd`      | NBDE, Crypto           | `e081afd25935da7a85f2e5d90da1556ce9f44bb2ff032654355e95e540a2e124`  |
 | [TCPDump](//www.tcpdump.org/)                    | 4.7.4      | `tcpdump`    | Networking, Sniffing   | `f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b`  |
 | [termshark](//github.com/gcla/termshark)         | 2.4.0      | `termshark`  | Networking, Sniffing   | `73f9b3115379a372115ecd9b466861fd7e9b1f23f5bb000a8ea5171e6d07df14`  |
 | [termsvg](//github.com/MrMarble/termsvg)         | 0.6.1      | `termvg`     | SVG, CLI               | `730e0796f91280ecfbcf509e7a683996a5760fed93c233c7bc222c3523c1a3b9`  |
