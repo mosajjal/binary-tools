@@ -3,3 +3,4 @@ src/
 dist/
 tools.json
 outdated.json
+__pycache__/
