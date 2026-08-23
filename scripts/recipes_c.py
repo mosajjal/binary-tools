@@ -94,7 +94,8 @@ RECIPES = {
     "tmux": dict(
         lang="c", slug="tmux/tmux",
         bins=[("tmux", "")],
-        pkgs=["autoconf", "automake", "pkgconf", "libevent-static", "ncurses-static", "ncurses-dev", "byacc"],
+        pkgs=["autoconf", "automake", "pkgconf", "libevent-dev", "libevent-static",
+              "ncurses-dev", "ncurses-static", "byacc"],
         build=[AUTOGEN, "./configure --with-libevent=/usr LDFLAGS=-static",
                "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
                "cp tmux /tmp/out/"],

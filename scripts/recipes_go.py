@@ -52,9 +52,12 @@ RECIPES = {
     ),
     "es-dump": dict(
         lang="go", slug="mosajjal/x", branch=True,
-        bins=[("es-dump", "./elasticdump")],
-        # multi-tool repo without go.mod in the subpackage
-        pre=["cd elasticdump && go mod init elasticdump && go mod tidy"],
+        # the subpackage carries its own go.mod; build from inside it
+        bins=[("es-dump", ".")], arm=False,
+        build=[
+            "(cd elasticdump && CGO_ENABLED=0 go build -trimpath -ldflags=\"-s -w\" -o /tmp/x64_es-dump .)",
+            "(cd elasticdump && CGO_ENABLED=0 GOARCH=arm GOARM=7 go build -trimpath -ldflags=\"-s -w\" -o /tmp/arm_es-dump .)",
+        ],
     ),
     "fq": dict(
         lang="go", slug="wader/fq", tag_prefix="v",

@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake pkgconf libevent-static ncurses-static ncurses-dev byacc
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake pkgconf libevent-dev libevent-static ncurses-dev ncurses-static byacc
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/tmux/tmux.git /src
 WORKDIR /src
 RUN set -ex \
