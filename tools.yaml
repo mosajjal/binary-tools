@@ -168,7 +168,7 @@ tools:
     check: {type: github-release, slug: rs/dnstrace}
     lang: go
     outputs: [dnstrace]
-    test_cmd: "/out/x64/dnstrace -h 2>&1 | grep -qi 'usage\|query'"
+    test_cmd: '/out/x64/dnstrace -h 2>&1 | grep -qiE "usage|query"'
 
   - name: dnstt_client
     version: "1.20241021"
