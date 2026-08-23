@@ -41,7 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           yq -o=json '.tools' tools.yaml > tools.json
-          python3 scripts/check_upstream.py --out outdated.json --json > report.json
+          python3 scripts/check_upstream.py tools.json --out outdated.json --json > report.json
 
           python3 - <<'EOF'
           import json, os

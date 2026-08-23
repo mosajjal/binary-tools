@@ -199,12 +199,18 @@ def check_one(t):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("manifest", nargs="?",
+                    help="tools JSON (rendered from tools.yaml); default: stdin")
     ap.add_argument("--out", help="write outdated JSON here")
     ap.add_argument("--json", action="store_true", help="print full JSON report")
     ap.add_argument("--all", action="store_true", help="also list up-to-date tools")
     args = ap.parse_args()
 
-    tools = json.load(sys.stdin)
+    if args.manifest:
+        with open(args.manifest) as f:
+            tools = json.load(f)
+    else:
+        tools = json.load(sys.stdin)
     results = {}
     with ThreadPoolExecutor(max_workers=12) as ex:
         futs = {ex.submit(check_one, t): t for t in tools}
