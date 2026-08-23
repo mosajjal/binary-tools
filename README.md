@@ -188,6 +188,35 @@ wget bin.n0p.me/arm/FILENAME (downloads arm version)
 ```
 
 
+# Automation
+
+Everything in this repo is rebuilt by CI when its upstream publishes a new
+release. The pipeline lives in `.github/workflows/upstream-bump.yml`:
+
+1. **check** — every Monday (and on demand) `scripts/check_upstream.py` asks
+   each upstream (GitHub release/tag, git remote, tarball index, SourceForge)
+   for its newest version and diffs it against `tools.yaml`.
+2. **build** — every stale tool is rebuilt from source in a matrix job using
+   `build/<tool>/Dockerfile`: fully static x64 + ARMv7 binaries, stripped and
+   UPX-packed. Smoke tests run inside the container (ARM via qemu-user).
+3. **PR** — new binaries land in `x64/` / `arm/`, `tools.yaml` versions and the
+   README tables (incl. SHA256) are regenerated, and one PR is opened
+   **assigned to the repo owner**.
+
+Useful entry points:
+
+```
+make check                # who is outdated right now?
+make build T=jq V=1.8.2   # build + smoke-test a tool locally
+make extract T=jq         # drop binaries into dist/jq/{x64,arm}/
+gh workflow run upstream-bump.yml -f tools=jq,yq   # force a bump PR for two tools
+gh workflow run build-tool.yml -f tool=zellij      # ad-hoc build + artifact
+```
+
+See `build/README.md` for how the Dockerfiles are generated and how to add a
+new tool.
+
+
 # What is it for
 
 * Testing the tools before searching for them in your package manager (yum, apt, pacman)

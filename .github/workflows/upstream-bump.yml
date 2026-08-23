@@ -1,0 +1,158 @@
+name: upstream-bump
+
+# Weekly sweep: check every tool's upstream for a newer release, rebuild the
+# stale ones from source via build/<tool>/Dockerfile, smoke-test them, and
+# open ONE PR assigned to the repo owner with the new binaries.
+on:
+  schedule:
+    - cron: "17 4 * * 1" # Mondays 04:17 UTC
+  workflow_dispatch:
+    inputs:
+      tools:
+        description: "comma-separated tool names to force (empty = all outdated)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: upstream-bump
+  cancel-in-progress: false
+
+env:
+  OWNER: ${{ github.repository_owner }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.check.outputs.matrix }}
+      count: ${{ steps.check.outputs.count }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: install yq
+        uses: mikefarah/yq@master
+      - id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_TOOLS: ${{ inputs.tools }}
+        run: |
+          set -euo pipefail
+          yq -o=json '.tools' tools.yaml > tools.json
+          python3 scripts/check_upstream.py --out outdated.json --json > report.json
+
+          python3 - <<'EOF'
+          import json, os
+          out = json.load(open("outdated.json"))
+          tools = {t["name"]: t for t in json.load(open("tools.json"))}
+          forced = [w.strip() for w in os.environ.get("FORCE_TOOLS", "").split(",") if w.strip()]
+          seen = {o["name"] for o in out["outdated"]}
+          for name in forced:
+              if name not in tools:
+                  raise SystemExit(f"unknown tool: {name}")
+              if name not in seen:
+                  # not outdated; still allow a manual rebuild at current version
+                  out["outdated"].append({"name": name,
+                                          "current": tools[name]["version"],
+                                          "latest": tools[name]["version"]})
+          json.dump(out, open("outdated.json", "w"), indent=2)
+          EOF
+
+          COUNT=$(jq '.outdated | length' outdated.json)
+          MATRIX=$(jq -c '[.outdated[] | {name: .name, version: .latest}]' outdated.json)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          cat outdated.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: outdated
+          path: outdated.json
+
+  build:
+    needs: check
+    if: needs.check.outputs.count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include: ${{ fromJSON(needs.check.outputs.matrix) }}
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - name: install yq + qemu (ARM smoke tests)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -yqq qemu-user-static
+          curl -fsSL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          chmod +x /usr/local/bin/yq
+      - name: build + test ${{ matrix.name }} ${{ matrix.version }}
+        run: ./scripts/build.sh "${{ matrix.name }}" "${{ matrix.version }}" --extract
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bt-${{ matrix.name }}
+          path: dist/${{ matrix.name }}/
+          retention-days: 3
+
+  pr:
+    needs: [check, build]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: install yq
+        run: |
+          curl -fsSL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          chmod +x /usr/local/bin/yq
+      - uses: actions/download-artifact@v5
+        with:
+          pattern: bt-*
+          path: dist/
+      - uses: actions/download-artifact@v4
+        with:
+          name: outdated
+          path: .
+      - name: assemble bump
+        run: |
+          set -euo pipefail
+          ./scripts/apply_bump.sh outdated.json dist
+      - name: open PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ env.OWNER }}
+        run: |
+          set -euo pipefail
+          BR="bot/upstream-bump-$(date +%Y%m%d)"
+          git config user.name "binary-tools-bot"
+          git config user.email "bot@${GITHUB_SERVER_URL##https://}"
+          git checkout -B "$BR"
+          git add -A x64 arm tools.yaml README.md
+          if git diff --cached --quiet; then
+            echo "nothing changed; no PR"
+            exit 0
+          fi
+          BUMPS=$(jq -r '.outdated[] | "- **\(.name)** \(.current) -> \(.latest)"' outdated.json)
+          {
+            echo "Automated weekly upstream bump."
+            echo ""
+            echo "$BUMPS"
+            echo ""
+            echo "Each binary was rebuilt from source in its Dockerfile"
+            echo "(build/<tool>/Dockerfile), stripped and UPX-packed, then"
+            echo "smoke-tested on x64 and ARMv7 before landing here."
+            echo ""
+            echo "Reviewer checklist:"
+            echo "- [ ] spot-check one binary locally (\`./scripts/build.sh <tool> --extract\`)"
+            echo "- [ ] sizes look sane vs previous commit"
+          } > body.md
+          git commit -m "chore: weekly upstream bumps ($(date +%Y-%m-%d))"
+          gh pr create \
+            --title "chore: weekly upstream bumps ($(date +%Y-%m-%d))" \
+            --body-file body.md \
+            --assignee "$OWNER" \
+            --label automation 2>/dev/null || \
+          gh pr create \
+            --title "chore: weekly upstream bumps ($(date +%Y-%m-%d))" \
+            --body-file body.md \
+            --assignee "$OWNER"

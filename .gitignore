@@ -1,2 +1,5 @@
 .vscode/
 src/
+dist/
+tools.json
+outdated.json

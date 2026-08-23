@@ -1,0 +1,63 @@
+name: lint-buildfiles
+
+# Validate Dockerfiles/scripts on PRs: hadolint every changed build/<t>/Dockerfile
+# and shellcheck the scripts.
+on:
+  pull_request:
+    paths:
+      - "build/**"
+      - "scripts/**"
+      - "tools.yaml"
+      - ".github/workflows/**"
+  push:
+    branches: [master, main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: install linters
+        run: |
+          curl -fsSL -o /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+          chmod +x /usr/local/bin/hadolint
+      - name: determine changed Dockerfiles
+        id: diff
+        if: github.event_name == 'pull_request'
+        run: |
+          git diff --name-only origin/"$GITHUB_BASE_REF"...HEAD | grep -E '^build/[^/]+/Dockerfile$' > files.txt || true
+          echo "files=$(paste -sd' ' files.txt)" >> "$GITHUB_OUTPUT"
+      - name: hadolint (all)
+        if: github.event_name != 'pull_request'
+        run: find build -name Dockerfile -print0 | xargs -0 -n1 hadolint --failure-threshold error || true
+      - name: hadolint (changed)
+        if: github.event_name == 'pull_request'
+        run: |
+          [[ -s files.txt ]] || { echo "no Dockerfile changes"; exit 0; }
+          FAIL=0
+          for f in $(cat files.txt); do
+            hadolint --failure-threshold error "$f" || FAIL=1
+          done
+          exit $FAIL
+      - name: shellcheck
+        run: |
+          find scripts -name '*.sh' -print0 | xargs -0 -n1 shellcheck -S warning
+      - name: manifest sanity
+        run: |
+          yq -o=json '.tools' tools.yaml > /dev/null
+          python3 - <<'EOF'
+          import json, subprocess
+          out = subprocess.run(["yq", "-o=json", ".tools", "tools.yaml"],
+                               capture_output=True, text=True, check=True).stdout
+          tools = json.loads(out)
+          names = [t["name"] for t in tools]
+          assert len(names) == len(set(names)), "duplicate tool names"
+          for t in tools:
+              assert t.get("outputs") is not None or t.get("arm_outputs"), t["name"]
+          print(f"manifest OK ({len(tools)} tools)")
+          EOF

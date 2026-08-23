@@ -1,0 +1,52 @@
+name: build-tool
+
+# Manual/on-demand build + smoke test of a single tool (or all tools).
+# Also usable as a reusable workflow (workflow_call).
+on:
+  workflow_dispatch:
+    inputs:
+      tool:
+        description: "tool name (tools.yaml) or 'all'"
+        required: true
+        default: jq
+      version:
+        description: "version override (empty = tools.yaml value)"
+        required: false
+        default: ""
+  workflow_call:
+    inputs:
+      tool: { required: true, type: string }
+      version: { required: false, type: string, default: "" }
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - name: install yq + qemu (ARM smoke tests)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -yqq qemu-user-static
+          curl -fsSL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          chmod +x /usr/local/bin/yq
+      - name: build ${{ inputs.tool }}
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          if [[ "${{ inputs.tool }}" == "all" ]]; then
+            yq -r '.tools[].name' tools.yaml | while read -r t; do
+              echo "=== $t"
+              ./scripts/build.sh "$t" "$VERSION" || echo "FAILED: $t" >> failed.txt
+            done
+            [[ ! -f failed.txt ]] || { cat failed.txt; exit 1; }
+          else
+            ./scripts/build.sh "${{ inputs.tool }}" "$VERSION" --extract
+          fi
+      - uses: actions/upload-artifact@v4
+        if: inputs.tool != 'all'
+        with:
+          name: bt-${{ inputs.tool }}
+          path: dist/${{ inputs.tool }}/
