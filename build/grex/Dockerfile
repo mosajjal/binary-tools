@@ -14,7 +14,7 @@ RUN set -ex \
  && cp target/x86_64-unknown-linux-musl/release/grex /tmp/x64_grex
 
 # --- ARMv7 cross (musl.cc toolchain as linker) ---
-ADD https://more.musl.cc/10/x86_64-linux-musl/arm-linux-musleabihf-cross.tgz /tmp/armtc.tgz
+ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
 RUN tar -C /opt -zxf /tmp/armtc.tgz && rm /tmp/armtc.tgz
 ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH \
     CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_LINKER=arm-linux-musleabihf-gcc \

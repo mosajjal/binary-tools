@@ -370,7 +370,7 @@ tools:
     test: "--version"
   - name: icmptunnel
     version: "1.0.0-alpha"
-    check: {type: github-tag, slug: DhavalKapil/icmptunnel}
+    check: {type: github-tag, slug: DhavalKapil/icmptunnel, prefix: v}
     lang: c
     outputs: [icmptunnel]
     test: "-h"
@@ -391,7 +391,7 @@ tools:
 
   - name: ioping
     version: "0.9"
-    check: {type: github-tag, slug: koct9i/ioping}
+    check: {type: github-tag, slug: koct9i/ioping, prefix: v}
     lang: c
     outputs: [ioping]
     test: "--version"

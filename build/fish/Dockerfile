@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja rust cargo pcre2-dev pcre2-static ncurses-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja rust cargo pcre2-dev ncurses-dev
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/fish-shell/fish-shell.git /src
 WORKDIR /src
 RUN set -ex \

@@ -12,7 +12,7 @@ RUN set -ex \
  && cc -O2 -static -o /tmp/out/xxd src/xxd/xxd.c
 
 # --- ARMv7 cross (musl.cc toolchain) ---
-ADD https://more.musl.cc/10/x86_64-linux-musl/arm-linux-musleabihf-cross.tgz /tmp/armtc.tgz
+ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
 RUN tar -C /opt -zxf /tmp/armtc.tgz
 ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \

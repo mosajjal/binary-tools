@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake autoconf automake libtool ncurses-static pcre2-static sqlite-static sqlite-dev zlib-static curl-dev openssl-libs-static
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake autoconf automake libtool ncurses-static sqlite-static sqlite-dev zlib-static curl-dev openssl-libs-static
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/tstack/lnav.git /src
 WORKDIR /src
 RUN set -ex \

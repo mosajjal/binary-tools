@@ -96,7 +96,8 @@ RECIPES = {
         bins=[("tmux", "")],
         pkgs=["autoconf", "automake", "pkgconf", "libevent-static", "ncurses-static", "ncurses-dev"],
         build=[AUTOGEN, "./configure LDFLAGS=-static",
-               "make -j$(nproc)", "cp tmux /tmp/out/"],
+               "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
+               "cp tmux /tmp/out/"],
     ),
     "strace": dict(
         lang="c", slug="strace/strace", tag_prefix="v",
@@ -172,8 +173,8 @@ RECIPES = {
     ),
     "curl": dict(
         lang="c",
-        clone_url="https://github.com/curl/curl.git", tag_prefix="curl-",
-        transform_note="", example_version="8.11.1",
+        slug="curl/curl", tag_prefix="curl-",
+        release_tarball="curl-{v}.tar.gz", example_version="8.21.0",
         bins=[("curl", "")],
         pkgs=["autoconf", "automake", "libtool", "openssl-dev", "openssl-libs-static",
               "zlib-static", "nghttp2-static", "nghttp2-dev", "ca-certificates"],
@@ -242,7 +243,7 @@ RECIPES = {
         build=["./configure LDFLAGS=-static", "make -j$(nproc)", "cp bbe /tmp/out/"],
     ),
     "packetq": dict(
-        lang="cxx", slug="DNS-OARC/PacketQ",
+        lang="cxx", slug="DNS-OARC/PacketQ", tag_prefix="v",
         bins=[("packetq", "")],
         pkgs=["autoconf", "automake", "libtool"],
         build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
@@ -261,7 +262,7 @@ RECIPES = {
         lang="c",
         tarball="https://nmap.org/dist/nmap-{v}.tar.bz2", tarflags="jx",
         bins=[("nmap", ""), ("nping", "")],
-        pkgs=["openssl-dev", "openssl-libs-static", "pcre2-dev", "pcre2-static", "zlib-static", "libssh2-dev"],
+        pkgs=["openssl-dev", "openssl-libs-static", "pcre2-dev", "zlib-static", "libssh2-dev"],
         build=["./configure --without-zenmap --without-ndiff --without-nmap-update "
                "--with-libpcap=included --with-libpcre=included --with-zlib=included "
                "--with-openssl=/usr LDFLAGS=-static",
@@ -271,7 +272,7 @@ RECIPES = {
     "lnav": dict(
         lang="cxx", slug="tstack/lnav", tag_prefix="v",
         bins=[("lnav", "")],
-        pkgs=["cmake", "autoconf", "automake", "libtool", "ncurses-static", "pcre2-static",
+        pkgs=["cmake", "autoconf", "automake", "libtool", "ncurses-static",
               "sqlite-static", "sqlite-dev", "zlib-static", "curl-dev", "openssl-libs-static"],
         build=["./autogen.sh && ./configure LDFLAGS=-static",
                "make -j$(nproc)", "cp src/lnav /tmp/out/"],
@@ -280,7 +281,7 @@ RECIPES = {
     "sslh": dict(
         lang="c", slug="yrutschle/sslh", tag_prefix="v",
         bins=[("sslh", "")],
-        pkgs=["pcre2-dev", "pcre2-static", "libconfig-dev", "libev-dev", "openssl-libs-static"],
+        pkgs=["pcre2-dev", "libconfig-dev", "libev-dev", "openssl-libs-static"],
         build=["make -j$(nproc) sslh-select CC=gcc LDFLAGS=-static USELIBCONFIG=1",
                "cp sslh-select /tmp/out/sslh"],
         experimental=True,
@@ -297,7 +298,8 @@ RECIPES = {
         lang="c", slug="kristapsdz/openrsync", branch=True,
         bins=[("openrsync", "")],
         pkgs=["autoconf", "automake"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
+        build=[AUTOGEN, "./configure LDFLAGS=-static",
+               "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
                "cp openrsync /tmp/out/"],
         experimental=True,
     ),
@@ -329,7 +331,7 @@ RECIPES = {
     "fish": dict(
         lang="c", slug="fish-shell/fish-shell",
         bins=[("fish", "")],
-        pkgs=["cmake", "ninja", "rust", "cargo", "pcre2-dev", "pcre2-static", "ncurses-dev"],
+        pkgs=["cmake", "ninja", "rust", "cargo", "pcre2-dev", "ncurses-dev"],
         build=["cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release "
                "-DCMAKE_EXE_LINKER_FLAGS=-static", "cmake --build build -j$(nproc)",
                "cp build/fish /tmp/out/"],
@@ -349,7 +351,7 @@ RECIPES = {
         lang="c",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "pcre2-static", "yaml-dev",
+        pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "yaml-dev",
               "jansson-dev", "libpcap-dev", "openssl-libs-static", "zlib-static", "cargo"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "

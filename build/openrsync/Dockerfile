@@ -11,7 +11,7 @@ RUN set -ex \
  && mkdir -p /tmp/out \
  && test -x configure || autoreconf -fi \
  && ./configure LDFLAGS=-static \
- && make -j$(nproc) \
+ && make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=: \
  && cp openrsync /tmp/out/
 
 RUN set -ex \
