@@ -11,7 +11,7 @@ RUN git clone --depth 1 --branch v${VERSION} https://github.com/sitkevij/hex.git
 WORKDIR /src
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \
- && cp target/x86_64-unknown-linux-musl/release/hex /tmp/x64_hex
+ && cp target/x86_64-unknown-linux-musl/release/hx /tmp/x64_hex
 
 # --- ARMv7 cross (musl.cc toolchain as linker) ---
 ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
@@ -24,7 +24,7 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH \
 RUN rustup target add armv7-unknown-linux-musleabihf
 RUN set -ex \
  && cargo build --release --target armv7-unknown-linux-musleabihf \
- && cp target/armv7-unknown-linux-musleabihf/release/hex /tmp/arm_hex
+ && cp target/armv7-unknown-linux-musleabihf/release/hx /tmp/arm_hex
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/hex) && cp /tmp/x64_hex /out/x64/hex \

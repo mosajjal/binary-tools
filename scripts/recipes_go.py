@@ -38,6 +38,8 @@ RECIPES = {
     "dnstrace": dict(
         lang="go", slug="rs/dnstrace", tag_prefix="v",
         bins=[("dnstrace", ".")],
+        # repo predates go modules
+        pre=["go mod init dnstrace && go mod tidy"],
     ),
     "dnstt_client": dict(
         lang="go", clone_url="https://www.bamsoftware.com/git/dnstt.git",
@@ -147,7 +149,7 @@ RECIPES = {
         bins=[("sniproxy", "./cmd/sniproxy")],
     ),
     "spp": dict(
-        lang="go", slug="esrrhs/spp", tag_prefix="v",
+        lang="go", slug="esrrhs/spp",
         bins=[("spp", ".")],
     ),
     "termshark": dict(

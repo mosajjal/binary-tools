@@ -8,6 +8,7 @@ ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/rs/dnstrace.git /src
 WORKDIR /src
+RUN go mod init dnstrace && go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_dnstrace .
 

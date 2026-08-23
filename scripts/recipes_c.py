@@ -46,7 +46,7 @@ RECIPES = {
                "cp redir /tmp/out/"],
     ),
     "ioping": dict(
-        lang="c", slug="koct9i/ioping",
+        lang="c", slug="koct9i/ioping", tag_prefix="v",
         bins=[("ioping", "")],
         build=["make -j$(nproc) LDFLAGS=-static", "cp ioping /tmp/out/"],
         arm_build=["make clean || true",
@@ -95,7 +95,7 @@ RECIPES = {
         lang="c", slug="tmux/tmux",
         bins=[("tmux", "")],
         pkgs=["autoconf", "automake", "pkgconf", "libevent-static", "ncurses-static", "ncurses-dev"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static",
+        build=[AUTOGEN, "./configure --with-libevent=/usr LDFLAGS=-static",
                "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
                "cp tmux /tmp/out/"],
     ),
@@ -173,7 +173,7 @@ RECIPES = {
     ),
     "curl": dict(
         lang="c",
-        slug="curl/curl", tag_prefix="curl-",
+        slug="curl/curl", tag_prefix="curl-", tag_transform="dots_to_underscores",
         release_tarball="curl-{v}.tar.gz", example_version="8.21.0",
         bins=[("curl", "")],
         pkgs=["autoconf", "automake", "libtool", "openssl-dev", "openssl-libs-static",

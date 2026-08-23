@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && test -x configure || autoreconf -fi \
- && ./configure LDFLAGS=-static \
+ && ./configure --with-libevent=/usr LDFLAGS=-static \
  && make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=: \
  && cp tmux /tmp/out/
 

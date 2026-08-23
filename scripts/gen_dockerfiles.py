@@ -59,8 +59,11 @@ def fetch_lines(r):
         return _curl_untar(url)
     if r.get("release_tarball"):
         t = r["release_tarball"].replace("{v}", "${VERSION}")
+        ver = "${VERSION}"
+        if r.get("tag_transform") == "dots_to_underscores":
+            ver = '${VERSION//./_}'
         url = (f"https://github.com/{r['slug']}/releases/download/"
-               f"{r.get('tag_prefix', '')}${{VERSION}}/{t}")
+               f"{r.get('tag_prefix', '')}{ver}/{t}")
         return _curl_untar(url)
     repo = r.get("clone_url") or f"https://github.com/{r['slug']}.git"
     if r.get("branch"):

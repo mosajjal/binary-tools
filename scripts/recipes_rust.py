@@ -32,7 +32,7 @@ RECIPES = {
     ),
     "hex": dict(
         lang="rust", slug="sitkevij/hex", tag_prefix="v",
-        bins=[("hex", "hex")],
+        bins=[("hex", "hx")],
     ),
     "hx": dict(
         lang="rust", slug="helix-editor/helix",
