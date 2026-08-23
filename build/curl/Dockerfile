@@ -9,7 +9,7 @@ RUN mkdir -p /src && curl -fsSL "https://github.com/curl/curl/releases/download/
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./buildconf && ./configure --disable-shared --enable-static --with-openssl --with-nghttp2 --with-zlib --without-libpsl --without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps \
+ && ./configure --disable-shared --enable-static --with-openssl --with-nghttp2 --with-zlib --without-libpsl --without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps \
  && make -j$(nproc) LDFLAGS=-static \
  && cp src/curl /tmp/out/
 

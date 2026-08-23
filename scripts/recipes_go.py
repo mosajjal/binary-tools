@@ -53,6 +53,8 @@ RECIPES = {
     "es-dump": dict(
         lang="go", slug="mosajjal/x", branch=True,
         bins=[("es-dump", "./elasticdump")],
+        # multi-tool repo without go.mod in the subpackage
+        pre=["cd elasticdump && go mod init elasticdump && go mod tidy"],
     ),
     "fq": dict(
         lang="go", slug="wader/fq", tag_prefix="v",

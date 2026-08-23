@@ -16,6 +16,7 @@ RECIPES = {
     ),
     "boringtun": dict(
         lang="rust", slug="cloudflare/boringtun", tag_prefix="boringtun-",
+        rust_image="rust:1.70-alpine",
         bins=[("boringtun", "boringtun-cli"), ("wg-user", "boringtun-cli")],
     ),
     "evtx": dict(

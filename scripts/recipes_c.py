@@ -94,7 +94,7 @@ RECIPES = {
     "tmux": dict(
         lang="c", slug="tmux/tmux",
         bins=[("tmux", "")],
-        pkgs=["autoconf", "automake", "pkgconf", "libevent-static", "ncurses-static", "ncurses-dev"],
+        pkgs=["autoconf", "automake", "pkgconf", "libevent-static", "ncurses-static", "ncurses-dev", "byacc"],
         build=[AUTOGEN, "./configure --with-libevent=/usr LDFLAGS=-static",
                "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
                "cp tmux /tmp/out/"],
@@ -178,7 +178,7 @@ RECIPES = {
         bins=[("curl", "")],
         pkgs=["autoconf", "automake", "libtool", "openssl-dev", "openssl-libs-static",
               "zlib-static", "nghttp2-static", "nghttp2-dev", "ca-certificates"],
-        build=["./buildconf && ./configure --disable-shared --enable-static "
+        build=["./configure --disable-shared --enable-static "
                "--with-openssl --with-nghttp2 --with-zlib --without-libpsl "
                "--without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps",
                "make -j$(nproc) LDFLAGS=-static", "cp src/curl /tmp/out/"],

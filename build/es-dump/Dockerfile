@@ -8,6 +8,7 @@ ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 https://github.com/mosajjal/x.git /src
 WORKDIR /src
+RUN cd elasticdump && go mod init elasticdump && go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_es-dump ./elasticdump
 
