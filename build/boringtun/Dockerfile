@@ -7,7 +7,7 @@ ARG VERSION
 ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C target-feature=+crt-static"
 ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+crt-static"
 RUN apk add --no-cache git ca-certificates upx musl-dev perl make
-RUN git clone --depth 1 --branch v${VERSION} https://github.com/cloudflare/boringtun.git /src
+RUN git clone --depth 1 --branch boringtun-${VERSION} https://github.com/cloudflare/boringtun.git /src
 WORKDIR /src
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \

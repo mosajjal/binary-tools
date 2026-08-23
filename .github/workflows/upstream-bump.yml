@@ -48,15 +48,18 @@ jobs:
           out = json.load(open("outdated.json"))
           tools = {t["name"]: t for t in json.load(open("tools.json"))}
           forced = [w.strip() for w in os.environ.get("FORCE_TOOLS", "").split(",") if w.strip()]
-          seen = {o["name"] for o in out["outdated"]}
-          for name in forced:
-              if name not in tools:
-                  raise SystemExit(f"unknown tool: {name}")
-              if name not in seen:
-                  # not outdated; still allow a manual rebuild at current version
-                  out["outdated"].append({"name": name,
-                                          "current": tools[name]["version"],
-                                          "latest": tools[name]["version"]})
+          if forced:
+              latest = {o["name"]: o["latest"] for o in out["outdated"]}
+              for name in forced:
+                  if name not in tools:
+                      raise SystemExit(f"unknown tool: {name}")
+              # forced run: build ONLY the requested tools, at their latest
+              # version when outdated, otherwise at the shipped version
+              out["outdated"] = [
+                  {"name": n, "current": tools[n]["version"],
+                   "latest": latest.get(n, tools[n]["version"])}
+                  for n in forced
+              ]
           json.dump(out, open("outdated.json", "w"), indent=2)
           EOF
 

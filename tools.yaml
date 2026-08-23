@@ -98,7 +98,7 @@ tools:
 
   - name: boringtun
     version: "0.5.2"
-    check: {type: github-release, slug: cloudflare/boringtun}
+    check: {type: github-release, slug: cloudflare/boringtun, prefix: "boringtun-cli-"}
     lang: rust
     outputs:
       - bin: boringtun

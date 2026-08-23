@@ -15,7 +15,7 @@ RECIPES = {
         bins=[("bandwhich", "bandwhich")],
     ),
     "boringtun": dict(
-        lang="rust", slug="cloudflare/boringtun", tag_prefix="v",
+        lang="rust", slug="cloudflare/boringtun", tag_prefix="boringtun-",
         bins=[("boringtun", "boringtun-cli"), ("wg-user", "boringtun-cli")],
     ),
     "evtx": dict(
