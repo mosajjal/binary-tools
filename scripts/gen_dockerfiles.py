@@ -225,13 +225,35 @@ def c_recipe(name, r):
     return "\n".join(b) + "\n"
 
 
+ARM_STRIP = "arm-linux-musleabihf-strip"
+
+
+def _q(paths):
+    return " ".join(f'"{p}"' for p in paths)
+
+
 def _collect_and_pack(pairs, r):
     steps = [f"mkdir -p $(dirname {dst}) && cp {src} {dst}" for src, dst in pairs]
-    bins = [dst for _, dst in pairs]
-    quoted = " ".join(f'"{x}"' for x in bins)
-    steps.append(f"strip {quoted}")
+
+    # Strip needs an arch-matched tool: the host `strip` cannot read ARM ELF
+    # (it errors "Unable to recognise the format"). Go already links with
+    # -s -w, so its binaries are stripped at build time -- skip strip there.
+    if r["lang"] != "go":
+        x64 = [dst for _, dst in pairs if "/out/arm/" not in dst]
+        arm = [dst for _, dst in pairs if "/out/arm/" in dst]
+        if x64:
+            steps.append(f"strip {_q(x64)}")
+        if arm:
+            steps.append(f"{ARM_STRIP} {_q(arm)}")
+
+    # UPX is multi-arch, so it packs both. Keep it non-fatal (some binaries
+    # legitimately refuse to pack), but wrap it in a subshell so its `||`
+    # only guards upx -- otherwise a failing strip in the same && chain would
+    # be masked and ship unstripped, unpacked binaries.
     if r.get("pack", True):
-        steps.append("upx -q --best --lzma %s || echo 'upx failed; shipping unpacked'" % quoted)
+        allbins = _q([dst for _, dst in pairs])
+        steps.append(f"( upx -q --best --lzma {allbins} || echo 'upx failed; shipping unpacked' )")
+
     return run_block(steps)
 
 
