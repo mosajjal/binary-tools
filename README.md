@@ -23,16 +23,16 @@ The categories are AI-generated so expect mistakes.
 | [Brook](//github.com/txthinking/brook)               | 20240606     | `brook`        | Proxy, VPN              | `10a424503a6cdf242d6d09a7d07f12bdac145e4098a765da8aca5807c1e2319d` |
 | [busybox](//busybox.net)                             | 1.36.0       | `busybox`      | Utilities, System       | `6958379fce82b38a579409770fd471bd9e53d0eb47a2c672831d68275dd27eba` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)         | 2.0          | `corkscrew`    | Proxy, Networking       | `f87d84d090af232cdefd26aefda285e464ac22f001d853b1a50732ae5ce8bb6a` |
-| [curl](//github.com/curl/curl)                       | 8.5.0        | `curl`         | Download, Networking    | `84056e941ce6d0456a84798ca3f3d94a2defd5b62d7cad66bdbfbc562518ccf8` |
+| [curl](//github.com/curl/curl)                       | 8.21.0 | `curl`         | Download, Networking    | `569f6606ed8780c2ee0e10790acffe049e108bc7534f7d8a04ad9f501918db08` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)      | 1.12         | `dh`           | Webserver, HTTP         | `76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
 | [dnsmonster](//github.com/mosajjal/dnsmonster)       | 0.9.9        | `dnsmonster`   | DNS, Monitoring         | `fe659b9a5c2dbb108779ec302e9e9ebd8e9d77161834df84d04802936d4f46d0` |
 | [dnspot](//github.com/mosajjal/dnspot)               | 0.1.0        | `dnspot/*`     | DNS, Security           | `e5242710ba34fa9b89421067925d0deb8d3380c1ac6128f8223daeefdbab00f2` |
 | [dnstrace](//github.com/rs/dnstrace)                 | 1.4.3        | `dnstrace`     | DNS, Networking         | `c975ea5c6e5480caf2d9746c6d6fb35340f9c540123868d61eaca12815b30125` |
 | [dnstt](//bamsoftware.com/software/dnstt/)           | 1.20241021   | `dnstt_*`      | DNS, Tunneling          | `7feaf2bca2ebf13312858201744caa5d5b4a9f738d69a66bcd7f5815c832cf6c` |
 | [doggo](//github.com/mr-karan/doggo)                 | 1.0.4        | `doggo`        | DNS, CLI                | `8c69685e45896a0ad9bd270e5f6052f00c8ddd1180564548c2f6a309721fc9db` |
-| [Dropbear](x64/dropbear/README.md)                   | 2022.82      | `dropbear/*`   | SSH, Server             | `b0852673c2dcbd595cb35ba9f49c9eefc434c51ddc1ed246acc1535c38a4fa4f` |
+| [Dropbear](x64/dropbear/README.md)                   | 2026.94 | `dropbear/*`   | SSH, Server             | `06bd1d56d27e2105d4e36e11ab08fe9cae89e5a32562959ee44a197a0a129a44` |
 | [Dead Simple VPN](//github.com/jedisct1/dsvpn)       | 0.1.3        | `dsvpn`        | VPN, Networking         | `84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
-| [es-dump](//github.com/mosajjal/go-exp)              | 0.0.1        | `es-dump`      | Elasticsearch, Data     | `f3d36a6eb0c9f49d2121ae68dba8428e14bc6b71f1e40cacfb2fc70f1b940a2f` |
+| [es-dump](//github.com/mosajjal/go-exp)              | 1.0.7 | `es-dump`      | Elasticsearch, Data     | `a514eaea4ba97f7a65dc8000cf4be967026336aa77f02202689ee9ca655f5f24` |
 | [evtx](//github.com/omerbenamram/evtx)               | 0.9.1        | `evtx`         | Forensics, Logs         | `a9a70961a8a492562e243aebb9ba1cb7d3a58728485b231955a77231efece4ae` |
 | [fd](//github.com/sharkdp/fd)                        | 8.6.0        | `fd`           | Search, CLI             | `702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
 | [fq](//github.com/wader/fq)                          | 0.5.0        | `fq`           | JSON, CLI               | `8fdf5658ecfa59f3f3400d2382f817a3d26cacfede564f461051ef527c2382f7` |
@@ -109,7 +109,7 @@ The categories are AI-generated so expect mistakes.
 | [tiny](//github.com/osa1/tiny)                       | 0.10.0       | `tiny`         | IRC, Chat               | `af1bbf306f60896284c91087466b88611dad8a4b5d44c0d61fa71dc368c0e2bc` |
 | [tinyproxy](//github.com/tinyproxy/tinyproxy)        | 1.11.1       | `tinyproxy`    | Proxy, Networking       | `d08f163bb4e3f1a2cf0bb3d48b19530d2611b716c05dfef24bd972802097e6c0` |
 | [tor](x64/tor/README.md)                             | 0.4.8.0      | `tor/*`        | Tor, Privacy            | `49ff0b8a390fce04058c8c8b2d8772dbfad7da2b4258e741327e4429c6d10577` |
-| [tmux](//github.com/tmux/tmux)                       | 3.4 next     | `tmux`         | Terminal, Multiplexer   | `8b453e21cd449b01f6f1b616e87d1bf0d11eeca6a564de2e6321c49c45e55bd2` |
+| [tmux](//github.com/tmux/tmux)                       | 3.7c | `tmux`         | Terminal, Multiplexer   | `35b1f7cb48a93d9c8868b327ea66380cd95e9c13e55de5acf374fbb96373af24` |
 | [ugrep](//github.com/Genivia/ugrep)                  | 6.0          | `ugrep`        | Search, CLI             | `a9f76a2d141ba7ea6087c89ed674ef6f67df5c869f28ffb14fbb6fc86969888a` |
 | [vi](//github.com/johnsonjh/OpenVi)                  | 7.4.23       | `vi`           | Editor, Text            | `4c72fbeafa69afc0e6fadd8aa11a75830bff87c8e1680d2348e4baedaa64ce4f` |
 | [vim](//www.vim.org/)                                | 9.0.363      | `vim`          | Editor, Text            | `d39479629cc1b5f7d1f62f07e0211b1fe994f04af27e02ab680cdbf1f79fae9a` |
@@ -129,7 +129,7 @@ The categories are AI-generated so expect mistakes.
 | ------------------------------------------------ | ---------- | ------------ | ---------------------- | ------------------------------------------------------------------- |
 | [Brook](//github.com/txthinking/brook)           | 20240606   | `brook`      | Proxy, VPN             | `d1a202d45c6d8bcb68a86cd69ee5c6422bb433e8556d2a429b0d59030a957185 ` |
 | [Busybox](//busybox.net)                         | 1.28.1     | `busybox`    | Utilities, System      | `ab9f082bf63528eebf1a102427283ad8a3bb243fb9b5f2187a6ed4d641e0175a`  |
-| [curl](//github.com/curl/curl)                   | 8.5.0      | `curl`       | Download, Networking   | `bff1af137c3a1dfff6fcc3046dc0d21a2eb7a04f21713004fdc2b23da1a60f95`  |
+| [curl](//github.com/curl/curl)                   | 8.21.0 | `curl`       | Download, Networking   | `569f6606ed8780c2ee0e10790acffe049e108bc7534f7d8a04ad9f501918db08` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)  | 1.12       | `dh`         | Webserver, HTTP        | `ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c`  |
 | [doggo](//github.com/mr-karan/doggo)             | 1.0.4      | `doggo`      | DNS, CLI               | `c3fc126d015429e225195113e1b8b8ec0818e26631571d2502e46dc1651f4d8c`  |
 | [DnsMonster](//github.com/mosajjal/dnsmonster)   | 0.9.7      | `dnsmonster` | DNS, Monitoring        | `712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899`  |
