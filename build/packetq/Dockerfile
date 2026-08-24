@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pkgconf
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pkgconf zlib-dev zlib-static
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/DNS-OARC/PacketQ.git /src
 WORKDIR /src
 RUN set -ex \

@@ -4,12 +4,13 @@
 
 FROM rust:1-alpine AS build
 ARG VERSION
-RUN apk add --no-cache linux-headers clang-dev
+RUN apk add --no-cache linux-headers clang clang-dev llvm-dev
 ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C target-feature=+crt-static"
 ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+crt-static"
 RUN apk add --no-cache git ca-certificates upx musl-dev perl make
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/bvaisvil/zenith.git /src
 WORKDIR /src
+ENV LIBCLANG_PATH=/usr/lib/llvm22/lib
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \
  && cp target/x86_64-unknown-linux-musl/release/zenith /tmp/x64_zenith

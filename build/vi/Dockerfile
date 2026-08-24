@@ -4,14 +4,13 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ncurses-static
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 ncurses-static ncurses-dev
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/johnsonjh/OpenVi.git /src
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
- && cmake --build build -j$(nproc) \
- && find build -name 'ovi' -exec cp {} /tmp/out/vi \; || cp build/bin/ovi /tmp/out/vi
+ && make -j$(nproc) -f GNUmakefile LDFLAGS=-static || make -j$(nproc) -f GNUmakefile \
+ && cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name ovi -exec cp {} /tmp/out/vi \;
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/vi) && cp /tmp/out/vi /out/x64/vi \

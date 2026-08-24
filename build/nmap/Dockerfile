@@ -4,12 +4,12 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 openssl-dev openssl-libs-static pcre2-dev zlib-static libssh2-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 openssl-dev openssl-libs-static pcre2-dev zlib-static zlib-dev
 RUN mkdir -p /src && curl -fsSL "https://nmap.org/dist/nmap-${VERSION}.tar.bz2" | bunzip2 -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./configure --without-zenmap --without-ndiff --without-nmap-update --with-libpcap=included --with-libpcre=included --with-zlib=included --with-openssl=/usr LDFLAGS=-static \
+ && ./configure --without-zenmap --without-ndiff --without-nmap-update --without-libssh2 --with-libpcap=included --with-libpcre=included --with-zlib=included --with-openssl=/usr LDFLAGS=-static \
  && make -j$(nproc) \
  && cp nmap nping /tmp/out/
 

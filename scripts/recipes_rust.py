@@ -93,7 +93,9 @@ RECIPES = {
         bins=[("xsv", "xsv")], experimental=True, arm=False,
     ),
     "zenith": dict(
-        lang="rust", slug="bvaisvil/zenith", pkgs=["linux-headers", "clang-dev"],
+        lang="rust", slug="bvaisvil/zenith",
+        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev"],
+        env={"LIBCLANG_PATH": "/usr/lib/llvm22/lib"},
         bins=[("zenith", "zenith")],
     ),
     "zellij": dict(

@@ -331,7 +331,7 @@ tools:
     check: {type: github-tag, slug: DhavalKapil/icmptunnel, prefix: v}
     lang: c
     outputs: [icmptunnel]
-    test: "-h"
+    test_cmd: "/out/x64/icmptunnel -h 2>&1 | grep -qi tunnel"
   - name: inlets
     version: "3.0"
     check: {type: pinned, reason: original repo deleted; the-cc-dev/inlets is a mirror}
@@ -707,7 +707,7 @@ tools:
       pattern: '^tor-(\d+\.\d+\.\d+(?:\.\d+)?)$'
     lang: c
     outputs: [tor]
-    test: "--version"
+    test_cmd: "/out/x64/tor --version 2>&1 | grep -qi tor"
     experimental: true
   - name: pt_bridges
     version: "0.4.8.0-compat"

@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 meson jose-dev http-parser-dev pkgconf
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/latchset/tang.git /src
+RUN git clone --depth 1 --branch v${VERSION} https://github.com/latchset/tang.git /src
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \

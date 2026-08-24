@@ -9,7 +9,7 @@ RUN apk add --no-cache nodejs npm
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/fatedier/frp.git /src
 WORKDIR /src
-RUN cd web/frpc && npm install --no-audit --no-fund >/dev/null && npm run build >/dev/null
+RUN cd web/frpc && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_frpc ./cmd/frpc \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_frps ./cmd/frps

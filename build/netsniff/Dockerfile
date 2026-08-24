@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool libnl3-dev libnl3-static libpcap-dev ncurses-static libnetfilter_queue-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool libnl3-dev libpcap-dev ncurses-static libnetfilter_queue-dev bash
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/netsniff-ng/netsniff-ng.git /src
 WORKDIR /src
 RUN set -ex \

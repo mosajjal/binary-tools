@@ -25,7 +25,8 @@ RECIPES = {
         bins=[("dsvpn", "")],
         build=["make CC=gcc LDFLAGS=-static -j$(nproc)", "cp dsvpn /tmp/out/"],
         arm_build=["make clean || true",
-                   "make CC=arm-linux-musleabihf-gcc STRIP=arm-linux-musleabihf-strip LDFLAGS=-static -j$(nproc)",
+                   "sed -i '/^\\tstrip /d' Makefile",
+                   "make CC=arm-linux-musleabihf-gcc LDFLAGS=-static -j$(nproc)",
                    "cp dsvpn /tmp/out-arm/"],
     ),
     "corkscrew": dict(
@@ -257,7 +258,7 @@ RECIPES = {
     "packetq": dict(
         lang="cxx", slug="DNS-OARC/PacketQ", tag_prefix="v",
         bins=[("packetq", "")],
-        pkgs=["autoconf", "automake", "libtool", "pkgconf"],
+        pkgs=["autoconf", "automake", "libtool", "pkgconf", "zlib-dev", "zlib-static"],
         build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
                "cp src/packetq /tmp/out/"],
     ),
@@ -274,10 +275,10 @@ RECIPES = {
         lang="c",
         tarball="https://nmap.org/dist/nmap-{v}.tar.bz2", tarflags="jx",
         bins=[("nmap", ""), ("nping", "")],
-        pkgs=["openssl-dev", "openssl-libs-static", "pcre2-dev", "zlib-static", "libssh2-dev"],
+        pkgs=["openssl-dev", "openssl-libs-static", "pcre2-dev", "zlib-static", "zlib-dev"],
         build=["./configure --without-zenmap --without-ndiff --without-nmap-update "
-               "--with-libpcap=included --with-libpcre=included --with-zlib=included "
-               "--with-openssl=/usr LDFLAGS=-static",
+               "--without-libssh2 --with-libpcap=included --with-libpcre=included "
+               "--with-zlib=included --with-openssl=/usr LDFLAGS=-static",
                "make -j$(nproc)", "cp nmap nping /tmp/out/"],
         experimental=True,
     ),
@@ -311,10 +312,10 @@ RECIPES = {
     "openrsync": dict(
         lang="c", slug="kristapsdz/openrsync", branch=True,
         bins=[("openrsync", "")],
-        pkgs=["autoconf", "automake"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static",
-               "make -j$(nproc) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=:",
-               "cp openrsync /tmp/out/"],
+        # BSD-make project: ./configure writes Makefile.configure, bmake builds
+        pkgs=["bmake"],
+        build=["./configure LDFLAGS=-static",
+               "bmake -j$(nproc)", "cp openrsync /tmp/out/"],
         experimental=True,
     ),
     "pdns": dict(
@@ -328,9 +329,10 @@ RECIPES = {
     "vi": dict(
         lang="c", slug="johnsonjh/OpenVi",
         bins=[("vi", "")],
-        pkgs=["cmake", "ncurses-static"],
-        build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static",
-               "cmake --build build -j$(nproc)", "find build -name 'ovi' -exec cp {} /tmp/out/vi \\; || cp build/bin/ovi /tmp/out/vi"],
+        # BSD-style GNUmakefile build; produces the `ovi` binary
+        pkgs=["ncurses-static", "ncurses-dev"],
+        build=["make -j$(nproc) -f GNUmakefile LDFLAGS=-static || make -j$(nproc) -f GNUmakefile",
+               "cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name ovi -exec cp {} /tmp/out/vi \\;"],
         experimental=True,
     ),
     "vim": dict(
@@ -355,8 +357,8 @@ RECIPES = {
         lang="c", slug="netsniff-ng/netsniff-ng", tag_prefix="v",
         bins=[("netsniff-ng", ""), ("trafgen", ""), ("mausezahn", ""), ("flowtop", ""),
               ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
-        pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libnl3-static", "libpcap-dev",
-              "ncurses-static", "libnetfilter_queue-dev"],
+        pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libpcap-dev",
+              "ncurses-static", "libnetfilter_queue-dev", "bash"],
         build=["chmod +x configure && ./configure LDFLAGS=-static",
                "make -j$(nproc)",
                "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
@@ -366,7 +368,7 @@ RECIPES = {
         lang="c",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "yaml-dev",
+        pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "yaml-dev", "yaml-static",
               "jansson-dev", "libpcap-dev", "openssl-libs-static", "zlib-static", "cargo"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
@@ -451,7 +453,7 @@ RECIPES["tor"] = dict(
 )
 
 RECIPES["tangd"] = dict(
-    lang="c", slug="latchset/tang",
+    lang="c", slug="latchset/tang", tag_prefix="v",
     bins=[],
     pkgs=["meson", "jose-dev", "http-parser-dev", "pkgconf"],
     build=["mkdir -p /tmp/out",
