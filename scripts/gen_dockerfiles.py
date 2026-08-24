@@ -216,7 +216,7 @@ def c_recipe(name, r):
     if is_cxx:
         pass  # build-base includes g++
     b = [
-        f"FROM {BASE_ALPINE} AS build",
+        f"FROM {r.get('base_image', BASE_ALPINE)} AS build",
         "ARG VERSION",
         f"RUN apk add --no-cache {' '.join(base_pkgs + r.get('pkgs', []))}",
         fetch_lines(r),

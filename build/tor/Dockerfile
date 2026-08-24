@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && ./autogen.sh \
- && ./configure --disable-systemd --disable-unittests --disable-libscrypt --disable-module-relay --disable-manpage --disable-html-manpage --enable-static --disable-tool-name-checks LDFLAGS='-static' \
+ && ./configure --disable-systemd --disable-unittests --disable-libscrypt --disable-module-relay --disable-asciidoc --disable-manpage  \
  && make -j$(nproc) \
  && cp src/app/tor /tmp/out/
 

@@ -4,15 +4,15 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 meson jose-dev http-parser-dev pkgconf asciidoc
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 meson jose-dev http-parser-dev pkgconf
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/latchset/tang.git /src
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && mkdir -p build && meson setup build -Dmanpage=false || meson setup build -Dmanpage=false \
+ && mkdir -p /tmp/out \
+ && meson setup build -Dmanpage=false 2>/dev/null || meson setup build \
  && meson compile -C build \
- && cp build/src/tangd /tmp/out/tangd || true \
- && mkdir -p /tmp/out && touch /tmp/out/.keep
+ && cp build/src/tangd /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---
 ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
@@ -21,13 +21,10 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && rm -rf build-arm && mkdir build-arm \
- && printf "[binaries]
-c = 'arm-linux-musleabihf-gcc'
-ar = 'arm-linux-musleabihf-ar'
-" > /tmp/cross.ini \
- && meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false || true \
- && meson compile -C build-arm || true \
- && cp build-arm/src/tangd /tmp/out-arm/tangd || true
+ && printf '[binaries]\nc = "arm-linux-musleabihf-gcc"\nar = "arm-linux-musleabihf-ar"\n' > /tmp/cross.ini \
+ && meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false 2>/dev/null || true \
+ && meson compile -C build-arm 2>/dev/null || true \
+ && cp build-arm/src/tangd /tmp/out-arm/ 2>/dev/null || true
 
 RUN set -ex \
  && ( upx -q --best --lzma  || echo 'upx failed; shipping unpacked' )

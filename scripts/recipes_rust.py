@@ -105,6 +105,6 @@ RECIPES = {
 
 
 RECIPES["rg"] = dict(
-    lang="rust", slug="BurntSushi/ripgrep", tag_prefix="v",
-    bins=[("rg", "rg")],
+    lang="rust", slug="BurntSushi/ripgrep",
+    bins=[("rg", "rg")], arm=False,
 )

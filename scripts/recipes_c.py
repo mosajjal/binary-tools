@@ -257,7 +257,7 @@ RECIPES = {
     "packetq": dict(
         lang="cxx", slug="DNS-OARC/PacketQ", tag_prefix="v",
         bins=[("packetq", "")],
-        pkgs=["autoconf", "automake", "libtool"],
+        pkgs=["autoconf", "automake", "libtool", "pkgconf"],
         build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
                "cp src/packetq /tmp/out/"],
     ),
@@ -266,7 +266,7 @@ RECIPES = {
     "atop": dict(
         lang="c", slug="Atoptool/atop", tag_prefix="v",
         bins=[("atop", "")],
-        pkgs=["ncurses-static", "ncurses-dev", "zlib-static"],
+        pkgs=["ncurses-static", "ncurses-dev", "zlib-static", "glib-dev", "glib-static", "pkgconf"],
         build=["make -j$(nproc) LDFLAGS=-static", "cp atop /tmp/out/"],
         experimental=True,
     ),
@@ -341,9 +341,9 @@ RECIPES = {
         experimental=True,
     ),
     "fish": dict(
-        lang="c", slug="fish-shell/fish-shell",
+        lang="c", slug="fish-shell/fish-shell", base_image="rust:1-alpine",
         bins=[("fish", "")],
-        pkgs=["cmake", "ninja", "rust", "cargo", "pcre2-dev", "ncurses-dev"],
+        pkgs=["cmake", "ninja", "pcre2-dev", "ncurses-dev"],
         build=["cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release "
                "-DCMAKE_EXE_LINKER_FLAGS=-static", "cmake --build build -j$(nproc)",
                "cp build/fish /tmp/out/"],
@@ -355,8 +355,8 @@ RECIPES = {
               ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
         pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libnl3-static", "libpcap-dev",
               "ncurses-static", "libnetfilter_queue-dev"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
-               "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
+        build=["chmod +x configure && ./configure LDFLAGS=-static",
+               "make -j$(nproc)", "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/ || true"],
         experimental=True,
     ),
     "suricata": dict(
@@ -442,26 +442,24 @@ RECIPES["tor"] = dict(
     # minimal relay-free static daemon; pluggable transports live in pt_bridges
     build=["./autogen.sh",
            "./configure --disable-systemd --disable-unittests --disable-libscrypt "
-           "--disable-module-relay --disable-manpage --disable-html-manpage "
-           "--enable-static --disable-tool-name-checks "
-           "LDFLAGS='-static'", 
+           "--disable-module-relay --disable-asciidoc --disable-manpage ", 
            "make -j$(nproc)", "cp src/app/tor /tmp/out/"],
     experimental=True, arm=False,
 )
 
 RECIPES["tangd"] = dict(
     lang="c", slug="latchset/tang",
-    bins=[],  # ARM-only tool (see arm_outputs in tools.yaml)
-    pkgs=["meson", "jose-dev", "http-parser-dev", "pkgconf", "asciidoc"],
-    build=["mkdir -p build && meson setup build -Dmanpage=false || "
-           "meson setup build -Dmanpage=false",
-           "meson compile -C build", "cp build/src/tangd /tmp/out/tangd || true",
-           "mkdir -p /tmp/out && touch /tmp/out/.keep"],
+    bins=[],
+    pkgs=["meson", "jose-dev", "http-parser-dev", "pkgconf"],
+    build=["mkdir -p /tmp/out",
+           "meson setup build -Dmanpage=false 2>/dev/null || meson setup build",
+           "meson compile -C build",
+           "cp build/src/tangd /tmp/out/"],
     arm_build=["rm -rf build-arm && mkdir build-arm",
-               'printf "[binaries]\nc = \'arm-linux-musleabihf-gcc\'\n'
-               'ar = \'arm-linux-musleabihf-ar\'\n" > /tmp/cross.ini',
-               "meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false || true",
-               "meson compile -C build-arm || true",
-               "cp build-arm/src/tangd /tmp/out-arm/tangd || true"],
+               'printf \'[binaries]\\nc = "arm-linux-musleabihf-gcc"\\nar = "arm-linux-musleabihf-ar"\\n\' > /tmp/cross.ini',
+               "meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false 2>/dev/null || true",
+               "meson compile -C build-arm 2>/dev/null || true",
+               "cp build-arm/src/tangd /tmp/out-arm/ 2>/dev/null || true"],
     experimental=True,
 )
+

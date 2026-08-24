@@ -2,9 +2,9 @@
 # Builds fish at a given ARG VERSION statically for x64.
 # usage: docker build --build-arg VERSION=SET_ME -t bt/fish build/fish
 
-FROM alpine:3.20 AS build
+FROM rust:1-alpine AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja rust cargo pcre2-dev ncurses-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja pcre2-dev ncurses-dev
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/fish-shell/fish-shell.git /src
 WORKDIR /src
 RUN set -ex \

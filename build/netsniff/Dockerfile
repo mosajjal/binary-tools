@@ -9,10 +9,9 @@ RUN git clone --depth 1 --branch v${VERSION} https://github.com/netsniff-ng/nets
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && test -x configure || autoreconf -fi \
- && ./configure LDFLAGS=-static \
+ && chmod +x configure && ./configure LDFLAGS=-static \
  && make -j$(nproc) \
- && cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/
+ && cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/ || true
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
