@@ -410,10 +410,10 @@ RECIPES = {
 RECIPES["3proxy"] = dict(
     lang="c", slug="3proxy/3proxy",
     bins=[("3proxy", "")],
-    build=["make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static'",
+    # hang-guard: their Makefile occasionally stalls on CI runners
+    build=["timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static'",
            "cp bin/3proxy /tmp/out/"],
-    arm_build=["make -f Makefile.Linux clean || true",
-               "make -f Makefile.Linux -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS='-static'",
+    arm_build=["timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static'",
                "cp bin/3proxy /tmp/out-arm/"],
     experimental=True,
 )

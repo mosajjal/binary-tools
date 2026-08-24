@@ -9,7 +9,7 @@ RUN git clone --depth 1 --branch ${VERSION} https://github.com/3proxy/3proxy.git
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static' \
+ && timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static' \
  && cp bin/3proxy /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---
@@ -18,8 +18,7 @@ RUN tar -C /opt -zxf /tmp/armtc.tgz
 ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
- && make -f Makefile.Linux clean || true \
- && make -f Makefile.Linux -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS='-static' \
+ && timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static' \
  && cp bin/3proxy /tmp/out-arm/
 
 RUN set -ex \
