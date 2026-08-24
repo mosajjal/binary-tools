@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/avml) && cp /tmp/x64_avml /out/x64/avml \
  && mkdir -p $(dirname /out/arm/avml) && cp /tmp/arm_avml /out/arm/avml \
- && strip "/out/x64/avml" "/out/arm/avml" \
- && upx -q --best --lzma "/out/x64/avml" "/out/arm/avml" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/avml" \
+ && arm-linux-musleabihf-strip "/out/arm/avml" \
+ && ( upx -q --best --lzma "/out/x64/avml" "/out/arm/avml" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

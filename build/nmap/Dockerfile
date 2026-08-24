@@ -17,7 +17,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/nmap) && cp /tmp/out/nmap /out/x64/nmap \
  && mkdir -p $(dirname /out/x64/nping) && cp /tmp/out/nping /out/x64/nping \
  && strip "/out/x64/nmap" "/out/x64/nping" \
- && upx -q --best --lzma "/out/x64/nmap" "/out/x64/nping" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/nmap" "/out/x64/nping" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/zenith) && cp /tmp/x64_zenith /out/x64/zenith \
  && mkdir -p $(dirname /out/arm/zenith) && cp /tmp/arm_zenith /out/arm/zenith \
- && strip "/out/x64/zenith" "/out/arm/zenith" \
- && upx -q --best --lzma "/out/x64/zenith" "/out/arm/zenith" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/zenith" \
+ && arm-linux-musleabihf-strip "/out/arm/zenith" \
+ && ( upx -q --best --lzma "/out/x64/zenith" "/out/arm/zenith" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

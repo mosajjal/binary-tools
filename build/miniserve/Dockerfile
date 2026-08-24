@@ -31,8 +31,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/miniserve) && cp /tmp/x64_miniserve /out/x64/miniserve \
  && mkdir -p $(dirname /out/arm/miniserve) && cp /tmp/arm_miniserve /out/arm/miniserve \
- && strip "/out/x64/miniserve" "/out/arm/miniserve" \
- && upx -q --best --lzma "/out/x64/miniserve" "/out/arm/miniserve" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/miniserve" \
+ && arm-linux-musleabihf-strip "/out/arm/miniserve" \
+ && ( upx -q --best --lzma "/out/x64/miniserve" "/out/arm/miniserve" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

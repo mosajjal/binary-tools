@@ -25,8 +25,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/icmptunnel) && cp /tmp/out/icmptunnel /out/x64/icmptunnel \
  && mkdir -p $(dirname /out/arm/icmptunnel) && cp /tmp/out-arm/icmptunnel /out/arm/icmptunnel \
- && strip "/out/x64/icmptunnel" "/out/arm/icmptunnel" \
- && upx -q --best --lzma "/out/x64/icmptunnel" "/out/arm/icmptunnel" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/icmptunnel" \
+ && arm-linux-musleabihf-strip "/out/arm/icmptunnel" \
+ && ( upx -q --best --lzma "/out/x64/icmptunnel" "/out/arm/icmptunnel" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

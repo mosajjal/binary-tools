@@ -17,8 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/lazygit) && cp /tmp/x64_lazygit /out/x64/lazygit \
  && mkdir -p $(dirname /out/arm/lazygit) && cp /tmp/arm_lazygit /out/arm/lazygit \
- && strip "/out/x64/lazygit" "/out/arm/lazygit" \
- && upx -q --best --lzma "/out/x64/lazygit" "/out/arm/lazygit" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/lazygit" "/out/arm/lazygit" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

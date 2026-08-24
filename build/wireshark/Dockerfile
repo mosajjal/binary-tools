@@ -29,7 +29,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/dftest) && cp /tmp/out/dftest /out/x64/dftest \
  && mkdir -p $(dirname /out/x64/tfshark) && cp /tmp/out/tfshark /out/x64/tfshark \
  && strip "/out/x64/tshark" "/out/x64/dumpcap" "/out/x64/editcap" "/out/x64/mergecap" "/out/x64/capinfos" "/out/x64/captype" "/out/x64/rawshark" "/out/x64/text2pcap" "/out/x64/randpkt" "/out/x64/reordercap" "/out/x64/sharkd" "/out/x64/dftest" "/out/x64/tfshark" \
- && upx -q --best --lzma "/out/x64/tshark" "/out/x64/dumpcap" "/out/x64/editcap" "/out/x64/mergecap" "/out/x64/capinfos" "/out/x64/captype" "/out/x64/rawshark" "/out/x64/text2pcap" "/out/x64/randpkt" "/out/x64/reordercap" "/out/x64/sharkd" "/out/x64/dftest" "/out/x64/tfshark" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/tshark" "/out/x64/dumpcap" "/out/x64/editcap" "/out/x64/mergecap" "/out/x64/capinfos" "/out/x64/captype" "/out/x64/rawshark" "/out/x64/text2pcap" "/out/x64/randpkt" "/out/x64/reordercap" "/out/x64/sharkd" "/out/x64/dftest" "/out/x64/tfshark" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

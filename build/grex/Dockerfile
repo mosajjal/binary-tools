@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/grex) && cp /tmp/x64_grex /out/x64/grex \
  && mkdir -p $(dirname /out/arm/grex) && cp /tmp/arm_grex /out/arm/grex \
- && strip "/out/x64/grex" "/out/arm/grex" \
- && upx -q --best --lzma "/out/x64/grex" "/out/arm/grex" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/grex" \
+ && arm-linux-musleabihf-strip "/out/arm/grex" \
+ && ( upx -q --best --lzma "/out/x64/grex" "/out/arm/grex" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

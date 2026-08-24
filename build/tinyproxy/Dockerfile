@@ -17,7 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tinyproxy) && cp /tmp/out/tinyproxy /out/x64/tinyproxy \
  && strip "/out/x64/tinyproxy" \
- && upx -q --best --lzma "/out/x64/tinyproxy" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/tinyproxy" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/sd) && cp /tmp/x64_sd /out/x64/sd \
  && mkdir -p $(dirname /out/arm/sd) && cp /tmp/arm_sd /out/arm/sd \
- && strip "/out/x64/sd" "/out/arm/sd" \
- && upx -q --best --lzma "/out/x64/sd" "/out/arm/sd" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/sd" \
+ && arm-linux-musleabihf-strip "/out/arm/sd" \
+ && ( upx -q --best --lzma "/out/x64/sd" "/out/arm/sd" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

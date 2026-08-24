@@ -17,7 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/pdns) && cp /tmp/out/pdns /out/x64/pdns \
  && strip "/out/x64/pdns" \
- && upx -q --best --lzma "/out/x64/pdns" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/pdns" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

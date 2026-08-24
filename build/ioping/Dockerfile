@@ -25,8 +25,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/ioping) && cp /tmp/out/ioping /out/x64/ioping \
  && mkdir -p $(dirname /out/arm/ioping) && cp /tmp/out-arm/ioping /out/arm/ioping \
- && strip "/out/x64/ioping" "/out/arm/ioping" \
- && upx -q --best --lzma "/out/x64/ioping" "/out/arm/ioping" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/ioping" \
+ && arm-linux-musleabihf-strip "/out/arm/ioping" \
+ && ( upx -q --best --lzma "/out/x64/ioping" "/out/arm/ioping" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -17,8 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/inlets) && cp /tmp/x64_inlets /out/x64/inlets \
  && mkdir -p $(dirname /out/arm/inlets) && cp /tmp/arm_inlets /out/arm/inlets \
- && strip "/out/x64/inlets" "/out/arm/inlets" \
- && upx -q --best --lzma "/out/x64/inlets" "/out/arm/inlets" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/inlets" "/out/arm/inlets" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

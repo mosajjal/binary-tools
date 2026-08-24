@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/kmon) && cp /tmp/x64_kmon /out/x64/kmon \
  && mkdir -p $(dirname /out/arm/kmon) && cp /tmp/arm_kmon /out/arm/kmon \
- && strip "/out/x64/kmon" "/out/arm/kmon" \
- && upx -q --best --lzma "/out/x64/kmon" "/out/arm/kmon" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/kmon" \
+ && arm-linux-musleabihf-strip "/out/arm/kmon" \
+ && ( upx -q --best --lzma "/out/x64/kmon" "/out/arm/kmon" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

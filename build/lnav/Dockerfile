@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/lnav) && cp /tmp/out/lnav /out/x64/lnav \
  && strip "/out/x64/lnav" \
- && upx -q --best --lzma "/out/x64/lnav" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/lnav" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

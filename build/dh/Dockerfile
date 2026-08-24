@@ -22,8 +22,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/dh) && cp /tmp/out/dh /out/x64/dh \
  && mkdir -p $(dirname /out/arm/dh) && cp /tmp/out-arm/dh /out/arm/dh \
- && strip "/out/x64/dh" "/out/arm/dh" \
- && upx -q --best --lzma "/out/x64/dh" "/out/arm/dh" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/dh" \
+ && arm-linux-musleabihf-strip "/out/arm/dh" \
+ && ( upx -q --best --lzma "/out/x64/dh" "/out/arm/dh" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

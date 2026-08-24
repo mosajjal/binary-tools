@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/bbe) && cp /tmp/out/bbe /out/x64/bbe \
  && strip "/out/x64/bbe" \
- && upx -q --best --lzma "/out/x64/bbe" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/bbe" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

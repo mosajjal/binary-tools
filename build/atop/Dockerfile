@@ -15,7 +15,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/atop) && cp /tmp/out/atop /out/x64/atop \
  && strip "/out/x64/atop" \
- && upx -q --best --lzma "/out/x64/atop" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/atop" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -17,8 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/goss) && cp /tmp/x64_goss /out/x64/goss \
  && mkdir -p $(dirname /out/arm/goss) && cp /tmp/arm_goss /out/arm/goss \
- && strip "/out/x64/goss" "/out/arm/goss" \
- && upx -q --best --lzma "/out/x64/goss" "/out/arm/goss" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/goss" "/out/arm/goss" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

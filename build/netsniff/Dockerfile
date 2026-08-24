@@ -24,7 +24,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/bpfc) && cp /tmp/out/bpfc /out/x64/bpfc \
  && mkdir -p $(dirname /out/x64/curvetun) && cp /tmp/out/curvetun /out/x64/curvetun \
  && strip "/out/x64/netsniff-ng" "/out/x64/trafgen" "/out/x64/mausezahn" "/out/x64/flowtop" "/out/x64/ifpps" "/out/x64/astraceroute" "/out/x64/bpfc" "/out/x64/curvetun" \
- && upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/trafgen" "/out/x64/mausezahn" "/out/x64/flowtop" "/out/x64/ifpps" "/out/x64/astraceroute" "/out/x64/bpfc" "/out/x64/curvetun" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/trafgen" "/out/x64/mausezahn" "/out/x64/flowtop" "/out/x64/ifpps" "/out/x64/astraceroute" "/out/x64/bpfc" "/out/x64/curvetun" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

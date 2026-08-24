@@ -17,8 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/micro) && cp /tmp/x64_micro /out/x64/micro \
  && mkdir -p $(dirname /out/arm/micro) && cp /tmp/arm_micro /out/arm/micro \
- && strip "/out/x64/micro" "/out/arm/micro" \
- && upx -q --best --lzma "/out/x64/micro" "/out/arm/micro" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/micro" "/out/arm/micro" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

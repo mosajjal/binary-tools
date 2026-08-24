@@ -33,8 +33,9 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/wg-user) && cp /tmp/x64_wg-user /out/x64/wg-user \
  && mkdir -p $(dirname /out/arm/boringtun) && cp /tmp/arm_boringtun /out/arm/boringtun \
  && mkdir -p $(dirname /out/arm/wg-user) && cp /tmp/arm_wg-user /out/arm/wg-user \
- && strip "/out/x64/boringtun" "/out/x64/wg-user" "/out/arm/boringtun" "/out/arm/wg-user" \
- && upx -q --best --lzma "/out/x64/boringtun" "/out/x64/wg-user" "/out/arm/boringtun" "/out/arm/wg-user" || echo 'upx failed; shipping unpacked'
+ && strip "/out/x64/boringtun" "/out/x64/wg-user" \
+ && arm-linux-musleabihf-strip "/out/arm/boringtun" "/out/arm/wg-user" \
+ && ( upx -q --best --lzma "/out/x64/boringtun" "/out/x64/wg-user" "/out/arm/boringtun" "/out/arm/wg-user" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -18,7 +18,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/sshx) && cp /tmp/x64_sshx /out/x64/sshx \
  && mkdir -p $(dirname /out/x64/sshx-server) && cp /tmp/x64_sshx-server /out/x64/sshx-server \
  && strip "/out/x64/sshx" "/out/x64/sshx-server" \
- && upx -q --best --lzma "/out/x64/sshx" "/out/x64/sshx-server" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/sshx" "/out/x64/sshx-server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

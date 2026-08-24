@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/ncdu) && cp /tmp/out/ncdu /out/x64/ncdu \
  && strip "/out/x64/ncdu" \
- && upx -q --best --lzma "/out/x64/ncdu" || echo 'upx failed; shipping unpacked'
+ && ( upx -q --best --lzma "/out/x64/ncdu" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out
