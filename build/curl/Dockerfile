@@ -9,8 +9,8 @@ RUN mkdir -p /src && curl -fsSL "https://github.com/curl/curl/releases/download/
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./configure --disable-shared --enable-static --with-openssl --with-zlib --without-libpsl --without-nghttp2 --without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps \
- && make -j$(nproc) LDFLAGS=-static \
+ && PKG_CONFIG='pkg-config --static' ./configure --disable-shared --enable-static --with-openssl --with-zlib --without-libpsl --without-nghttp2 --without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps LDFLAGS=-static \
+ && make -j$(nproc) curl_LDFLAGS=-all-static \
  && cp src/curl /tmp/out/
 
 RUN set -ex \

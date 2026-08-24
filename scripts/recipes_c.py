@@ -179,11 +179,16 @@ RECIPES = {
         bins=[("curl", "")],
         pkgs=["autoconf", "automake", "libtool", "openssl-dev", "openssl-libs-static",
               "zlib-static", "zlib-dev", "pkgconf", "python3"],
-        # plain HTTP/1.1+TLS: no nghttp2 (its .so wins over the .a at link time)
-        build=["./configure --disable-shared --enable-static "
+        # plain HTTP/1.1+TLS: no nghttp2 (its .so wins over the .a at link time).
+        # PKG_CONFIG --static pulls OpenSSL 3's private transitive deps; LDFLAGS at
+        # configure time bakes -static into feature tests; curl_LDFLAGS=-all-static
+        # is libtool's own fully-static toggle (plain LDFLAGS=-static is swallowed
+        # by libtool and the exe links dynamically against libssl.so).
+        build=["PKG_CONFIG='pkg-config --static' ./configure --disable-shared --enable-static "
                "--with-openssl --with-zlib --without-libpsl --without-nghttp2 "
-               "--without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps",
-               "make -j$(nproc) LDFLAGS=-static", "cp src/curl /tmp/out/"],
+               "--without-brotli --without-zstd --without-libidn2 --disable-ldap --disable-ldaps "
+               "LDFLAGS=-static",
+               "make -j$(nproc) curl_LDFLAGS=-all-static", "cp src/curl /tmp/out/"],
     ),
     "busybox": dict(
         lang="c",
