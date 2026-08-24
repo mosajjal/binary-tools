@@ -7,7 +7,7 @@ ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake
 RUN git clone --depth 1 --branch logtop-${VERSION} https://github.com/JulienPalard/logtop.git /src
 WORKDIR /src
-RUN curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/include/uthash.h && mkdir -p src && cp uthash.h src/
+RUN curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && mkdir -p src && cp uthash.h src/
 RUN set -ex \
  && mkdir -p /tmp/out \
  && test -x configure || autoreconf -fi \

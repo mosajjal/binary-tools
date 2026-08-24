@@ -9,8 +9,8 @@ RUN mkdir -p /src && curl -fsSL "https://github.com/jqlang/jq/releases/download/
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./configure --without-oniguruma LDFLAGS=-static \
- && make -j$(nproc) LC_ALL=C \
+ && ./configure --without-oniguruma --disable-shared \
+ && make -j$(nproc) LC_ALL=C LDFLAGS=-all-static \
  && cp jq /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---
@@ -20,8 +20,8 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && mkdir -p /src-arm && curl -fsSL "https://github.com/jqlang/jq/releases/download/jq-${VERSION}/jq-${VERSION}.tar.gz" | gunzip -c | tar x -C /src-arm --strip-components=1 \
- && cd /src-arm && ./configure --host=arm-linux-musleabihf --without-oniguruma LDFLAGS=-static \
- && make -j$(nproc) LC_ALL=C \
+ && cd /src-arm && ./configure --host=arm-linux-musleabihf --without-oniguruma --disable-shared \
+ && make -j$(nproc) LC_ALL=C LDFLAGS=-all-static \
  && cp jq /tmp/out-arm/
 
 RUN set -ex \

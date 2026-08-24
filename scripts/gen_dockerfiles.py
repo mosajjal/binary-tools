@@ -83,12 +83,22 @@ def run_block(lines):
 
 
 def go_recipe(name, r):
-    ldflags = "-s -w" + (" " + r["ldflags"] if r.get("ldflags") else "")
+    # cgo=True: tool needs a C dependency (e.g. mattn/go-sqlite3). Link the C
+    # runtime statically via the external linker so the binary stays static.
+    cgo = r.get("cgo", False)
+    ldflags = "-s -w"
+    if cgo:
+        ldflags += " -linkmode external -extldflags=-static"
+    if r.get("ldflags"):
+        ldflags += " " + r["ldflags"]
     b = [
         f"FROM {GO_IMAGE} AS build",
         "ARG VERSION",
-        "ENV CGO_ENABLED=0 GOTOOLCHAIN=auto",
+        f"ENV CGO_ENABLED={'1' if cgo else '0'} GOTOOLCHAIN=auto",
     ]
+    if cgo:
+        # gcc + static musl for the native (x64) cgo link
+        b.append("RUN apk add --no-cache build-base")
     if r.get("pkgs"):
         b.append(f"RUN apk add --no-cache {' '.join(r['pkgs'])}")
     b += [
@@ -111,12 +121,22 @@ def go_recipe(name, r):
         for n, p in r["bins"]
     ]
     b.append(run_block(main))
-    # cross-build for ARMv7 (pure Go -> free)
+    # cross-build for ARMv7 (pure Go -> free; cgo -> needs the C cross toolchain)
     if r.get("arm", True):
-        armlines = [
-            f'GOARCH=arm GOARM=7 go build -trimpath -ldflags="{ldflags}" -o /tmp/arm_{n} {p}'
-            for n, p in r["bins"]
-        ]
+        if cgo:
+            b.append("# --- ARMv7 cgo cross (musl.cc toolchain as C compiler) ---")
+            b.append(f"ADD {ARM_TC_URL} /tmp/armtc.tgz")
+            b.append("RUN tar -C /opt -zxf /tmp/armtc.tgz && rm /tmp/armtc.tgz")
+            b.append("ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH")
+            armlines = [
+                f'CC=arm-linux-musleabihf-gcc GOARCH=arm GOARM=7 go build -trimpath -ldflags="{ldflags}" -o /tmp/arm_{n} {p}'
+                for n, p in r["bins"]
+            ]
+        else:
+            armlines = [
+                f'GOARCH=arm GOARM=7 go build -trimpath -ldflags="{ldflags}" -o /tmp/arm_{n} {p}'
+                for n, p in r["bins"]
+            ]
         b.append(run_block(armlines))
 
     collect = [(f"/tmp/x64_{n}", f"/out/x64/{n}") for n, _ in r["bins"]]

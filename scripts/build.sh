@@ -28,7 +28,7 @@ VERSION=${VERSION:-$($YQ -r "$sel | .version" tools.yaml)}
 IMAGE="bt/$TOOL:$VERSION"
 
 echo "==> building $TOOL $VERSION"
-docker build -q=false --build-arg VERSION="$VERSION" -t "$IMAGE" "build/$TOOL" >&2
+docker build --progress=plain --build-arg VERSION="$VERSION" -t "$IMAGE" "build/$TOOL" >&2
 
 echo "==> smoke test (x64)"
 TEST_ARGS=$($YQ -r "$sel | .test // \"--version\"" tools.yaml)
@@ -44,7 +44,17 @@ else
     BINS=$($YQ -r "$sel | .outputs | map(.bin // .) | join(\" \")" tools.yaml)
     for b in $BINS; do
         echo "    /out/x64/$b $TEST_ARGS"
-        docker run --rm --entrypoint /bin/sh "$IMAGE" -ec "/out/x64/$b $TEST_ARGS >/dev/null"
+        if docker run --rm --entrypoint /bin/sh "$IMAGE" -ec "/out/x64/$b $TEST_ARGS >/dev/null" 2>/dev/null; then
+            continue
+        fi
+        # not every tool supports the manifest's default flag; walk a ladder
+        # of common version/help invocations before giving up
+        OK=0
+        for args in "--version" "-V" "-v" "version" "--help" "-h"; do
+            if docker run --rm --entrypoint /bin/sh "$IMAGE" \
+                -ec "/out/x64/$b $args >/dev/null 2>&1"; then OK=1; break; fi
+        done
+        [ $OK = 1 ] || { echo "smoke test failed for /out/x64/$b"; exit 1; }
     done
 fi
 

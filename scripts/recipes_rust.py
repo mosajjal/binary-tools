@@ -80,6 +80,7 @@ RECIPES = {
     ),
     "sshx": dict(
         lang="rust", slug="ekzhang/sshx", branch=True,
+        pkgs=["protoc"], env={"PROTOC": "/usr/bin/protoc"},
         bins=[("sshx", "sshx"), ("sshx-server", "sshx-server")], arm=False,
     ),
     "tiny": dict(
@@ -93,7 +94,7 @@ RECIPES = {
         bins=[("xsv", "xsv")], experimental=True, arm=False,
     ),
     "zenith": dict(
-        lang="rust", slug="bvaisvil/zenith",
+        lang="rust", slug="bvaisvil/zenith", pkgs=["linux-headers"],
         bins=[("zenith", "zenith")],
     ),
     "zellij": dict(
@@ -101,3 +102,9 @@ RECIPES = {
         bins=[("zellij", "zellij")], arm=False,
     ),
 }
+
+
+RECIPES["rg"] = dict(
+    lang="rust", slug="BurntSushi/ripgrep", tag_prefix="v",
+    bins=[("rg", "rg")],
+)

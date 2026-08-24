@@ -4,15 +4,20 @@
 
 FROM golang:1.25-alpine AS build
 ARG VERSION
-ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
+ENV CGO_ENABLED=1 GOTOOLCHAIN=auto
+RUN apk add --no-cache build-base
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/laurent22/massren.git /src
 WORKDIR /src
 RUN set -ex \
- && go build -trimpath -ldflags="-s -w" -o /tmp/x64_massren .
+ && go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static" -o /tmp/x64_massren .
 
+# --- ARMv7 cgo cross (musl.cc toolchain as C compiler) ---
+ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
+RUN tar -C /opt -zxf /tmp/armtc.tgz && rm /tmp/armtc.tgz
+ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
- && GOARCH=arm GOARM=7 go build -trimpath -ldflags="-s -w" -o /tmp/arm_massren .
+ && CC=arm-linux-musleabihf-gcc GOARCH=arm GOARM=7 go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static" -o /tmp/arm_massren .
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/massren) && cp /tmp/x64_massren /out/x64/massren \

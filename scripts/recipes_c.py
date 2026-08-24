@@ -54,7 +54,7 @@ RECIPES = {
                    "cp ioping /tmp/out-arm/"],
     ),
     "icmptunnel": dict(
-        lang="c", slug="DhavalKapil/icmptunnel",
+        lang="c", slug="DhavalKapil/icmptunnel", tag_prefix="v",
         bins=[("icmptunnel", "")],
         build=["make -j$(nproc) LDFLAGS=-static", "cp tunnel /tmp/out/icmptunnel"],
         arm_build=["make clean || true",
@@ -78,7 +78,7 @@ RECIPES = {
         lang="c", slug="JulienPalard/logtop", tag_prefix="logtop-",
         bins=[("logtop", "")],
         pkgs=["autoconf", "automake"],
-        pre=["curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/include/uthash.h && mkdir -p src && cp uthash.h src/"],
+        pre=["curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && mkdir -p src && cp uthash.h src/"],
         build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
                "cp logtop /tmp/out/"], experimental=True,
     ),
@@ -142,11 +142,16 @@ RECIPES = {
         lang="c", slug="jqlang/jq", tag_prefix="jq-",
         release_tarball="jq-{v}.tar.gz", example_version="1.7.1",
         bins=[("jq", "")],
-        build=["./configure --without-oniguruma LDFLAGS=-static",
-               "make -j$(nproc) LC_ALL=C", "cp jq /tmp/out/"],
+        # jq links its executable via libtool. Plain `-static` in LDFLAGS only
+        # tells libtool to prefer static libtool libs -- musl stays dynamic.
+        # `-all-static` forces a fully static link, but it is a libtool-only
+        # flag: passing it to ./configure breaks configure's raw-gcc link
+        # tests (exit 77). So pass it only to the libtool link at make time.
+        build=["./configure --without-oniguruma --disable-shared",
+               "make -j$(nproc) LC_ALL=C LDFLAGS=-all-static", "cp jq /tmp/out/"],
         arm_build=['mkdir -p /src-arm && curl -fsSL "https://github.com/jqlang/jq/releases/download/jq-${VERSION}/jq-${VERSION}.tar.gz" | gunzip -c | tar x -C /src-arm --strip-components=1',
-                   "cd /src-arm && ./configure --host=arm-linux-musleabihf --without-oniguruma LDFLAGS=-static",
-                   "make -j$(nproc) LC_ALL=C", "cp jq /tmp/out-arm/"],
+                   "cd /src-arm && ./configure --host=arm-linux-musleabihf --without-oniguruma --disable-shared",
+                   "make -j$(nproc) LC_ALL=C LDFLAGS=-all-static", "cp jq /tmp/out-arm/"],
     ),
     "ncdu": dict(
         lang="c",
@@ -349,7 +354,7 @@ RECIPES = {
         bins=[("netsniff-ng", ""), ("trafgen", ""), ("mausezahn", ""), ("flowtop", ""),
               ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
         pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libnl3-static", "libpcap-dev",
-              "ncurses-static", "libnetfilter-queue-dev"],
+              "ncurses-static", "libnetfilter_queue-dev"],
         build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
                "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
         experimental=True,
@@ -387,7 +392,7 @@ RECIPES = {
     "zmap": dict(
         lang="c", slug="zmap/zmap", tag_prefix="v",
         bins=[("zmap", ""), ("ztee", ""), ("zgrab2", "")],
-        pkgs=["cmake", "gengetopt", "json-c-dev", "unistring-dev", "libpcap-dev"],
+        pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/ || true",
@@ -397,3 +402,66 @@ RECIPES = {
 }
 
 # tor is special (C daemon + Go pluggable transports); see build/tor/Dockerfile.
+
+
+RECIPES["3proxy"] = dict(
+    lang="c", slug="3proxy/3proxy",
+    bins=[("3proxy", "")],
+    build=["make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static'",
+           "cp bin/3proxy /tmp/out/"],
+    arm_build=["make -f Makefile.Linux clean || true",
+               "make -f Makefile.Linux -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS='-static'",
+               "cp bin/3proxy /tmp/out-arm/"],
+    experimental=True,
+)
+
+RECIPES["ngrep"] = dict(
+    lang="c", clone_url="https://github.com/jpr5/ngrep.git",
+    tag_prefix="v", example_version="1.49.0",
+    bins=[("ngrep", "")],
+    pkgs=["libpcap-dev"],
+    build=["test -x configure || autoreconf -fi",
+           "./configure --enable-pcre2 LDFLAGS=-static",
+           "make -j$(nproc)", "cp ngrep /tmp/out/"],
+)
+
+RECIPES["ptunnel-ng"] = dict(
+    lang="c", slug="utoni/ptunnel-ng", tag_prefix="v",
+    bins=[("ptunnel-ng", "")],
+    pkgs=["autoconf", "automake", "libtool"],
+    build=[AUTOGEN, "./configure LDFLAGS=-static",
+           "make -j$(nproc)", "cp src/ptunnel-ng /tmp/out/"],
+)
+
+RECIPES["tor"] = dict(
+    lang="c", clone_url="https://gitlab.torproject.org/tpo/core/tor.git",
+    tag_prefix="tor-", example_version="0.4.9.11",
+    bins=[("tor", "")],
+    pkgs=["autoconf", "automake", "libtool", "pkgconf", "libevent-dev", "libevent-static",
+          "openssl-dev", "openssl-libs-static", "zlib-static", "zlib-dev", "xz-dev"],
+    # minimal relay-free static daemon; pluggable transports live in pt_bridges
+    build=["./autogen.sh",
+           "./configure --disable-systemd --disable-unittests --disable-libscrypt "
+           "--disable-module-relay --disable-manpage --disable-html-manpage "
+           "--enable-static --disable-tool-name-checks "
+           "LDFLAGS='-static'", 
+           "make -j$(nproc)", "cp src/app/tor /tmp/out/"],
+    experimental=True, arm=False,
+)
+
+RECIPES["tangd"] = dict(
+    lang="c", slug="latchset/tang",
+    bins=[],  # ARM-only tool (see arm_outputs in tools.yaml)
+    pkgs=["meson", "jose-dev", "http-parser-dev", "pkgconf", "asciidoc"],
+    build=["mkdir -p build && meson setup build -Dmanpage=false || "
+           "meson setup build -Dmanpage=false",
+           "meson compile -C build", "cp build/src/tangd /tmp/out/tangd || true",
+           "mkdir -p /tmp/out && touch /tmp/out/.keep"],
+    arm_build=["rm -rf build-arm && mkdir build-arm",
+               'printf "[binaries]\nc = \'arm-linux-musleabihf-gcc\'\n'
+               'ar = \'arm-linux-musleabihf-ar\'\n" > /tmp/cross.ini',
+               "meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false || true",
+               "meson compile -C build-arm || true",
+               "cp build-arm/src/tangd /tmp/out-arm/tangd || true"],
+    experimental=True,
+)

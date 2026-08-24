@@ -66,6 +66,9 @@ RECIPES = {
     "frp": dict(
         lang="go", slug="fatedier/frp", tag_prefix="v",
         bins=[("frpc", "./cmd/frpc"), ("frps", "./cmd/frps")],
+        # cmd packages go:embed web/*/dist -- build the SPA first
+        pkgs=["nodejs", "npm"],
+        pre=["cd web/frpc && npm install --no-audit --no-fund >/dev/null && npm run build >/dev/null"],
     ),
     "fzf": dict(
         lang="go", slug="junegunn/fzf", tag_prefix="v",
@@ -116,7 +119,9 @@ RECIPES = {
         bins=[("lazygit", ".")],
     ),
     "massren": dict(
-        lang="go", slug="laurent22/massren", tag_prefix="v",
+        # depends on mattn/go-sqlite3 (cgo-only); without cgo the driver is a
+        # no-op stub and massren panics at runtime ("unknown driver sqlite3").
+        lang="go", slug="laurent22/massren", tag_prefix="v", cgo=True,
         bins=[("massren", ".")],
     ),
     "memcd-util": dict(
@@ -178,3 +183,12 @@ RECIPES = {
         bins=[("yq", ".")],
     ),
 }
+
+RECIPES["ffuf"] = dict(
+    lang="go", slug="ffuf/ffuf", tag_prefix="v",
+    bins=[("ffuf", ".")],
+)
+RECIPES["superfile"] = dict(
+    lang="go", slug="yorukot/superfile", tag_prefix="v",
+    bins=[("superfile", ".")],
+)
