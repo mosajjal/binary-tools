@@ -150,6 +150,7 @@ jobs:
             echo "- [ ] sizes look sane vs previous commit"
           } > body.md
           git commit -m "chore: weekly upstream bumps ($(date +%Y-%m-%d))"
+          git push -u origin "$BR"
           gh pr create \
             --title "chore: weekly upstream bumps ($(date +%Y-%m-%d))" \
             --body-file body.md \
