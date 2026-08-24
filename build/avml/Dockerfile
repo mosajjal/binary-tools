@@ -2,7 +2,7 @@
 # Builds avml at a given ARG VERSION statically for x64 and ARMv7.
 # usage: docker build --build-arg VERSION=SET_ME -t bt/avml build/avml
 
-FROM rust:1.72-alpine AS build
+FROM rust:1-alpine AS build
 ARG VERSION
 ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C target-feature=+crt-static"
 ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+crt-static"

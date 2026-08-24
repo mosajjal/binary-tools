@@ -66,10 +66,11 @@ def fetch_lines(r):
                f"{r.get('tag_prefix', '')}{ver}/{t}")
         return _curl_untar(url)
     repo = r.get("clone_url") or f"https://github.com/{r['slug']}.git"
+    depth = "" if r.get("full_clone") else "--depth 1 "
     if r.get("branch"):
-        return f"RUN git clone --depth 1 {repo} /src"
+        return f"RUN git clone {depth}{repo} /src"
     ref = f"{r.get('tag_prefix', '')}${{VERSION}}"
-    return f"RUN git clone --depth 1 --branch {ref} {repo} /src"
+    return f"RUN git clone {depth}--branch {ref} {repo} /src"
 
 
 def sh(lines):

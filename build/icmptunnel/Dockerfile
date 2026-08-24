@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && make -j$(nproc) LDFLAGS=-static \
- && cp tunnel /tmp/out/icmptunnel
+ && cp icmptunnel /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---
 ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
@@ -20,7 +20,7 @@ RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
  && make -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS=-static \
- && cp tunnel /tmp/out-arm/icmptunnel
+ && cp icmptunnel /tmp/out-arm/
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/icmptunnel) && cp /tmp/out/icmptunnel /out/x64/icmptunnel \

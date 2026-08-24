@@ -7,7 +7,6 @@ features/cargo_args are appended to `cargo build --release`.
 RECIPES = {
     "avml": dict(
         lang="rust", slug="microsoft/avml", tag_prefix="v",
-        rust_image="rust:1.72-alpine",
         bins=[("avml", "avml")],
     ),
     "bandwhich": dict(
@@ -94,7 +93,7 @@ RECIPES = {
         bins=[("xsv", "xsv")], experimental=True, arm=False,
     ),
     "zenith": dict(
-        lang="rust", slug="bvaisvil/zenith", pkgs=["linux-headers"],
+        lang="rust", slug="bvaisvil/zenith", pkgs=["linux-headers", "clang-dev"],
         bins=[("zenith", "zenith")],
     ),
     "zellij": dict(

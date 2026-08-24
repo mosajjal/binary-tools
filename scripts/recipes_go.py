@@ -42,7 +42,7 @@ RECIPES = {
         pre=["go mod init dnstrace && go mod tidy"],
     ),
     "dnstt_client": dict(
-        lang="go", clone_url="https://www.bamsoftware.com/git/dnstt.git",
+        lang="go", clone_url="https://www.bamsoftware.com/git/dnstt.git", full_clone=True,
         tag_prefix="v", example_version="1.20241021",
         bins=[("dnstt_client", "./dnstt-client"), ("dnstt_server", "./dnstt-server")],
     ),

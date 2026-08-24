@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 libpcap-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 libpcap-dev pcre2-dev pkgconf
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/jpr5/ngrep.git /src
 WORKDIR /src
 RUN set -ex \

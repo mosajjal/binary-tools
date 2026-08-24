@@ -25,7 +25,7 @@ RECIPES = {
         bins=[("dsvpn", "")],
         build=["make CC=gcc LDFLAGS=-static -j$(nproc)", "cp dsvpn /tmp/out/"],
         arm_build=["make clean || true",
-                   "make CC=arm-linux-musleabihf-gcc LDFLAGS=-static -j$(nproc)",
+                   "make CC=arm-linux-musleabihf-gcc STRIP=arm-linux-musleabihf-strip LDFLAGS=-static -j$(nproc)",
                    "cp dsvpn /tmp/out-arm/"],
     ),
     "corkscrew": dict(
@@ -56,10 +56,10 @@ RECIPES = {
     "icmptunnel": dict(
         lang="c", slug="DhavalKapil/icmptunnel", tag_prefix="v",
         bins=[("icmptunnel", "")],
-        build=["make -j$(nproc) LDFLAGS=-static", "cp tunnel /tmp/out/icmptunnel"],
+        build=["make -j$(nproc) LDFLAGS=-static", "cp icmptunnel /tmp/out/"],
         arm_build=["make clean || true",
                    "make -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS=-static",
-                   "cp tunnel /tmp/out-arm/icmptunnel"],
+                   "cp icmptunnel /tmp/out-arm/"],
     ),
     "wg": dict(
         lang="c", clone_url="https://git.zx2c4.com/wireguard-tools",
@@ -77,10 +77,10 @@ RECIPES = {
     "logtop": dict(
         lang="c", slug="JulienPalard/logtop", tag_prefix="logtop-",
         bins=[("logtop", "")],
-        pkgs=["autoconf", "automake"],
-        pre=["curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && mkdir -p src && cp uthash.h src/"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
-               "cp logtop /tmp/out/"], experimental=True,
+        # uthash header fetched at build time; plain Makefile, no autotools
+        pre=["mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h"],
+        build=["make -j$(nproc) LDFLAGS=-static", "cp logtop /tmp/out/"],
+        experimental=True,
     ),
 
     # ---------------------------------------------------- autotools static --
@@ -293,8 +293,10 @@ RECIPES = {
     "sslh": dict(
         lang="c", slug="yrutschle/sslh", tag_prefix="v",
         bins=[("sslh", "")],
-        pkgs=["pcre2-dev", "libconfig-dev", "libev-dev", "openssl-libs-static"],
-        build=["make -j$(nproc) sslh-select CC=gcc LDFLAGS=-static USELIBCONFIG=1",
+        pkgs=["pcre2-dev", "libconfig-dev", "libev-dev", "openssl-libs-static",
+              "autoconf", "pkgconf"],
+        build=["autoreconf -fi && ./configure",
+               "make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static'",
                "cp sslh-select /tmp/out/sslh"],
         experimental=True,
     ),
@@ -356,7 +358,8 @@ RECIPES = {
         pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libnl3-static", "libpcap-dev",
               "ncurses-static", "libnetfilter_queue-dev"],
         build=["chmod +x configure && ./configure LDFLAGS=-static",
-               "make -j$(nproc)", "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/ || true"],
+               "make -j$(nproc)",
+               "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
         experimental=True,
     ),
     "suricata": dict(
@@ -419,7 +422,7 @@ RECIPES["ngrep"] = dict(
     lang="c", clone_url="https://github.com/jpr5/ngrep.git",
     tag_prefix="v", example_version="1.49.0",
     bins=[("ngrep", "")],
-    pkgs=["libpcap-dev"],
+    pkgs=["libpcap-dev", "pcre2-dev", "pkgconf"],
     build=["test -x configure || autoreconf -fi",
            "./configure --enable-pcre2 LDFLAGS=-static",
            "make -j$(nproc)", "cp ngrep /tmp/out/"],

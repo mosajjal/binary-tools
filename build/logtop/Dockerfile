@@ -4,15 +4,13 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2
 RUN git clone --depth 1 --branch logtop-${VERSION} https://github.com/JulienPalard/logtop.git /src
 WORKDIR /src
-RUN curl -fsSLO https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && mkdir -p src && cp uthash.h src/
+RUN mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h
 RUN set -ex \
  && mkdir -p /tmp/out \
- && test -x configure || autoreconf -fi \
- && ./configure LDFLAGS=-static \
- && make -j$(nproc) \
+ && make -j$(nproc) LDFLAGS=-static \
  && cp logtop /tmp/out/
 
 RUN set -ex \

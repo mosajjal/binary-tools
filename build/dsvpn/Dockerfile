@@ -19,7 +19,7 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
- && make CC=arm-linux-musleabihf-gcc LDFLAGS=-static -j$(nproc) \
+ && make CC=arm-linux-musleabihf-gcc STRIP=arm-linux-musleabihf-strip LDFLAGS=-static -j$(nproc) \
  && cp dsvpn /tmp/out-arm/
 
 RUN set -ex \

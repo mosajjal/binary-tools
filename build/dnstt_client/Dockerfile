@@ -6,7 +6,7 @@ FROM golang:1.25-alpine AS build
 ARG VERSION
 ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
 RUN apk add --no-cache git ca-certificates upx
-RUN git clone --depth 1 --branch v${VERSION} https://www.bamsoftware.com/git/dnstt.git /src
+RUN git clone --branch v${VERSION} https://www.bamsoftware.com/git/dnstt.git /src
 WORKDIR /src
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_dnstt_client ./dnstt-client \

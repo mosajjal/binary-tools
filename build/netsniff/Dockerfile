@@ -11,7 +11,7 @@ RUN set -ex \
  && mkdir -p /tmp/out \
  && chmod +x configure && ./configure LDFLAGS=-static \
  && make -j$(nproc) \
- && cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/ || true
+ && cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
