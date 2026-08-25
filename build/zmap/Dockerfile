@@ -12,8 +12,8 @@ RUN set -ex \
  && cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static -DWITH_DEMOS=OFF -DWITH_WERROR=OFF \
  && cmake --build build -j$(nproc) \
  && cp build/src/zmap /tmp/out/ \
- && cp build/src/ztee /tmp/out/ || true \
- && GOBIN=/tmp/out go install github.com/zmap/zgrab2/cmd/zgrab2@latest || true
+ && cp build/src/ztee /tmp/out/ \
+ && GOBIN=/tmp/out go install github.com/zmap/zgrab2/cmd/zgrab2@latest
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/zmap) && cp /tmp/out/zmap /out/x64/zmap \

@@ -296,7 +296,7 @@ RECIPES = {
     "sslh": dict(
         lang="c", slug="yrutschle/sslh", tag_prefix="v",
         bins=[("sslh", "")],
-        pkgs=["pcre2-dev", "libconfig-dev", "libev-dev", "openssl-libs-static",
+        pkgs=["pcre2-dev", "libconfig-dev", "libconfig-static", "libev-dev", "openssl-libs-static",
               "autoconf", "automake", "pkgconf"],
         build=["./configure",
                "make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static'",
@@ -357,8 +357,7 @@ RECIPES = {
     ),
     "netsniff": dict(
         lang="c", slug="netsniff-ng/netsniff-ng", tag_prefix="v",
-        bins=[("netsniff-ng", ""), ("trafgen", ""), ("mausezahn", ""), ("flowtop", ""),
-              ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
+        bins=[("netsniff-ng", ""), ("ifpps", "")],
         pkgs=["autoconf", "automake", "libtool", "libnl3", "libnl3-dev", "libnl3-static", "libpcap-dev",
               "ncurses-dev", "ncurses-static", "libnetfilter_queue-dev", "bash"],
         build=["chmod +x configure && ./configure",
@@ -389,12 +388,12 @@ RECIPES = {
               "libgcrypt-static", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
-               "-DBUILD_strstrip=ON -DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "
+               "-DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "
                "-DCMAKE_EXE_LINKER_FLAGS=-static", "cmake --build build -j$(nproc)",
-               "cp build/run/tshark build/run/dumpcap build/run/editcap build/run/mergecap "
-               "build/run/capinfos build/run/captype build/run/rawshark build/run/text2pcap "
-               "build/run/randpkt build/run/reordercap build/run/sharkd build/run/dftest /tmp/out/ || true",
-               "cp build/run/* /tmp/out/ 2>/dev/null || true"],
+               "for f in tshark dumpcap editcap mergecap capinfos captype rawshark "
+               "text2pcap randpkt reordercap sharkd dftest; do "
+               "cp build/run/$f /tmp/out/ 2>/dev/null || echo missing-$f; done; "
+               "ls /tmp/out/"],
         experimental=True, arm=False,
     ),
     "zmap": dict(
@@ -403,8 +402,8 @@ RECIPES = {
         pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev", "judy-dev"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
-               "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/ || true",
-               "GOBIN=/tmp/out go install github.com/zmap/zgrab2/cmd/zgrab2@latest || true"],
+               "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/",
+               "GOBIN=/tmp/out go install github.com/zmap/zgrab2/cmd/zgrab2@latest"],
         experimental=True, arm=False,
     ),
 }

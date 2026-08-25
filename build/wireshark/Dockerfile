@@ -9,10 +9,9 @@ RUN mkdir -p /src && curl -fsSL "https://www.wireshark.org/download/src/wireshar
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF -DBUILD_strstrip=ON -DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
+ && cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF -DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
  && cmake --build build -j$(nproc) \
- && cp build/run/tshark build/run/dumpcap build/run/editcap build/run/mergecap build/run/capinfos build/run/captype build/run/rawshark build/run/text2pcap build/run/randpkt build/run/reordercap build/run/sharkd build/run/dftest /tmp/out/ || true \
- && cp build/run/* /tmp/out/ 2>/dev/null || true
+ && for f in tshark dumpcap editcap mergecap capinfos captype rawshark text2pcap randpkt reordercap sharkd dftest; do cp build/run/$f /tmp/out/ 2>/dev/null || echo missing-$f; done; ls /tmp/out/
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tshark) && cp /tmp/out/tshark /out/x64/tshark \

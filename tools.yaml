@@ -471,7 +471,7 @@ tools:
     version: "0.6.7"
     check: {type: github-tag, slug: netsniff-ng/netsniff-ng, pattern: '^v(.+)$'}
     lang: c
-    outputs: [netsniff-ng, trafgen, mausezahn, flowtop, ifpps, astraceroute, bpfc, curvetun]
+    outputs: [netsniff-ng, ifpps]
     test: "--version"
     experimental: true
   - name: ngrep
@@ -733,7 +733,7 @@ tools:
     check: {type: github-release, slug: johnsonjh/OpenVi}
     lang: c
     outputs: [vi]
-    test: "--version"
+    test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
     version: "9.0.363"

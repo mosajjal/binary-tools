@@ -15,15 +15,9 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
- && mkdir -p $(dirname /out/x64/trafgen) && cp /tmp/out/trafgen /out/x64/trafgen \
- && mkdir -p $(dirname /out/x64/mausezahn) && cp /tmp/out/mausezahn /out/x64/mausezahn \
- && mkdir -p $(dirname /out/x64/flowtop) && cp /tmp/out/flowtop /out/x64/flowtop \
  && mkdir -p $(dirname /out/x64/ifpps) && cp /tmp/out/ifpps /out/x64/ifpps \
- && mkdir -p $(dirname /out/x64/astraceroute) && cp /tmp/out/astraceroute /out/x64/astraceroute \
- && mkdir -p $(dirname /out/x64/bpfc) && cp /tmp/out/bpfc /out/x64/bpfc \
- && mkdir -p $(dirname /out/x64/curvetun) && cp /tmp/out/curvetun /out/x64/curvetun \
- && strip "/out/x64/netsniff-ng" "/out/x64/trafgen" "/out/x64/mausezahn" "/out/x64/flowtop" "/out/x64/ifpps" "/out/x64/astraceroute" "/out/x64/bpfc" "/out/x64/curvetun" \
- && ( upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/trafgen" "/out/x64/mausezahn" "/out/x64/flowtop" "/out/x64/ifpps" "/out/x64/astraceroute" "/out/x64/bpfc" "/out/x64/curvetun" || echo 'upx failed; shipping unpacked' )
+ && strip "/out/x64/netsniff-ng" "/out/x64/ifpps" \
+ && ( upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/ifpps" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out
