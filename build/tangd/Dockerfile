@@ -14,22 +14,10 @@ RUN set -ex \
  && meson compile -C build \
  && cp build/src/tangd /tmp/out/
 
-# --- ARMv7 cross (musl.cc toolchain) ---
-ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
-RUN tar -C /opt -zxf /tmp/armtc.tgz
-ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
- && mkdir -p /tmp/out-arm \
- && rm -rf build-arm && mkdir build-arm \
- && printf "[binaries]\nc = 'arm-linux-musleabihf-gcc'\nar = 'arm-linux-musleabihf-ar'\n" > /tmp/cross.ini \
- && meson setup build-arm --cross-file /tmp/cross.ini \
- && meson compile -C build-arm \
- && cp build-arm/src/tangd /tmp/out-arm/
-
-RUN set -ex \
- && mkdir -p $(dirname /out/arm/tangd) && cp /tmp/out-arm/tangd /out/arm/tangd \
- && arm-linux-musleabihf-strip "/out/arm/tangd" \
- && ( upx -q --best --lzma "/out/arm/tangd" || echo 'upx failed; shipping unpacked' )
+ && mkdir -p $(dirname /out/x64/tangd) && cp /tmp/out/tangd /out/x64/tangd \
+ && strip "/out/x64/tangd" \
+ && ( upx -q --best --lzma "/out/x64/tangd" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

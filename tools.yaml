@@ -472,7 +472,7 @@ tools:
     check: {type: github-tag, slug: netsniff-ng/netsniff-ng, pattern: '^v(.+)$'}
     lang: c
     outputs: [netsniff-ng, ifpps]
-    test: "--version"
+    test_cmd: "/out/x64/netsniff-ng --version 2>&1 | grep -qi netsniff"
     experimental: true
   - name: ngrep
     version: "1.47.1"
@@ -807,7 +807,6 @@ tools:
     version: "15"
     check: {type: github-release, slug: latchset/tang}
     lang: c
-    outputs: []
-    arm_outputs: [tangd]
-    test: "--version"
+    outputs: [tangd]
+    test_cmd: "/out/x64/tangd --version 2>&1 | grep -qi tang || /out/x64/tangd -h 2>&1 | grep -qi usage"
     experimental: true

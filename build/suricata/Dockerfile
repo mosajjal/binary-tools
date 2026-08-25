@@ -10,7 +10,6 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue --disable-nflog --disable-gccmarch-native \
- && find /usr/lib -maxdepth 1 -name 'libyaml.so*' -delete -o -name 'libjansson.so*' -delete -o -name 'libpcap.so*' -delete -o -name 'libpcre2-8.so*' -delete -o -name 'libssl.so*' -delete -o -name 'libcrypto.so*' -delete || true \
  && make -j$(nproc) \
  && cp src/suricata /tmp/out/
 
