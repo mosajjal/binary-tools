@@ -362,7 +362,7 @@ RECIPES = {
               "ncurses-dev", "ncurses-static", "libnetfilter_queue-dev", "bash"],
         build=["chmod +x configure && ./configure",
                "make -j$(nproc) LDFLAGS=-static",
-               "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
+               "cp netsniff-ng ifpps /tmp/out/"],
         experimental=True,
     ),
     "suricata": dict(
