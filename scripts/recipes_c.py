@@ -374,6 +374,10 @@ RECIPES = {
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
+               "find /usr/lib -maxdepth 1 -name 'libyaml.so*' -delete -o "
+               "-name 'libjansson.so*' -delete -o -name 'libpcap.so*' -delete -o "
+               "-name 'libpcre2-8.so*' -delete -o -name 'libssl.so*' -delete -o "
+               "-name 'libcrypto.so*' -delete || true",
                "make -j$(nproc)", "cp src/suricata /tmp/out/"],
         experimental=True,
     ),
@@ -385,7 +389,7 @@ RECIPES = {
               ("randpkt", ""), ("reordercap", ""), ("sharkd", ""), ("dftest", ""),
               ("tfshark", "")],
         pkgs=["cmake", "ninja", "perl", "glib-dev", "glib-static", "libgcrypt-dev",
-              "libgcrypt-static", "libpcap-dev",
+              "libgcrypt-static", "c-ares-dev", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
                "-DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "
@@ -399,7 +403,8 @@ RECIPES = {
     "zmap": dict(
         lang="c", slug="zmap/zmap", tag_prefix="v",
         bins=[("zmap", ""), ("ztee", ""), ("zgrab2", "")],
-        pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev", "judy-dev"],
+        pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev",
+              "judy-dev", "gmp-dev", "gmp-static"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/",
