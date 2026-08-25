@@ -27,7 +27,9 @@ RUN set -ex \
  && cp build-arm/src/tangd /tmp/out-arm/ 2>/dev/null || true
 
 RUN set -ex \
- && ( upx -q --best --lzma  || echo 'upx failed; shipping unpacked' )
+ && mkdir -p $(dirname /out/arm/tangd) && cp /tmp/out-arm/tangd /out/arm/tangd \
+ && arm-linux-musleabihf-strip "/out/arm/tangd" \
+ && ( upx -q --best --lzma "/out/arm/tangd" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
 COPY --from=build /out /out

@@ -94,7 +94,7 @@ RECIPES = {
     ),
     "zenith": dict(
         lang="rust", slug="bvaisvil/zenith",
-        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev"],
+        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev", "gcc"],
         env={"LIBCLANG_PATH": "/usr/lib/llvm22/lib"},
         bins=[("zenith", "zenith")],
     ),

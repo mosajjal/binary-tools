@@ -79,7 +79,7 @@ RECIPES = {
         lang="c", slug="JulienPalard/logtop", tag_prefix="logtop-",
         bins=[("logtop", "")],
         # uthash header fetched at build time; plain Makefile, no autotools
-        pre=["mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h"],
+        pre=["mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && cp src/uthash.h ."],
         build=["make -j$(nproc) LDFLAGS=-static", "cp logtop /tmp/out/"],
         experimental=True,
     ),
@@ -279,7 +279,8 @@ RECIPES = {
         build=["./configure --without-zenmap --without-ndiff --without-nmap-update "
                "--without-libssh2 --with-libpcap=included --with-libpcre=included "
                "--with-zlib=included --with-openssl=/usr LDFLAGS=-static",
-               "make -j$(nproc)", "cp nmap nping /tmp/out/"],
+               "make -j$(nproc)", "cp nmap /tmp/out/",
+               "cp nping/nping /tmp/out/ 2>/dev/null || cp nping /tmp/out/ 2>/dev/null || true"],
         experimental=True,
     ),
     "lnav": dict(
@@ -295,7 +296,7 @@ RECIPES = {
         lang="c", slug="yrutschle/sslh", tag_prefix="v",
         bins=[("sslh", "")],
         pkgs=["pcre2-dev", "libconfig-dev", "libev-dev", "openssl-libs-static",
-              "autoconf", "pkgconf"],
+              "autoconf", "automake", "pkgconf"],
         build=["autoreconf -fi && ./configure",
                "make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static'",
                "cp sslh-select /tmp/out/sslh"],
@@ -359,8 +360,8 @@ RECIPES = {
               ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
         pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libpcap-dev",
               "ncurses-static", "libnetfilter_queue-dev", "bash"],
-        build=["chmod +x configure && ./configure LDFLAGS=-static",
-               "make -j$(nproc)",
+        build=["chmod +x configure && ./configure",
+               "make -j$(nproc) LDFLAGS=-static",
                "cp netsniff-ng trafgen mausezahn flowtop ifpps astraceroute bpfc curvetun /tmp/out/"],
         experimental=True,
     ),
@@ -369,7 +370,7 @@ RECIPES = {
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
         pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "yaml-dev", "yaml-static",
-              "jansson-dev", "libpcap-dev", "openssl-libs-static", "zlib-static", "cargo"],
+              "jansson-dev", "jansson-static", "libpcap-dev", "openssl-libs-static", "zlib-static", "cargo"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
@@ -455,6 +456,7 @@ RECIPES["tor"] = dict(
 RECIPES["tangd"] = dict(
     lang="c", slug="latchset/tang", tag_prefix="v",
     bins=[],
+    arm_only=True, arm_bins=["tangd"],
     pkgs=["meson", "jose-dev", "http-parser-dev", "pkgconf"],
     build=["mkdir -p /tmp/out",
            "meson setup build -Dmanpage=false 2>/dev/null || meson setup build",

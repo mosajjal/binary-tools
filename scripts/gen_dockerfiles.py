@@ -240,6 +240,10 @@ def c_recipe(name, r):
     collect = [(f"/tmp/out/{n}", f"/out/x64/{n}") for n, _ in r["bins"]]
     if r.get("arm_build"):
         collect += [(f"/tmp/out-arm/{n}", f"/out/arm/{n}") for n, _ in r["bins"]]
+    # ARM-only tools ship no x64 binary but still need an /out tree
+    if not collect and r.get("arm_only"):
+        collect = [(f"/tmp/out-arm/{n}", f"/out/arm/{n}")
+                   for n in r.get("arm_bins", [])]
     b.append(_collect_and_pack(collect, r))
     b.append(f"FROM {BASE_ALPINE}")
     b.append("COPY --from=build /out /out")

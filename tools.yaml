@@ -177,7 +177,7 @@ tools:
     check: {type: github-release, slug: jedisct1/dsvpn}
     lang: c
     outputs: [dsvpn]
-    test: "--help"
+    test_cmd: "/out/x64/dsvpn 2>&1 | grep -qi 'usage\\|dsvpn'"
   - name: es-dump
     version: "1.0.7"
     check: {type: github-release, slug: mosajjal/x}

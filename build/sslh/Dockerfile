@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 pcre2-dev libconfig-dev libev-dev openssl-libs-static autoconf pkgconf
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 pcre2-dev libconfig-dev libev-dev openssl-libs-static autoconf automake pkgconf
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/yrutschle/sslh.git /src
 WORKDIR /src
 RUN set -ex \

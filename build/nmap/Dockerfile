@@ -11,7 +11,8 @@ RUN set -ex \
  && mkdir -p /tmp/out \
  && ./configure --without-zenmap --without-ndiff --without-nmap-update --without-libssh2 --with-libpcap=included --with-libpcre=included --with-zlib=included --with-openssl=/usr LDFLAGS=-static \
  && make -j$(nproc) \
- && cp nmap nping /tmp/out/
+ && cp nmap /tmp/out/ \
+ && cp nping/nping /tmp/out/ 2>/dev/null || cp nping /tmp/out/ 2>/dev/null || true
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/nmap) && cp /tmp/out/nmap /out/x64/nmap \

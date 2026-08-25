@@ -7,7 +7,7 @@ ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2
 RUN git clone --depth 1 --branch logtop-${VERSION} https://github.com/JulienPalard/logtop.git /src
 WORKDIR /src
-RUN mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h
+RUN mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && cp src/uthash.h .
 RUN set -ex \
  && mkdir -p /tmp/out \
  && make -j$(nproc) LDFLAGS=-static \
