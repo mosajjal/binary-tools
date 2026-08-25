@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && mkdir -p /tmp/out \
- && meson setup build -Dmanpage=false 2>/dev/null || meson setup build \
+ && meson setup build \
  && meson compile -C build \
  && cp build/src/tangd /tmp/out/
 
@@ -22,7 +22,7 @@ RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && rm -rf build-arm && mkdir build-arm \
  && printf "[binaries]\nc = 'arm-linux-musleabihf-gcc'\nar = 'arm-linux-musleabihf-ar'\n" > /tmp/cross.ini \
- && meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false \
+ && meson setup build-arm --cross-file /tmp/cross.ini \
  && meson compile -C build-arm \
  && cp build-arm/src/tangd /tmp/out-arm/
 
