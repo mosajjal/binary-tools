@@ -334,7 +334,7 @@ RECIPES = {
         # BSD-style GNUmakefile build; produces the `ovi` binary
         pkgs=["ncurses-static", "ncurses-dev"],
         build=["make -j$(nproc) -f GNUmakefile LDFLAGS=-static || make -j$(nproc) -f GNUmakefile",
-               "cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name ovi -exec cp {} /tmp/out/vi \\;"],
+               "cp bin/vi /tmp/out/vi 2>/dev/null || cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name vi -path '*bin*' -exec cp {} /tmp/out/vi \\;"],
         experimental=True,
     ),
     "vim": dict(
@@ -359,7 +359,7 @@ RECIPES = {
         lang="c", slug="netsniff-ng/netsniff-ng", tag_prefix="v",
         bins=[("netsniff-ng", ""), ("trafgen", ""), ("mausezahn", ""), ("flowtop", ""),
               ("ifpps", ""), ("astraceroute", ""), ("bpfc", ""), ("curvetun", "")],
-        pkgs=["autoconf", "automake", "libtool", "libnl3-dev", "libnl3-static", "libpcap-dev",
+        pkgs=["autoconf", "automake", "libtool", "libnl3", "libnl3-dev", "libnl3-static", "libpcap-dev",
               "ncurses-dev", "ncurses-static", "libnetfilter_queue-dev", "bash"],
         build=["chmod +x configure && ./configure",
                "make -j$(nproc) LDFLAGS=-static",
@@ -385,7 +385,8 @@ RECIPES = {
               ("capinfos", ""), ("captype", ""), ("rawshark", ""), ("text2pcap", ""),
               ("randpkt", ""), ("reordercap", ""), ("sharkd", ""), ("dftest", ""),
               ("tfshark", "")],
-        pkgs=["cmake", "ninja", "glib-dev", "glib-static", "libpcap-dev",
+        pkgs=["cmake", "ninja", "perl", "glib-dev", "glib-static", "libgcrypt-dev",
+              "libgcrypt-static", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
                "-DBUILD_strstrip=ON -DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "
@@ -399,7 +400,7 @@ RECIPES = {
     "zmap": dict(
         lang="c", slug="zmap/zmap", tag_prefix="v",
         bins=[("zmap", ""), ("ztee", ""), ("zgrab2", "")],
-        pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev"],
+        pkgs=["cmake", "gengetopt", "json-c-dev", "libunistring-dev", "libpcap-dev", "judy-dev"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/ || true",
@@ -464,10 +465,10 @@ RECIPES["tangd"] = dict(
            "meson compile -C build",
            "cp build/src/tangd /tmp/out/"],
     arm_build=["rm -rf build-arm && mkdir build-arm",
-               'printf \'[binaries]\\nc = "arm-linux-musleabihf-gcc"\\nar = "arm-linux-musleabihf-ar"\\n\' > /tmp/cross.ini',
-               "meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false 2>/dev/null || true",
-               "meson compile -C build-arm 2>/dev/null || true",
-               "cp build-arm/src/tangd /tmp/out-arm/ 2>/dev/null || true"],
+               "printf \"[binaries]\\nc = 'arm-linux-musleabihf-gcc'\\nar = 'arm-linux-musleabihf-ar'\\n\" > /tmp/cross.ini",
+               "meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false",
+               "meson compile -C build-arm",
+               "cp build-arm/src/tangd /tmp/out-arm/"],
     experimental=True,
 )
 

@@ -11,6 +11,7 @@ RUN apk add --no-cache git ca-certificates upx musl-dev perl make
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/bvaisvil/zenith.git /src
 WORKDIR /src
 ENV LIBCLANG_PATH=/usr/lib/llvm22/lib
+RUN ln -sf /usr/bin/gcc /usr/bin/musl-gcc
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \
  && cp target/x86_64-unknown-linux-musl/release/zenith /tmp/x64_zenith

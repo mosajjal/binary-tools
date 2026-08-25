@@ -21,10 +21,10 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && rm -rf build-arm && mkdir build-arm \
- && printf '[binaries]\nc = "arm-linux-musleabihf-gcc"\nar = "arm-linux-musleabihf-ar"\n' > /tmp/cross.ini \
- && meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false 2>/dev/null || true \
- && meson compile -C build-arm 2>/dev/null || true \
- && cp build-arm/src/tangd /tmp/out-arm/ 2>/dev/null || true
+ && printf "[binaries]\nc = 'arm-linux-musleabihf-gcc'\nar = 'arm-linux-musleabihf-ar'\n" > /tmp/cross.ini \
+ && meson setup build-arm --cross-file /tmp/cross.ini -Dmanpage=false \
+ && meson compile -C build-arm \
+ && cp build-arm/src/tangd /tmp/out-arm/
 
 RUN set -ex \
  && mkdir -p $(dirname /out/arm/tangd) && cp /tmp/out-arm/tangd /out/arm/tangd \

@@ -69,7 +69,7 @@ RECIPES = {
         # cmd packages go:embed web/*/dist -- build the SPA first
         pkgs=["nodejs", "npm"],
         pre=["cd web/frpc && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null",
-             "cd web/frps && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null"],
+             "cd /src/web/frps && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null"],
     ),
     "fzf": dict(
         lang="go", slug="junegunn/fzf", tag_prefix="v",

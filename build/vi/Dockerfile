@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && make -j$(nproc) -f GNUmakefile LDFLAGS=-static || make -j$(nproc) -f GNUmakefile \
- && cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name ovi -exec cp {} /tmp/out/vi \;
+ && cp bin/vi /tmp/out/vi 2>/dev/null || cp ovi /tmp/out/vi 2>/dev/null || find . -maxdepth 2 -name vi -path '*bin*' -exec cp {} /tmp/out/vi \;
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/vi) && cp /tmp/out/vi /out/x64/vi \
