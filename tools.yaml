@@ -173,7 +173,7 @@ tools:
     outputs: [dropbear, dbclient, dropbearconvert, dropbearkey, scp]
     test_cmd: "/out/x64/dbclient -V 2>&1 | grep -qi dropbear"
   - name: dsvpn
-    version: "0.1.3"
+    version: "0.1.5"
     check: {type: github-release, slug: jedisct1/dsvpn}
     lang: c
     outputs: [dsvpn]
@@ -481,7 +481,7 @@ tools:
     outputs: [ngrep]
     test: "-V"
   - name: nmap
-    version: "7.91"
+    version: "7.991"
     check:
       type: url
       url: https://nmap.org/dist/

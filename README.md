@@ -31,7 +31,7 @@ The categories are AI-generated so expect mistakes.
 | [dnstt](//bamsoftware.com/software/dnstt/)           | 1.20241021   | `dnstt_*`      | DNS, Tunneling          | `7feaf2bca2ebf13312858201744caa5d5b4a9f738d69a66bcd7f5815c832cf6c` |
 | [doggo](//github.com/mr-karan/doggo)                 | 1.0.4        | `doggo`        | DNS, CLI                | `8c69685e45896a0ad9bd270e5f6052f00c8ddd1180564548c2f6a309721fc9db` |
 | [Dropbear](x64/dropbear/README.md)                   | 2026.94 | `dropbear/*`   | SSH, Server             | `06bd1d56d27e2105d4e36e11ab08fe9cae89e5a32562959ee44a197a0a129a44` |
-| [Dead Simple VPN](//github.com/jedisct1/dsvpn)       | 0.1.3        | `dsvpn`        | VPN, Networking         | `84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
+| [Dead Simple VPN](//github.com/jedisct1/dsvpn)       | 0.1.5 | `dsvpn`        | VPN, Networking         | `3024a48fc7df426643967818a17b19220d9ae413805a59599e5483b74c42657c` |
 | [es-dump](//github.com/mosajjal/go-exp)              | 1.0.7 | `es-dump`      | Elasticsearch, Data     | `a514eaea4ba97f7a65dc8000cf4be967026336aa77f02202689ee9ca655f5f24` |
 | [evtx](//github.com/omerbenamram/evtx)               | 0.9.1        | `evtx`         | Forensics, Logs         | `a9a70961a8a492562e243aebb9ba1cb7d3a58728485b231955a77231efece4ae` |
 | [fd](//github.com/sharkdp/fd)                        | 8.6.0        | `fd`           | Search, CLI             | `702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
@@ -78,7 +78,7 @@ The categories are AI-generated so expect mistakes.
 | [NetCat](//www.freebsd.org/cgi/man.cgi?query=netcat) | 1.68         | `nc`           | Networking, CLI         | `6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
 | [Netsniff](x64/netsniff/README.md)                   | 0.6.7        | `netsniff/*`   | Networking, Sniffing    | `2b26c172e319d91d4bb6e4d6cf344bb8675272426dc09c91f4fb3312c3880b12` |
 | [ngrep](//github.com/jpr5/ngrep/)                    | 1.47.1-git   | `ngrep`        | Networking, Sniffing    | `7da483d50d04c1ebede2ebd7d8a1155c3a1f2e1728e7a082043dc63e550c3f9c` |
-| [nmap](//nmap.org/)                                  | 7.91         | `nmap, nping`  | Security, Scanner       | `f584966010a883169dc1322d0e7f0506f94b2ae133dbd960e0ff48186f4084f9` |
+| [nmap](//nmap.org/)                                  | 7.991 | `nmap, nping`  | Security, Scanner       | `251b5a7e19af442589bc17d90d9d5466bec97ae7478877a3eae0ed9ad294086a` |
 | [onionpipe](//github.com/cmars/onionpipe)            | 1.0.13       | `onionpipe`    | Tor, Networking         | `7b3c01d8555a04c46ecbbaf8afbacf5fdd1a78af76946f1861cca094c39417d1` |
 | [nomino](//github.com/yaa110/nomino)                 | 1.1.0        | `nomino`       | Rename, CLI             | `eb0560be96a592d8ade485516c404df9557d80059ba4f1290178201c2aa49873` |
 | [openrsync](//github.com/kristapsdz/openrsync)       | f50d0f8      | `openrsync`    | Sync, Files             | `f2394b8337eac1c53c83576be0f9c969480bb5a212d60939de815d271d5a1549` |
