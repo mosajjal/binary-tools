@@ -653,7 +653,7 @@ tools:
       pattern: 'suricata-(\d+\.\d+\.\d+(?:-\w+)?)\.tar\.gz'
     lang: c
     outputs: [suricata]
-    test: "--build-info"
+    test_cmd: '/out/x64/suricata -V 2>&1 | grep -qiE "Suricata|build-info"'
     experimental: true
   - name: superfile
     version: "1.1.2"

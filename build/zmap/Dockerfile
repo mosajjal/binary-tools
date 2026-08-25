@@ -13,7 +13,7 @@ RUN set -ex \
  && cmake --build build -j$(nproc) \
  && cp build/src/zmap /tmp/out/ \
  && cp build/src/ztee /tmp/out/ \
- && GOBIN=/tmp/out go install github.com/zmap/zgrab2/cmd/zgrab2@latest
+ && GOBIN=/tmp/out GOTOOLCHAIN=auto go install github.com/zmap/zgrab2/cmd/zgrab2@latest
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/zmap) && cp /tmp/out/zmap /out/x64/zmap \
