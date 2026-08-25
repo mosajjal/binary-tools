@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 ncurses-dev ncurses-static
 RUN git clone --depth 1 --branch logtop-${VERSION} https://github.com/JulienPalard/logtop.git /src
 WORKDIR /src
 RUN mkdir -p src && curl -fsSLo src/uthash.h https://raw.githubusercontent.com/troydhanson/uthash/master/src/uthash.h && cp src/uthash.h .

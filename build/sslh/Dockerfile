@@ -9,7 +9,7 @@ RUN git clone --depth 1 --branch v${VERSION} https://github.com/yrutschle/sslh.g
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && autoreconf -fi && ./configure \
+ && ./configure \
  && make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static' \
  && cp sslh-select /tmp/out/sslh
 

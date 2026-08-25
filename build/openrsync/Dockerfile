@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 bmake
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 bmake musl-fts-dev
 RUN git clone --depth 1 https://github.com/kristapsdz/openrsync.git /src
 WORKDIR /src
 RUN set -ex \
