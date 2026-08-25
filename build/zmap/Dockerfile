@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake gengetopt flex json-c-dev libunistring-dev libpcap-dev judy-dev gmp-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake gengetopt flex json-c-dev libunistring-dev libpcap-dev judy-dev gmp-dev byacc
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/zmap/zmap.git /src
 WORKDIR /src
 RUN set -ex \

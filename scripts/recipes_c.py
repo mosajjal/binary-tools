@@ -401,7 +401,7 @@ RECIPES = {
         lang="c", slug="zmap/zmap", tag_prefix="v",
         bins=[("zmap", ""), ("ztee", ""), ("zgrab2", "")],
         pkgs=["cmake", "gengetopt", "flex", "json-c-dev", "libunistring-dev", "libpcap-dev",
-              "judy-dev", "gmp-dev"],
+              "judy-dev", "gmp-dev", "byacc"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/",
