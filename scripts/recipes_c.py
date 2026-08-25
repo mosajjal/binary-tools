@@ -362,7 +362,8 @@ RECIPES = {
               "ncurses-dev", "ncurses-static", "libnetfilter_queue-dev", "bash"],
         build=["chmod +x configure && ./configure",
                "make -j$(nproc) LDFLAGS=-static",
-               "cp netsniff-ng ifpps /tmp/out/"],
+               "find . -maxdepth 2 -type f \\( -name netsniff-ng -o -name ifpps \\) "
+               "-exec cp {} /tmp/out/ \\;"],
         experimental=True,
     ),
     "suricata": dict(
@@ -389,7 +390,7 @@ RECIPES = {
               ("randpkt", ""), ("reordercap", ""), ("sharkd", ""), ("dftest", ""),
               ("tfshark", "")],
         pkgs=["cmake", "ninja", "perl", "flex", "glib-dev", "glib-static", "libgcrypt-dev",
-              "libgcrypt-static", "c-ares-dev", "libpcap-dev",
+              "libgcrypt-static", "c-ares-dev", "libxml2-dev", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
                "-DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "

@@ -4,7 +4,7 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja perl flex glib-dev glib-static libgcrypt-dev libgcrypt-static c-ares-dev libpcap-dev pcre2-dev zlib-static speexdsp-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja perl flex glib-dev glib-static libgcrypt-dev libgcrypt-static c-ares-dev libxml2-dev libpcap-dev pcre2-dev zlib-static speexdsp-dev
 RUN mkdir -p /src && curl -fsSL "https://www.wireshark.org/download/src/wireshark-${VERSION}.tar.xz" | unxz -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \

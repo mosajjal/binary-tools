@@ -11,7 +11,7 @@ RUN set -ex \
  && mkdir -p /tmp/out \
  && chmod +x configure && ./configure \
  && make -j$(nproc) LDFLAGS=-static \
- && cp netsniff-ng ifpps /tmp/out/
+ && find . -maxdepth 2 -type f \( -name netsniff-ng -o -name ifpps \) -exec cp {} /tmp/out/ \;
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
