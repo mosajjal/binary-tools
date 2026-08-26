@@ -124,7 +124,7 @@ RECIPES = {
         # no-op stub and massren panics at runtime ("unknown driver sqlite3").
         lang="go", slug="laurent22/massren", tag_prefix="v", cgo=True,
         # repo predates go modules
-        pre=["test -f go.mod || go mod init massren; go mod tidy"]
+        pre=["test -f go.mod || go mod init massren; go mod tidy"],
         bins=[("massren", ".")],
     ),
     "memcd-util": dict(
