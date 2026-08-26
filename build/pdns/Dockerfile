@@ -11,6 +11,7 @@ RUN mkdir -p /ldns-src /opt/ldns && curl -fsSL --retry 3 https://www.nlnetlabs.n
 RUN set -ex \
  && mkdir -p /tmp/out \
  && cd /ldns-src && ./configure --prefix=/opt/ldns --disable-shared --with-ssl=/usr && make -j$(nproc) && make install && cd /src \
+ && autoreconf -fi \
  && ./configure LDFLAGS='-static -L/opt/ldns/lib' CPPFLAGS='-I/opt/ldns/include' LIBS='-lldns -lssl -lcrypto -lz' \
  && make -j$(nproc) \
  && cp src/passivedns /tmp/out/pdns

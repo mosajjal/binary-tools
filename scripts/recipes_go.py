@@ -137,7 +137,7 @@ RECIPES = {
     ),
     "mylg": dict(
         lang="go", slug="mehrdadrad/mylg", branch=True, cgo=True,
-        bins=[("mylg", ".")],
+        bins=[("mylg", ".")], arm=False,
         env={"CGO_ENABLED": "1"}, pkgs=["libpcap-dev", "build-base"],
         ldflags='-extldflags "-static"',
         # repo predates go modules; needs gcc for the pcap cgo bits

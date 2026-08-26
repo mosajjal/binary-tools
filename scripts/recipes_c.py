@@ -332,6 +332,7 @@ RECIPES = {
              "gunzip -c | tar x -C /ldns-src --strip-components=1"],
         build=["cd /ldns-src && ./configure --prefix=/opt/ldns --disable-shared "
                "--with-ssl=/usr && make -j$(nproc) && make install && cd /src",
+               "autoreconf -fi",
                "./configure LDFLAGS='-static -L/opt/ldns/lib' "
                "CPPFLAGS='-I/opt/ldns/include' LIBS='-lldns -lssl -lcrypto -lz'",
                "make -j$(nproc)", "cp src/passivedns /tmp/out/pdns"],
@@ -390,7 +391,7 @@ RECIPES = {
     ),
     "wireshark": dict(
         lang="cxx",
-        tarball="https://www.wireshark.org/download/src/wireshark-{v}.tar.xz",
+        slug="wireshark/wireshark", tag_prefix="v",
         bins=[("tshark", ""), ("dumpcap", ""), ("editcap", ""), ("mergecap", ""),
               ("capinfos", ""), ("captype", ""), ("rawshark", ""), ("text2pcap", ""),
               ("randpkt", ""), ("reordercap", ""), ("sharkd", ""), ("dftest", ""),
