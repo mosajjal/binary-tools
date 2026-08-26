@@ -118,7 +118,7 @@ tools:
     check: {type: github-tag, slug: bryanpkc/corkscrew}
     lang: c
     outputs: [corkscrew]
-    test: "--help"
+    test_cmd: '/out/x64/corkscrew -h 2>&1 | grep -qiE "usage|corkscrew" || /out/x64/corkscrew 2>&1 | grep -qiE "usage|corkscrew"'
   - name: curl
     version: "8.21.0"
     check: {type: github-tag, slug: curl/curl, pattern: '^curl-(\d+_\d+_\d+)$', transform: underscore_to_dot}
@@ -538,6 +538,7 @@ tools:
     test: "-h"
   - name: ptunnel-ng
     version: "1.43"
+    enabled: false
     check: {type: github-tag, slug: utoni/ptunnel-ng, pattern: '^v?(.+)$'}
     lang: c
     outputs: [ptunnel-ng]

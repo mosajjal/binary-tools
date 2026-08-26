@@ -124,7 +124,7 @@ RECIPES = {
         # no-op stub and massren panics at runtime ("unknown driver sqlite3").
         lang="go", slug="laurent22/massren", tag_prefix="v", cgo=True,
         # repo predates go modules
-        pre=["go mod init massren && go mod tidy"],
+        pre=["test -f go.mod || go mod init massren; go mod tidy"]
         bins=[("massren", ".")],
     ),
     "memcd-util": dict(
@@ -141,7 +141,7 @@ RECIPES = {
         env={"CGO_ENABLED": "1"}, pkgs=["libpcap-dev", "build-base"],
         ldflags='-extldflags "-static"',
         # repo predates go modules; needs gcc for the pcap cgo bits
-        pre=["go mod init mylg && go mod tidy"],
+        pre=["test -f go.mod || go mod init mylg; go mod tidy"],
     ),
     "onionpipe": dict(
         lang="go", slug="cmars/onionpipe", tag_prefix="v",

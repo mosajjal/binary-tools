@@ -327,7 +327,7 @@ RECIPES = {
         # static -lldns probe needs its own deps spelled out
         pkgs=["autoconf", "automake", "ldns-dev", "openssl-dev", "openssl-libs-static",
               "libpcap-dev", "zlib-static"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static LIBS='-lldns -lssl -lcrypto -lz -lpcap'",
+        build=[AUTOGEN, "./configure LDFLAGS=-static LIBS='-lcrypto -lz'",
                "make -j$(nproc)", "cp src/passivedns /tmp/out/pdns"],
         experimental=True,
     ),
@@ -373,7 +373,7 @@ RECIPES = {
         lang="c",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre-static", "yaml-dev",
+        pkgs=["autoconf", "automake", "libtool", "pcre-dev", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
               "openssl-libs-static", "zlib-static", "cargo"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
@@ -393,7 +393,7 @@ RECIPES = {
               "libgcrypt-static", "c-ares-dev", "libxml2-dev", "libssh-dev", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
-               "-DENABLE_PCAP=ON -DCMAKE_BUILD_TYPE=Release "
+               "-DENABLE_PCAP=OFF -DCMAKE_BUILD_TYPE=Release "
                "-DCMAKE_EXE_LINKER_FLAGS=-static", "cmake --build build -j$(nproc)",
                "for f in tshark dumpcap editcap mergecap capinfos captype rawshark "
                "text2pcap randpkt reordercap sharkd dftest; do "
