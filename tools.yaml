@@ -505,6 +505,7 @@ tools:
     test: "--version"
   - name: openrsync
     version: "f50d0f8"
+    enabled: false
     check:
       type: github-tag
       slug: kristapsdz/openrsync
