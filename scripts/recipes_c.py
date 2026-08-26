@@ -312,14 +312,17 @@ RECIPES = {
         experimental=True,
     ),
     "openrsync": dict(
-        lang="c", slug="kristapsdz/openrsync", branch=True,
-        disabled_reason="BSD fts API incompatible with musl; needs upstream porting",
+        lang="c",
+        # Mirror Alpine's testing/openrsync recipe: pin a known-good commit
+        # (master HEAD breaks periodically), apply their assert patch, build
+        # with plain GNU make -- no bmake, no musl-fts needed.
+        tarball="https://github.com/kristapsdz/openrsync/archive/{v}.tar.gz",
+        example_version="48070e68d73f67d6922b2ffc8c2dee9754e659c6",
         bins=[("openrsync", "")],
-        # BSD-make project: ./configure writes Makefile.configure, bmake builds
-        pkgs=["bmake", "musl-fts-dev"],
-        build=["./configure LDFLAGS=-static",
-               "bmake -j$(nproc)", "cp openrsync /tmp/out/"],
-        experimental=True,
+        pkgs=["patch"],
+        pre=["curl -fsSL --retry 3 https://raw.githubusercontent.com/alpinelinux/aports/master/testing/openrsync/10-assert.patch | patch -p1"],
+        build=["./configure PREFIX=/usr LDFLAGS=-static",
+               "make -j$(nproc)", "cp openrsync /tmp/out/"],
     ),
             # BLOCKED: alpine musl static link of ldns leaves EVP_sha256
         # unresolved in ldns's own tools; needs ldns built with openssl

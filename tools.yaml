@@ -504,13 +504,8 @@ tools:
     arm_outputs: [onionpipe]
     test: "--version"
   - name: openrsync
-    version: "f50d0f8"
-    enabled: false
-    check:
-      type: github-tag
-      slug: kristapsdz/openrsync
-      pattern: '^VERSION_(.+)$'
-      transform: underscore_to_dot
+    version: "48070e68d73f67d6922b2ffc8c2dee9754e659c6"
+    check: {type: pinned, reason: pinned to the commit Alpine ships; upstream tags lag}
     lang: c
     outputs: [openrsync]
     arm_outputs: [openrsync]
