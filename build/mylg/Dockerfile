@@ -4,7 +4,8 @@
 
 FROM golang:1.25-alpine AS build
 ARG VERSION
-ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
+ENV CGO_ENABLED=1 GOTOOLCHAIN=auto
+RUN apk add --no-cache build-base
 RUN apk add --no-cache libpcap-dev build-base
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 https://github.com/mehrdadrad/mylg.git /src
@@ -12,10 +13,14 @@ WORKDIR /src
 ENV CGO_ENABLED=1
 RUN test -f go.mod || go mod init mylg; go mod tidy
 RUN set -ex \
- && go build -trimpath -ldflags="-s -w -extldflags "-static"" -o /tmp/x64_mylg .
+ && go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static -extldflags "-static"" -o /tmp/x64_mylg .
 
+# --- ARMv7 cgo cross (musl.cc toolchain as C compiler) ---
+ADD https://github.com/mosajjal/binary-tools/releases/download/toolchain-v1/armtc.tgz /tmp/armtc.tgz
+RUN tar -C /opt -zxf /tmp/armtc.tgz && rm /tmp/armtc.tgz
+ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
- && GOARCH=arm GOARM=7 go build -trimpath -ldflags="-s -w -extldflags "-static"" -o /tmp/arm_mylg .
+ && CC=arm-linux-musleabihf-gcc GOARCH=arm GOARM=7 go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static -extldflags "-static"" -o /tmp/arm_mylg .
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/mylg) && cp /tmp/x64_mylg /out/x64/mylg \

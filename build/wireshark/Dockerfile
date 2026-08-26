@@ -9,7 +9,7 @@ RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://www.wireshark
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF -DENABLE_PCAP=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
+ && cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF -DENABLE_PCAP=OFF -DZLIB_INCLUDE_DIR=/usr/include -DZLIB_LIBRARY=/lib/libz.a -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
  && cmake --build build -j$(nproc) \
  && for f in tshark dumpcap editcap mergecap capinfos captype rawshark text2pcap randpkt reordercap sharkd dftest; do cp build/run/$f /tmp/out/ 2>/dev/null || echo missing-$f; done; ls /tmp/out/
 

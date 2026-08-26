@@ -136,7 +136,7 @@ RECIPES = {
         bins=[("micro", "./cmd/micro")],
     ),
     "mylg": dict(
-        lang="go", slug="mehrdadrad/mylg", branch=True,
+        lang="go", slug="mehrdadrad/mylg", branch=True, cgo=True,
         bins=[("mylg", ".")],
         env={"CGO_ENABLED": "1"}, pkgs=["libpcap-dev", "build-base"],
         ldflags='-extldflags "-static"',
