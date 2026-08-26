@@ -321,7 +321,10 @@ RECIPES = {
                "bmake -j$(nproc)", "cp openrsync /tmp/out/"],
         experimental=True,
     ),
-    "pdns": dict(
+            # BLOCKED: alpine musl static link of ldns leaves EVP_sha256
+        # unresolved in ldns's own tools; needs ldns built with openssl
+        # embedded or passivedns patched for dynamic linking
+"pdns": dict(
         lang="c", slug="gamelinux/passivedns",
         bins=[("pdns", "")],
         # static -lldns probe needs its own deps spelled out
@@ -389,7 +392,10 @@ RECIPES = {
                "make -j$(nproc)", "cp src/suricata /tmp/out/"],
         experimental=True,
     ),
-    "wireshark": dict(
+            # BLOCKED: cli-only build still links tshark against shared
+        # libwsutil; ENABLE_STATIC=ON insufficient on musl. Next step:
+        # -DBUILD_SHARED_LIBS='OFF' patch or ship dynamic w/ bundled libs
+"wireshark": dict(
         lang="cxx",
         slug="wireshark/wireshark", tag_prefix="v",
         bins=[("tshark", ""), ("dumpcap", ""), ("editcap", ""), ("mergecap", ""),
