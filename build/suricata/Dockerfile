@@ -4,8 +4,8 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pcre2-dev yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static cargo
-RUN mkdir -p /src && curl -fsSL "https://www.openinfosecfoundation.org/download/suricata-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pcre-dev pcre-static yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static cargo
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://www.openinfosecfoundation.org/download/suricata-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \

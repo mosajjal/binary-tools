@@ -38,7 +38,7 @@ RUN git clone --depth 1 --branch {prefix}{VERSION} https://github.com/{slug}.git
 """
 
 FETCH_TARBALL = """\\
-RUN mkdir -p /src && curl -fsSL "{url}" | tar {tarflags} -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "{url}" | tar {tarflags} -C /src --strip-components=1
 """
 
 
@@ -49,7 +49,7 @@ _DECOMP = {".tar.xz": "unxz -c", ".tar.gz": "gunzip -c",
 def _curl_untar(url):
     """Fetch a tarball and untar into /src; decodes by extension (busybox-safe)."""
     suffix = next((e for e in _DECOMP if e in url), ".tar.gz")
-    return (f'RUN mkdir -p /src && curl -fsSL "{url}" | {_DECOMP[suffix]} '
+    return (f'RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "{url}" | {_DECOMP[suffix]} '
             "| tar x -C /src --strip-components=1")
 
 

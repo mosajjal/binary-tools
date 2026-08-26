@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool openssl-dev openssl-libs-static zlib-static zlib-dev pkgconf python3
-RUN mkdir -p /src && curl -fsSL "https://github.com/curl/curl/releases/download/curl-${VERSION//./_}/curl-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://github.com/curl/curl/releases/download/curl-${VERSION//./_}/curl-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \

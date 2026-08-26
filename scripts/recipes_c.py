@@ -313,6 +313,7 @@ RECIPES = {
     ),
     "openrsync": dict(
         lang="c", slug="kristapsdz/openrsync", branch=True,
+        disabled_reason="BSD fts API incompatible with musl; needs upstream porting",
         bins=[("openrsync", "")],
         # BSD-make project: ./configure writes Makefile.configure, bmake builds
         pkgs=["bmake", "musl-fts-dev"],
@@ -372,8 +373,9 @@ RECIPES = {
         lang="c",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pcre2-dev", "yaml-dev", "yaml-static",
-              "jansson-dev", "jansson-static", "libpcap-dev", "openssl-libs-static", "zlib-static", "cargo"],
+        pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre-static", "yaml-dev",
+              "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
+              "openssl-libs-static", "zlib-static", "cargo"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",

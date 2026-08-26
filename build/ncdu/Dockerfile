@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 ncurses-static ncurses-dev
-RUN mkdir -p /src && curl -fsSL "https://dev.yorhel.nl/download/ncdu-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://dev.yorhel.nl/download/ncdu-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \

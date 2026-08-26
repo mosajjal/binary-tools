@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 flex byacc
-RUN mkdir -p /src && curl -fsSL "https://www.tcpdump.org/release/tcpdump-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://www.tcpdump.org/release/tcpdump-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN mkdir -p /libpcap-src /opt/libpcap && curl -fsSL https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz | tar xz -C /libpcap-src --strip-components=1
 RUN set -ex \

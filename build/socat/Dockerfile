@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 openssl-dev openssl-libs-static readline-static readline-dev ncurses-static zlib-static
-RUN mkdir -p /src && curl -fsSL "http://www.dest-unreach.org/socat/download/socat-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "http://www.dest-unreach.org/socat/download/socat-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \

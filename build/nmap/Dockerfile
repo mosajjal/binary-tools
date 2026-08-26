@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 openssl-dev openssl-libs-static pcre2-dev zlib-static zlib-dev
-RUN mkdir -p /src && curl -fsSL "https://nmap.org/dist/nmap-${VERSION}.tar.bz2" | bunzip2 -c | tar x -C /src --strip-components=1
+RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://nmap.org/dist/nmap-${VERSION}.tar.bz2" | bunzip2 -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
