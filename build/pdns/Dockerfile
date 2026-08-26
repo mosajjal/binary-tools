@@ -4,13 +4,13 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake ldns-dev libpcap-dev
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake ldns-dev openssl-dev openssl-libs-static libpcap-dev zlib-static
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/gamelinux/passivedns.git /src
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && test -x configure || autoreconf -fi \
- && ./configure LDFLAGS=-static \
+ && ./configure LDFLAGS=-static LIBS='-lldns -lssl -lcrypto -lz -lpcap' \
  && make -j$(nproc) \
  && cp src/passivedns /tmp/out/pdns
 

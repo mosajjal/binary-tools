@@ -9,6 +9,7 @@ RUN apk add --no-cache build-base
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 --branch v${VERSION} https://github.com/laurent22/massren.git /src
 WORKDIR /src
+RUN go mod init massren && go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static" -o /tmp/x64_massren .
 

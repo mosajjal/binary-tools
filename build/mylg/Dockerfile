@@ -5,11 +5,12 @@
 FROM golang:1.25-alpine AS build
 ARG VERSION
 ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
-RUN apk add --no-cache libpcap-dev
+RUN apk add --no-cache libpcap-dev build-base
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 https://github.com/mehrdadrad/mylg.git /src
 WORKDIR /src
 ENV CGO_ENABLED=1
+RUN go mod init mylg && go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w -extldflags "-static"" -o /tmp/x64_mylg .
 

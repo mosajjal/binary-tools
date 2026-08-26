@@ -123,6 +123,8 @@ RECIPES = {
         # depends on mattn/go-sqlite3 (cgo-only); without cgo the driver is a
         # no-op stub and massren panics at runtime ("unknown driver sqlite3").
         lang="go", slug="laurent22/massren", tag_prefix="v", cgo=True,
+        # repo predates go modules
+        pre=["go mod init massren && go mod tidy"],
         bins=[("massren", ".")],
     ),
     "memcd-util": dict(
@@ -136,8 +138,10 @@ RECIPES = {
     "mylg": dict(
         lang="go", slug="mehrdadrad/mylg", branch=True,
         bins=[("mylg", ".")],
-        env={"CGO_ENABLED": "1"}, pkgs=["libpcap-dev"],
+        env={"CGO_ENABLED": "1"}, pkgs=["libpcap-dev", "build-base"],
         ldflags='-extldflags "-static"',
+        # repo predates go modules; needs gcc for the pcap cgo bits
+        pre=["go mod init mylg && go mod tidy"],
     ),
     "onionpipe": dict(
         lang="go", slug="cmars/onionpipe", tag_prefix="v",

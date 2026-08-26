@@ -10,7 +10,7 @@ WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && test -x configure || autoreconf -fi \
- && ./configure LDFLAGS=-static \
+ && ./configure LDFLAGS=-static CFLAGS='-D_LINUX_IN6_H' \
  && make -j$(nproc) \
  && cp src/ptunnel-ng /tmp/out/
 

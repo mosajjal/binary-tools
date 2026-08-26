@@ -30,7 +30,7 @@ RECIPES = {
                    "cp dsvpn /tmp/out-arm/"],
     ),
     "corkscrew": dict(
-        lang="c", slug="bryanpkc/corkscrew",
+        lang="c", slug="bryanpkc/corkscrew", tag_prefix="v",
         bins=[("corkscrew", "")],
         pkgs=["autoconf", "automake"],
         build=[AUTOGEN, "./configure --host=$(gcc -dumpmachine) LDFLAGS=-static",
@@ -323,9 +323,11 @@ RECIPES = {
     "pdns": dict(
         lang="c", slug="gamelinux/passivedns",
         bins=[("pdns", "")],
-        pkgs=["autoconf", "automake", "ldns-dev", "libpcap-dev"],
-        build=[AUTOGEN, "./configure LDFLAGS=-static", "make -j$(nproc)",
-               "cp src/passivedns /tmp/out/pdns"],
+        # static -lldns probe needs its own deps spelled out
+        pkgs=["autoconf", "automake", "ldns-dev", "openssl-dev", "openssl-libs-static",
+              "libpcap-dev", "zlib-static"],
+        build=[AUTOGEN, "./configure LDFLAGS=-static LIBS='-lldns -lssl -lcrypto -lz -lpcap'",
+               "make -j$(nproc)", "cp src/passivedns /tmp/out/pdns"],
         experimental=True,
     ),
     "vi": dict(
@@ -437,8 +439,10 @@ RECIPES["ngrep"] = dict(
 RECIPES["ptunnel-ng"] = dict(
     lang="c", slug="utoni/ptunnel-ng", tag_prefix="v",
     bins=[("ptunnel-ng", "")],
+    # musl's netinet/in.h doesn't set _LINUX_IN6_H, so linux/in6.h redefines
+    # the v6 structs; pre-defining the guard avoids the clash
     pkgs=["autoconf", "automake", "libtool"],
-    build=[AUTOGEN, "./configure LDFLAGS=-static",
+    build=[AUTOGEN, "./configure LDFLAGS=-static CFLAGS='-D_LINUX_IN6_H'",
            "make -j$(nproc)", "cp src/ptunnel-ng /tmp/out/"],
 )
 
