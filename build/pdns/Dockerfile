@@ -10,7 +10,7 @@ WORKDIR /src
 RUN mkdir -p /ldns-src /opt/ldns && curl -fsSL --retry 3 https://www.nlnetlabs.nl/downloads/ldns/ldns-1.8.3.tar.gz | gunzip -c | tar x -C /ldns-src --strip-components=1
 RUN set -ex \
  && mkdir -p /tmp/out \
- && cd /ldns-src && ./configure --prefix=/opt/ldns --disable-shared --with-ssl=/usr && make -j$(nproc) && make install && cd /src \
+ && cd /ldns-src && ./configure --prefix=/opt/ldns --disable-shared --with-ssl=/usr && make -j$(nproc) LIBS='-lcrypto' && make install && cd /src \
  && autoreconf -fi \
  && ./configure LDFLAGS='-static -L/opt/ldns/lib' CPPFLAGS='-I/opt/ldns/include' LIBS='-lldns -lssl -lcrypto -lz' \
  && make -j$(nproc) \
