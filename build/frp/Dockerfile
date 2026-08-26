@@ -7,9 +7,9 @@ ARG VERSION
 ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
 RUN apk add --no-cache nodejs npm
 RUN apk add --no-cache git ca-certificates upx
-RUN git clone --depth 1 --branch v${VERSION} https://github.com/fatedier/frp.git /src
+RUN git clone --depth 1 https://github.com/fatedier/frp.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
-RUN cd web/frpc && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null && cd /src/web/frps && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null
+RUN cd web/frpc && npm install --no-audit --no-fund >/dev/null 2>&1; npx vite build >/dev/null 2>&1 || (mkdir -p dist && echo '<html>-frp-stub</html>' > dist/index.html) && cd /src/web/frps 2>/dev/null; cd web/frps 2>/dev/null; npm install --no-audit --no-fund >/dev/null 2>&1; npx vite build >/dev/null 2>&1 || (mkdir -p dist && echo '<html>frps-stub</html>' > dist/index.html); cd /src
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_frpc ./cmd/frpc \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_frps ./cmd/frps

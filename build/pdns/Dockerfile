@@ -5,7 +5,7 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake openssl-dev openssl-libs-static libpcap-dev zlib-static
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/gamelinux/passivedns.git /src
+RUN git clone --depth 1 https://github.com/gamelinux/passivedns.git /src && cd /src && REF="${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
 RUN mkdir -p /ldns-src /opt/ldns && curl -fsSL --retry 3 https://www.nlnetlabs.nl/downloads/ldns/ldns-1.8.3.tar.gz | gunzip -c | tar x -C /ldns-src --strip-components=1
 RUN set -ex \

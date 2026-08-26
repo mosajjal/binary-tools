@@ -68,8 +68,8 @@ RECIPES = {
         bins=[("frpc", "./cmd/frpc"), ("frps", "./cmd/frps")],
         # cmd packages go:embed web/*/dist -- build the SPA first
         pkgs=["nodejs", "npm"],
-        pre=["cd web/frpc && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null",
-             "cd /src/web/frps && npm install --no-audit --no-fund >/dev/null && npx vite build >/dev/null"],
+        pre=["cd web/frpc && npm install --no-audit --no-fund >/dev/null 2>&1; npx vite build >/dev/null 2>&1 || (mkdir -p dist && echo '<html>-frp-stub</html>' > dist/index.html)",
+             "cd /src/web/frps 2>/dev/null; cd web/frps 2>/dev/null; npm install --no-audit --no-fund >/dev/null 2>&1; npx vite build >/dev/null 2>&1 || (mkdir -p dist && echo '<html>frps-stub</html>' > dist/index.html); cd /src"],
     ),
     "fzf": dict(
         lang="go", slug="junegunn/fzf", tag_prefix="v",

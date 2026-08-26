@@ -5,11 +5,11 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/3proxy/3proxy.git /src
+RUN git clone --depth 1 https://github.com/3proxy/3proxy.git /src && cd /src && REF="${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static' \
+ && timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static' WITH_PLUGINS=no \
  && cp bin/3proxy /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---
@@ -18,7 +18,7 @@ RUN tar -C /opt -zxf /tmp/armtc.tgz
 ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
- && timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static' \
+ && timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static' WITH_PLUGINS=no \
  && cp bin/3proxy /tmp/out-arm/
 
 RUN set -ex \

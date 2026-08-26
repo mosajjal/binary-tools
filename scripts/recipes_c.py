@@ -26,7 +26,7 @@ RECIPES = {
         build=["make CC=gcc LDFLAGS=-static -j$(nproc)", "cp dsvpn /tmp/out/"],
         arm_build=["make clean || true",
                    "sed -i '/^\\tstrip /d' Makefile",
-                   "make CC=arm-linux-musleabihf-gcc LDFLAGS=-static -j$(nproc)",
+                   "make CC=arm-linux-musleabihf-gcc CFLAGS='-O2' LDFLAGS=-static -j$(nproc)",
                    "cp dsvpn /tmp/out-arm/"],
     ),
     "corkscrew": dict(
@@ -296,11 +296,11 @@ RECIPES = {
     "sslh": dict(
         lang="c", slug="yrutschle/sslh", tag_prefix="v",
         bins=[("sslh", "")],
-        pkgs=["pcre2-dev", "libconfig-dev", "libconfig-static", "libev-dev", "openssl-libs-static",
-              "autoconf", "automake", "pkgconf"],
-        build=["./configure",
-               "make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static'",
-               "cp sslh-select /tmp/out/sslh"],
+        pkgs=["pcre2-dev", "libconfig-dev", "libconfig-static", "libev-dev", "openssl-libs-static"],
+        # 2.x dropped autotools — plain Makefile. 1.x had ./configure; try both.
+        build=["test -x configure && ./configure || echo 'no configure, using Makefile defaults'",
+               "make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static' USELIBCONFIG=1 2>/dev/null || make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static'",
+               "cp sslh-select /tmp/out/sslh 2>/dev/null || cp sslh /tmp/out/sslh"],
         experimental=True,
     ),
     "sslsplit": dict(
@@ -384,11 +384,12 @@ RECIPES = {
     ),
     "suricata": dict(
         lang="c",
+        base_image="rust:1.70-alpine",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
         pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre2-dev", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
-              "openssl-libs-static", "zlib-static", "cargo"],
+              "openssl-libs-static", "zlib-static"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
@@ -412,17 +413,18 @@ RECIPES = {
                "-DENABLE_STATIC=ON -DENABLE_PCAP=OFF -DZLIB_INCLUDE_DIR=/usr/include "
                "-DZLIB_LIBRARY=/lib/libz.a -DCMAKE_BUILD_TYPE=Release "
                "-DCMAKE_EXE_LINKER_FLAGS=-static", "cmake --build build -j$(nproc)",
+               "find build -maxdepth 4 -name tshark -type f -exec cp {} /tmp/out/ \\; 2>/dev/null || true",
                "for f in tshark dumpcap editcap mergecap capinfos captype rawshark "
-               "text2pcap randpkt reordercap sharkd dftest; do "
-               "cp build/run/$f /tmp/out/ 2>/dev/null || echo missing-$f; done; "
+               "text2pcap randpkt reordercap sharkd dftest tfshark; do "
+               "find build -name $f -type f -exec cp {} /tmp/out/ \\; 2>/dev/null || echo missing-$f; done; "
                "ls /tmp/out/"],
         experimental=True, arm=False,
     ),
     "zmap": dict(
         lang="c", slug="zmap/zmap", tag_prefix="v",
         bins=[("zmap", ""), ("ztee", ""), ("zgrab2", "")],
-        pkgs=["cmake", "gengetopt", "flex", "json-c-dev", "libunistring-dev",
-              "libunistring-static", "libpcap-dev", "judy-dev", "gmp-dev", "byacc", "go"],
+        pkgs=["cmake", "gengetopt", "flex", "byacc", "json-c-dev", "libunistring-dev",
+              "libunistring-static", "libpcap-dev", "judy-dev", "gmp-dev", "go", "pkgconf"],
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/",
@@ -438,9 +440,12 @@ RECIPES["3proxy"] = dict(
     lang="c", slug="3proxy/3proxy",
     bins=[("3proxy", "")],
     # hang-guard: their Makefile occasionally stalls on CI runners
-    build=["timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static'",
+    # Plugins are .so — disable for static build to avoid "attempted static
+    # link of dynamic object" (ld.so plugin error). Plugin support is not
+    # needed for the standalone proxy binary we ship.
+    build=["timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=gcc LDFLAGS='-static' WITH_PLUGINS=no",
            "cp bin/3proxy /tmp/out/"],
-    arm_build=["timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static'",
+    arm_build=["timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static' WITH_PLUGINS=no",
                "cp bin/3proxy /tmp/out-arm/"],
     experimental=True,
 )

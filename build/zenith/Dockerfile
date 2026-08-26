@@ -2,15 +2,15 @@
 # Builds zenith at a given ARG VERSION statically for x64 and ARMv7.
 # usage: docker build --build-arg VERSION=SET_ME -t bt/zenith build/zenith
 
-FROM rust:1-alpine AS build
+FROM rust:1.70-alpine AS build
 ARG VERSION
 RUN apk add --no-cache linux-headers clang clang-dev llvm-dev gcc
 ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C target-feature=+crt-static"
 ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+crt-static"
 RUN apk add --no-cache git ca-certificates upx musl-dev perl make
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/bvaisvil/zenith.git /src
+RUN git clone --depth 1 https://github.com/bvaisvil/zenith.git /src && cd /src && REF="${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
-ENV LIBCLANG_PATH=/usr/lib/llvm22/lib
+ENV LIBCLANG_PATH=/usr/lib/llvm16/lib
 RUN ln -sf /usr/bin/gcc /usr/bin/musl-gcc
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \

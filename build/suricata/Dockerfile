@@ -2,9 +2,9 @@
 # Builds suricata at a given ARG VERSION statically for x64.
 # usage: docker build --build-arg VERSION=SET_ME -t bt/suricata build/suricata
 
-FROM alpine:3.20 AS build
+FROM rust:1.70-alpine AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pcre-dev pcre2-dev yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static cargo
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pcre-dev pcre2-dev yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static
 RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://www.openinfosecfoundation.org/download/suricata-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN set -ex \

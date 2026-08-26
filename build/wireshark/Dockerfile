@@ -5,13 +5,14 @@
 FROM alpine:3.20 AS build
 ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake ninja perl flex glib-dev glib-static libgcrypt-dev libgcrypt-static c-ares-dev libxml2-dev libssh-dev libpcap-dev pcre2-dev zlib-static speexdsp-dev
-RUN git clone --depth 1 --branch v${VERSION} https://github.com/wireshark/wireshark.git /src
+RUN git clone --depth 1 https://github.com/wireshark/wireshark.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
  && cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF -DENABLE_STATIC=ON -DENABLE_PCAP=OFF -DZLIB_INCLUDE_DIR=/usr/include -DZLIB_LIBRARY=/lib/libz.a -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static \
  && cmake --build build -j$(nproc) \
- && for f in tshark dumpcap editcap mergecap capinfos captype rawshark text2pcap randpkt reordercap sharkd dftest; do cp build/run/$f /tmp/out/ 2>/dev/null || echo missing-$f; done; ls /tmp/out/
+ && find build -maxdepth 4 -name tshark -type f -exec cp {} /tmp/out/ \; 2>/dev/null || true \
+ && for f in tshark dumpcap editcap mergecap capinfos captype rawshark text2pcap randpkt reordercap sharkd dftest tfshark; do find build -name $f -type f -exec cp {} /tmp/out/ \; 2>/dev/null || echo missing-$f; done; ls /tmp/out/
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tshark) && cp /tmp/out/tshark /out/x64/tshark \

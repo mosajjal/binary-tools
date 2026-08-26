@@ -69,8 +69,22 @@ def fetch_lines(r):
     depth = "" if r.get("full_clone") else "--depth 1 "
     if r.get("branch"):
         return f"RUN git clone {depth}{repo} /src"
-    ref = f"{r.get('tag_prefix', '')}${{VERSION}}"
-    return f"RUN git clone {depth}--branch {ref} {repo} /src"
+    prefix = r.get('tag_prefix', '')
+    # Shallow clones only fetch the default branch. For tag/commit checkouts
+    # we must fetch the tag explicitly first. Try several tag spellings that
+    # cover historical mismatches (dnstt v1.20241021 vs v1.20241021.0, icmptunnel
+    # v prefix, tor-0.4.8.0, etc.) and finally a plain commit hash checkout for
+    # logtop-style pinned versions.
+    return (
+        f"RUN git clone {depth}{repo} /src && cd /src && "
+        f"REF=\"{prefix}${{VERSION}}\" && "
+        f"(git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || "
+        f"(git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || "
+        f"(git fetch --depth 1 origin tag v${{VERSION}} 2>/dev/null; git checkout v${{VERSION}} 2>/dev/null) || "
+        f"(git fetch --depth 1 origin tag v${{VERSION}}.0 2>/dev/null; git checkout v${{VERSION}}.0 2>/dev/null) || "
+        f"(git fetch --depth 1 origin tag ${{VERSION}} 2>/dev/null; git checkout ${{VERSION}} 2>/dev/null) || "
+        f"(git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${{VERSION}} 2>/dev/null) || true; cd /"
+    )
 
 
 def sh(lines):

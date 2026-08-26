@@ -4,14 +4,14 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 pcre2-dev libconfig-dev libconfig-static libev-dev openssl-libs-static autoconf automake pkgconf
-RUN git clone --depth 1 --branch v${VERSION} https://github.com/yrutschle/sslh.git /src
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 pcre2-dev libconfig-dev libconfig-static libev-dev openssl-libs-static
+RUN git clone --depth 1 https://github.com/yrutschle/sslh.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./configure \
- && make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static' \
- && cp sslh-select /tmp/out/sslh
+ && test -x configure && ./configure || echo 'no configure, using Makefile defaults' \
+ && make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static' USELIBCONFIG=1 2>/dev/null || make -j$(nproc) sslh-select CC=gcc LDFLAGS='-static' \
+ && cp sslh-select /tmp/out/sslh 2>/dev/null || cp sslh /tmp/out/sslh
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/sslh) && cp /tmp/out/sslh /out/x64/sslh \

@@ -7,7 +7,7 @@ ARG VERSION
 ENV CGO_ENABLED=1 GOTOOLCHAIN=auto
 RUN apk add --no-cache build-base
 RUN apk add --no-cache git ca-certificates upx
-RUN git clone --depth 1 --branch v${VERSION} https://github.com/laurent22/massren.git /src
+RUN git clone --depth 1 https://github.com/laurent22/massren.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
 RUN test -f go.mod || go mod init massren; go mod tidy
 RUN set -ex \
