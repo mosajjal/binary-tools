@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/xsv) && cp /tmp/x64_xsv /out/x64/xsv \
- && strip "/out/x64/xsv" \
+ && strip "/out/x64/xsv" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/xsv" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/socat) && cp /tmp/out/socat /out/x64/socat \
- && strip "/out/x64/socat" \
+ && strip "/out/x64/socat" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/socat" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

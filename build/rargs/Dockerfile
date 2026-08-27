@@ -29,8 +29,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/rargs) && cp /tmp/x64_rargs /out/x64/rargs \
  && mkdir -p $(dirname /out/arm/rargs) && cp /tmp/arm_rargs /out/arm/rargs \
- && strip "/out/x64/rargs" \
- && arm-linux-musleabihf-strip "/out/arm/rargs" \
+ && strip "/out/x64/rargs" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/rargs" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/rargs" "/out/arm/rargs" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

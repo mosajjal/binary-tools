@@ -17,7 +17,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tcpdump) && cp /tmp/out/tcpdump /out/x64/tcpdump \
- && strip "/out/x64/tcpdump" \
+ && strip "/out/x64/tcpdump" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/tcpdump" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

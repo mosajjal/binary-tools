@@ -26,8 +26,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/dsvpn) && cp /tmp/out/dsvpn /out/x64/dsvpn \
  && mkdir -p $(dirname /out/arm/dsvpn) && cp /tmp/out-arm/dsvpn /out/arm/dsvpn \
- && strip "/out/x64/dsvpn" \
- && arm-linux-musleabihf-strip "/out/arm/dsvpn" \
+ && strip "/out/x64/dsvpn" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/dsvpn" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/dsvpn" "/out/arm/dsvpn" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

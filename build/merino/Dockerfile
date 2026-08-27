@@ -29,8 +29,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/merino) && cp /tmp/x64_merino /out/x64/merino \
  && mkdir -p $(dirname /out/arm/merino) && cp /tmp/arm_merino /out/arm/merino \
- && strip "/out/x64/merino" \
- && arm-linux-musleabihf-strip "/out/arm/merino" \
+ && strip "/out/x64/merino" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/merino" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/merino" "/out/arm/merino" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

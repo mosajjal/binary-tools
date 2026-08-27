@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/jaq) && cp /tmp/x64_jaq /out/x64/jaq \
- && strip "/out/x64/jaq" \
+ && strip "/out/x64/jaq" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/jaq" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

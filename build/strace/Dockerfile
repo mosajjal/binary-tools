@@ -27,8 +27,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/strace) && cp /tmp/out/strace /out/x64/strace \
  && mkdir -p $(dirname /out/arm/strace) && cp /tmp/out-arm/strace /out/arm/strace \
- && strip "/out/x64/strace" \
- && arm-linux-musleabihf-strip "/out/arm/strace" \
+ && strip "/out/x64/strace" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/strace" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/strace" "/out/arm/strace" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

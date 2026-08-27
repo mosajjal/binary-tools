@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/iodine) && cp /tmp/out/iodine /out/x64/iodine \
  && mkdir -p $(dirname /out/x64/iodined) && cp /tmp/out/iodined /out/x64/iodined \
- && strip "/out/x64/iodine" "/out/x64/iodined" \
+ && strip "/out/x64/iodine" "/out/x64/iodined" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/iodine" "/out/x64/iodined" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

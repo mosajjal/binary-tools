@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/fish) && cp /tmp/out/fish /out/x64/fish \
- && strip "/out/x64/fish" \
+ && strip "/out/x64/fish" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/fish" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

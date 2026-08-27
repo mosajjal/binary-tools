@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/lnav) && cp /tmp/out/lnav /out/x64/lnav \
- && strip "/out/x64/lnav" \
+ && strip "/out/x64/lnav" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/lnav" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

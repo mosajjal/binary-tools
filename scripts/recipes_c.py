@@ -387,11 +387,11 @@ RECIPES = {
         base_image="rust:1-alpine",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre2-dev", "yaml-dev",
+        pkgs=["autoconf", "automake", "libtool", "pkgconf", "pcre-dev", "pcre-static", "pcre2-dev", "pcre2-static", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
               "openssl-libs-static", "zlib-static"],
         pre=["(cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)"],
-        build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
+        build=["PKG_CONFIG='pkg-config --static' ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
                "make -j$(nproc)", "cp src/suricata /tmp/out/"],

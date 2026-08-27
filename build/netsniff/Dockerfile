@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
  && mkdir -p $(dirname /out/x64/ifpps) && cp /tmp/out/ifpps /out/x64/ifpps \
- && strip "/out/x64/netsniff-ng" "/out/x64/ifpps" \
+ && strip "/out/x64/netsniff-ng" "/out/x64/ifpps" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/ifpps" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

@@ -16,7 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/httptunnel-client) && cp /tmp/out/httptunnel-client /out/x64/httptunnel-client \
  && mkdir -p $(dirname /out/x64/httptunnel-server) && cp /tmp/out/httptunnel-server /out/x64/httptunnel-server \
- && strip "/out/x64/httptunnel-client" "/out/x64/httptunnel-server" \
+ && strip "/out/x64/httptunnel-client" "/out/x64/httptunnel-server" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/httptunnel-client" "/out/x64/httptunnel-server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

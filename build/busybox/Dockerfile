@@ -31,8 +31,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/busybox) && cp /tmp/out/busybox /out/x64/busybox \
  && mkdir -p $(dirname /out/arm/busybox) && cp /tmp/out-arm/busybox /out/arm/busybox \
- && strip "/out/x64/busybox" \
- && arm-linux-musleabihf-strip "/out/arm/busybox" \
+ && strip "/out/x64/busybox" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/busybox" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/busybox" "/out/arm/busybox" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

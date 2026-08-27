@@ -32,8 +32,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tiny) && cp /tmp/x64_tiny /out/x64/tiny \
  && mkdir -p $(dirname /out/arm/tiny) && cp /tmp/arm_tiny /out/arm/tiny \
- && strip "/out/x64/tiny" \
- && arm-linux-musleabihf-strip "/out/arm/tiny" \
+ && strip "/out/x64/tiny" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/tiny" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/tiny" "/out/arm/tiny" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

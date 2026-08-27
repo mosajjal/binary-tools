@@ -16,7 +16,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/tor) && cp /tmp/out/tor /out/x64/tor \
- && strip "/out/x64/tor" \
+ && strip "/out/x64/tor" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/tor" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

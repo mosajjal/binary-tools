@@ -27,8 +27,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/pv) && cp /tmp/out/pv /out/x64/pv \
  && mkdir -p $(dirname /out/arm/pv) && cp /tmp/out-arm/pv /out/arm/pv \
- && strip "/out/x64/pv" \
- && arm-linux-musleabihf-strip "/out/arm/pv" \
+ && strip "/out/x64/pv" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/pv" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/pv" "/out/arm/pv" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

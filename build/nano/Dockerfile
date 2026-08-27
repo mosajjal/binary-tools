@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/nano) && cp /tmp/out/nano /out/x64/nano \
- && strip "/out/x64/nano" \
+ && strip "/out/x64/nano" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/nano" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

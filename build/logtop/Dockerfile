@@ -15,7 +15,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/logtop) && cp /tmp/out/logtop /out/x64/logtop \
- && strip "/out/x64/logtop" \
+ && strip "/out/x64/logtop" || echo 'strip x64 failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/logtop" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

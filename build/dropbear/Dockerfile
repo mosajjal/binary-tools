@@ -35,8 +35,8 @@ RUN set -ex \
  && mkdir -p $(dirname /out/arm/dropbearconvert) && cp /tmp/out-arm/dropbearconvert /out/arm/dropbearconvert \
  && mkdir -p $(dirname /out/arm/dropbearkey) && cp /tmp/out-arm/dropbearkey /out/arm/dropbearkey \
  && mkdir -p $(dirname /out/arm/scp) && cp /tmp/out-arm/scp /out/arm/scp \
- && strip "/out/x64/dropbear" "/out/x64/dbclient" "/out/x64/dropbearconvert" "/out/x64/dropbearkey" "/out/x64/scp" \
- && arm-linux-musleabihf-strip "/out/arm/dropbear" "/out/arm/dbclient" "/out/arm/dropbearconvert" "/out/arm/dropbearkey" "/out/arm/scp" \
+ && strip "/out/x64/dropbear" "/out/x64/dbclient" "/out/x64/dropbearconvert" "/out/x64/dropbearkey" "/out/x64/scp" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/dropbear" "/out/arm/dbclient" "/out/arm/dropbearconvert" "/out/arm/dropbearkey" "/out/arm/scp" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/dropbear" "/out/x64/dbclient" "/out/x64/dropbearconvert" "/out/x64/dropbearkey" "/out/x64/scp" "/out/arm/dropbear" "/out/arm/dbclient" "/out/arm/dropbearconvert" "/out/arm/dropbearkey" "/out/arm/scp" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

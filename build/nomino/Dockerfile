@@ -29,8 +29,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/nomino) && cp /tmp/x64_nomino /out/x64/nomino \
  && mkdir -p $(dirname /out/arm/nomino) && cp /tmp/arm_nomino /out/arm/nomino \
- && strip "/out/x64/nomino" \
- && arm-linux-musleabihf-strip "/out/arm/nomino" \
+ && strip "/out/x64/nomino" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/nomino" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/nomino" "/out/arm/nomino" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
