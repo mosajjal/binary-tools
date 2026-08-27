@@ -58,7 +58,7 @@ tools:
     outputs: [atop]
     test: "-V"
   - name: avml
-    version: "0.11.2"
+    version: "0.20.0"
     check: {type: github-release, slug: microsoft/avml}
     lang: rust
     outputs: [avml]
@@ -153,7 +153,7 @@ tools:
     outputs: [dnstrace]
     test_cmd: '/out/x64/dnstrace -h 2>&1 | grep -qiE "usage|query"'
   - name: dnstt_client
-    version: "1.20241021"
+    version: "1.20260501.0"
     check: {type: git-remote, remote: 'https://www.bamsoftware.com/git/dnstt.git', pattern: '^v(.+)$'}
     lang: go
     outputs: [dnstt_client, dnstt_server]
@@ -173,7 +173,7 @@ tools:
     outputs: [dropbear, dbclient, dropbearconvert, dropbearkey, scp]
     test_cmd: "/out/x64/dbclient -V 2>&1 | grep -qi dropbear"
   - name: dsvpn
-    version: "0.1.3"
+    version: "0.1.5"
     check: {type: github-release, slug: jedisct1/dsvpn}
     lang: c
     outputs: [dsvpn]
@@ -219,7 +219,7 @@ tools:
     outputs: [fq]
     test: "--version"
   - name: frp
-    version: "0.48.0"
+    version: "0.71.0"
     check: {type: github-release, slug: fatedier/frp}
     lang: go
     outputs: [frpc, frps]
@@ -327,7 +327,7 @@ tools:
     outputs: [hex]
     test: "--version"
   - name: icmptunnel
-    version: "1.0.0-alpha"
+    version: "1.0.0"
     check: {type: github-tag, slug: DhavalKapil/icmptunnel, prefix: v}
     lang: c
     outputs: [icmptunnel]
@@ -396,7 +396,7 @@ tools:
     test: "-V"
     experimental: true
   - name: logtop
-    version: "a0935ab"
+    version: "0.7"
     check: {type: github-tag, slug: JulienPalard/logtop, prefix: "logtop-"}
     lang: c
     outputs: [logtop]
@@ -475,7 +475,7 @@ tools:
     test_cmd: "/out/x64/netsniff-ng --version 2>&1 | grep -qi netsniff"
     experimental: true
   - name: ngrep
-    version: "1.47.1"
+    version: "1.49.0"
     check: {type: sourceforge, project: ngrep}
     lang: c
     outputs: [ngrep]
@@ -623,7 +623,7 @@ tools:
     outputs: [sshx, sshx-server]
     test: "--help"
   - name: sslh
-    version: "2.0"
+    version: "2.3.1"
     check: {type: github-tag, slug: yrutschle/sslh, prefix: v}
     lang: c
     outputs: [sslh]
@@ -697,7 +697,7 @@ tools:
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.8.0"
+    version: "0.4.9.11"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -793,7 +793,7 @@ tools:
     outputs: [zellij]
     test: "--version"
   - name: zmap
-    version: "2.1.1"
+    version: "4.4.0"
     check: {type: github-release, slug: zmap/zmap}
     lang: c
     outputs: [zmap, ztee, zgrab2]
