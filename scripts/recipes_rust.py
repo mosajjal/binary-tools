@@ -7,8 +7,8 @@ features/cargo_args are appended to `cargo build --release`.
 RECIPES = {
     "avml": dict(
         lang="rust", slug="microsoft/avml", tag_prefix="v",
-        rust_image="rust:1.70-alpine",
         bins=[("avml", "avml")],
+        arm=False,
     ),
     "bandwhich": dict(
         lang="rust", slug="imsnif/bandwhich", tag_prefix="v",
@@ -95,11 +95,11 @@ RECIPES = {
     ),
     "zenith": dict(
         lang="rust", slug="bvaisvil/zenith",
-        rust_image="rust:1.70-alpine",
         pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev", "gcc"],
         env={"LIBCLANG_PATH": "/usr/lib/llvm16/lib"},
         pre=["ln -sf /usr/bin/gcc /usr/bin/musl-gcc"],
         bins=[("zenith", "zenith")],
+        arm=False,
     ),
     "zellij": dict(
         lang="rust", slug="zellij-org/zellij", tag_prefix="v",

@@ -384,12 +384,13 @@ RECIPES = {
     ),
     "suricata": dict(
         lang="c",
-        base_image="rust:1.70-alpine",
+        base_image="rust:1-alpine",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
         pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre2-dev", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
               "openssl-libs-static", "zlib-static"],
+        pre=["cargo update -p lexical-core 2>/dev/null || true"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
