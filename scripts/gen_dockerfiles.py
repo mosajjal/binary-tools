@@ -281,9 +281,9 @@ def _collect_and_pack(pairs, r):
         x64 = [dst for _, dst in pairs if "/out/arm/" not in dst]
         arm = [dst for _, dst in pairs if "/out/arm/" in dst]
         if x64:
-            steps.append(f"strip {_q(x64)}")
+            steps.append(f"strip {_q(x64)} || echo 'strip x64 failed (non-ELF?)'")
         if arm:
-            steps.append(f"{ARM_STRIP} {_q(arm)}")
+            steps.append(f"{ARM_STRIP} {_q(arm)} || echo 'strip arm failed (non-ELF?)'")
 
     # UPX is multi-arch, so it packs both. Keep it non-fatal (some binaries
     # legitimately refuse to pack), but wrap it in a subshell so its `||`

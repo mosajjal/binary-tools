@@ -24,8 +24,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/3proxy) && cp /tmp/out/3proxy /out/x64/3proxy \
  && mkdir -p $(dirname /out/arm/3proxy) && cp /tmp/out-arm/3proxy /out/arm/3proxy \
- && strip "/out/x64/3proxy" \
- && arm-linux-musleabihf-strip "/out/arm/3proxy" \
+ && strip "/out/x64/3proxy" || echo 'strip x64 failed (non-ELF?)' \
+ && arm-linux-musleabihf-strip "/out/arm/3proxy" || echo 'strip arm failed (non-ELF?)' \
  && ( upx -q --best --lzma "/out/x64/3proxy" "/out/arm/3proxy" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
