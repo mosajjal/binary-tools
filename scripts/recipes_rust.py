@@ -95,9 +95,7 @@ RECIPES = {
     ),
     "zenith": dict(
         lang="rust", slug="bvaisvil/zenith",
-        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev", "gcc"],
-        env={"LIBCLANG_PATH": "/usr/lib/llvm16/lib"},
-        pre=["ln -sf /usr/bin/gcc /usr/bin/musl-gcc"],
+        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev"],
         bins=[("zenith", "zenith")],
         arm=False,
     ),

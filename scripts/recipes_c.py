@@ -390,7 +390,7 @@ RECIPES = {
         pkgs=["autoconf", "automake", "libtool", "pcre-dev", "pcre2-dev", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
               "openssl-libs-static", "zlib-static"],
-        pre=["cargo update -p lexical-core 2>/dev/null || true"],
+        pre=["(cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)"],
         build=["./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
                "LDFLAGS=-static --disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
