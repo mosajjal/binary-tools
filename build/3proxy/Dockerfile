@@ -18,7 +18,8 @@ RUN tar -C /opt -zxf /tmp/armtc.tgz
 ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
- && timeout -k 30 600 make -f Makefile.Linux CC=arm-linux-musleabihf-gcc LDFLAGS='-static' WITH_PLUGINS=no \
+ && make -f Makefile.Linux clean 2>/dev/null; rm -rf bin/*.o bin/3proxy \
+ && timeout -k 30 600 make -f Makefile.Linux -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS='-static' WITH_PLUGINS=no \
  && cp bin/3proxy /tmp/out-arm/
 
 RUN set -ex \
