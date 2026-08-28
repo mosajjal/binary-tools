@@ -10,7 +10,7 @@ RUN apk add --no-cache libpcap-dev build-base
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 https://github.com/mehrdadrad/mylg.git /src
 WORKDIR /src
-ENV CGO_ENABLED=1
+ENV CGO_ENABLED="1"
 RUN test -f go.mod || go mod init mylg; go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w -linkmode external -extldflags=-static -extldflags "-static"" -o /tmp/x64_mylg .

@@ -128,7 +128,7 @@ def go_recipe(name, r):
     b.append("WORKDIR /src")
     if r.get("env"):
         for k, v in r["env"].items():
-            b.append(f"ENV {k}={v}")
+            b.append(f'ENV {k}="{v}"')
     if r.get("pre"):
         b.append("RUN " + " && ".join(r["pre"]))
     main = r.get("build") or [
@@ -169,19 +169,31 @@ def rust_recipe(name, r):
         f"FROM {base} AS build",
         "ARG VERSION",
     ]
+    if r.get("apt_pkgs"):
+        b.append("RUN echo 'deb http://deb.debian.org/debian bookworm-backports main' "
+                 ">> /etc/apt/sources.list.d/backports.list && apt-get update -qq "
+                 "&& apt-get install -y --no-install-recommends "
+                 f"{' '.join(r['apt_pkgs'])}")
     if r.get("pkgs"):
         b.append(f"RUN apk add --no-cache {' '.join(r['pkgs'])}")
     b += [
         # per-target flags so HOST proc-macros are built without crt-static
         'ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C target-feature=+crt-static"',
         'ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+crt-static"',
-        "RUN apk add --no-cache git ca-certificates upx musl-dev perl make",
-        fetch_lines(r),
-        "WORKDIR /src",
     ]
+    # glibc base (apt): build scripts run on glibc (bindgen dlopens libclang),
+    # final artifact still targets static musl via musl-gcc cross linker.
+    if r.get("apt_pkgs"):
+        b += [
+            "RUN rustup target add x86_64-unknown-linux-musl",
+            "ENV CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=musl-gcc",
+        ]
+    else:
+        b.append("RUN apk add --no-cache git ca-certificates upx musl-dev perl make")
+    b += [fetch_lines(r), "WORKDIR /src"]
     if r.get("env"):
         for k, v in r["env"].items():
-            b.append(f"ENV {k}={v}")
+            b.append(f'ENV {k}="{v}"')
     if r.get("pre"):
         b.append("RUN " + " && ".join(r["pre"]))
     args = r.get("cargo_args", "")
@@ -239,7 +251,7 @@ def c_recipe(name, r):
     ]
     if r.get("env"):
         for k, v in r["env"].items():
-            b.append(f"ENV {k}={v}")
+            b.append(f'ENV {k}="{v}"')
     if r.get("pre"):
         b.append("RUN " + " && ".join(r["pre"]))
     b.append(run_block(["mkdir -p /tmp/out"] + r["build"]))

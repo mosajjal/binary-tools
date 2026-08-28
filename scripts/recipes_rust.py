@@ -95,8 +95,11 @@ RECIPES = {
     ),
     "zenith": dict(
         lang="rust", slug="bvaisvil/zenith",
-        pkgs=["linux-headers", "clang", "clang-dev", "clang-static", "llvm-dev", "llvm-static", "pkgconf"],
-        env={"CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_RUSTFLAGS": "-C target-feature=-crt-static", "LIBCLANG_PATH": "/usr/lib", "PKG_CONFIG_ALLOW_SYSTEM_LIBS": "1"},
+        # DISABLED in tools.yaml: linux-taskstats' bindgen build-script dlopens
+        # libclang, which fails on a static-musl host. A glibc host + zigbuild
+        # musl cross works but needs zig toolchain integration; shipped binary
+        # is retained.
+        pkgs=["linux-headers", "clang", "clang-dev", "llvm-dev", "pkgconf"],
         bins=[("zenith", "zenith")],
         arm=False,
     ),

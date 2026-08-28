@@ -783,6 +783,7 @@ tools:
     test_cmd: "/out/x64/yq '.a' /dev/null --null-input || true; echo '{}' | /out/x64/yq -P '.'"
   - name: zenith
     version: "0.12.0"
+    enabled: false
     check: {type: github-release, slug: bvaisvil/zenith, prefix: ""}
     lang: rust
     outputs: [zenith]

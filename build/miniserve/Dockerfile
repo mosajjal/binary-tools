@@ -10,7 +10,7 @@ ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+cr
 RUN apk add --no-cache git ca-certificates upx musl-dev perl make
 RUN git clone --depth 1 https://github.com/svenstaro/miniserve.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
-ENV OPENSSL_STATIC=1
+ENV OPENSSL_STATIC="1"
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl --features tls \
  && cp target/x86_64-unknown-linux-musl/release/miniserve /tmp/x64_miniserve

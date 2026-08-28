@@ -10,7 +10,7 @@ ENV CARGO_TARGET_ARMV7_UNKNOWN_LINUX_MUSLEABIHF_RUSTFLAGS="-C target-feature=+cr
 RUN apk add --no-cache git ca-certificates upx musl-dev perl make
 RUN git clone --depth 1 https://github.com/ekzhang/sshx.git /src
 WORKDIR /src
-ENV PROTOC=/usr/bin/protoc
+ENV PROTOC="/usr/bin/protoc"
 RUN set -ex \
  && cargo build --release --target x86_64-unknown-linux-musl \
  && cp target/x86_64-unknown-linux-musl/release/sshx /tmp/x64_sshx \
