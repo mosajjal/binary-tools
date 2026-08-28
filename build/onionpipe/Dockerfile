@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/onionpipe) && cp /tmp/x64_onionpipe /out/x64/onionpipe \
  && mkdir -p $(dirname /out/arm/onionpipe) && cp /tmp/arm_onionpipe /out/arm/onionpipe \
+ && test -n "$(ls "/out/x64/onionpipe" "/out/arm/onionpipe" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/onionpipe" "/out/arm/onionpipe" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

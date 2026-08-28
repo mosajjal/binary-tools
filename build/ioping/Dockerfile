@@ -25,8 +25,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/ioping) && cp /tmp/out/ioping /out/x64/ioping \
  && mkdir -p $(dirname /out/arm/ioping) && cp /tmp/out-arm/ioping /out/arm/ioping \
- && strip "/out/x64/ioping" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/ioping" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/ioping"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/ioping"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/ioping" "/out/arm/ioping" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/ioping" "/out/arm/ioping" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

@@ -4,7 +4,7 @@
 
 FROM rust:1-alpine AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pkgconf pcre-dev pcre-static pcre2-dev pcre2-static yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 autoconf automake libtool pkgconf pcre-dev pcre-static pcre2-dev yaml-dev yaml-static jansson-dev jansson-static libpcap-dev openssl-libs-static zlib-static
 RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://www.openinfosecfoundation.org/download/suricata-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
 RUN (cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)
@@ -16,7 +16,8 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/suricata) && cp /tmp/out/suricata /out/x64/suricata \
- && strip "/out/x64/suricata" || echo 'strip x64 failed (non-ELF?)' \
+ && for f in "/out/x64/suricata"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/suricata" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/suricata" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

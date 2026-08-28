@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/singbox) && cp /tmp/x64_singbox /out/x64/singbox \
  && mkdir -p $(dirname /out/arm/singbox) && cp /tmp/arm_singbox /out/arm/singbox \
+ && test -n "$(ls "/out/x64/singbox" "/out/arm/singbox" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/singbox" "/out/arm/singbox" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

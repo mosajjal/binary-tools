@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/sniproxy) && cp /tmp/x64_sniproxy /out/x64/sniproxy \
  && mkdir -p $(dirname /out/arm/sniproxy) && cp /tmp/arm_sniproxy /out/arm/sniproxy \
+ && test -n "$(ls "/out/x64/sniproxy" "/out/arm/sniproxy" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/sniproxy" "/out/arm/sniproxy" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

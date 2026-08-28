@@ -28,8 +28,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/corkscrew) && cp /tmp/out/corkscrew /out/x64/corkscrew \
  && mkdir -p $(dirname /out/arm/corkscrew) && cp /tmp/out-arm/corkscrew /out/arm/corkscrew \
- && strip "/out/x64/corkscrew" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/corkscrew" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/corkscrew"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/corkscrew"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/corkscrew" "/out/arm/corkscrew" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/corkscrew" "/out/arm/corkscrew" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

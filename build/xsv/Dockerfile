@@ -15,7 +15,8 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/xsv) && cp /tmp/x64_xsv /out/x64/xsv \
- && strip "/out/x64/xsv" || echo 'strip x64 failed (non-ELF?)' \
+ && for f in "/out/x64/xsv"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/xsv" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/xsv" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

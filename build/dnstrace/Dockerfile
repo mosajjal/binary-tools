@@ -18,6 +18,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/dnstrace) && cp /tmp/x64_dnstrace /out/x64/dnstrace \
  && mkdir -p $(dirname /out/arm/dnstrace) && cp /tmp/arm_dnstrace /out/arm/dnstrace \
+ && test -n "$(ls "/out/x64/dnstrace" "/out/arm/dnstrace" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/dnstrace" "/out/arm/dnstrace" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

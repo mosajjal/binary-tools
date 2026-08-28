@@ -17,7 +17,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/nmap) && cp /tmp/out/nmap /out/x64/nmap \
  && mkdir -p $(dirname /out/x64/nping) && cp /tmp/out/nping /out/x64/nping \
- && strip "/out/x64/nmap" "/out/x64/nping" || echo 'strip x64 failed (non-ELF?)' \
+ && for f in "/out/x64/nmap" "/out/x64/nping"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/nmap" "/out/x64/nping" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/nmap" "/out/x64/nping" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

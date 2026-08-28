@@ -754,6 +754,7 @@ tools:
     test: "--version"
   - name: wireshark
     version: "2.6.17"
+    enabled: false
     check:
       type: url
       url: https://www.wireshark.org/download/src/

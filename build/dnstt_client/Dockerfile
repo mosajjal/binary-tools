@@ -21,6 +21,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/dnstt_server) && cp /tmp/x64_dnstt_server /out/x64/dnstt_server \
  && mkdir -p $(dirname /out/arm/dnstt_client) && cp /tmp/arm_dnstt_client /out/arm/dnstt_client \
  && mkdir -p $(dirname /out/arm/dnstt_server) && cp /tmp/arm_dnstt_server /out/arm/dnstt_server \
+ && test -n "$(ls "/out/x64/dnstt_client" "/out/x64/dnstt_server" "/out/arm/dnstt_client" "/out/arm/dnstt_server" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/dnstt_client" "/out/x64/dnstt_server" "/out/arm/dnstt_client" "/out/arm/dnstt_server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

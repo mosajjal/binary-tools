@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/superfile) && cp /tmp/x64_superfile /out/x64/superfile \
  && mkdir -p $(dirname /out/arm/superfile) && cp /tmp/arm_superfile /out/arm/superfile \
+ && test -n "$(ls "/out/x64/superfile" "/out/arm/superfile" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/superfile" "/out/arm/superfile" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

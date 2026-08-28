@@ -22,8 +22,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/xxd) && cp /tmp/out/xxd /out/x64/xxd \
  && mkdir -p $(dirname /out/arm/xxd) && cp /tmp/out-arm/xxd /out/arm/xxd \
- && strip "/out/x64/xxd" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/xxd" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/xxd"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/xxd"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/xxd" "/out/arm/xxd" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/xxd" "/out/arm/xxd" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

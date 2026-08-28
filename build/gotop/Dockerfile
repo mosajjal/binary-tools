@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/gotop) && cp /tmp/x64_gotop /out/x64/gotop \
  && mkdir -p $(dirname /out/arm/gotop) && cp /tmp/arm_gotop /out/arm/gotop \
+ && test -n "$(ls "/out/x64/gotop" "/out/arm/gotop" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/gotop" "/out/arm/gotop" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

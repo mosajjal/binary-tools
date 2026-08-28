@@ -16,7 +16,8 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/openrsync) && cp /tmp/out/openrsync /out/x64/openrsync \
- && strip "/out/x64/openrsync" || echo 'strip x64 failed (non-ELF?)' \
+ && for f in "/out/x64/openrsync"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/openrsync" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/openrsync" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/gum) && cp /tmp/x64_gum /out/x64/gum \
  && mkdir -p $(dirname /out/arm/gum) && cp /tmp/arm_gum /out/arm/gum \
+ && test -n "$(ls "/out/x64/gum" "/out/arm/gum" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/gum" "/out/arm/gum" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

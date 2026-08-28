@@ -23,6 +23,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/frps) && cp /tmp/x64_frps /out/x64/frps \
  && mkdir -p $(dirname /out/arm/frpc) && cp /tmp/arm_frpc /out/arm/frpc \
  && mkdir -p $(dirname /out/arm/frps) && cp /tmp/arm_frps /out/arm/frps \
+ && test -n "$(ls "/out/x64/frpc" "/out/x64/frps" "/out/arm/frpc" "/out/arm/frps" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/frpc" "/out/x64/frps" "/out/arm/frpc" "/out/arm/frps" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

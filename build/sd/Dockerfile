@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/sd) && cp /tmp/x64_sd /out/x64/sd \
  && mkdir -p $(dirname /out/arm/sd) && cp /tmp/arm_sd /out/arm/sd \
- && strip "/out/x64/sd" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/sd" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/sd"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/sd"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/sd" "/out/arm/sd" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/sd" "/out/arm/sd" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

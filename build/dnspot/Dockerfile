@@ -21,6 +21,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/dnspot-server) && cp /tmp/x64_dnspot-server /out/x64/dnspot-server \
  && mkdir -p $(dirname /out/arm/dnspot-agent) && cp /tmp/arm_dnspot-agent /out/arm/dnspot-agent \
  && mkdir -p $(dirname /out/arm/dnspot-server) && cp /tmp/arm_dnspot-server /out/arm/dnspot-server \
+ && test -n "$(ls "/out/x64/dnspot-agent" "/out/x64/dnspot-server" "/out/arm/dnspot-agent" "/out/arm/dnspot-server" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/dnspot-agent" "/out/x64/dnspot-server" "/out/arm/dnspot-agent" "/out/arm/dnspot-server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

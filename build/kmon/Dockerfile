@@ -29,8 +29,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/kmon) && cp /tmp/x64_kmon /out/x64/kmon \
  && mkdir -p $(dirname /out/arm/kmon) && cp /tmp/arm_kmon /out/arm/kmon \
- && strip "/out/x64/kmon" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/kmon" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/kmon"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/kmon"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/kmon" "/out/arm/kmon" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/kmon" "/out/arm/kmon" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

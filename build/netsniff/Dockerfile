@@ -16,7 +16,8 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/netsniff-ng) && cp /tmp/out/netsniff-ng /out/x64/netsniff-ng \
  && mkdir -p $(dirname /out/x64/ifpps) && cp /tmp/out/ifpps /out/x64/ifpps \
- && strip "/out/x64/netsniff-ng" "/out/x64/ifpps" || echo 'strip x64 failed (non-ELF?)' \
+ && for f in "/out/x64/netsniff-ng" "/out/x64/ifpps"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/netsniff-ng" "/out/x64/ifpps" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/netsniff-ng" "/out/x64/ifpps" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

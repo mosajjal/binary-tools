@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/gobuster) && cp /tmp/x64_gobuster /out/x64/gobuster \
  && mkdir -p $(dirname /out/arm/gobuster) && cp /tmp/arm_gobuster /out/arm/gobuster \
+ && test -n "$(ls "/out/x64/gobuster" "/out/arm/gobuster" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/gobuster" "/out/arm/gobuster" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

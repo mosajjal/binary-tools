@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/termsvg) && cp /tmp/x64_termsvg /out/x64/termsvg \
  && mkdir -p $(dirname /out/arm/termsvg) && cp /tmp/arm_termsvg /out/arm/termsvg \
+ && test -n "$(ls "/out/x64/termsvg" "/out/arm/termsvg" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/termsvg" "/out/arm/termsvg" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

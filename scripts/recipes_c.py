@@ -387,7 +387,7 @@ RECIPES = {
         base_image="rust:1-alpine",
         tarball="https://www.openinfosecfoundation.org/download/suricata-{v}.tar.gz",
         bins=[("suricata", "")],
-        pkgs=["autoconf", "automake", "libtool", "pkgconf", "pcre-dev", "pcre-static", "pcre2-dev", "pcre2-static", "yaml-dev",
+        pkgs=["autoconf", "automake", "libtool", "pkgconf", "pcre-dev", "pcre-static", "pcre2-dev", "yaml-dev",
               "yaml-static", "jansson-dev", "jansson-static", "libpcap-dev",
               "openssl-libs-static", "zlib-static"],
         pre=["(cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)"],
@@ -410,6 +410,9 @@ RECIPES = {
         pkgs=["cmake", "ninja", "perl", "flex", "glib-dev", "glib-static", "libgcrypt-dev",
               "libgcrypt-static", "c-ares-dev", "libxml2-dev", "libssh-dev", "libpcap-dev",
               "pcre2-dev", "zlib-static", "speexdsp-dev"],
+        # DISABLED in tools.yaml: static 4.x on musl is infeasible -- alpine
+        # ships no static c-ares/gnutls/krb5, and even Alpine builds it dynamic.
+        # The repo keeps its hand-built static 2.6.17 binaries.
         build=["cmake -B build -G Ninja -DBUILD_wireshark=OFF -DBUILD_qtapps=OFF "
                "-DENABLE_STATIC=ON -DENABLE_PCAP=OFF -DZLIB_INCLUDE_DIR=/usr/include "
                "-DZLIB_LIBRARY=/lib/libz.a -DCMAKE_BUILD_TYPE=Release "

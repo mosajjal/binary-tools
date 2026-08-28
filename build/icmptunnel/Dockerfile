@@ -25,8 +25,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/icmptunnel) && cp /tmp/out/icmptunnel /out/x64/icmptunnel \
  && mkdir -p $(dirname /out/arm/icmptunnel) && cp /tmp/out-arm/icmptunnel /out/arm/icmptunnel \
- && strip "/out/x64/icmptunnel" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/icmptunnel" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/icmptunnel"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/icmptunnel"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/icmptunnel" "/out/arm/icmptunnel" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/icmptunnel" "/out/arm/icmptunnel" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

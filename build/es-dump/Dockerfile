@@ -14,6 +14,7 @@ RUN set -ex \
 
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/es-dump) && cp /tmp/x64_es-dump /out/x64/es-dump \
+ && test -n "$(ls "/out/x64/es-dump" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/es-dump" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

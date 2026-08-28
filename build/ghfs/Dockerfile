@@ -17,6 +17,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/ghfs) && cp /tmp/x64_ghfs /out/x64/ghfs \
  && mkdir -p $(dirname /out/arm/ghfs) && cp /tmp/arm_ghfs /out/arm/ghfs \
+ && test -n "$(ls "/out/x64/ghfs" "/out/arm/ghfs" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/ghfs" "/out/arm/ghfs" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

@@ -274,24 +274,27 @@ def _q(paths):
 def _collect_and_pack(pairs, r):
     steps = [f"mkdir -p $(dirname {dst}) && cp {src} {dst}" for src, dst in pairs]
 
-    # Strip needs an arch-matched tool: the host `strip` cannot read ARM ELF
-    # (it errors "Unable to recognise the format"). Go already links with
-    # -s -w, so its binaries are stripped at build time -- skip strip there.
-    if r["lang"] != "go":
-        x64 = [dst for _, dst in pairs if "/out/arm/" not in dst]
-        arm = [dst for _, dst in pairs if "/out/arm/" in dst]
-        if x64:
-            steps.append(f"strip {_q(x64)} || echo 'strip x64 failed (non-ELF?)'")
-        if arm:
-            steps.append(f"{ARM_STRIP} {_q(arm)} || echo 'strip arm failed (non-ELF?)'")
+    # Strip only real ELF files. Some recipes produce shell wrappers / scripts
+    # next to ELF binaries (e.g. wireshark's text2pcap), which `strip` would
+    # reject; `file` tells them apart so we never abort on non-ELF, but still
+    # strip every genuine binary. A build that produces no ELF at all is a
+    # hard failure -- empty /out must not pass silently.
+    if r["lang"] != "go":  # Go links with -s -w already
+        for tag, stripbin in (("x64", "strip"), ("arm", ARM_STRIP)):
+            bins = _q([dst for _, dst in pairs if f"/out/{tag}/" in dst])
+            if bins:
+                steps.append(f'for f in {bins}; do file "$f" | grep -q ELF && {stripbin} "$f" || true; done')
 
-    # UPX is multi-arch, so it packs both. Keep it non-fatal (some binaries
-    # legitimately refuse to pack), but wrap it in a subshell so its `||`
-    # only guards upx -- otherwise a failing strip in the same && chain would
-    # be masked and ship unstripped, unpacked binaries.
+    # A build that shipped zero binaries is broken, not "successful but empty".
+    allbins = [dst for _, dst in pairs]
+    if allbins:
+        steps.append(f'test -n "$(ls {_q(allbins)} 2>/dev/null | head -1)" || {{ echo "ERROR: no binaries produced"; exit 1; }}')
+
     if r.get("pack", True):
-        allbins = _q([dst for _, dst in pairs])
-        steps.append(f"( upx -q --best --lzma {allbins} || echo 'upx failed; shipping unpacked' )")
+        # UPX is multi-arch; keep non-fatal only for genuinely unpackable
+        # binaries (already-packed or format unsupported), but if nothing was
+        # packed because nothing existed, the guard above already caught it.
+        steps.append(f"( upx -q --best --lzma {_q(allbins)} || echo 'upx failed; shipping unpacked' )")
 
     return run_block(steps)
 

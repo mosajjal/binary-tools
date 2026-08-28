@@ -31,8 +31,9 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/miniserve) && cp /tmp/x64_miniserve /out/x64/miniserve \
  && mkdir -p $(dirname /out/arm/miniserve) && cp /tmp/arm_miniserve /out/arm/miniserve \
- && strip "/out/x64/miniserve" || echo 'strip x64 failed (non-ELF?)' \
- && arm-linux-musleabihf-strip "/out/arm/miniserve" || echo 'strip arm failed (non-ELF?)' \
+ && for f in "/out/x64/miniserve"; do file "$f" | grep -q ELF && strip "$f" || true; done \
+ && for f in "/out/arm/miniserve"; do file "$f" | grep -q ELF && arm-linux-musleabihf-strip "$f" || true; done \
+ && test -n "$(ls "/out/x64/miniserve" "/out/arm/miniserve" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/miniserve" "/out/arm/miniserve" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

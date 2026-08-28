@@ -21,6 +21,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/lyrebird) && cp /tmp/x64_lyrebird /out/x64/lyrebird \
  && mkdir -p $(dirname /out/x64/webtunnel_client) && cp /tmp/x64_webtunnel_client /out/x64/webtunnel_client \
  && mkdir -p $(dirname /out/x64/webtunnel_server) && cp /tmp/x64_webtunnel_server /out/x64/webtunnel_server \
+ && test -n "$(ls "/out/x64/snowflake" "/out/x64/lyrebird" "/out/x64/webtunnel_client" "/out/x64/webtunnel_server" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
  && ( upx -q --best --lzma "/out/x64/snowflake" "/out/x64/lyrebird" "/out/x64/webtunnel_client" "/out/x64/webtunnel_server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
