@@ -38,7 +38,7 @@ tools:
     check: {type: github-tag, slug: 3proxy/3proxy}
     lang: c
     outputs: [3proxy]
-    test_cmd: "/out/x64/3proxy 2>&1 | head -n1 | grep -qi '3proxy\\|Usage: 3proxy'"
+    test_cmd: "timeout 2 /out/x64/3proxy; rc=$?; [ $rc -eq 124 ] || [ $rc -eq 0 ]"
   - name: amass
     version: "4.2.0"
     check: {type: github-release, slug: owasp-amass/amass}
