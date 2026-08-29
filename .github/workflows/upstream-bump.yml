@@ -119,7 +119,7 @@ jobs:
       - name: assemble bump
         run: |
           set -euo pipefail
-          ./scripts/apply_bump.sh outdated.json dist
+          ./scripts/apply_bump.sh outdated.json dist bumped.json
       - name: open PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -135,7 +135,7 @@ jobs:
             echo "nothing changed; no PR"
             exit 0
           fi
-          BUMPS=$(jq -r '.outdated[] | "- **\(.name)** \(.current) -> \(.latest)"' outdated.json)
+          BUMPS=$(jq -r '.[] | "- **\(.name)** \(.current) -> \(.latest)"' bumped.json)
           {
             echo "Automated weekly upstream bump."
             echo ""

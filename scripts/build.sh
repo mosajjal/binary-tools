@@ -59,7 +59,14 @@ else
 fi
 
 # ARM smoke test through qemu-user-static if the host provides it.
+# ARM is only shipped when the tool declares arm outputs; if we ship it, it
+# must pass the same ladder as x64 -- a broken ARM binary never lands in a PR.
 if docker run --rm --entrypoint /bin/sh "$IMAGE" -ec 'ls /out/arm/* >/dev/null 2>&1' 2>/dev/null; then
+    ARM_SHIPPED=1
+else
+    ARM_SHIPPED=0
+fi
+if [[ $ARM_SHIPPED == 1 ]]; then
     QEMU=$(command -v qemu-arm-static || true)
     if [[ -z "$QEMU" && -x /usr/bin/qemu-arm-static ]]; then QEMU=/usr/bin/qemu-arm-static; fi
     if [[ -n "$QEMU" ]]; then
@@ -70,12 +77,17 @@ if docker run --rm --entrypoint /bin/sh "$IMAGE" -ec 'ls /out/arm/* >/dev/null 2
         docker rm "$CID" >/dev/null
         for b in "$ARMDIR"/*; do
             echo "    arm $(basename "$b")"
-            "$QEMU" "$b" $TEST_ARGS >/dev/null || {
-                echo "    (arm smoke failed for $(basename "$b"); not blocking)"; }
+            "$QEMU" "$b" $TEST_ARGS >/dev/null 2>&1 && continue
+            # same fallback ladder as x64; if none pass, the ARM binary is broken
+            OK=0
+            for args in "--version" "-V" "-v" "version" "--help" "-h"; do
+                if "$QEMU" "$b" $args >/dev/null 2>&1; then OK=1; break; fi
+            done
+            [ $OK = 1 ] || { echo "arm smoke test failed for /out/arm/$(basename "$b")"; exit 1; }
         done
         rm -rf "$ARMDIR"
     else
-        echo "==> arm binaries present (qemu unavailable locally; CI verifies)"
+        echo "==> arm binaries present (qemu unavailable locally; CI installs it)"
     fi
 fi
 
