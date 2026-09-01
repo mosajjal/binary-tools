@@ -83,7 +83,8 @@ while [ $i -lt $N ]; do
 done
 
 if [ -n "$BUMPED" ]; then
-    # shellcheck disable=SC2086 -- BUMPED is a space-separated NAME=VER list
+    # BUMPED is a space-separated NAME=VER list; word splitting is intended
+    # shellcheck disable=SC2086
     python3 scripts/update_readme.py $BUMPED
 fi
 
