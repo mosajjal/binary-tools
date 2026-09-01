@@ -47,6 +47,8 @@ jobs:
       - name: shellcheck
         run: |
           find scripts -name '*.sh' -print0 | xargs -0 -n1 shellcheck -S warning
+      - name: manifest path + version-ordering tests
+        run: python3 scripts/test_layout.py
       - name: manifest sanity
         run: |
           yq -o=json '.tools' tools.yaml > /dev/null

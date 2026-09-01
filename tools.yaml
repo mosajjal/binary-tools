@@ -23,8 +23,11 @@
 #   project    sourceforge project id
 #   lang       build language hint: go | rust | c | cxx | mixed
 #   outputs    binaries produced by build/<name>/Dockerfile into /out/x64/
-#              [{bin, dst}]; dst defaults to x64/<name>/<bin>, or x64/<bin>
-#              when there is a single output whose bin == name
+#              [{bin, dst}]; dst is the repo path under x64/ (arm/ for
+#              arm_outputs) and defaults to <name>/<bin>, or <bin> when there
+#              is a single output whose bin == name. Set it explicitly whenever
+#              the shipped layout differs -- scripts/test_layout.py enforces
+#              that every dst names a real binary, never a directory or a doc.
 #   arm_outputs  same shape, copied from /out/arm/ (ARMv7 hard-float musl)
 #   test       args appended to each output binary for the smoke test;
 #              false disables; test_cmd overrides the whole command
@@ -93,7 +96,9 @@ tools:
     lang: rust
     outputs:
       - bin: boringtun
+        dst: boringtun
       - bin: wg-user
+        dst: wg-user
         note: legacy boringtun-cli alias kept for backwards compatibility
     test: "--version"
   - name: brook
@@ -156,8 +161,8 @@ tools:
     version: "1.20241021"
     check: {type: git-remote, remote: 'https://www.bamsoftware.com/git/dnstt.git', pattern: '^v(.+)$'}
     lang: go
-    outputs: [dnstt_client, dnstt_server]
-    arm_outputs: [dnstt_client, dnstt_server]
+    outputs: [{bin: dnstt_client, dst: dnstt_client}, {bin: dnstt_server, dst: dnstt_server}]
+    arm_outputs: [{bin: dnstt_client, dst: dnstt_client}, {bin: dnstt_server, dst: dnstt_server}]
     test: "-h"
   - name: doggo
     version: "1.0.4"
@@ -222,8 +227,8 @@ tools:
     version: "0.48.0"
     check: {type: github-release, slug: fatedier/frp}
     lang: go
-    outputs: [frpc, frps]
-    arm_outputs: [frpc, frps]
+    outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
+    arm_outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     test: "--version"
   - name: fzf
     version: "0.36.0"
@@ -311,7 +316,7 @@ tools:
       url: https://ftp.gnu.org/gnu/httptunnel/
       pattern: 'httptunnel-(\d+\.\d+)\.tar\.gz'
     lang: c
-    outputs: [httptunnel-client, httptunnel-server]
+    outputs: [{bin: httptunnel-client, dst: httptunnel-client}, {bin: httptunnel-server, dst: httptunnel-server}]
     test: "--help"
   - name: httpx
     version: "1.2.9"
@@ -342,7 +347,7 @@ tools:
     version: "0.8.0"
     check: {type: github-tag, slug: yarrick/iodine}
     lang: c
-    outputs: [iodine, iodined]
+    outputs: [{bin: iodine, dst: iodine}, {bin: iodined, dst: iodined}]
     test_cmd: "/out/x64/iodine 2>&1 | grep -q iodine"
   - name: ioping
     version: "0.9"
@@ -487,7 +492,7 @@ tools:
       url: https://nmap.org/dist/
       pattern: 'nmap-(\d+\.\d+(?:\.\d+)?)\.tar\.bz2'
     lang: c
-    outputs: [nmap, nping]
+    outputs: [{bin: nmap, dst: nmap}, {bin: nping, dst: nping}]
     test: "--version"
     experimental: true
   - name: nomino
@@ -703,14 +708,16 @@ tools:
       remote: https://gitlab.torproject.org/tpo/core/tor.git
       pattern: '^tor-(\d+\.\d+\.\d+(?:\.\d+)?)$'
     lang: c
-    outputs: [tor]
+    outputs: [{bin: tor, dst: tor/tor}]
     test_cmd: "/out/x64/tor --version 2>&1 | grep -qi tor"
     experimental: true
   - name: pt_bridges
     version: "0.4.8.0-compat"
     check: {type: pinned, reason: webtunnel has no tags; bridges tracked manually}
     lang: go
-    outputs: [lyrebird, snowflake, webtunnel_client, webtunnel_server]
+    outputs: [{bin: lyrebird, dst: tor/lyrebird}, {bin: snowflake, dst: tor/snowflake},
+              {bin: webtunnel_client, dst: tor/webtunnel_client},
+              {bin: webtunnel_server, dst: tor/webtunnel_server}]
     test: "--version"
     experimental: true
   - name: tmux

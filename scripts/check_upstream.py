@@ -40,9 +40,20 @@ def http_get(url):
         return r.read().decode("utf-8", "replace")
 
 
+# A delimited trailing word is a prerelease and sorts below the plain release
+# (1.0.0-alpha < 1.0.0); a letter glued to a digit is a patch level and sorts
+# above it (tmux 3.7 < 3.7c).
+PRERELEASE = re.compile(r"[._\-+~](alpha|beta|rc|pre|dev|snapshot)[\w.]*$", re.I)
+
+
 def version_key(v):
     """Sort key tolerant of mixed versions: 1.7 < 1.10, 4.5.0, 20240606."""
-    parts = re.split(r"[._\-+~]", v.lstrip("v"))
+    v = v.lstrip("v")
+    pre = ""
+    m = PRERELEASE.search(v)
+    if m:
+        pre, v = m.group(0)[1:].lower(), v[:m.start()]
+    parts = re.split(r"[._\-+~]", v)
     key = []
     for p in parts:
         if p.isdigit():
@@ -56,7 +67,20 @@ def version_key(v):
                 key.append((1, m.group(2)))
             else:
                 key.append((1, p))
+    # trailing marker: every version carries one, so a prerelease loses the
+    # comparison against its own release instead of merely being longer
+    key.append((0, pre) if pre else (1, ""))
     return key
+
+
+def is_newer(latest, cur):
+    """True only when `latest` sorts strictly above `cur`.
+
+    An upstream that is behind (rs/dnstrace tags 1.4.0 while we ship 1.4.3) or
+    on an incomparable scheme (a release tag vs a pinned commit sha) must not
+    trigger a bump -- that ships an older binary under a newer version string.
+    """
+    return version_key(latest) > version_key(cur)
 
 
 def pick_max(candidates):
@@ -193,7 +217,13 @@ def check_one(t):
     if not latest:
         return name, t.get("version"), "error: no version found upstream"
     cur = t.get("version", "")
-    status = "outdated" if version_key(latest) != version_key(cur) else "ok"
+    if version_key(latest) == version_key(cur):
+        status = "ok"
+    elif is_newer(latest, cur):
+        status = "outdated"
+    else:
+        # upstream is behind us or uses a different scheme: report, never bump
+        status = f"ahead: shipped {cur} > upstream {latest}"
     return name, latest, status
 
 
@@ -218,11 +248,11 @@ def main():
             name, latest, status = fut.result()
             results[name] = {"latest": latest, "status": status}
             mark = {"outdated": "!!", "ok": "  ", "pinned": "--",
-                    "disabled": "--"}.get(status.split(":")[0], "??")
+                    "disabled": "--", "ahead": "<<"}.get(status.split(":")[0], "??")
             line = f"{mark} {name:<22} shipped={str(tools_next(name, tools)):<14}"
             if latest:
                 line += f"latest={latest}"
-            if args.all or status.startswith(("outdated", "error")):
+            if args.all or status.startswith(("outdated", "error", "ahead")):
                 print(line + ("" if status == "outdated" else f"   [{status}]"),
                       file=sys.stderr)
 

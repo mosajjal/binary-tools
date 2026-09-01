@@ -116,10 +116,20 @@ jobs:
         with:
           name: outdated
           path: .
+      # A bot PR does not trigger lint-buildfiles (its checks sit in
+      # action_required), so the bump validates its own tree here instead.
+      - name: manifest path + version-ordering tests
+        run: python3 scripts/test_layout.py
       - name: assemble bump
         run: |
           set -euo pipefail
           ./scripts/apply_bump.sh outdated.json dist bumped.json
+      - name: verify only binaries moved
+        run: |
+          set -euo pipefail
+          DOCS=$(git diff --name-only -- x64 arm | grep -E '\.(md|txt|conf|ya?ml|json)$' || true)
+          [ -z "$DOCS" ] || { echo "bump wrote over documentation:"; echo "$DOCS"; exit 1; }
+          python3 scripts/test_layout.py
       - name: open PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
