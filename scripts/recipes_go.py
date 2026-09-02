@@ -12,6 +12,8 @@ RECIPES = {
     "amicontained": dict(
         lang="go", slug="genuinetools/amicontained",
         bins=[("amicontained", ".")],
+        # main.go uses unix.SYS_SELECT, which x/sys does not define on arm
+        arm=False,
     ),
     "bed": dict(
         lang="go", slug="itchyny/bed", tag_prefix="v",
@@ -38,8 +40,8 @@ RECIPES = {
     "dnstrace": dict(
         lang="go", slug="rs/dnstrace", tag_prefix="v",
         bins=[("dnstrace", ".")],
-        # repo predates go modules
-        pre=["go mod init dnstrace && go mod tidy"],
+        # repo predated go modules and has since gained a go.mod
+        pre=["test -f go.mod || go mod init dnstrace", "go mod tidy"],
     ),
     "dnstt_client": dict(
         lang="go", clone_url="https://www.bamsoftware.com/git/dnstt.git", full_clone=True,
@@ -106,6 +108,9 @@ RECIPES = {
     "httpdump": dict(
         lang="go", slug="hsiafan/httpdump", branch=True,
         bins=[("httpdump", ".")],
+        # gopacket/pcap is cgo-only; ARM would need a cross libpcap
+        env={"CGO_ENABLED": "1"}, pkgs=["build-base", "libpcap-dev", "libpcap"],
+        ldflags='-extldflags "-static"', arm=False,
     ),
     "httpx": dict(
         lang="go", slug="projectdiscovery/httpx", tag_prefix="v",
@@ -130,6 +135,8 @@ RECIPES = {
     "memcd-util": dict(
         lang="go", slug="me-io/memcached-util", tag_prefix="v",
         bins=[("memcd-util", "./cmd/util")], experimental=True,
+        # no go.mod upstream
+        pre=["test -f go.mod || go mod init memcd-util", "go mod tidy"],
     ),
     "micro": dict(
         lang="go", slug="micro-editor/micro", tag_prefix="v",
@@ -182,6 +189,9 @@ RECIPES = {
     "inlets": dict(
         lang="go", slug="the-cc-dev/inlets", branch=True,
         bins=[("inlets", ".")],
+        # no go.mod upstream
+        # no go.mod upstream, and the stale vendor/ dir conflicts with a fresh one
+        pre=["test -f go.mod || go mod init inlets", "rm -rf vendor", "go mod tidy"],
     ),
     "yq": dict(
         lang="go", slug="mikefarah/yq", tag_prefix="v",

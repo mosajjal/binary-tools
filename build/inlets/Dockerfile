@@ -8,6 +8,7 @@ ENV CGO_ENABLED=0 GOTOOLCHAIN=auto
 RUN apk add --no-cache git ca-certificates upx
 RUN git clone --depth 1 https://github.com/the-cc-dev/inlets.git /src
 WORKDIR /src
+RUN test -f go.mod || go mod init inlets && rm -rf vendor && go mod tidy
 RUN set -ex \
  && go build -trimpath -ldflags="-s -w" -o /tmp/x64_inlets .
 

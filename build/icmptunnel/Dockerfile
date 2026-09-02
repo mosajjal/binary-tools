@@ -9,7 +9,7 @@ RUN git clone --depth 1 https://github.com/DhavalKapil/icmptunnel.git /src && cd
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && make -j$(nproc) LDFLAGS=-static \
+ && make -j$(nproc) CFLAGS='-O2 -static' LDFLAGS=-static \
  && cp icmptunnel /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---

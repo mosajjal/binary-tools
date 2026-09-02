@@ -9,7 +9,7 @@ RUN git clone --depth 1 https://github.com/jedisct1/dsvpn.git /src && cd /src &&
 WORKDIR /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && make CC=gcc LDFLAGS=-static -j$(nproc) \
+ && make CC=gcc CFLAGS='-O2 -static' LDFLAGS=-static -j$(nproc) \
  && cp dsvpn /tmp/out/
 
 # --- ARMv7 cross (musl.cc toolchain) ---

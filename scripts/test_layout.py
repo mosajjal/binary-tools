@@ -182,6 +182,23 @@ def test_readme_matches_binaries():
               f"tools.yaml says {tools[name]['version']}")
 
 
+def test_arm_claims_are_buildable():
+    """A tool must not claim an ARM output its Dockerfile cannot produce.
+
+    Seven tools shipped an ARM binary no build could refresh: dnsmonster's was
+    left dynamically linked against a loader no target has. They now carry an
+    arm_frozen note saying why.
+    """
+    for t in load_tools():
+        if not outputs(t, "arm") or t.get("arm_frozen"):
+            continue
+        df = os.path.join(ROOT, "build", t["name"], "Dockerfile")
+        check(os.path.exists(df), f"{t['name']}: declares ARM output, no Dockerfile")
+        if os.path.exists(df):
+            check("/out/arm/" in open(df).read(),
+                  f"{t['name']}: declares ARM output but its Dockerfile builds none")
+
+
 def test_arm_row_creation():
     """A tool that starts shipping ARM gets a well-formed row, in order."""
     lines = open(os.path.join(ROOT, "README.md")).read().split("\n")
@@ -255,6 +272,7 @@ def main():
     test_readme_rows_resolve()
     test_readme_matches_binaries()
     test_arm_row_creation()
+    test_arm_claims_are_buildable()
     test_arm_same_expands()
     test_version_ordering()
 

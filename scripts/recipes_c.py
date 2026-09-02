@@ -23,7 +23,8 @@ RECIPES = {
     "dsvpn": dict(
         lang="c", slug="jedisct1/dsvpn", tag_prefix="",
         bins=[("dsvpn", "")],
-        build=["make CC=gcc LDFLAGS=-static -j$(nproc)", "cp dsvpn /tmp/out/"],
+        build=["make CC=gcc CFLAGS='-O2 -static' LDFLAGS=-static -j$(nproc)",
+               "cp dsvpn /tmp/out/"],
         arm_build=["make clean || true",
                    "sed -i '/^\\tstrip /d' Makefile",
                    # the Makefile links with CFLAGS, so -static must be there too
@@ -58,7 +59,8 @@ RECIPES = {
     "icmptunnel": dict(
         lang="c", slug="DhavalKapil/icmptunnel", tag_prefix="v",
         bins=[("icmptunnel", "")],
-        build=["make -j$(nproc) LDFLAGS=-static", "cp icmptunnel /tmp/out/"],
+        build=["make -j$(nproc) CFLAGS='-O2 -static' LDFLAGS=-static",
+               "cp icmptunnel /tmp/out/"],
         arm_build=["make clean || true",
                    # LDFLAGS alone leaves a musl-dynamic binary: link via CFLAGS too
                    "make -j$(nproc) CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static' LDFLAGS=-static",
@@ -124,7 +126,12 @@ RECIPES = {
                "make -j$(nproc) PROGRAMS='dropbear dbclient dropbearconvert dropbearkey scp'",
                "cp dropbear dbclient dropbearconvert dropbearkey scp /tmp/out/"],
         arm_build=["make clean || true",
-                   "./configure --host=arm-linux-musleabihf LDFLAGS=-static --disable-zlib",
+                   # configure links through CFLAGS here, so LDFLAGS alone left a
+                   # binary needing /usr/lib/ld.so.1 -- unrunnable on a real target
+                   # dropbear's hardening adds -Wl,-pie, which beats -static and left
+                   # a dynamic PIE needing /usr/lib/ld.so.1 -- unrunnable on a target
+                   "./configure --host=arm-linux-musleabihf CFLAGS='-O2 -static' "
+                   "LDFLAGS=-static --disable-zlib --disable-harden",
                    "make -j$(nproc) PROGRAMS='dropbear dbclient dropbearconvert dropbearkey scp'",
                    "mkdir -p /tmp/out-arm && cp dropbear dbclient dropbearconvert dropbearkey scp /tmp/out-arm/"],
     ),
@@ -415,10 +422,15 @@ RECIPES = {
              "(cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)"],
         build=["PKG_CONFIG_PATH=/opt/pcre2/lib/pkgconfig PKG_CONFIG='pkg-config --static' "
                "./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var "
-               "LDFLAGS='-static -L/opt/pcre2/lib' CPPFLAGS='-I/opt/pcre2/include' "
+               # libtool drops a bare -static on the final link, so CFLAGS carries
+               # it; -no-pie stops the default PIE link from winning over -static
+               "LDFLAGS='-static -no-pie -L/opt/pcre2/lib' CFLAGS='-O2 -static -no-pie' "
+               "CPPFLAGS='-I/opt/pcre2/include' "
                "--disable-python --disable-lua --disable-nfqueue "
                "--disable-nflog --disable-gccmarch-native",
-               "make -j$(nproc)", "cp src/suricata /tmp/out/"],
+               # libtool only honours -all-static, and only at link time
+               "make -j$(nproc) LDFLAGS='-all-static -L/opt/pcre2/lib'",
+               "cp src/suricata /tmp/out/"],
         experimental=True,
     ),
             # BLOCKED: cli-only build still links tshark against shared
@@ -456,7 +468,8 @@ RECIPES = {
         build=["cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXE_LINKER_FLAGS=-static "
                "-DWITH_DEMOS=OFF -DWITH_WERROR=OFF", "cmake --build build -j$(nproc)",
                "cp build/src/zmap /tmp/out/", "cp build/src/ztee /tmp/out/",
-               "GOBIN=/tmp/out GOTOOLCHAIN=auto go install github.com/zmap/zgrab2/cmd/zgrab2@latest"],
+               "CGO_ENABLED=0 GOBIN=/tmp/out GOTOOLCHAIN=auto "
+               "go install github.com/zmap/zgrab2/cmd/zgrab2@latest"],
         experimental=True, arm=False,
     ),
 }
@@ -504,11 +517,16 @@ RECIPES["tor"] = dict(
     tag_prefix="tor-", example_version="0.4.9.11",
     bins=[("tor", "")],
     pkgs=["autoconf", "automake", "libtool", "pkgconf", "libevent-dev", "libevent-static",
-          "openssl-dev", "openssl-libs-static", "zlib-static", "zlib-dev", "xz-dev"],
+          "openssl-dev", "openssl-libs-static", "zlib-static", "zlib-dev", "xz-dev",
+          # static link pulls in the compression libs tor optionally uses
+          "xz-static", "zstd-static", "zstd-dev"],
     # minimal relay-free static daemon; pluggable transports live in pt_bridges
     build=["./autogen.sh",
            "./configure --disable-systemd --disable-unittests --disable-libscrypt "
-           "--disable-module-relay --disable-asciidoc --disable-manpage ", 
+           "--disable-module-relay --disable-asciidoc --disable-manpage "
+           # --enable-static-tor demands --with-*-dir for every dep; the static
+           # libs are all in /usr here, so plain -static is enough
+           "LDFLAGS=-static",
            "make -j$(nproc)", "cp src/app/tor /tmp/out/"],
     experimental=True, arm=False,
 )
