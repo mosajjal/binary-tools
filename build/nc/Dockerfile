@@ -7,7 +7,8 @@ ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 linux-headers libmd-dev patch
 RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://salsa.debian.org/debian/netcat-openbsd/-/archive/debian/${VERSION}/netcat-openbsd-debian-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
-RUN mkdir -p /libbsd /opt/libbsd && curl -fsSL --retry 3 http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.12.2.orig.tar.xz | unxz | tar x -C /libbsd --strip-components=1 && cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static && make -j$(nproc) && make install && cd /src && while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/base64.c -o base64.c && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/b64.patch | patch -Np1 && sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile
+COPY base64.c /src/base64.c
+RUN mkdir -p /libbsd /opt/libbsd && curl -fsSL --retry 3 http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.12.2.orig.tar.xz | unxz | tar x -C /libbsd --strip-components=1 && cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static && make -j$(nproc) && make install && cd /src && while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series && sed -i '/^int[[:space:]]*remote_connect(/i int b64_ntop(const unsigned char *, size_t, char *, size_t);' socks.c && sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile
 RUN set -ex \
  && mkdir -p /tmp/out \
  && mkdir -p /tmp/out \

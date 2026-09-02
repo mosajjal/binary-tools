@@ -126,6 +126,10 @@ def go_recipe(name, r):
         else:
             b.append(f"RUN git clone --depth 1 --branch {r.get('extra_tag_prefix', '')}${{VERSION}} {u} /src/{d}")
     b.append("WORKDIR /src")
+    # files vendored next to the Dockerfile, for sources no build should have
+    # to fetch at build time
+    for f in r.get("files", []):
+        b.append(f"COPY {f} /src/{f}")
     if r.get("env"):
         for k, v in r["env"].items():
             b.append(f'ENV {k}="{v}"')
@@ -196,6 +200,10 @@ def rust_recipe(name, r):
     else:
         b.append("RUN apk add --no-cache git ca-certificates upx musl-dev perl make")
     b += [fetch_lines(r), "WORKDIR /src"]
+    # files vendored next to the Dockerfile, for sources no build should have
+    # to fetch at build time
+    for f in r.get("files", []):
+        b.append(f"COPY {f} /src/{f}")
     if r.get("env"):
         for k, v in r["env"].items():
             b.append(f'ENV {k}="{v}"')
@@ -254,6 +262,10 @@ def c_recipe(name, r):
         fetch_lines(r),
         "WORKDIR /src",
     ]
+    # files vendored next to the Dockerfile, for sources no build should have
+    # to fetch at build time
+    for f in r.get("files", []):
+        b.append(f"COPY {f} /src/{f}")
     if r.get("env"):
         for k, v in r["env"].items():
             b.append(f'ENV {k}="{v}"')
