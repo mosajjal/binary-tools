@@ -501,7 +501,7 @@ tools:
     outputs: [ncdu]
     test: "--version"
   - name: nc
-    version: "1.68"
+    version: "1.238-1"
     # OpenBSD netcat via Debian's portable patchset; the binary this replaced
     # was glibc-linked with no recipe behind it
     check:
