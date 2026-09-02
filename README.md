@@ -25,7 +25,7 @@ The categories are AI-generated so expect mistakes.
 | [Corkscrew](//github.com/bryanpkc/corkscrew)         | 2.0          | `corkscrew`    | Proxy, Networking       | `c504c8161451530b04214ab3f40c6d420023c6f048e233e9557bc82752156978` |
 | [curl](//github.com/curl/curl)                       | 8.21.0 | `curl`         | Download, Networking    | `a67662da460e3fea2f7010d8b7eae638a74c23a2faaf0deebbb397d3d0560769` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)      | 1.12         | `dh`           | Webserver, HTTP         | `76605e66ebf87fe663d09a1a7e0e9a96108251df451d311e76967c447fe9599a` |
-| [dnsmonster](//github.com/mosajjal/dnsmonster)       | 1.2.5        | `dnsmonster`   | DNS, Monitoring         | `540d2d3ad235da578e813a445c002fcae41248dd889c9f4b06fdbf5e62dd1674` |
+| [dnsmonster](//github.com/mosajjal/dnsmonster)       | 1.2.5        | `dnsmonster`   | DNS, Monitoring         | `595441422859c372af10e890eb3888ea1336462a96c285282dcf563546b848d7` |
 | [dnspot](//github.com/mosajjal/dnspot)               | 0.1.0        | `dnspot/*`     | DNS, Security           | `37129f94753d3cb8e3fa794b11f77bb80f280cf1be9ab20ef31070a759fd63e3` |
 | [dnstrace](//github.com/rs/dnstrace)                 | 1.4.3        | `dnstrace`     | DNS, Networking         | `cae82d467a079a08a5d3e4969b60111ee188204d806627abd5567590bdbd8f26` |
 | [dnstt](//bamsoftware.com/software/dnstt/)           | 1.20260501.0 | `dnstt_*`      | DNS, Tunneling          | `f9a4b3cdbfb7c4489671fff507f4bb45b23bcaaf11a89bcfbe7a02a2cc561352` |
@@ -142,7 +142,7 @@ The categories are AI-generated so expect mistakes.
 | [dnspot](//github.com/mosajjal/dnspot)           | 0.1.0      | `dnspot/*`   | DNS, Security          | `c9d8394ba3a273f30a9a67beec6342f05ae54c5db6fa5df1c3af4e0589ab3153` |
 | [dnstrace](//github.com/rs/dnstrace)             | 1.4.3      | `dnstrace`   | DNS, Networking        | `930db22538a126ccd1390bd7548ec8d5a0455b3423909273a78e0e82d3e47eb0` |
 | [doggo](//github.com/mr-karan/doggo)             | 1.4.0      | `doggo`      | DNS, CLI               | `052ce4a8de7a6ea6dae7949c8b08f7782c261b6d1f9c94cd193fe80544bd3168` |
-| [DnsMonster](//github.com/mosajjal/dnsmonster)   | 1.2.5      | `dnsmonster` | DNS, Monitoring        | `712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
+| [DnsMonster](//github.com/mosajjal/dnsmonster)   | 1.2.5      | `dnsmonster` | DNS, Monitoring        | `d1fa4d33fe73d57fa3da0b4c0bff077b2ec1125c8d7c5e181f4eea7b3491c9de` |
 | [dnstt](//bamsoftware.com/software/dnstt/)       | 1.20260501.0 | `dnstt_*`    | DNS, Tunneling         | `e4d8329158e6991bf752f46e253a758a34c3bd3d21486b5796480ffc17105d04` |
 | [Dropbear](x64/dropbear/README.md)               | 2026.94    | `dropbear/*` | SSH, Server            | `d62fdef051f8712f58ea443636a2492af1335173bf50ac53ba6f2752714cb741` |
 | [fd](//github.com/sharkdp/fd)                    | 10.5.0     | `fd`         | Search, CLI            | `f543a0f241b5449bcb9af4bb019eee398f4160d5b780c1bc9d2c113bd2780cde` |
