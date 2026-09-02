@@ -4,12 +4,13 @@
 
 FROM alpine:3.20 AS build
 ARG VERSION
-RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake autoconf automake libtool ncurses-static sqlite-static sqlite-dev zlib-static curl-dev openssl-libs-static
+RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 cmake autoconf automake libtool ncurses-static sqlite-static sqlite-dev zlib-static curl-dev openssl-libs-static libunistring-dev libunistring-static curl-static nghttp2-static brotli-static zstd-static libidn2-static c-ares-static libpsl-static pkgconf
 RUN git clone --depth 1 https://github.com/tstack/lnav.git /src && cd /src && REF="v${VERSION}" && (git fetch --depth 1 origin tag $REF 2>/dev/null; git checkout $REF 2>/dev/null) || (git fetch --depth 1 origin tag $REF.0 2>/dev/null; git checkout $REF.0 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION} 2>/dev/null; git checkout v${VERSION} 2>/dev/null) || (git fetch --depth 1 origin tag v${VERSION}.0 2>/dev/null; git checkout v${VERSION}.0 2>/dev/null) || (git fetch --depth 1 origin tag ${VERSION} 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || (git fetch --unshallow 2>/dev/null || git fetch --depth 1000 origin 2>/dev/null; git checkout ${VERSION} 2>/dev/null) || true; cd /
 WORKDIR /src
+RUN mkdir -p /pcre2-src /opt/pcre2 && curl -fsSL --retry 3 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.gz | gunzip -c | tar x -C /pcre2-src --strip-components=1 && cd /pcre2-src && ./configure --prefix=/opt/pcre2 --disable-shared --enable-static && make -j$(nproc) && make install && cd /src
 RUN set -ex \
  && mkdir -p /tmp/out \
- && ./autogen.sh && ./configure LDFLAGS=-static \
+ && ./autogen.sh && PKG_CONFIG_PATH=/opt/pcre2/lib/pkgconfig PKG_CONFIG='pkg-config --static' ./configure LDFLAGS='-static -L/opt/pcre2/lib' CPPFLAGS=-I/opt/pcre2/include LIBS="$(pkg-config --static --libs libcurl)" \
  && make -j$(nproc) \
  && cp src/lnav /tmp/out/
 

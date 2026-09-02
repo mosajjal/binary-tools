@@ -19,7 +19,7 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
- && make -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS=-static \
+ && make -j$(nproc) CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static' LDFLAGS=-static \
  && cp icmptunnel /tmp/out-arm/
 
 RUN set -ex \
