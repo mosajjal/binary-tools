@@ -33,7 +33,6 @@ FILENAME_CELL = {
     "zmap": "zmap/*", "dnspot": "dnspot/*", "sshx": "sshx/server",
     "httptunnel_client": "httptunnel-*", "jj": "jj", "q": "q", "nc": "nc",
     "dnstt_client": "dnstt_*",
-    "termsvg": "termvg",  # README typo; fix the cell and this entry together
 }
 
 

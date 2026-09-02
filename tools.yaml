@@ -811,5 +811,6 @@ tools:
     check: {type: github-release, slug: latchset/tang}
     lang: c
     outputs: [tangd]
+    arm_outputs: [tangd]
     test_cmd: "/out/x64/tangd --version 2>&1 | grep -qi tang || /out/x64/tangd -h 2>&1 | grep -qi usage"
     experimental: true
