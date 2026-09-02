@@ -539,8 +539,6 @@ _LIBMD = "1.1.0"
 # upstream libbsd answers GitHub runners with HTTP 418; debian's pool serves the
 # same tarballs, and this build already pulls netcat from there
 _DEB_POOL = "http://deb.debian.org/debian/pool/main"
-_APORTS = ("https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/"
-           "main/netcat-openbsd")
 _NC_PRE = [
     # libbsd carries strtonum/arc4random for the OpenBSD source; alpine ships
     # it shared-only, so build a static one
@@ -551,9 +549,11 @@ _NC_PRE = [
     "&& make -j$(nproc) && make install && cd /src",
     # debian keeps the linux port as a quilt series
     'while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series',
-    # the port calls b64_ntop, which musl has no equivalent of
-    f"curl -fsSL --retry 3 {_APORTS}/base64.c -o base64.c",
-    f"curl -fsSL --retry 3 {_APORTS}/b64.patch | patch -Np1",
+    # the port calls b64_ntop, which musl has no equivalent of. base64.c is
+    # vendored in build/nc/: the runner could not reach the distro git host it
+    # used to come from, and a build should not depend on one being up
+    r"sed -i '/^int[[:space:]]*remote_connect(/i "
+    r"int b64_ntop(const unsigned char *, size_t, char *, size_t);' socks.c",
     r"""sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile""",
 ]
 # IPTOS_DSCP_VA is a linux/glibc define musl's netinet/ip.h lacks
@@ -565,6 +565,7 @@ RECIPES["nc"] = dict(
             "debian/{v}/netcat-openbsd-debian-{v}.tar.gz",
     bins=[("nc", "")],
     pkgs=["linux-headers", "libmd-dev", "patch"],
+    files=["base64.c"],
     pre=_NC_PRE,
     build=["mkdir -p /tmp/out",
            f"make CFLAGS='{_NC_CFLAGS} -I/opt/libbsd/include' "
