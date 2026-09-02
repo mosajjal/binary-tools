@@ -531,6 +531,59 @@ RECIPES["tor"] = dict(
     experimental=True, arm=False,
 )
 
+# OpenBSD netcat, via Debian's portable patchset (the same source alpine's
+# netcat-openbsd package uses). The binary this replaced was glibc-linked with
+# no recipe at all, the last dynamic binary in the repo.
+_LIBBSD = "0.12.2"
+_LIBMD = "1.1.0"
+_APORTS = ("https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/"
+           "main/netcat-openbsd")
+_NC_PRE = [
+    # libbsd carries strtonum/arc4random for the OpenBSD source; alpine ships
+    # it shared-only, so build a static one
+    "mkdir -p /libbsd /opt/libbsd",
+    f"curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-{_LIBBSD}.tar.xz "
+    "| unxz | tar x -C /libbsd --strip-components=1",
+    "cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static "
+    "&& make -j$(nproc) && make install && cd /src",
+    # debian keeps the linux port as a quilt series
+    'while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series',
+    # the port calls b64_ntop, which musl has no equivalent of
+    f"curl -fsSL --retry 3 {_APORTS}/base64.c -o base64.c",
+    f"curl -fsSL --retry 3 {_APORTS}/b64.patch | patch -Np1",
+    r"""sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile""",
+]
+# IPTOS_DSCP_VA is a linux/glibc define musl's netinet/ip.h lacks
+_NC_CFLAGS = "-O2 -static -DIPTOS_DSCP_VA=0xb0"
+
+RECIPES["nc"] = dict(
+    lang="c",
+    tarball="https://salsa.debian.org/debian/netcat-openbsd/-/archive/"
+            "debian/{v}/netcat-openbsd-debian-{v}.tar.gz",
+    bins=[("nc", "")],
+    pkgs=["linux-headers", "libmd-dev", "patch"],
+    pre=_NC_PRE,
+    build=["mkdir -p /tmp/out",
+           f"make CFLAGS='{_NC_CFLAGS} -I/opt/libbsd/include' "
+           "LDFLAGS='-static -L/opt/libbsd/lib' LIBS='-lbsd -lmd'",
+           "cp nc /tmp/out/"],
+    # ARM needs its own libmd and libbsd; alpine cross-ships neither
+    arm_build=["make clean || true",
+               "mkdir -p /libmd-arm /libbsd-arm /opt/arm-deps",
+               f"curl -fsSL --retry 3 https://archive.hadrons.org/software/libmd/libmd-{_LIBMD}.tar.xz "
+               "| unxz | tar x -C /libmd-arm --strip-components=1",
+               "cd /libmd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps "
+               "--disable-shared --enable-static && make -j$(nproc) && make install && cd /src",
+               f"curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-{_LIBBSD}.tar.xz "
+               "| unxz | tar x -C /libbsd-arm --strip-components=1",
+               "cd /libbsd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps "
+               "--disable-shared --enable-static CPPFLAGS=-I/opt/arm-deps/include "
+               "LDFLAGS=-L/opt/arm-deps/lib && make -j$(nproc) && make install && cd /src",
+               f"make CC=arm-linux-musleabihf-gcc CFLAGS='{_NC_CFLAGS} -I/opt/arm-deps/include' "
+               "LDFLAGS='-static -L/opt/arm-deps/lib' LIBS='-lbsd -lmd'",
+               "mkdir -p /tmp/out-arm && cp nc /tmp/out-arm/"],
+)
+
 RECIPES["tangd"] = dict(
     lang="c", slug="latchset/tang", tag_prefix="v",
     bins=[("tangd", "")],

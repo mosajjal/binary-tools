@@ -502,11 +502,16 @@ tools:
     test: "--version"
   - name: nc
     version: "1.68"
-    check: {type: pinned, reason: ancient FreeBSD netcat, no upstream releases to track: ''}
-    enabled: false
+    # OpenBSD netcat via Debian's portable patchset; the binary this replaced
+    # was glibc-linked with no recipe behind it
+    check:
+      type: url
+      url: http://deb.debian.org/debian/pool/main/n/netcat-openbsd/
+      pattern: 'netcat-openbsd_([0-9.]+-[0-9]+)\.debian\.tar\.xz'
     lang: c
     outputs: [nc]
-    test: "-h"
+    arm_outputs: same
+    test_cmd: '/out/x64/nc -h 2>&1 | grep -qi usage'
   - name: netsniff
     version: "0.6.9"
     check: {type: github-tag, slug: netsniff-ng/netsniff-ng, pattern: '^v(.+)$'}
