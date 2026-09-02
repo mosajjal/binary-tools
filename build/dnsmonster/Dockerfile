@@ -16,6 +16,7 @@ RUN set -ex \
 RUN set -ex \
  && mkdir -p $(dirname /out/x64/dnsmonster) && cp /tmp/x64_dnsmonster /out/x64/dnsmonster \
  && test -n "$(ls "/out/x64/dnsmonster" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/dnsmonster"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/dnsmonster" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

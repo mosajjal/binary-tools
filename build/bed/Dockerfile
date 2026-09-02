@@ -18,6 +18,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/bed) && cp /tmp/x64_bed /out/x64/bed \
  && mkdir -p $(dirname /out/arm/bed) && cp /tmp/arm_bed /out/arm/bed \
  && test -n "$(ls "/out/x64/bed" "/out/arm/bed" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/bed" "/out/arm/bed"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/bed" "/out/arm/bed" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

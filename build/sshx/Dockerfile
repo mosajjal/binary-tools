@@ -21,6 +21,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/sshx-server) && cp /tmp/x64_sshx-server /out/x64/sshx-server \
  && for f in "/out/x64/sshx" "/out/x64/sshx-server"; do file "$f" | grep -q ELF && strip "$f" || true; done \
  && test -n "$(ls "/out/x64/sshx" "/out/x64/sshx-server" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/sshx" "/out/x64/sshx-server"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/sshx" "/out/x64/sshx-server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

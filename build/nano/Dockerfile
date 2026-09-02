@@ -17,6 +17,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/nano) && cp /tmp/out/nano /out/x64/nano \
  && for f in "/out/x64/nano"; do file "$f" | grep -q ELF && strip "$f" || true; done \
  && test -n "$(ls "/out/x64/nano" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/nano"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/nano" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

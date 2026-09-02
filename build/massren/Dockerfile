@@ -24,6 +24,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/massren) && cp /tmp/x64_massren /out/x64/massren \
  && mkdir -p $(dirname /out/arm/massren) && cp /tmp/arm_massren /out/arm/massren \
  && test -n "$(ls "/out/x64/massren" "/out/arm/massren" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/massren" "/out/arm/massren"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/massren" "/out/arm/massren" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
