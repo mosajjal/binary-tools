@@ -75,7 +75,7 @@ The categories are AI-generated so expect mistakes.
 | [mylg](//github.com/mehrdadrad/mylg)                 | 0.2.6        | `mylg`         | Networking, Diagnostics | `6a75b46987617266d8b37b64ff7eba3df8e587b69c5d262a7a1e76945fa3e956` |
 | [Nano](//www.nano-editor.org/)                       | 9.2          | `nano`         | Editor, Text            | `adc17588061b3543597d8153d7fcdd72095aeee09ec8452076506cc04b4282eb` |
 | [ncdu](//dev.yorhel.nl/ncdu/changes)                 | 1.22         | `ncdu`         | Disk, Utilities         | `0fc6489df52e31f819821ff30c10af8e127cf5b8d4a288f9b3925d7f073e8b9b` |
-| [NetCat](//www.freebsd.org/cgi/man.cgi?query=netcat) | 1.68         | `nc`           | Networking, CLI         | `6d11e05b6a31b8a4f7f97f71d9e15c12084a9e919a0250fc4ca4e053f0bb816d` |
+| [NetCat](//www.freebsd.org/cgi/man.cgi?query=netcat) | 1.238-1      | `nc`           | Networking, CLI         | `55a448b4f6b048b527d77ccf2d34212d37f124f1929552f8d34fa6a9816c05e5` |
 | [Netsniff](x64/netsniff/README.md)                   | 0.6.9        | `netsniff/*`   | Networking, Sniffing    | `ca97e86f0a21776631101d0baa37f07a460b7c833845fa0509b7b88e587cd9c7` |
 | [ngrep](//github.com/jpr5/ngrep/)                    | 1.49.0       | `ngrep`        | Networking, Sniffing    | `1481f1bb4fe383f23bd494c5f506a0c486c9552b25a2823636dfe8a6386dc50a` |
 | [nmap](//nmap.org/)                                  | 7.991        | `nmap, nping`  | Security, Scanner       | `251b5a7e19af442589bc17d90d9d5466bec97ae7478877a3eae0ed9ad294086a` |
@@ -174,6 +174,7 @@ The categories are AI-generated so expect mistakes.
 | [merino](//github.com/ajmwagar/merino)           | 0.1.3      | `merino`     | Proxy, Networking      | `5ad7584aa14b619ee09bb3ff6c81789248558ff7f38c0839ffb6601befd64acc` |
 | [micro](//github.com/zyedidia/micro)             | 2.0.15     | `micro`      | Editor, Text           | `2edf490694849079a9a4cbfd5036a0877c24acf15fe866ea743f18f450d81ee2` |
 | [miniserve](//github.com/svenstaro/miniserve)    | 0.35.0     | `miniserve`  | Fileserver, HTTP       | `b1f95ec4baed765e3dfda51a67df5e7023d76c3ec399078f0106c265286b1ae3` |
+| [NetCat](//www.freebsd.org/cgi/man.cgi?query=netcat) | 1.238-1    | `nc`         | Networking, CLI        | `2dbc8aa69238dac38edb7595006b7282d7ae45a8c2b8fdbded3d62612050fd4f` |
 | [nomino](//github.com/yaa110/nomino)             | 1.6.4      | `nomino`     | Rename, CLI            | `471210093ff603326666d4023942263ba7a24d577df3b814939853c0957c2c00` |
 | [onionpipe](//github.com/cmars/onionpipe)        | 1.1.11     | `onionpipe`  | Tor, Networking        | `e6f829d7a5d4ba375aa1e64c0678c8218bb5a59f2dab32aabf2a81986f52b8e6` |
 | [openrsync](//github.com/kristapsdz/openrsync)   | 48070e68d73f67d6922b2ffc8c2dee9754e659c6 | `openrsync`  | Sync, Files            | `ba57f6b614a277b89e845caca607efb68c64412ae417f8294082abb94cfa8e2d` |
