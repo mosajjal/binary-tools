@@ -127,13 +127,14 @@ The categories are AI-generated so expect mistakes.
 
 | Software                                         | Version    | Filename     | Category               | SHA256                                                              |
 | ------------------------------------------------ | ---------- | ------------ | ---------------------- | ------------------------------------------------------------------- |
-| [Brook](//github.com/txthinking/brook)           | 20240606   | `brook`      | Proxy, VPN             | `d1a202d45c6d8bcb68a86cd69ee5c6422bb433e8556d2a429b0d59030a957185 ` |
+| [Brook](//github.com/txthinking/brook)           | 20260101.0 | `brook`      | Proxy, VPN             | `8f04cc18202f7f95352c81116e1666453a6f0459c2ffd668003be72a86e99eec` |
 | [Busybox](//busybox.net)                         | 1.38.0     | `busybox`    | Utilities, System      | `e88e3e4ea068e249616f5fea6ed0d2eab497c39e148798fb9f5abf7e59d3465a` |
 | [curl](//github.com/curl/curl)                   | 8.21.0 | `curl`       | Download, Networking   | `bff1af137c3a1dfff6fcc3046dc0d21a2eb7a04f21713004fdc2b23da1a60f95` |
 | [Darkhttpd](//github.com/ryanmjacobs/darkhttpd)  | 1.12       | `dh`         | Webserver, HTTP        | `ced94ba48bc25ac467c974f3ea379805c3a5dfd875a3fd98998b31f8ed917e6c` |
 | [doggo](//github.com/mr-karan/doggo)             | 1.4.0      | `doggo`      | DNS, CLI               | `052ce4a8de7a6ea6dae7949c8b08f7782c261b6d1f9c94cd193fe80544bd3168` |
 | [DnsMonster](//github.com/mosajjal/dnsmonster)   | 1.2.5      | `dnsmonster` | DNS, Monitoring        | `712e5db3eed9e9cc93f0fcee6bf694b3aac4adc1a57fe2c7973f56fda740a899` |
 | [dnstt](//bamsoftware.com/software/dnstt/)       | 1.20260501.0 | `dnstt_*`    | DNS, Tunneling         | `e4d8329158e6991bf752f46e253a758a34c3bd3d21486b5796480ffc17105d04` |
+| [Dropbear](x64/dropbear/README.md)               | 2026.94    | `dropbear/*` | SSH, Server            | `184f47e8277b81ddb85a964422265ba1cd251404f4a665ff27b2033f9e5495c1` |
 | [fd](//github.com/sharkdp/fd)                    | 10.5.0     | `fd`         | Search, CLI            | `f543a0f241b5449bcb9af4bb019eee398f4160d5b780c1bc9d2c113bd2780cde` |
 | [ffuf](//github.com/ffuf/ffuf/)                  | 2.2.1      | `ffuf`       | Fuzzing, Web           | `5610b60989e26e9e9d531d1310fdce6c13e19098da9d026c438213f5ff8d664c` |
 | [fish](//github.com/fish-shell/fish-shell)       | 4.8.1      | `fish`       | Shell, CLI             | `73f33a66929a13987a35a20da4852f67f9fde1e3d4e4b4700ee230950ef614d2` |
