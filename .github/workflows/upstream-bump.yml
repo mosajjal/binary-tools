@@ -161,12 +161,20 @@ jobs:
           } > body.md
           git commit -m "chore: weekly upstream bumps ($(date +%Y-%m-%d))"
           git push -u --force origin "$BR"
-          gh pr create \
-            --title "chore: weekly upstream bumps ($(date +%Y-%m-%d))" \
-            --body-file body.md \
-            --assignee "$OWNER" \
-            --label automation 2>/dev/null || \
-          gh pr create \
-            --title "chore: weekly upstream bumps ($(date +%Y-%m-%d))" \
-            --body-file body.md \
-            --assignee "$OWNER"
+
+          TITLE="chore: weekly upstream bumps ($(date +%Y-%m-%d))"
+          echo "" >> body.md
+          echo "Built by run ${GITHUB_RUN_ID}." >> body.md
+
+          # A second run on the same day reuses the branch name and force-pushes
+          # over it. Creating a PR then fails and the run ends red with the open
+          # PR silently describing a diff it no longer has -- update it instead.
+          EXISTING=$(gh pr list --head "$BR" --state open --json number -q '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --title "$TITLE" --body-file body.md
+            echo "updated existing PR #$EXISTING"
+            exit 0
+          fi
+          gh pr create --title "$TITLE" --body-file body.md \
+            --assignee "$OWNER" --label automation 2>/dev/null || \
+          gh pr create --title "$TITLE" --body-file body.md --assignee "$OWNER"
