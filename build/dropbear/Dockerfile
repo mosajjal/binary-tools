@@ -20,7 +20,7 @@ ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH
 RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
- && ./configure --host=arm-linux-musleabihf LDFLAGS=-static --disable-zlib \
+ && ./configure --host=arm-linux-musleabihf CFLAGS='-O2 -static' LDFLAGS=-static --disable-zlib --disable-harden \
  && make -j$(nproc) PROGRAMS='dropbear dbclient dropbearconvert dropbearkey scp' \
  && mkdir -p /tmp/out-arm && cp dropbear dbclient dropbearconvert dropbearkey scp /tmp/out-arm/
 

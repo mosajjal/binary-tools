@@ -28,7 +28,12 @@
 #              is a single output whose bin == name. Set it explicitly whenever
 #              the shipped layout differs -- scripts/test_layout.py enforces
 #              that every dst names a real binary, never a directory or a doc.
-#   arm_outputs  same shape, copied from /out/arm/ (ARMv7 hard-float musl)
+#   arm_outputs  same shape, copied from /out/arm/ (ARMv7 hard-float musl).
+#              `same` mirrors `outputs`.
+#   arm_frozen   why build/<name>/Dockerfile cannot produce the ARM binary this
+#              tool ships. The binary stays in the repo but no bump can refresh
+#              it; scripts/test_layout.py requires this note rather than letting
+#              the manifest claim ARM support the build cannot deliver
 #   test       args appended to each output binary for the smoke test;
 #              false disables; test_cmd overrides the whole command
 #   experimental  known-fragile build (failure does not block the bump PR)
@@ -55,7 +60,6 @@ tools:
     check: {type: github-release, slug: genuinetools/amicontained}
     lang: go
     outputs: [amicontained]
-    arm_outputs: same
     test: "--version"
   - name: atop
     version: "2.13.0"
@@ -138,6 +142,7 @@ tools:
     lang: c
     outputs: [curl]
     arm_outputs: same
+    arm_frozen: no ARM cross for the openssl/nghttp2 stack
     test: "--version"
   - name: dh
     version: "1.12"
@@ -152,6 +157,7 @@ tools:
     lang: go
     outputs: [dnsmonster]
     arm_outputs: same
+    arm_frozen: cgo + libpcap, no ARM cross toolchain for it
     test: "--version"
   - name: dnspot
     version: "0.1.0"
@@ -159,6 +165,9 @@ tools:
     lang: go
     outputs: [dnspot-agent, dnspot-server]
     arm_outputs: same
+    # dnspot-server opens an interactive prompt and panics without a tty; its
+    # banner is the proof it actually ran, which no flag will give us
+    test_cmd: '/out/x64/dnspot-agent --help >/dev/null 2>&1 && /out/x64/dnspot-server </dev/null 2>&1 | grep -qi "press ctrl"'
     test: "--version"
   - name: dnstrace
     version: "1.4.3"
@@ -230,6 +239,7 @@ tools:
     lang: mixed
     outputs: [fish]
     arm_outputs: same
+    arm_frozen: rust/c++ mix, no ARM cross
     test: "--version"
     experimental: true
   - name: fq
@@ -326,7 +336,6 @@ tools:
     check: {type: pinned, reason: upstream has no tags or releases}
     lang: go
     outputs: [httpdump]
-    arm_outputs: same
     test: "--help"
   - name: httptunnel_client
     version: "3.3"
@@ -544,6 +553,7 @@ tools:
     lang: c
     outputs: [openrsync]
     arm_outputs: [openrsync]
+    arm_frozen: no ARM cross
     test: "--version"
     experimental: true
   - name: packetq
@@ -579,6 +589,7 @@ tools:
     lang: rust
     outputs: [pueue, pueued]
     arm_outputs: [pueue, pueued]
+    arm_frozen: no ARM rust target wired up
     test: "--version"
   - name: pv
     version: "1.11.0"
@@ -704,6 +715,7 @@ tools:
     lang: c
     outputs: [tcpdump]
     arm_outputs: [tcpdump]
+    arm_frozen: libpcap has no ARM cross build here
     test: "--version"
   - name: termshark
     version: "2.4.0"
@@ -847,5 +859,6 @@ tools:
     lang: c
     outputs: [tangd]
     arm_outputs: [tangd]
+    arm_frozen: meson needs a cross file plus ARM jose/http-parser
     test_cmd: "/out/x64/tangd --version 2>&1 | grep -qi tang || /out/x64/tangd -h 2>&1 | grep -qi usage"
     experimental: true

@@ -10,8 +10,8 @@ WORKDIR /src
 RUN mkdir -p /pcre2-src /opt/pcre2 && curl -fsSL --retry 3 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.gz | gunzip -c | tar x -C /pcre2-src --strip-components=1 && cd /pcre2-src && ./configure --prefix=/opt/pcre2 --disable-shared --enable-static && make -j$(nproc) && make install && cd /src && (cd rust && cargo update -p lexical-core 2>/dev/null || cargo update 2>/dev/null || true)
 RUN set -ex \
  && mkdir -p /tmp/out \
- && PKG_CONFIG_PATH=/opt/pcre2/lib/pkgconfig PKG_CONFIG='pkg-config --static' ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var LDFLAGS='-static -L/opt/pcre2/lib' CPPFLAGS='-I/opt/pcre2/include' --disable-python --disable-lua --disable-nfqueue --disable-nflog --disable-gccmarch-native \
- && make -j$(nproc) \
+ && PKG_CONFIG_PATH=/opt/pcre2/lib/pkgconfig PKG_CONFIG='pkg-config --static' ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var LDFLAGS='-static -no-pie -L/opt/pcre2/lib' CFLAGS='-O2 -static -no-pie' CPPFLAGS='-I/opt/pcre2/include' --disable-python --disable-lua --disable-nfqueue --disable-nflog --disable-gccmarch-native \
+ && make -j$(nproc) LDFLAGS='-all-static -L/opt/pcre2/lib' \
  && cp src/suricata /tmp/out/
 
 RUN set -ex \
