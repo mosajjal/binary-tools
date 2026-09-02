@@ -22,7 +22,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_upstream import is_newer, pick_max  # noqa: E402
 from manifest import ARCHES, load_tools, outputs  # noqa: E402
-from update_readme import ROW, cell_for, cell_owners  # noqa: E402
+from update_readme import (ROW, arm_row, cell_for, cell_owners,  # noqa: E402
+                           insert_arm_rows)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC_EXT = (".md", ".txt", ".conf", ".json", ".yaml", ".yml")
@@ -181,6 +182,35 @@ def test_readme_matches_binaries():
               f"tools.yaml says {tools[name]['version']}")
 
 
+def test_arm_row_creation():
+    """A tool that starts shipping ARM gets a well-formed row, in order."""
+    lines = open(os.path.join(ROOT, "README.md")).read().split("\n")
+    arm_start = next(i for i, l in enumerate(lines)
+                     if l.startswith("# Filename map (ARM5)"))
+    arm_lines = [l for l in lines[arm_start:] if ROW.match(l)]
+    x64 = next(l for l in lines[:arm_start] if ROW.match(l))
+
+    sha = "0" * 64
+    row = arm_row(x64, arm_lines, "9.9.9", sha)
+    m = ROW.match(row)
+    check(m is not None, f"generated ARM row does not parse: {row}")
+    if m:
+        check(m.group("ver").strip() == "9.9.9", "generated row lost its version")
+        check(m.group("sha") == sha, "generated row lost its hash")
+        check(m.group("fn") == ROW.match(x64).group("fn"),
+              "generated row changed the filename cell")
+
+    # "aaa" sorts before every label in the table, so it must land first
+    first = arm_lines[0].replace(re.match(r"^\|\s*\[([^\]]+)\]", arm_lines[0])
+                                 .group(1), "aaa", 1)
+    out = insert_arm_rows(list(lines), [first])
+    new_at = [i for i, l in enumerate(out) if l == first]
+    check(len(new_at) == 1, "row inserted more than once")
+    if new_at:
+        check(new_at[0] < out.index(arm_lines[1]),
+              "row was not inserted in alphabetical order")
+
+
 def test_arm_same_expands():
     """`arm_outputs: same` is a scalar in tools.yaml; splitting it yields s,a,m,e."""
     for t in load_tools():
@@ -224,6 +254,7 @@ def main():
     test_smoke_cmd_targets_own_binary()
     test_readme_rows_resolve()
     test_readme_matches_binaries()
+    test_arm_row_creation()
     test_arm_same_expands()
     test_version_ordering()
 
