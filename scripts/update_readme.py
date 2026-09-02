@@ -4,6 +4,10 @@
 usage: update_readme.py NAME=NEWVER [NAME=NEWVER ...]
        update_readme.py --sync            (re-derive every row from the repo)
 
+A tool that starts shipping an ARM binary gets a row created for it in the ARM
+table, copied from its x64 row and inserted alphabetically. Without that a new
+`arm_outputs` ships a binary no table ever mentions.
+
 Rewrites a tool's version and SHA256 cells from tools.yaml and the binary as it
 landed in the repo, per section: the x64 table gets the x64 hash, the ARM table
 the ARM one. Version column keeps its original width so tables stay aligned.
@@ -67,6 +71,42 @@ def sha_of(root, name, arch):
     return h.hexdigest()
 
 
+def _cells(line):
+    """The five raw cells of a table row, padding included."""
+    return line.split("|")[1:6]
+
+
+def _fit(text, width):
+    return f" {text} ".ljust(width)[:max(width, len(text) + 2)]
+
+
+def arm_row(x64_line, arm_lines, ver, sha):
+    """An ARM row for a tool that has only an x64 one, in the ARM table's shape."""
+    src = _cells(x64_line)
+    widths = [len(c) for c in _cells(arm_lines[0])]
+    cells = [src[0], f" {ver} ", src[2], src[3], f" `{sha}` "]
+    return "|" + "|".join(_fit(c.strip(), w) for c, w in zip(cells, widths)) + "|"
+
+
+def insert_arm_rows(lines, additions):
+    """Insert new ARM rows alphabetically by software label."""
+    arm_idx = [i for i, l in enumerate(lines) if ROW.match(l)
+               and i > next(j for j, x in enumerate(lines)
+                            if x.startswith("# Filename map (ARM5)"))]
+    for line in additions:
+        label = re.match(r"^\|\s*\[([^\]]+)\]", line).group(1).lower()
+        at = arm_idx[-1] + 1
+        for i in arm_idx:
+            other = re.match(r"^\|\s*\[([^\]]+)\]", lines[i]).group(1).lower()
+            if other > label:
+                at = i
+                break
+        lines.insert(at, line)
+        arm_idx = [i if i < at else i + 1 for i in arm_idx] + [at]
+        arm_idx.sort()
+    return lines
+
+
 def main():
     tools = load_tools()
     if sys.argv[1:2] == ["--sync"]:
@@ -106,6 +146,28 @@ def main():
             parts[5] = f" `{sha}` "
         lines[i] = "|".join(parts)
         changed.append((section, name, ver, bool(sha)))
+
+    # a tool that just started shipping ARM has no row to update yet
+    have_arm = {name for sec, name, _, _ in changed if sec == "arm"}
+    x64_line = {}
+    for line in lines:                       # x64 table comes first, so its row wins
+        m = ROW.match(line)
+        name = owners.get(m.group("fn").strip("`")) if m else None
+        if name:
+            x64_line.setdefault(name, line)
+    arm_lines = [l for l in lines[next(i for i, x in enumerate(lines)
+                 if x.startswith("# Filename map (ARM5)")):] if ROW.match(l)]
+    additions = []
+    for name, ver in bumps.items():
+        if name in have_arm or name not in x64_line:
+            continue
+        sha = sha_of(ROOT, name, "arm")
+        if not sha:
+            continue
+        additions.append(arm_row(x64_line[name], arm_lines, ver, sha))
+        changed.append(("arm", name, ver, True))
+    if additions:
+        lines = insert_arm_rows(lines, additions)
 
     open(path, "w").write("\n".join(lines))
     for sec, name, ver, hashed in changed:

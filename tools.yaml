@@ -41,18 +41,21 @@ tools:
     check: {type: github-tag, slug: 3proxy/3proxy}
     lang: c
     outputs: [3proxy]
+    arm_outputs: same
     test_cmd: "timeout 2 /out/x64/3proxy; rc=$?; [ $rc -eq 124 ] || [ $rc -eq 0 ]"
   - name: amass
     version: "5.1.1"
     check: {type: github-release, slug: owasp-amass/amass}
     lang: go
     outputs: [amass]
+    arm_outputs: same
     test: "--version"
   - name: amicontained
     version: "0.4.9"
     check: {type: github-release, slug: genuinetools/amicontained}
     lang: go
     outputs: [amicontained]
+    arm_outputs: same
     test: "--version"
   - name: atop
     version: "2.13.0"
@@ -71,6 +74,7 @@ tools:
     check: {type: github-release, slug: imsnif/bandwhich}
     lang: rust
     outputs: [bandwhich]
+    arm_outputs: same
     test: "--version"
   - name: bbe
     version: "0.2.2"
@@ -83,12 +87,14 @@ tools:
     check: {type: github-release, slug: itchyny/bed}
     lang: go
     outputs: [bed]
+    arm_outputs: same
     test: "--version"
   - name: bit
     version: "1.1.2"
     check: {type: github-release, slug: chriswalz/bit}
     lang: go
     outputs: [bit]
+    arm_outputs: same
     test: "version"
   - name: boringtun
     version: "0.5.2"
@@ -100,6 +106,7 @@ tools:
       - bin: wg-user
         dst: wg-user
         note: legacy boringtun-cli alias kept for backwards compatibility
+    arm_outputs: same
     test: "--version"
   - name: brook
     version: "20260101.0"
@@ -123,6 +130,7 @@ tools:
     check: {type: github-tag, slug: bryanpkc/corkscrew}
     lang: c
     outputs: [corkscrew]
+    arm_outputs: same
     test_cmd: '/out/x64/corkscrew -h 2>&1 | grep -qiE "usage|corkscrew" || /out/x64/corkscrew 2>&1 | grep -qiE "usage|corkscrew"'
   - name: curl
     version: "8.21.0"
@@ -150,12 +158,14 @@ tools:
     check: {type: github-release, slug: mosajjal/dnspot}
     lang: go
     outputs: [dnspot-agent, dnspot-server]
+    arm_outputs: same
     test: "--version"
   - name: dnstrace
     version: "1.4.3"
     check: {type: github-release, slug: rs/dnstrace}
     lang: go
     outputs: [dnstrace]
+    arm_outputs: same
     test_cmd: '/out/x64/dnstrace -h 2>&1 | grep -qiE "usage|query"'
   - name: dnstt_client
     version: "1.20260501.0"
@@ -176,12 +186,17 @@ tools:
     check: {type: github-tag, slug: mkj/dropbear, pattern: '^DROPBEAR_(\d+\.\d+)$', transform: underscore_to_dot}
     lang: c
     outputs: [dropbear, dbclient, dropbearconvert, dropbearkey, scp]
+    # ARM ships these flat, unlike x64/dropbear/
+    arm_outputs: [{bin: dropbear, dst: dropbear}, {bin: dbclient, dst: dbclient},
+                  {bin: dropbearconvert, dst: dropbearconvert},
+                  {bin: dropbearkey, dst: dropbearkey}, {bin: scp, dst: scp}]
     test_cmd: "/out/x64/dbclient -V 2>&1 | grep -qi dropbear"
   - name: dsvpn
     version: "0.1.5"
     check: {type: github-release, slug: jedisct1/dsvpn}
     lang: c
     outputs: [dsvpn]
+    arm_outputs: same
     test_cmd: "/out/x64/dsvpn 2>&1 | grep -qi 'usage\\|dsvpn'"
   - name: es-dump
     version: "1.0.7"
@@ -222,6 +237,7 @@ tools:
     check: {type: github-release, slug: wader/fq}
     lang: go
     outputs: [fq]
+    arm_outputs: same
     test: "--version"
   - name: frp
     version: "0.71.0"
@@ -249,6 +265,7 @@ tools:
     check: {type: github-release, slug: OJ/gobuster}
     lang: go
     outputs: [gobuster]
+    arm_outputs: same
     test: "--version"
   - name: gojq
     version: "0.12.19"
@@ -283,6 +300,7 @@ tools:
     check: {type: github-release, slug: pemistahl/grex}
     lang: rust
     outputs: [grex]
+    arm_outputs: same
     test: "--version"
   - name: gum
     version: "2.0.0"
@@ -308,6 +326,7 @@ tools:
     check: {type: pinned, reason: upstream has no tags or releases}
     lang: go
     outputs: [httpdump]
+    arm_outputs: same
     test: "--help"
   - name: httptunnel_client
     version: "3.3"
@@ -330,18 +349,21 @@ tools:
     check: {type: github-release, slug: sitkevij/hex}
     lang: rust
     outputs: [hex]
+    arm_outputs: same
     test: "--version"
   - name: icmptunnel
     version: "1.0.0"
     check: {type: github-tag, slug: DhavalKapil/icmptunnel, prefix: v}
     lang: c
     outputs: [icmptunnel]
+    arm_outputs: same
     test_cmd: "/out/x64/icmptunnel -h 2>&1 | grep -qi tunnel"
   - name: inlets
     version: "3.0"
     check: {type: pinned, reason: original repo deleted; the-cc-dev/inlets is a mirror}
     lang: go
     outputs: [inlets]
+    arm_outputs: same
     test: "--version"
   - name: iodine
     version: "0.8.0"
@@ -354,6 +376,7 @@ tools:
     check: {type: github-tag, slug: koct9i/ioping, prefix: v}
     lang: c
     outputs: [ioping]
+    arm_outputs: same
     test: "--version"
   - name: jaq
     version: "3.1.1"
@@ -366,6 +389,7 @@ tools:
     check: {type: github-release, slug: tidwall/jj}
     lang: go
     outputs: [jj]
+    arm_outputs: same
     test: "-h"
   - name: jq
     version: "1.8.2"
@@ -379,12 +403,14 @@ tools:
     check: {type: github-release, slug: ilai-deutel/kibi}
     lang: rust
     outputs: [kibi]
+    arm_outputs: same
     test: "--version"
   - name: kmon
     version: "1.7.1"
     check: {type: github-release, slug: orhun/kmon}
     lang: rust
     outputs: [kmon]
+    arm_outputs: same
     test: "--version"
   - name: lazygit
     version: "0.64.1"
@@ -411,12 +437,14 @@ tools:
     check: {type: github-release, slug: laurent22/massren}
     lang: go
     outputs: [massren]
+    arm_outputs: same
     test: "--version"
   - name: memcd-util
     version: "0.0.1"
     check: {type: github-release, slug: me-io/memcached-util}
     lang: go
     outputs: [memcd-util]
+    arm_outputs: same
     test: "--version"
     experimental: true
   - name: merino
@@ -424,6 +452,7 @@ tools:
     check: {type: pinned, reason: no tags/releases upstream}
     lang: rust
     outputs: [merino]
+    arm_outputs: same
     test: "--version"
   - name: micro
     version: "2.0.15"
@@ -500,6 +529,7 @@ tools:
     check: {type: github-release, slug: yaa110/nomino}
     lang: rust
     outputs: [nomino]
+    arm_outputs: same
     test: "--version"
   - name: onionpipe
     version: "1.1.11"
@@ -572,6 +602,7 @@ tools:
     check: {type: github-release, slug: lotabout/rargs}
     lang: rust
     outputs: [rargs]
+    arm_outputs: same
     test: "--help"
   - name: redir
     version: "3.3"
@@ -590,6 +621,7 @@ tools:
     check: {type: github-release, slug: chmln/sd}
     lang: rust
     outputs: [sd]
+    arm_outputs: same
     test_cmd: "/out/x64/sd --version"
   - name: singbox
     version: "1.14.0"
@@ -692,6 +724,7 @@ tools:
     check: {type: github-release, slug: osa1/tiny, prefix: v}
     lang: rust
     outputs: [tiny]
+    arm_outputs: same
     test: "--version"
     experimental: true
   - name: tinyproxy
@@ -778,12 +811,14 @@ tools:
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
+    arm_outputs: same
     test: "--version"
   - name: yq
     version: "4.53.6"
     check: {type: github-release, slug: mikefarah/yq, prefix: v}
     lang: go
     outputs: [yq]
+    arm_outputs: same
     test_cmd: "/out/x64/yq '.a' /dev/null --null-input || true; echo '{}' | /out/x64/yq -P '.'"
   - name: zenith
     version: "0.12.0"
