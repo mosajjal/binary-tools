@@ -2,10 +2,16 @@
 """Update README.md version/SHA256 columns for bumped tools.
 
 usage: update_readme.py NAME=NEWVER [NAME=NEWVER ...]
+       update_readme.py --sync            (re-derive every row from the repo)
 
-Hashes the binary as it landed in the repo (outputs[0].dst) and rewrites the
-matching table row(s), so the published SHA256 always describes the file a user
-downloads. Version column is padded to its original width so tables stay aligned.
+Rewrites a tool's version and SHA256 cells from tools.yaml and the binary as it
+landed in the repo, per section: the x64 table gets the x64 hash, the ARM table
+the ARM one. Version column keeps its original width so tables stay aligned.
+
+Rows are matched on the exact filename cell. Substring matching used to be
+enough until it wasn't: "strace" is inside "dnstrace", "tiny" inside
+"tinyproxy", "vi" inside "vim", "wg" inside "wg-go", "rg" inside "rargs" -- each
+of those wrote one tool's version and hash into another tool's row.
 """
 import hashlib
 import os
@@ -24,8 +30,9 @@ FILENAME_CELL = {
     "dh": "dh", "hx": "hx", "frp": "frpc/frps", "pueue": "pueue(d)",
     "iodine": "iodine(d)", "nmap": "nmap, nping", "tor": "tor/*",
     "dropbear": "dropbear/*", "netsniff": "netsniff/*", "wireshark": "wireshark/*",
-    "zmap": "zmap/*", "dnspot": "dnspot/*", "sshx": "sshx", "httptunnel_client":
-    "httptunnel-*", "jj": "jj", "q": "`q`", "nc": "nc",
+    "zmap": "zmap/*", "dnspot": "dnspot/*", "sshx": "sshx/server",
+    "httptunnel_client": "httptunnel-*", "jj": "jj", "q": "q", "nc": "nc",
+    "dnstt_client": "dnstt_*",
 }
 
 
@@ -36,9 +43,18 @@ def cell_for(name):
     return FILENAME_CELL.get(name, name)
 
 
-def sha_of(root, name):
-    """SHA256 of the shipped binary, read from the repo rather than from dist/."""
-    outs = next((outputs(t) for t in load_tools() if t["name"] == name), [])
+def cell_owners(tools=None):
+    """filename cell -> tool name. One tool per cell, checked by test_layout."""
+    return {cell_for(t["name"]): t["name"] for t in (tools or load_tools())}
+
+
+def sha_of(root, name, arch):
+    """SHA256 of the shipped binary for one arch, read from the repo.
+
+    The ARM table used to be filled with x64 hashes: every row was hashed from
+    outputs[0] regardless of which section it sat in.
+    """
+    outs = next((outputs(t, arch) for t in load_tools() if t["name"] == name), [])
     if not outs:
         return None
     p = os.path.join(root, outs[0][1])
@@ -52,10 +68,15 @@ def sha_of(root, name):
 
 
 def main():
-    bumps = {}
-    for arg in sys.argv[1:]:
-        name, _, ver = arg.partition("=")
-        bumps[name] = ver
+    tools = load_tools()
+    if sys.argv[1:2] == ["--sync"]:
+        bumps = {t["name"]: t["version"] for t in tools}
+    else:
+        bumps = {}
+        for arg in sys.argv[1:]:
+            name, _, ver = arg.partition("=")
+            bumps[name] = ver
+    owners = cell_owners(tools)
 
     path = os.path.join(ROOT, "README.md")
     lines = open(path).read().split("\n")
@@ -71,25 +92,30 @@ def main():
         m = ROW.match(line)
         if not m or section is None:
             continue
-        fn = m.group("fn")
-        for name, ver in bumps.items():
-            if f"`{cell_for(name)}`" != fn and cell_for(name) not in fn.strip("`"):
-                continue
-            sha = sha_of(ROOT, name)
-            parts = line.split("|")
-            # parts: '', sw, ver, fn, cat, sha, ''
-            # keep the original cell width when the new version fits; a longer
-            # one just grows the row (markdown tolerates ragged tables)
-            parts[2] = f" {ver} ".ljust(len(parts[2]))
-            if sha:
-                parts[5] = f" `{sha}` "
-            lines[i] = "|".join(parts)
-            changed.append((section, name, ver, bool(sha)))
-            break
+        name = owners.get(m.group("fn").strip("`"))
+        if name is None or name not in bumps:
+            continue
+        ver = bumps[name]
+        sha = sha_of(ROOT, name, section)
+        parts = line.split("|")
+        # parts: '', sw, ver, fn, cat, sha, ''
+        # keep the original cell width when the new version fits; a longer
+        # one just grows the row (markdown tolerates ragged tables)
+        parts[2] = f" {ver} ".ljust(len(parts[2]))
+        if sha:
+            parts[5] = f" `{sha}` "
+        lines[i] = "|".join(parts)
+        changed.append((section, name, ver, bool(sha)))
 
     open(path, "w").write("\n".join(lines))
     for sec, name, ver, hashed in changed:
-        print(f"{sec}: {name} -> {ver} sha={'updated' if hashed else 'KEPT (artifact missing)'}")
+        print(f"{sec}: {name} -> {ver} sha={'updated' if hashed else 'KEPT (binary missing)'}")
+
+    # a bump that matched no row is a silent no-op otherwise
+    for name in bumps:
+        if not any(c[1] == name for c in changed):
+            print(f"WARNING: {name} matched no README row (cell "
+                  f"'{cell_for(name)}')", file=sys.stderr)
 
 
 if __name__ == "__main__":

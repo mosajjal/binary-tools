@@ -13,6 +13,7 @@ Guards the two defects that shipped in the 2026-08-31 bump PR:
      upstream release older than the shipped one (dnstrace 1.4.3 -> 1.4.0)
      was published as a bump.
 """
+import hashlib
 import os
 import re
 import subprocess
@@ -21,9 +22,14 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from check_upstream import is_newer, pick_max  # noqa: E402
 from manifest import ARCHES, load_tools, outputs  # noqa: E402
+from update_readme import ROW, cell_for, cell_owners  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC_EXT = (".md", ".txt", ".conf", ".json", ".yaml", ".yml")
+
+# tools with no row of their own: pt_bridges ships inside the tor/* row, tangd
+# is ARM-only
+NO_README_ROW = {"pt_bridges", "tangd"}
 
 failures = []
 
@@ -101,6 +107,80 @@ def test_smoke_cmd_targets_own_binary():
                   f"{t['name']}: test_cmd runs /out/x64/{ref}, not one of {sorted(mine)}")
 
 
+def test_readme_rows_resolve():
+    """Each tool owns one README row per section, matched on the exact cell.
+
+    Substring matching put strace's version in dnstrace's row, tiny's in
+    tinyproxy's, vi's in vim's, wg's in wg-go's and rg's in rargs'.
+    """
+    owners = cell_owners()
+    names = [t["name"] for t in load_tools()]
+    check(len(owners) == len(names),
+          f"two tools share a README cell: "
+          f"{sorted(set(names) - set(owners.values()))}")
+
+    seen = {}
+    section = None
+    for line in open(os.path.join(ROOT, "README.md")):
+        if line.startswith("# Filename map (x64)"):
+            section = "x64"
+        elif line.startswith("# Filename map (ARM5)"):
+            section = "arm"
+        m = ROW.match(line.rstrip("\n"))
+        if not m or section is None:
+            continue
+        name = owners.get(m.group("fn").strip("`"))
+        if name is None:
+            continue
+        key = (section, name)
+        check(key not in seen, f"{name}: two {section} rows in README.md")
+        seen[key] = True
+
+    for name in names:
+        if name in NO_README_ROW:
+            continue
+        check(("x64", name) in seen,
+              f"{name}: cell '{cell_for(name)}' resolves to no x64 row, so a "
+              f"bump would silently leave its version and hash stale")
+
+
+def test_readme_matches_binaries():
+    """Both tables must describe the binaries actually in the repo.
+
+    The published SHA256 is the only thing a user can check a download
+    against, and the x64 table drifted 39 hashes out of date before anyone
+    noticed.
+    """
+    owners = cell_owners()
+    tools = {t["name"]: t for t in load_tools()}
+    section = None
+    for line in open(os.path.join(ROOT, "README.md")):
+        if line.startswith("# Filename map (x64)"):
+            section = "x64"
+        elif line.startswith("# Filename map (ARM5)"):
+            section = "arm"
+        m = ROW.match(line.rstrip("\n"))
+        if not m or section is None:
+            continue
+        name = owners.get(m.group("fn").strip("`"))
+        if name is None:
+            continue
+        outs = outputs(tools[name], section)
+        if not outs:
+            continue
+        path = os.path.join(ROOT, outs[0][1])
+        if not os.path.exists(path):
+            check(False, f"{section} {name}: README row but no {outs[0][1]}")
+            continue
+        with open(path, "rb") as f:
+            sha = hashlib.sha256(f.read()).hexdigest()
+        check(m.group("sha") == sha,
+              f"{section} {name}: README sha does not match {outs[0][1]}")
+        check(m.group("ver").strip() == tools[name]["version"],
+              f"{section} {name}: README says {m.group('ver').strip()}, "
+              f"tools.yaml says {tools[name]['version']}")
+
+
 def test_arm_same_expands():
     """`arm_outputs: same` is a scalar in tools.yaml; splitting it yields s,a,m,e."""
     for t in load_tools():
@@ -142,6 +222,8 @@ def main():
     test_no_relocation(files)
     test_clobbered_docs(files)
     test_smoke_cmd_targets_own_binary()
+    test_readme_rows_resolve()
+    test_readme_matches_binaries()
     test_arm_same_expands()
     test_version_ordering()
 
