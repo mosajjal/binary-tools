@@ -143,8 +143,13 @@ def go_recipe(name, r):
             b.append(f"ADD {ARM_TC_URL} /tmp/armtc.tgz")
             b.append("RUN tar -C /opt -zxf /tmp/armtc.tgz && rm /tmp/armtc.tgz")
             b.append("ENV PATH=/opt/arm-linux-musleabihf-cross/bin:$PATH")
+            # a cgo tool usually needs its C dependency cross-built first
+            if r.get("arm_pre"):
+                b.append(run_block(r["arm_pre"]))
+            armenv = " ".join(f'{k}="{v}"' for k, v in r.get("arm_env", {}).items())
+            armenv = (armenv + " ") if armenv else ""
             armlines = [
-                f'CC=arm-linux-musleabihf-gcc GOARCH=arm GOARM=7 go build -trimpath -ldflags="{ldflags}" -o /tmp/arm_{n} {p}'
+                f'{armenv}CC=arm-linux-musleabihf-gcc GOARCH=arm GOARM=7 go build -trimpath -ldflags="{ldflags}" -o /tmp/arm_{n} {p}'
                 for n, p in r["bins"]
             ]
         else:

@@ -30,8 +30,19 @@ RECIPES = {
     "dnsmonster": dict(
         lang="go", slug="FenkoHQ/dnsmonster", tag_prefix="v",
         bins=[("dnsmonster", "./cmd/dnsmonster")],
-        env={"CGO_ENABLED": "1"}, pkgs=["build-base", "libpcap-dev"],
-        ldflags='-extldflags "-static"', arm=False,
+        cgo=True, pkgs=["build-base", "libpcap-dev", "flex", "bison", "curl"],
+        ldflags='-extldflags "-static"',
+        # cgo needs an ARM libpcap, and alpine ships none -- cross-build it
+        arm_pre=["mkdir -p /pcap-src /opt/arm-libpcap",
+                 "curl -fsSL --retry 3 https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz | "
+                 "gunzip -c | tar x -C /pcap-src --strip-components=1",
+                 "cd /pcap-src && ./configure --host=arm-linux-musleabihf "
+                 "--prefix=/opt/arm-libpcap --disable-shared --without-libnl "
+                 "--disable-dbus --disable-rdma ac_cv_linux_vers=2 "
+                 "&& make -j$(nproc) && make install && cd /src"],
+        arm_env={"CGO_ENABLED": "1",
+                 "CGO_CFLAGS": "-I/opt/arm-libpcap/include",
+                 "CGO_LDFLAGS": "-L/opt/arm-libpcap/lib"},
     ),
     "dnspot": dict(
         lang="go", slug="mosajjal/dnspot",

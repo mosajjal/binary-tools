@@ -157,7 +157,6 @@ tools:
     lang: go
     outputs: [dnsmonster]
     arm_outputs: same
-    arm_frozen: cgo + libpcap, no ARM cross toolchain for it
     test: "--version"
   - name: dnspot
     version: "0.1.0"
