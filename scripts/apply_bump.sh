@@ -59,9 +59,20 @@ while [ $i -lt $N ]; do
     LATEST=$($YQ -r ".outdated[$i].latest" "$OUTDATED")
     i=$((i+1))
 
-    XDIR="$DIST/bt-$TOOL/x64"
-    ADIR="$DIST/bt-$TOOL/arm"
-    [ -d "$XDIR" ] || { echo "skip $TOOL (no artifacts)"; continue; }
+    # download-artifact drops the per-artifact directory when a pattern matches
+    # exactly one artifact, so a single-tool bump lands in <dist>/x64 instead of
+    # <dist>/bt-<tool>/x64. That flat layout is only unambiguous when this run
+    # bumped one tool.
+    ROOTDIR=""
+    for CAND in "$DIST/bt-$TOOL" "$DIST/$TOOL"; do
+        [ -d "$CAND/x64" ] && { ROOTDIR=$CAND; break; }
+    done
+    if [ -z "$ROOTDIR" ] && [ "$N" = 1 ] && [ -d "$DIST/x64" ]; then
+        ROOTDIR=$DIST
+    fi
+    [ -n "$ROOTDIR" ] || { echo "skip $TOOL (no artifacts)"; continue; }
+    XDIR="$ROOTDIR/x64"
+    ADIR="$ROOTDIR/arm"
 
     # verify every declared output actually built before touching the repo
     MISSING=0
