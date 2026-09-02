@@ -10,7 +10,7 @@ The categories are AI-generated so expect mistakes.
 
 | Software                                             | Version      | Filename       | Category                | SHA256                                                             |
 | ---------------------------------------------------- | ------------ | -------------- | ----------------------- | ------------------------------------------------------------------ |
-| [3proxy](//github.com/z3APA3A/3proxy)                | 0.9 3        | `3proxy`       | Proxy, Networking       | `7c5a2814658e776c648d84b3087d47bbc0e6fd6191f3983947ebb0c88bd5b443` |
+| [3proxy](//github.com/z3APA3A/3proxy)                | 1.0.0        | `3proxy`       | Proxy, Networking       | `7e84ce828c298c4905f3e211e63bd37eba0baa261fa0df9ba1229c14c60db321` |
 | [amicontained](//github.com/genuinetools/)           | 0.4.9        | `amicontained` | Security, Container     | `38af6bd80d8cca3147d72ccccf97576d501d67118a4f6190f64c094fe18fc7a4` |
 | [amass](//github.com/OWASP/Amass)                    | 4.2.0        | `amass`        | Recon, Security         | `58c1de78683fc12b154323b31ccf2b2d16a5d89f3d140947e757072ebf36210c` |
 | [atop](//github.com/Atoptool/atop)                   | 2.8.1        | `atop`         | Monitoring, System      | `cc8b410f283680c91ffb4fea1263c177e8e819a15d3a1b51c71c9ce9b3ec9abd` |
@@ -31,7 +31,7 @@ The categories are AI-generated so expect mistakes.
 | [dnstt](//bamsoftware.com/software/dnstt/)           | 1.20241021   | `dnstt_*`      | DNS, Tunneling          | `7feaf2bca2ebf13312858201744caa5d5b4a9f738d69a66bcd7f5815c832cf6c` |
 | [doggo](//github.com/mr-karan/doggo)                 | 1.0.4        | `doggo`        | DNS, CLI                | `8c69685e45896a0ad9bd270e5f6052f00c8ddd1180564548c2f6a309721fc9db` |
 | [Dropbear](x64/dropbear/README.md)                   | 2026.94 | `dropbear/*`   | SSH, Server             | `06bd1d56d27e2105d4e36e11ab08fe9cae89e5a32562959ee44a197a0a129a44` |
-| [Dead Simple VPN](//github.com/jedisct1/dsvpn)       | 0.1.3        | `dsvpn`        | VPN, Networking         | `84315770dac9e17b07e89322653c89fc24b57c845a645dd925e17a1bd287821a` |
+| [Dead Simple VPN](//github.com/jedisct1/dsvpn)       | 0.1.5        | `dsvpn`        | VPN, Networking         | `3024a48fc7df426643967818a17b19220d9ae413805a59599e5483b74c42657c` |
 | [es-dump](//github.com/mosajjal/go-exp)              | 1.0.7 | `es-dump`      | Elasticsearch, Data     | `a514eaea4ba97f7a65dc8000cf4be967026336aa77f02202689ee9ca655f5f24` |
 | [evtx](//github.com/omerbenamram/evtx)               | 0.9.1        | `evtx`         | Forensics, Logs         | `a9a70961a8a492562e243aebb9ba1cb7d3a58728485b231955a77231efece4ae` |
 | [fd](//github.com/sharkdp/fd)                        | 8.6.0        | `fd`           | Search, CLI             | `702eb951e6b37be64cca66da976e0fcb0be587121034c1d6f841ce7fad3bd8e3` |
@@ -55,7 +55,7 @@ The categories are AI-generated so expect mistakes.
 | [httptunnel](//www.gnu.org/software/httptunnel/)     | 3.3.git      | `httptunnel-*` | Tunneling, Networking   | `df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
 | [httpx](//github.com/projectdiscovery/httpx)         | 1.2.9        | `httpx`        | HTTP, Recon             | `21438df6740c059743c7df493add8b34f104cc7b117abb42e8cabb874fd64b96` |
 | [hex](//github.com/sitkevij/hex)                     | 0.4.1        | `hex`          | Editor, Binary          | `54cd7c101684fd41ef7bda87dfbaa1ba76d917410340bbd74233910406cce971` |
-| [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)   | 1.0.0-alpha  | `icmptunnel`   | Tunneling, Networking   | `ea86405fe5bacb6cbf4d0e32622b2acd1244ff34565faa54ded2b6155919d21c` |
+| [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)   | 1.0.0        | `icmptunnel`   | Tunneling, Networking   | `a2b8ba80effb0732f0ccf3b5595fa885a388b40458458ccdb1bc6b33604bd67e` |
 | [inlets](//github.com/inlets/inlets)                 | 3.0          | `inlets`       | Proxy, Tunneling        | `6c6cfe3edfc361e134978b2456ecbd9e357dea4a88e7855d1cfc678da022bc94` |
 | [iodine](//github.com/yarrick/iodine)                | 0.8.0        | `iodine(d)`    | DNS, Tunneling          | `f7c0fc5a86d3d35f17226260b5025cb5a0f943792c7537db91d6d59af64174a3` |
 | [IOPing](//github.com/koct9i/ioping)                 | 0.9          | `ioping`       | Disk, Benchmark         | `76e72317d1e3988c9214cd66c898a0974f3e46814175069d80e41c7d95980750` |
@@ -65,7 +65,7 @@ The categories are AI-generated so expect mistakes.
 | [Kibi](//github.com/ilai-deutel/kibi)                | 0.2.2        | `kibi`         | Editor, Text            | `f817c3771b0cbf1cde40a652a29e1d11318111be9617c2f49e92ad6c5402ba39` |
 | [kmon](//github.com/orhun/kmon)                      | 1.6.3        | `kmon`         | Kernel, Monitoring      | `dcdc7db06055ba4c395f3bbc6475a28732d4cca0352d59c5b9a71deaa4567884` |
 | [lazygit](//github.com/jesseduffield/lazygit)        | 0.38.2       | `lazygit`      | Git, CLI                | `865c1d334e8bad35ef3ed40a17b47c4b4e020f7bf80532bbb93a7219244fe239` |
-| [lnav](//github.com/tstack/lnav)                     | 0.11.0       | `lnav`         | Logs, Viewer            | `377240d781abaa54930636f36cfeb91cc337ee80b3688049b45d7bcae2a376e2` |
+| [lnav](//github.com/tstack/lnav)                     | 0.14.0       | `lnav`         | Logs, Viewer            | `df5101b90dab0691c684fc678857e6549f332b70cf24b9bb292c9b3b757eee21` |
 | [logtop](//github.com/JulienPalard/logtop)           | a0935ab      | `logtop`       | Logs, Monitoring        | `6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
 | [massren](//github.com/laurent22/massren)            | 1.5.6        | `massren`      | Rename, CLI             | `5a6e090f05f095b2c99c37971e6c8d07069a71845a3d4e5c4bc4513d4858e6e1` |
 | [memcached-util](//github.com/me-io/memcached-util)  | 0.0.1        | `memcd-util`   | Cache, Utilities        | `e77ce75e720606738eeb9c459b5c2dc3fa3d9283e34fa7ff6004e6703f6174aa` |
