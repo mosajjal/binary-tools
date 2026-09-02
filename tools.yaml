@@ -43,7 +43,7 @@ tools:
     outputs: [3proxy]
     test_cmd: "timeout 2 /out/x64/3proxy; rc=$?; [ $rc -eq 124 ] || [ $rc -eq 0 ]"
   - name: amass
-    version: "4.2.0"
+    version: "5.1.1"
     check: {type: github-release, slug: owasp-amass/amass}
     lang: go
     outputs: [amass]
@@ -55,19 +55,19 @@ tools:
     outputs: [amicontained]
     test: "--version"
   - name: atop
-    version: "2.8.1"
+    version: "2.13.0"
     check: {type: github-release, slug: Atoptool/atop}
     lang: c
     outputs: [atop]
     test: "-V"
   - name: avml
-    version: "0.11.2"
+    version: "0.20.0"
     check: {type: github-release, slug: microsoft/avml}
     lang: rust
     outputs: [avml]
     test: "--help"
   - name: bandwhich
-    version: "0.21.0"
+    version: "0.23.1"
     check: {type: github-release, slug: imsnif/bandwhich}
     lang: rust
     outputs: [bandwhich]
@@ -102,14 +102,14 @@ tools:
         note: legacy boringtun-cli alias kept for backwards compatibility
     test: "--version"
   - name: brook
-    version: "20240606"
+    version: "20260101.0"
     check: {type: github-release, slug: txthinking/brook}
     lang: go
     outputs: [brook]
     arm_outputs: same
     test: "--version"
   - name: busybox
-    version: "1.36.0"
+    version: "1.38.0"
     check:
       type: url
       url: https://busybox.net/downloads/
@@ -139,7 +139,7 @@ tools:
     arm_outputs: same
     test_cmd: "timeout 2 /out/x64/dh --pidfile /tmp/dh.pid --port 18080 127.0.0.1 >/dev/null 2>&1 & sleep 1; wget -qO- http://127.0.0.1:18080/ || true; kill %1 2>/dev/null; true"
   - name: dnsmonster
-    version: "0.9.9"
+    version: "1.2.5"
     check: {type: github-release, slug: FenkoHQ/dnsmonster}
     lang: go
     outputs: [dnsmonster]
@@ -158,14 +158,14 @@ tools:
     outputs: [dnstrace]
     test_cmd: '/out/x64/dnstrace -h 2>&1 | grep -qiE "usage|query"'
   - name: dnstt_client
-    version: "1.20241021"
+    version: "1.20260501.0"
     check: {type: git-remote, remote: 'https://www.bamsoftware.com/git/dnstt.git', pattern: '^v(.+)$'}
     lang: go
     outputs: [{bin: dnstt_client, dst: dnstt_client}, {bin: dnstt_server, dst: dnstt_server}]
     arm_outputs: [{bin: dnstt_client, dst: dnstt_client}, {bin: dnstt_server, dst: dnstt_server}]
     test: "-h"
   - name: doggo
-    version: "1.0.4"
+    version: "1.4.0"
     check: {type: github-release, slug: mr-karan/doggo}
     lang: go
     outputs: [doggo]
@@ -190,27 +190,27 @@ tools:
     outputs: [es-dump]
     test: "--help"
   - name: evtx
-    version: "0.9.1"
+    version: "0.12.2"
     check: {type: github-release, slug: omerbenamram/evtx}
     lang: rust
     outputs: [evtx]
     test: "--help"
   - name: fd
-    version: "8.6.0"
+    version: "10.5.0"
     check: {type: github-release, slug: sharkdp/fd}
     lang: rust
     outputs: [fd]
     arm_outputs: same
     test: "--version"
   - name: ffuf
-    version: "2.2.0"
+    version: "2.2.1"
     check: {type: github-release, slug: ffuf/ffuf}
     lang: go
     outputs: [ffuf]
     arm_outputs: same
     test: "-V"
   - name: fish
-    version: "4.5.0"
+    version: "4.8.1"
     check: {type: github-release, slug: fish-shell/fish-shell}
     lang: mixed
     outputs: [fish]
@@ -218,47 +218,47 @@ tools:
     test: "--version"
     experimental: true
   - name: fq
-    version: "0.5.0"
+    version: "0.18.0"
     check: {type: github-release, slug: wader/fq}
     lang: go
     outputs: [fq]
     test: "--version"
   - name: frp
-    version: "0.48.0"
+    version: "0.71.0"
     check: {type: github-release, slug: fatedier/frp}
     lang: go
     outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     arm_outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     test: "--version"
   - name: fzf
-    version: "0.36.0"
+    version: "0.74.3"
     check: {type: github-release, slug: junegunn/fzf}
     lang: go
     outputs: [fzf]
     arm_outputs: [fzf]
     test: "--version"
   - name: ghfs
-    version: "1.18.1"
+    version: "1.22.0"
     check: {type: github-release, slug: mjpclab/go-http-file-server}
     lang: go
     outputs: [ghfs]
     arm_outputs: [ghfs]
     test: "--version"
   - name: gobuster
-    version: "3.6.0"
+    version: "3.8.2"
     check: {type: github-release, slug: OJ/gobuster}
     lang: go
     outputs: [gobuster]
     test: "--version"
   - name: gojq
-    version: "0.12.11"
+    version: "0.12.19"
     check: {type: github-release, slug: itchyny/gojq}
     lang: go
     outputs: [gojq]
     arm_outputs: [gojq]
     test_cmd: "/out/x64/gojq -n .a"
   - name: gotop
-    version: "4.1.2"
+    version: "4.2.0"
     check: {type: github-release, slug: xxxserxxx/gotop}
     lang: go
     outputs: [gotop]
@@ -279,26 +279,26 @@ tools:
     arm_outputs: [gron]
     test_cmd: "echo '{\"a\":1}' | /out/x64/gron"
   - name: grex
-    version: "1.4.1"
+    version: "1.4.6"
     check: {type: github-release, slug: pemistahl/grex}
     lang: rust
     outputs: [grex]
     test: "--version"
   - name: gum
-    version: "0.9.0"
+    version: "2.0.0"
     check: {type: github-release, slug: charmbracelet/gum}
     lang: go
     outputs: [gum]
     arm_outputs: [gum]
     test: "--version"
   - name: hx
-    version: "23.05"
+    version: "25.07.1"
     check: {type: github-release, slug: helix-editor/helix}
     lang: rust
     outputs: [hx]
     test: "--version"
   - name: htop
-    version: "3.4.1"
+    version: "3.5.3"
     check: {type: github-release, slug: htop-dev/htop}
     lang: c
     outputs: [htop]
@@ -319,14 +319,14 @@ tools:
     outputs: [{bin: httptunnel-client, dst: httptunnel-client}, {bin: httptunnel-server, dst: httptunnel-server}]
     test: "--help"
   - name: httpx
-    version: "1.2.9"
+    version: "1.11.0"
     check: {type: github-release, slug: projectdiscovery/httpx}
     lang: go
     outputs: [httpx]
     arm_outputs: [httpx]
     test: "--version"
   - name: hex
-    version: "0.4.1"
+    version: "0.7.0"
     check: {type: github-release, slug: sitkevij/hex}
     lang: rust
     outputs: [hex]
@@ -350,13 +350,13 @@ tools:
     outputs: [{bin: iodine, dst: iodine}, {bin: iodined, dst: iodined}]
     test_cmd: "/out/x64/iodine 2>&1 | grep -q iodine"
   - name: ioping
-    version: "0.9"
+    version: "1.3"
     check: {type: github-tag, slug: koct9i/ioping, prefix: v}
     lang: c
     outputs: [ioping]
     test: "--version"
   - name: jaq
-    version: "1.4.0"
+    version: "3.1.1"
     check: {type: github-release, slug: 01mf02/jaq}
     lang: rust
     outputs: [jaq]
@@ -368,26 +368,26 @@ tools:
     outputs: [jj]
     test: "-h"
   - name: jq
-    version: "1.7"
+    version: "1.8.2"
     check: {type: github-release, slug: jqlang/jq, prefix: "jq-"}
     lang: c
     outputs: [jq]
     arm_outputs: [jq]
     test_cmd: "echo '{}' | /out/x64/jq ."
   - name: kibi
-    version: "0.2.2"
+    version: "0.3.3"
     check: {type: github-release, slug: ilai-deutel/kibi}
     lang: rust
     outputs: [kibi]
     test: "--version"
   - name: kmon
-    version: "1.6.3"
+    version: "1.7.1"
     check: {type: github-release, slug: orhun/kmon}
     lang: rust
     outputs: [kmon]
     test: "--version"
   - name: lazygit
-    version: "0.38.2"
+    version: "0.64.1"
     check: {type: github-release, slug: jesseduffield/lazygit}
     lang: go
     outputs: [lazygit]
@@ -407,7 +407,7 @@ tools:
     outputs: [logtop]
     test: "--help"
   - name: massren
-    version: "1.5.6"
+    version: "1.5.7"
     check: {type: github-release, slug: laurent22/massren}
     lang: go
     outputs: [massren]
@@ -426,14 +426,14 @@ tools:
     outputs: [merino]
     test: "--version"
   - name: micro
-    version: "2.0.12"
+    version: "2.0.15"
     check: {type: github-release, slug: micro-editor/micro}
     lang: go
     outputs: [micro]
     arm_outputs: [micro]
     test: "--version"
   - name: miniserve
-    version: "0.23.0"
+    version: "0.35.0"
     check: {type: github-release, slug: svenstaro/miniserve}
     lang: rust
     outputs: [miniserve]
@@ -446,7 +446,7 @@ tools:
     outputs: [mylg]
     test: "-h"
   - name: nano
-    version: "7.1"
+    version: "9.2"
     check:
       type: url
       url: https://www.nano-editor.org/dist/
@@ -457,7 +457,7 @@ tools:
     outputs: [nano]
     test: "--version"
   - name: ncdu
-    version: "1.15.1"
+    version: "1.22"
     check:
       type: url
       url: https://dev.yorhel.nl/download
@@ -473,20 +473,20 @@ tools:
     outputs: [nc]
     test: "-h"
   - name: netsniff
-    version: "0.6.7"
+    version: "0.6.9"
     check: {type: github-tag, slug: netsniff-ng/netsniff-ng, pattern: '^v(.+)$'}
     lang: c
     outputs: [netsniff-ng, ifpps]
     test_cmd: "/out/x64/netsniff-ng --version 2>&1 | grep -qi netsniff"
     experimental: true
   - name: ngrep
-    version: "1.47.1"
+    version: "1.49.0"
     check: {type: sourceforge, project: ngrep}
     lang: c
     outputs: [ngrep]
     test: "-V"
   - name: nmap
-    version: "7.91"
+    version: "7.991"
     check:
       type: url
       url: https://nmap.org/dist/
@@ -496,13 +496,13 @@ tools:
     test: "--version"
     experimental: true
   - name: nomino
-    version: "1.1.0"
+    version: "1.6.4"
     check: {type: github-release, slug: yaa110/nomino}
     lang: rust
     outputs: [nomino]
     test: "--version"
   - name: onionpipe
-    version: "1.0.13"
+    version: "1.1.11"
     check: {type: github-release, slug: cmars/onionpipe}
     lang: go
     outputs: [onionpipe]
@@ -517,7 +517,7 @@ tools:
     test: "--version"
     experimental: true
   - name: packetq
-    version: "1.7.1"
+    version: "1.7.3"
     check: {type: github-release, slug: DNS-OARC/PacketQ, archived_ok: true}
     lang: cxx
     outputs: [packetq]
@@ -530,7 +530,7 @@ tools:
     test: "-h"
     experimental: true
   - name: pline-go
-    version: "1.24.0"
+    version: "1.26"
     check: {type: github-release, slug: justjanne/powerline-go}
     lang: go
     outputs: [pline-go]
@@ -544,14 +544,14 @@ tools:
     outputs: [ptunnel-ng]
     test: "-h"
   - name: pueue
-    version: "3.3.0"
+    version: "4.0.4"
     check: {type: github-release, slug: Nukesor/pueue}
     lang: rust
     outputs: [pueue, pueued]
     arm_outputs: [pueue, pueued]
     test: "--version"
   - name: pv
-    version: "1.6.6"
+    version: "1.11.0"
     check:
       type: url
       url: https://www.ivarch.com/programs/pv.shtml
@@ -561,7 +561,7 @@ tools:
     arm_outputs: [pv]
     test: "--version"
   - name: q
-    version: "0.11.1"
+    version: "0.19.12"
     check: {type: github-release, slug: natesales/q}
     lang: go
     outputs: [q]
@@ -580,33 +580,33 @@ tools:
     outputs: [redir]
     test: "-h"
   - name: rg
-    version: "14.0.0"
+    version: "15.2.0"
     check: {type: github-release, slug: BurntSushi/ripgrep}
     lang: rust
     outputs: [rg]
     test: "--version"
   - name: sd
-    version: "0.7.5"
+    version: "1.1.0"
     check: {type: github-release, slug: chmln/sd}
     lang: rust
     outputs: [sd]
     test_cmd: "/out/x64/sd --version"
   - name: singbox
-    version: "1.2.7"
+    version: "1.14.0"
     check: {type: github-tag, slug: SagerNet/sing-box, prefix: v}
     lang: go
     outputs: [singbox]
     arm_outputs: [singbox]
     test: "version"
   - name: sniproxy
-    version: "2.0.3"
+    version: "2.4.1"
     check: {type: github-release, slug: mosajjal/sniproxy}
     lang: go
     outputs: [sniproxy]
     arm_outputs: [sniproxy]
     test: "--version"
   - name: socat
-    version: "1.7.4.0"
+    version: "1.8.1.3"
     check:
       type: url
       url: http://www.dest-unreach.org/socat/download/
@@ -615,20 +615,20 @@ tools:
     outputs: [socat]
     test: "-V"
   - name: spp
-    version: "0.6"
+    version: "0.7"
     check: {type: github-release, slug: esrrhs/spp}
     lang: go
     outputs: [spp]
     arm_outputs: [spp]
     test: "--help"
   - name: sshx
-    version: "0.2"
+    version: "0.4.1"
     check: {type: github-release, slug: ekzhang/sshx}
     lang: rust
     outputs: [sshx, sshx-server]
     test: "--help"
   - name: sslh
-    version: "2.0"
+    version: "2.3.1"
     check: {type: github-tag, slug: yrutschle/sslh, prefix: v}
     lang: c
     outputs: [sslh]
@@ -641,14 +641,14 @@ tools:
     test: "-V"
     experimental: true
   - name: strace
-    version: "6.0"
+    version: "7.2"
     check: {type: github-release, slug: strace/strace, prefix: v}
     lang: c
     outputs: [strace]
     arm_outputs: [strace]
     test: "-V"
   - name: suricata
-    version: "6.0.0-rc1"
+    version: "8.0.6"
     check:
       type: url
       url: https://www.openinfosecfoundation.org/download/
@@ -658,13 +658,13 @@ tools:
     test_cmd: '/out/x64/suricata -V 2>&1 | grep -qiE "Suricata|build-info"'
     experimental: true
   - name: superfile
-    version: "1.1.2"
+    version: "1.6.0"
     check: {type: github-release, slug: yorukot/superfile}
     lang: go
     outputs: [superfile]
     arm_outputs: [superfile]
   - name: tcpdump
-    version: "4.99.0"
+    version: "4.99.6"
     check:
       type: url
       url: https://www.tcpdump.org/release/
@@ -681,27 +681,27 @@ tools:
     arm_outputs: [termshark]
     test_cmd: "printf '#!/bin/sh\necho tshark-stub\n' > /usr/local/bin/tshark && chmod +x /usr/local/bin/tshark && TERM=tput /out/x64/termshark --version"
   - name: termsvg
-    version: "0.6.1"
+    version: "0.11.0"
     check: {type: github-release, slug: MrMarble/termsvg}
     lang: go
     outputs: [termsvg]
     arm_outputs: [termsvg]
     test: "--version"
   - name: tiny
-    version: "0.10.0"
+    version: "0.13.0"
     check: {type: github-release, slug: osa1/tiny, prefix: v}
     lang: rust
     outputs: [tiny]
     test: "--version"
     experimental: true
   - name: tinyproxy
-    version: "1.11.1"
+    version: "1.11.3"
     check: {type: github-release, slug: tinyproxy/tinyproxy}
     lang: c
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.8.0"
+    version: "0.4.9.11"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -714,9 +714,7 @@ tools:
     version: "0.4.8.0-compat"
     check: {type: pinned, reason: webtunnel has no tags; bridges tracked manually}
     lang: go
-    outputs: [{bin: lyrebird, dst: tor/lyrebird}, {bin: snowflake, dst: tor/snowflake},
-              {bin: webtunnel_client, dst: tor/webtunnel_client},
-              {bin: webtunnel_server, dst: tor/webtunnel_server}]
+    outputs: [{bin: lyrebird, dst: tor/lyrebird}, {bin: snowflake, dst: tor/snowflake}, {bin: webtunnel_client, dst: tor/webtunnel_client}, {bin: webtunnel_server, dst: tor/webtunnel_server}]
     test: "--version"
     experimental: true
   - name: tmux
@@ -726,33 +724,33 @@ tools:
     outputs: [tmux]
     test: "-V"
   - name: ugrep
-    version: "6.0"
+    version: "7.8.4"
     check: {type: github-tag, slug: Genivia/ugrep, prefix: v}
     lang: cxx
     outputs: [ugrep]
     test_cmd: "echo hi | /out/x64/ugrep hi"
   - name: vi
-    version: "7.4.23"
+    version: "7.9.33"
     check: {type: github-release, slug: johnsonjh/OpenVi}
     lang: c
     outputs: [vi]
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.0.363"
+    version: "9.2.1031"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
     test: "--version"
     experimental: true
   - name: wg
-    version: "1.0.20210223"
+    version: "1.0.20260223"
     check: {type: github-tag, slug: WireGuard/wireguard-tools, pattern: '^v(.+)$'}
     lang: c
     outputs: [wg]
     test: "--version"
   - name: wg-go
-    version: "0.0.20230223"
+    version: "0.0.20250522"
     check: {type: github-tag, slug: WireGuard/wireguard-go}
     lang: go
     outputs: [wg-go]
@@ -776,13 +774,13 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "1.10"
+    version: "9.2.1031"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
     test: "--version"
   - name: yq
-    version: "4.33.3"
+    version: "4.53.6"
     check: {type: github-release, slug: mikefarah/yq, prefix: v}
     lang: go
     outputs: [yq]
@@ -795,13 +793,13 @@ tools:
     outputs: [zenith]
     test: "--version"
   - name: zellij
-    version: "0.42.2"
+    version: "0.45.1"
     check: {type: github-release, slug: zellij-org/zellij}
     lang: rust
     outputs: [zellij]
     test: "--version"
   - name: zmap
-    version: "2.1.1"
+    version: "4.4.0"
     check: {type: github-release, slug: zmap/zmap}
     lang: c
     outputs: [zmap, ztee, zgrab2]
