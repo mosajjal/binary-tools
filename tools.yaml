@@ -196,9 +196,7 @@ tools:
     lang: c
     outputs: [dropbear, dbclient, dropbearconvert, dropbearkey, scp]
     # ARM ships these flat, unlike x64/dropbear/
-    arm_outputs: [{bin: dropbear, dst: dropbear}, {bin: dbclient, dst: dbclient},
-                  {bin: dropbearconvert, dst: dropbearconvert},
-                  {bin: dropbearkey, dst: dropbearkey}, {bin: scp, dst: scp}]
+    arm_outputs: [{bin: dropbear, dst: dropbear}, {bin: dbclient, dst: dbclient}, {bin: dropbearconvert, dst: dropbearconvert}, {bin: dropbearkey, dst: dropbearkey}, {bin: scp, dst: scp}]
     test_cmd: "/out/x64/dbclient -V 2>&1 | grep -qi dropbear"
   - name: dsvpn
     version: "0.1.5"
