@@ -7,7 +7,7 @@ ARG VERSION
 RUN apk add --no-cache build-base git ca-certificates curl upx linux-headers xz bzip2 linux-headers libmd-dev patch
 RUN mkdir -p /src && curl -fsSL --retry 3 --retry-delay 2 "https://salsa.debian.org/debian/netcat-openbsd/-/archive/debian/${VERSION}/netcat-openbsd-debian-${VERSION}.tar.gz" | gunzip -c | tar x -C /src --strip-components=1
 WORKDIR /src
-RUN mkdir -p /libbsd /opt/libbsd && curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz | unxz | tar x -C /libbsd --strip-components=1 && cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static && make -j$(nproc) && make install && cd /src && while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/base64.c -o base64.c && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/b64.patch | patch -Np1 && sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile
+RUN mkdir -p /libbsd /opt/libbsd && curl -fsSL --retry 3 http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.12.2.orig.tar.xz | unxz | tar x -C /libbsd --strip-components=1 && cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static && make -j$(nproc) && make install && cd /src && while read -r p; do patch -Np1 < "debian/patches/$p"; done < debian/patches/series && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/base64.c -o base64.c && curl -fsSL --retry 3 https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/netcat-openbsd/b64.patch | patch -Np1 && sed -i '/SRCS=/s;\(.*\);& base64.c;' Makefile
 RUN set -ex \
  && mkdir -p /tmp/out \
  && mkdir -p /tmp/out \
@@ -22,9 +22,9 @@ RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
  && mkdir -p /libmd-arm /libbsd-arm /opt/arm-deps \
- && curl -fsSL --retry 3 https://archive.hadrons.org/software/libmd/libmd-1.1.0.tar.xz | unxz | tar x -C /libmd-arm --strip-components=1 \
+ && curl -fsSL --retry 3 http://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.1.0.orig.tar.xz | unxz | tar x -C /libmd-arm --strip-components=1 \
  && cd /libmd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps --disable-shared --enable-static && make -j$(nproc) && make install && cd /src \
- && curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz | unxz | tar x -C /libbsd-arm --strip-components=1 \
+ && curl -fsSL --retry 3 http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.12.2.orig.tar.xz | unxz | tar x -C /libbsd-arm --strip-components=1 \
  && cd /libbsd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps --disable-shared --enable-static CPPFLAGS=-I/opt/arm-deps/include LDFLAGS=-L/opt/arm-deps/lib && make -j$(nproc) && make install && cd /src \
  && make CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static -DIPTOS_DSCP_VA=0xb0 -I/opt/arm-deps/include' LDFLAGS='-static -L/opt/arm-deps/lib' LIBS='-lbsd -lmd' \
  && mkdir -p /tmp/out-arm && cp nc /tmp/out-arm/

@@ -536,13 +536,16 @@ RECIPES["tor"] = dict(
 # no recipe at all, the last dynamic binary in the repo.
 _LIBBSD = "0.12.2"
 _LIBMD = "1.1.0"
+# upstream libbsd answers GitHub runners with HTTP 418; debian's pool serves the
+# same tarballs, and this build already pulls netcat from there
+_DEB_POOL = "http://deb.debian.org/debian/pool/main"
 _APORTS = ("https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/"
            "main/netcat-openbsd")
 _NC_PRE = [
     # libbsd carries strtonum/arc4random for the OpenBSD source; alpine ships
     # it shared-only, so build a static one
     "mkdir -p /libbsd /opt/libbsd",
-    f"curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-{_LIBBSD}.tar.xz "
+    f"curl -fsSL --retry 3 {_DEB_POOL}/libb/libbsd/libbsd_{_LIBBSD}.orig.tar.xz "
     "| unxz | tar x -C /libbsd --strip-components=1",
     "cd /libbsd && ./configure --prefix=/opt/libbsd --disable-shared --enable-static "
     "&& make -j$(nproc) && make install && cd /src",
@@ -570,11 +573,11 @@ RECIPES["nc"] = dict(
     # ARM needs its own libmd and libbsd; alpine cross-ships neither
     arm_build=["make clean || true",
                "mkdir -p /libmd-arm /libbsd-arm /opt/arm-deps",
-               f"curl -fsSL --retry 3 https://archive.hadrons.org/software/libmd/libmd-{_LIBMD}.tar.xz "
+               f"curl -fsSL --retry 3 {_DEB_POOL}/libm/libmd/libmd_{_LIBMD}.orig.tar.xz "
                "| unxz | tar x -C /libmd-arm --strip-components=1",
                "cd /libmd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps "
                "--disable-shared --enable-static && make -j$(nproc) && make install && cd /src",
-               f"curl -fsSL --retry 3 https://libbsd.freedesktop.org/releases/libbsd-{_LIBBSD}.tar.xz "
+               f"curl -fsSL --retry 3 {_DEB_POOL}/libb/libbsd/libbsd_{_LIBBSD}.orig.tar.xz "
                "| unxz | tar x -C /libbsd-arm --strip-components=1",
                "cd /libbsd-arm && ./configure --host=arm-linux-musleabihf --prefix=/opt/arm-deps "
                "--disable-shared --enable-static CPPFLAGS=-I/opt/arm-deps/include "
