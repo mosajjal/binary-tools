@@ -18,6 +18,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/gojq) && cp /tmp/x64_gojq /out/x64/gojq \
  && mkdir -p $(dirname /out/arm/gojq) && cp /tmp/arm_gojq /out/arm/gojq \
  && test -n "$(ls "/out/x64/gojq" "/out/arm/gojq" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/gojq" "/out/arm/gojq"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/gojq" "/out/arm/gojq" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

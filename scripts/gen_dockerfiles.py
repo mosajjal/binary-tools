@@ -302,6 +302,17 @@ def _collect_and_pack(pairs, r):
     if allbins:
         steps.append(f'test -n "$(ls {_q(allbins)} 2>/dev/null | head -1)" || {{ echo "ERROR: no binaries produced"; exit 1; }}')
 
+    # Everything here ships as a single static file. Several tools quietly did
+    # not: dropbear's hardening adds -Wl,-pie, which beats -static; dsvpn and
+    # icmptunnel link through CFLAGS; tor was never told to link statically.
+    # A dynamic binary is useless on the targets this repo exists for, so the
+    # build fails rather than shipping one. Checked before UPX, which hides it.
+    if allbins:
+        steps.append(
+            f'for f in {_q(allbins)}; do file "$f" | grep -q ELF || continue; '
+            f'file "$f" | grep -qE "statically linked|static-pie linked" || '
+            f'{{ echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }}; done')
+
     if r.get("pack", True):
         # UPX is multi-arch; keep non-fatal only for genuinely unpackable
         # binaries (already-packed or format unsupported), but if nothing was

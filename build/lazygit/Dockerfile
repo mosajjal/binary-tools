@@ -18,6 +18,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/x64/lazygit) && cp /tmp/x64_lazygit /out/x64/lazygit \
  && mkdir -p $(dirname /out/arm/lazygit) && cp /tmp/arm_lazygit /out/arm/lazygit \
  && test -n "$(ls "/out/x64/lazygit" "/out/arm/lazygit" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/lazygit" "/out/arm/lazygit"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/lazygit" "/out/arm/lazygit" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20

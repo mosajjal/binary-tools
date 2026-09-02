@@ -22,6 +22,7 @@ RUN set -ex \
  && mkdir -p $(dirname /out/arm/dnstt_client) && cp /tmp/arm_dnstt_client /out/arm/dnstt_client \
  && mkdir -p $(dirname /out/arm/dnstt_server) && cp /tmp/arm_dnstt_server /out/arm/dnstt_server \
  && test -n "$(ls "/out/x64/dnstt_client" "/out/x64/dnstt_server" "/out/arm/dnstt_client" "/out/arm/dnstt_server" 2>/dev/null | head -1)" || { echo "ERROR: no binaries produced"; exit 1; } \
+ && for f in "/out/x64/dnstt_client" "/out/x64/dnstt_server" "/out/arm/dnstt_client" "/out/arm/dnstt_server"; do file "$f" | grep -q ELF || continue; file "$f" | grep -qE "statically linked|static-pie linked" || { echo "ERROR: $f is dynamically linked"; file "$f"; exit 1; }; done \
  && ( upx -q --best --lzma "/out/x64/dnstt_client" "/out/x64/dnstt_server" "/out/arm/dnstt_client" "/out/arm/dnstt_server" || echo 'upx failed; shipping unpacked' )
 
 FROM alpine:3.20
