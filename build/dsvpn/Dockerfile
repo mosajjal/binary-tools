@@ -20,7 +20,7 @@ RUN set -ex \
  && mkdir -p /tmp/out-arm \
  && make clean || true \
  && sed -i '/^\tstrip /d' Makefile \
- && make CC=arm-linux-musleabihf-gcc CFLAGS='-O2' LDFLAGS=-static -j$(nproc) \
+ && make CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static' LDFLAGS=-static -j$(nproc) \
  && cp dsvpn /tmp/out-arm/
 
 RUN set -ex \

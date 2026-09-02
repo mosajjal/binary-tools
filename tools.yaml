@@ -663,7 +663,6 @@ tools:
     lang: go
     outputs: [superfile]
     arm_outputs: [superfile]
-    test_cmd: '/out/x64/suricata -V 2>&1 | grep -qiE "Suricata|build-info"'
   - name: tcpdump
     version: "4.99.0"
     check:

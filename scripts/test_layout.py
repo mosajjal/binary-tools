@@ -14,6 +14,7 @@ Guards the two defects that shipped in the 2026-08-31 bump PR:
      was published as a bump.
 """
 import os
+import re
 import subprocess
 import sys
 
@@ -82,6 +83,24 @@ def test_clobbered_docs(files):
         check(not _is_elf(doc), f"{doc} is a binary, not documentation")
 
 
+def test_smoke_cmd_targets_own_binary():
+    """A test_cmd must exercise the tool it belongs to.
+
+    superfile carried a copy of suricata's command. Nothing failed: the shell's
+    own "/out/x64/suricata: not found" went through `2>&1` into
+    `grep -qiE "Suricata|build-info"`, which matched the path in that very
+    message -- so the tool shipped for months with no smoke test at all.
+    """
+    for t in load_tools():
+        cmd = t.get("test_cmd")
+        if not cmd:
+            continue
+        mine = {b for b, _ in outputs(t, "x64")} | {b for b, _ in outputs(t, "arm")}
+        for ref in re.findall(r"/out/x64/([\w.-]+)", cmd):
+            check(ref in mine,
+                  f"{t['name']}: test_cmd runs /out/x64/{ref}, not one of {sorted(mine)}")
+
+
 def test_arm_same_expands():
     """`arm_outputs: same` is a scalar in tools.yaml; splitting it yields s,a,m,e."""
     for t in load_tools():
@@ -122,6 +141,7 @@ def main():
     test_destinations(files, dirs)
     test_no_relocation(files)
     test_clobbered_docs(files)
+    test_smoke_cmd_targets_own_binary()
     test_arm_same_expands()
     test_version_ordering()
 

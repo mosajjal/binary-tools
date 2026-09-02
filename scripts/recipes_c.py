@@ -26,7 +26,8 @@ RECIPES = {
         build=["make CC=gcc LDFLAGS=-static -j$(nproc)", "cp dsvpn /tmp/out/"],
         arm_build=["make clean || true",
                    "sed -i '/^\\tstrip /d' Makefile",
-                   "make CC=arm-linux-musleabihf-gcc CFLAGS='-O2' LDFLAGS=-static -j$(nproc)",
+                   # the Makefile links with CFLAGS, so -static must be there too
+                   "make CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static' LDFLAGS=-static -j$(nproc)",
                    "cp dsvpn /tmp/out-arm/"],
     ),
     "corkscrew": dict(
@@ -59,7 +60,8 @@ RECIPES = {
         bins=[("icmptunnel", "")],
         build=["make -j$(nproc) LDFLAGS=-static", "cp icmptunnel /tmp/out/"],
         arm_build=["make clean || true",
-                   "make -j$(nproc) CC=arm-linux-musleabihf-gcc LDFLAGS=-static",
+                   # LDFLAGS alone leaves a musl-dynamic binary: link via CFLAGS too
+                   "make -j$(nproc) CC=arm-linux-musleabihf-gcc CFLAGS='-O2 -static' LDFLAGS=-static",
                    "cp icmptunnel /tmp/out-arm/"],
     ),
     "wg": dict(
@@ -288,8 +290,21 @@ RECIPES = {
         lang="cxx", slug="tstack/lnav", tag_prefix="v",
         bins=[("lnav", "")],
         pkgs=["cmake", "autoconf", "automake", "libtool", "ncurses-static",
-              "sqlite-static", "sqlite-dev", "zlib-static", "curl-dev", "openssl-libs-static"],
-        build=["./autogen.sh && ./configure LDFLAGS=-static",
+              "sqlite-static", "sqlite-dev", "zlib-static", "curl-dev", "openssl-libs-static",
+              # configure links its probes statically, so every curl
+              # dependency needs its .a here too
+              "libunistring-dev", "libunistring-static", "curl-static",
+              "nghttp2-static", "brotli-static", "zstd-static",
+              "libidn2-static", "c-ares-static", "libpsl-static", "pkgconf"],
+        # alpine ships no static libpcre2 -- build one, same as suricata
+        pre=["mkdir -p /pcre2-src /opt/pcre2",
+             "curl -fsSL --retry 3 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.gz | "
+             "gunzip -c | tar x -C /pcre2-src --strip-components=1",
+             "cd /pcre2-src && ./configure --prefix=/opt/pcre2 --disable-shared --enable-static "
+             "&& make -j$(nproc) && make install && cd /src"],
+        build=["./autogen.sh && PKG_CONFIG_PATH=/opt/pcre2/lib/pkgconfig PKG_CONFIG='pkg-config --static' ./configure "
+               "LDFLAGS='-static -L/opt/pcre2/lib' CPPFLAGS=-I/opt/pcre2/include "
+               "LIBS=\"$(pkg-config --static --libs libcurl)\"",
                "make -j$(nproc)", "cp src/lnav /tmp/out/"],
         experimental=True,
     ),
