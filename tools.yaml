@@ -137,7 +137,7 @@ tools:
     arm_outputs: same
     test_cmd: '/out/x64/corkscrew -h 2>&1 | grep -qiE "usage|corkscrew" || /out/x64/corkscrew 2>&1 | grep -qiE "usage|corkscrew"'
   - name: curl
-    version: "8.21.0"
+    version: "8.22.0"
     check: {type: github-tag, slug: curl/curl, pattern: '^curl-(\d+_\d+_\d+)$', transform: underscore_to_dot}
     lang: c
     outputs: [curl]
@@ -231,7 +231,7 @@ tools:
     arm_outputs: same
     test: "-V"
   - name: fish
-    version: "4.8.1"
+    version: "4.9.2"
     check: {type: github-release, slug: fish-shell/fish-shell}
     lang: mixed
     outputs: [fish]
@@ -419,14 +419,14 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: lazygit
-    version: "0.64.1"
+    version: "0.65.0"
     check: {type: github-release, slug: jesseduffield/lazygit}
     lang: go
     outputs: [lazygit]
     arm_outputs: [lazygit]
     test: "--version"
   - name: lnav
-    version: "0.14.0"
+    version: "0.14.1"
     check: {type: github-release, slug: tstack/lnav}
     lang: cxx
     outputs: [lnav]
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1031"
+    version: "9.2.1037"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1031"
+    version: "9.2.1037"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
