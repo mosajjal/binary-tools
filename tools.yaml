@@ -113,7 +113,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: brook
-    version: "20260101.0"
+    version: "20270101"
     check: {type: github-release, slug: txthinking/brook}
     lang: go
     outputs: [brook]
@@ -224,14 +224,14 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: ffuf
-    version: "2.2.1"
+    version: "2.3.0"
     check: {type: github-release, slug: ffuf/ffuf}
     lang: go
     outputs: [ffuf]
     arm_outputs: same
     test: "-V"
   - name: fish
-    version: "4.9.2"
+    version: "4.9.3"
     check: {type: github-release, slug: fish-shell/fish-shell}
     lang: mixed
     outputs: [fish]
@@ -254,7 +254,7 @@ tools:
     arm_outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     test: "--version"
   - name: fzf
-    version: "0.74.3"
+    version: "0.74.4"
     check: {type: github-release, slug: junegunn/fzf}
     lang: go
     outputs: [fzf]
@@ -310,7 +310,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: gum
-    version: "2.0.0"
+    version: "2.0.1"
     check: {type: github-release, slug: charmbracelet/gum}
     lang: go
     outputs: [gum]
@@ -344,7 +344,7 @@ tools:
     outputs: [{bin: httptunnel-client, dst: httptunnel-client}, {bin: httptunnel-server, dst: httptunnel-server}]
     test: "--help"
   - name: httpx
-    version: "1.11.0"
+    version: "1.12.0"
     check: {type: github-release, slug: projectdiscovery/httpx}
     lang: go
     outputs: [httpx]
@@ -419,7 +419,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: lazygit
-    version: "0.65.0"
+    version: "0.65.1"
     check: {type: github-release, slug: jesseduffield/lazygit}
     lang: go
     outputs: [lazygit]
@@ -660,7 +660,7 @@ tools:
     outputs: [socat]
     test: "-V"
   - name: spp
-    version: "0.7"
+    version: "0.8.0"
     check: {type: github-release, slug: esrrhs/spp}
     lang: go
     outputs: [spp]
@@ -748,7 +748,7 @@ tools:
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.9.11"
+    version: "0.4.9.12"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1037"
+    version: "9.2.1099"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1037"
+    version: "9.2.1099"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
