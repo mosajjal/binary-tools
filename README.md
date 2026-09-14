@@ -20,7 +20,7 @@ The categories are AI-generated so expect mistakes.
 | [Bed](//github.com/itchyny/bed)                      | 0.2.8        | `bed`          | Editor, Binary          | `b23678b02c75f9674eb188d84c255a78a6fe51a4ad74ea63515349bb8885f5eb` |
 | [boringtun](//github.com/cloudflare/boringtun)       | 0.5.2        | `boringtun`    | VPN, Networking         | `ac779fdda3801b80629f20d600bf43554be5ba0b33a51ab9cc1ee37cde9465b4` |
 | [bit](//github.com/chriswalz/bit)                    | 1.1.2        | `bit`          | Git, CLI                | `eae18a999cb280e9fad5b461ab1955a19ac382ce04ce66d65c0bc806f92d32a5` |
-| [Brook](//github.com/txthinking/brook)               | 20260101.0   | `brook`        | Proxy, VPN              | `a9ca093a586a7dc3f80a81a35ebe12627dcbbe9b262f63ca9c4397a0e920cac2` |
+| [Brook](//github.com/txthinking/brook)               | 20270101     | `brook`        | Proxy, VPN              | `ee195ad33792d23957ab3a94cb5303c02f76e53118bd0207f334b7516d3b6949` |
 | [busybox](//busybox.net)                             | 1.38.0       | `busybox`      | Utilities, System       | `5414fab86e910431389930a307761069f52e2b9ed20e1a5ba5031a00648446bd` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)         | 2.0          | `corkscrew`    | Proxy, Networking       | `c504c8161451530b04214ab3f40c6d420023c6f048e233e9557bc82752156978` |
 | [curl](//github.com/curl/curl)                       | 8.22.0 | `curl`         | Download, Networking    | `15e0ab7ae62387394969f133a1ff84aa43264cae7f40ea120e1fb3cf8e702a8a` |
@@ -36,10 +36,10 @@ The categories are AI-generated so expect mistakes.
 | [evtx](//github.com/omerbenamram/evtx)               | 0.12.2       | `evtx`         | Forensics, Logs         | `b7aacfa14c804ea6050b10d76dd4c4d6c22a8583ec6e134311f2a74b70523bfc` |
 | [fd](//github.com/sharkdp/fd)                        | 10.5.0       | `fd`           | Search, CLI             | `d9df59d97310928245cf7d876440e71ea69902c50c5e201ccc6f088b83aeecbc` |
 | [fq](//github.com/wader/fq)                          | 0.18.0       | `fq`           | JSON, CLI               | `c1545350fd1837e2cce11dba1961874f46c74f271217d9695ff75f114f248de8` |
-| [ffuf](//github.com/ffuf/ffuf)                       | 2.2.1        | `ffuf`         | Fuzzing, Web            | `74ba27eeb6f557c16200058c9c1c8ef42d04c8e5030fd23b37b9509e940b8053` |
-| [fish](//github.com/fish-shell/fish-shell)           | 4.9.2        | `fish`         | Shell, CLI              | `4370505b9c90a9e6ba2b4c7ab1cf3744720aa77721234f0d7222a6328958c84c` |
+| [ffuf](//github.com/ffuf/ffuf)                       | 2.3.0        | `ffuf`         | Fuzzing, Web            | `4bfdc83c73667397b247faac59b7eea31710d2f693edeeaa82be7381b6212821` |
+| [fish](//github.com/fish-shell/fish-shell)           | 4.9.3        | `fish`         | Shell, CLI              | `27f8d2401fb2d698359be4700d32fc0f31b5ddd1f3418d8eb56037241b3c9adf` |
 | [frp](//github.com/fatedier/frp)                     | 0.71.0       | `frpc/frps`    | Proxy, Tunneling        | `6a90ebaa452a24d23af63da7b534c3bbb52f876a67caf6a2b402d962c862eb9d` |
-| [Fzf](//github.com/junegunn/fzf)                     | 0.74.3       | `fzf`          | Search, CLI             | `29f45a62692686041166c6c24403f23c9d9f2fca8e40360730ce70d504d9a141` |
+| [Fzf](//github.com/junegunn/fzf)                     | 0.74.4       | `fzf`          | Search, CLI             | `6d379b6ea0da09cf13361f3c998c54aa066abb109610556212dc02ad9cee7b59` |
 | [gobuster](//github.com/OJ/gobuster)                 | 3.8.2        | `gobuster`     | Fuzzing, Web            | `2fd9f4a15411cc19f7d523f0b6b6e0d9a983c0f66646547916c20b73d6be505d` |
 | [ghfs](//github.com/mjpclab/go-http-file-server)     | 1.22.0       | `ghfs`         | Fileserver, HTTP        | `d2e17e8044d1efc72721689c9c177875fd27e46a036d56d6e29a0c05967ace33` |
 | [Gost](//github.com/ginuerzh/gost)                   | 2.11.3       | `gost`         | Proxy, Tunneling        | `4eb72e9f88417155bab988a93e8dd80f624f48a42ee6e19d912979dd8ed92594` |
@@ -48,12 +48,12 @@ The categories are AI-generated so expect mistakes.
 | [goss](//github.com/cakturk/go-netstat)              | e5b49ef      | `goss`         | Networking, Monitoring  | `15200f1c111cd3a2c6fd5ffd3c057e5d03b68864f322e4ba0c89726603b19c54` |
 | [gron](//github.com/tomnomnom/gron)                  | 0.7.1        | `gron`         | JSON, CLI               | `be69198a4b5ceb12fa8606df4646a68df5ebfab0f4e26498415568cdb317ed3d` |
 | [grex](//github.com/pemistahl/grex/)                 | 1.4.6        | `grex`         | Regex, CLI              | `828ee297be5cb05701d44ece3d8608d449c48809f91dee7df61154b5c8b095d2` |
-| [gum](//github.com/charmbracelet/gum)                | 2.0.0        | `gum`          | CLI, UI                 | `6b67741700a3401af8ed871d206fb9e10421079fbfc32b658698c35ab6e25f60` |
+| [gum](//github.com/charmbracelet/gum)                | 2.0.1        | `gum`          | CLI, UI                 | `c326b12ec9f8ff0ee506199bed1b80461f4a5fab02ac63f8b4189ed4cdb11aa7` |
 | [helix](//github.com/helix-editor/helix)             | 25.07.1      | `hx`           | Editor, Text            | `704cf3224f59cd81d6ba22df38225a6155f16985eb88d48baaa52fa529d8833e` |
 | [Htop](//hisham.hm/htop/)                            | 3.5.3        | `htop`         | Monitoring, System      | `34794d1fadaf05a2e011a8dec4a9061753b266a6744312bca198889d402d205c` |
 | [httpdump](//github.com/hsiafan/httpdump)            | 49c42ed      | `httpdump`     | HTTP, Debugging         | `f07fca90367bbce2fb5e18a2f1825610254f9ceab004b5ed1d74a88995e03fb3` |
 | [httptunnel](//www.gnu.org/software/httptunnel/)     | 3.3          | `httptunnel-*` | Tunneling, Networking   | `df200c537ea49202358ca48bad15ab8a1f18ddf2575b953ccdf0d0912763571f` |
-| [httpx](//github.com/projectdiscovery/httpx)         | 1.11.0       | `httpx`        | HTTP, Recon             | `023bf858562a36f6b1c99d2762b8057c3b7398c81632dcab4b3e83e51e4835ba` |
+| [httpx](//github.com/projectdiscovery/httpx)         | 1.12.0       | `httpx`        | HTTP, Recon             | `fa8c229b80bdca41187f3738869d0692e2002f224c3b6e20f33d9326aa136fae` |
 | [hex](//github.com/sitkevij/hex)                     | 0.7.0        | `hex`          | Editor, Binary          | `57f9158b9e8b3828f7dc40b219b2da2022c6106d8dddfa1b92c6dbd04f821004` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel)   | 1.0.0        | `icmptunnel`   | Tunneling, Networking   | `afca950d36a3afda4c9e59ed4cf3341449f3c1dd0be179f18d675d5735dbaa53` |
 | [inlets](//github.com/inlets/inlets)                 | 3.0          | `inlets`       | Proxy, Tunneling        | `621f2c358146717b6ef21192fefee0be2eacccc64681bfbd65556bb51d58fc39` |
@@ -64,7 +64,7 @@ The categories are AI-generated so expect mistakes.
 | [jq](//github.com/stedolan/jq)                       | 1.8.2        | `jq`           | JSON, CLI               | `1f6030e4a1be2290db0857c1f404b5b455886d0e2ecd6b5694e60d800e2a608f` |
 | [Kibi](//github.com/ilai-deutel/kibi)                | 0.3.3        | `kibi`         | Editor, Text            | `a21a89293b42ace8f851ee1afdf43b6e3fd52df90ccf422ad1ff9b10f3829ecc` |
 | [kmon](//github.com/orhun/kmon)                      | 1.7.1        | `kmon`         | Kernel, Monitoring      | `af98383bdfe37e5413491f0a29079b40b628310790aa6de456a67c2e382253bd` |
-| [lazygit](//github.com/jesseduffield/lazygit)        | 0.65.0       | `lazygit`      | Git, CLI                | `304945bcd590f36e483e286af71190751123e6b3690b0b1b6dffd5fa674ec6d4` |
+| [lazygit](//github.com/jesseduffield/lazygit)        | 0.65.1       | `lazygit`      | Git, CLI                | `9ed35923fdbd273371c81c8ddfd33a52f752631df2f84b2c992cebfbeba6dfda` |
 | [lnav](//github.com/tstack/lnav)                     | 0.14.1       | `lnav`         | Logs, Viewer            | `83d518afd7573bfad654a0131e471ec5fae2dcbb7095849b658040942ac99a09` |
 | [logtop](//github.com/JulienPalard/logtop)           | a0935ab      | `logtop`       | Logs, Monitoring        | `6401ef31a57e3234bd3dac63403636c0d8e41b428948b90f42f0d8f518b30e10` |
 | [massren](//github.com/laurent22/massren)            | 1.5.7        | `massren`      | Rename, CLI             | `b86f956ec83b877b17dce62d2d6a1c2c458eb21cf2ef83cc09cbfbb6db030d5a` |
@@ -95,7 +95,7 @@ The categories are AI-generated so expect mistakes.
 | [sd](//github.com/chmln/sd)                          | 1.1.0        | `sd`           | CLI, Replace            | `d66ea7a08b2b1b39ceff783964465306d29c07212f30e64bc6f2296da26bc172` |
 | [singbox](//github.com/SagerNet/sing-box)            | 1.14.0       | `singbox`      | Proxy, VPN              | `9371b21ab430401f4d381aa2f454c3d80338992bf1bfb224212f9288635bf82d` |
 | [Socat](http://www.dest-unreach.org/socat/)          | 1.8.1.3      | `socat`        | Networking, Proxy       | `b45aa7bc33dd150419f809d62569eb4205a23cabfb159bf51c85d95f993a73bf` |
-| [spp](//github.com/esrrhs/spp/)                      | 0.7          | `spp`          | Proxy, Networking       | `aa232443aa6acfa5965a48cd5bc154d5287471c7912f57152f47e5d95dd13da6` |
+| [spp](//github.com/esrrhs/spp/)                      | 0.8.0        | `spp`          | Proxy, Networking       | `0ed74ea0a72e8d5760a05c03a1bf87b70abbb32d603673be5f1b4133925ac19c` |
 | [sshx](//github.com/ekzhang/sshx/)                   | 0.4.1        | `sshx/server`  | SSH, Server             | `bdadaaa10e40d0043faf46730e0db3527939c948966c55a2684a2aa5edb04a39` |
 | [sslh](//github.com/yrutschle/sslh/)                 | 2.3.1        | `sslh`         | Proxy, Multiplexer      | `964e1d3c1c98184421feb569a767393f531a3d487f5df284a30d8835ee0c0f2d` |
 | [sslsplit](//github.com/droe/sslsplit/)              | 0.5.5        | `sslsplit`     | Proxy, SSL              | `36c45ed304c4bed4147da62a5128c27cb9f51de078a66f8521aa04d82d17b3eb` |
@@ -108,16 +108,16 @@ The categories are AI-generated so expect mistakes.
 | [termsvg](//github.com/MrMarble/termsvg)             | 0.11.0       | `termsvg`       | SVG, CLI                | `39847c3a55148e90c1af98b4df1c21dc153122a6005afc58e42f68f5f6d13b15` |
 | [tiny](//github.com/osa1/tiny)                       | 0.13.0       | `tiny`         | IRC, Chat               | `cc13fa4b6be8fca8918a23ffe9bb8bc6b133797bfa7b55adb70dc7102af4e49d` |
 | [tinyproxy](//github.com/tinyproxy/tinyproxy)        | 1.11.3       | `tinyproxy`    | Proxy, Networking       | `b5951e272eb52282158dd564bcf58ea8f4048661a42338f0561aa7ef94fb9df5` |
-| [tor](x64/tor/README.md)                             | 0.4.9.11     | `tor/*`        | Tor, Privacy            | `7d00d896395c42c0c9de410f17e54da1cd3c4bb71ff9697696e79c30e4ce0add` |
+| [tor](x64/tor/README.md)                             | 0.4.9.12     | `tor/*`        | Tor, Privacy            | `7fdbf303520da0ac0e13ec1ec043ecceff1bc29053ce01ec89b33ef273ffa4f0` |
 | [tmux](//github.com/tmux/tmux)                       | 3.7c | `tmux`         | Terminal, Multiplexer   | `35b1f7cb48a93d9c8868b327ea66380cd95e9c13e55de5acf374fbb96373af24` |
 | [ugrep](//github.com/Genivia/ugrep)                  | 7.8.4        | `ugrep`        | Search, CLI             | `d455d63bfb2914f7b09dce5ee15cc5a3a36a35078a8111b5a9ea7dcd233ff8a7` |
 | [vi](//github.com/johnsonjh/OpenVi)                  | 7.9.33       | `vi`           | Editor, Text            | `3f80500e119f9d837a66a6e8e211ef80d5aa48d975d69c45cf6aced884cb0ecc` |
-| [vim](//www.vim.org/)                                | 9.2.1037     | `vim`          | Editor, Text            | `f56877268d75a813f97012861a8b999c158376bccde88eca1109fcc781ec0f35` |
+| [vim](//www.vim.org/)                                | 9.2.1099     | `vim`          | Editor, Text            | `33110d3d8aef2308e68b00b7041bdbd05382f2ec1433576b711e427f431f10c0` |
 | [Wireshark](x64/wireshark/README.md)                 | 2.6.17       | `wireshark/*`  | Networking, Sniffing    | `e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [wireguard](//github.com/WireGuard/wireguard-tools)  | 1.0.20260223 | `wg`           | VPN, Networking         | `8eb26b0a4d94e1f7c257ac98a5d439a73d27d840c18c7d2c8a23dd9a1f4fb062` |
 | [wireguard-go](//github.com/WireGuard/wireguard-go)  | 0.0.20250522 | `wg-go`        | VPN, Networking         | `daca6f2119894cadab8a16a86ffcc021356a2f153339841b85e2818bb43c4b91` |
 | [xsv](//github.com/BurntSushi/xsv)                   | 0.13.0       | `xsv`          | CSV, CLI                | `34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
-| [xxd](//linux.die.net/man/1/xxd)                     | 9.2.1037     | `xxd`          | Hex, CLI                | `ef177642314f82c6a261ea75cfd60ff53027a507bd965287061ebe3a315b236d` |
+| [xxd](//linux.die.net/man/1/xxd)                     | 9.2.1099     | `xxd`          | Hex, CLI                | `ef177642314f82c6a261ea75cfd60ff53027a507bd965287061ebe3a315b236d` |
 | [yq](//github.com/mikefarah/yq)                      | 4.53.6       | `yq`           | YAML, CLI               | `919f1fb481a22e25fc246c4aec41e1ee55a674b526c6f413cd3d4aaef75e5e50` |
 | [zenith](//github.com/bvaisvil/zenith)               | 0.12.0       | `zenith`       | Monitoring, System      | `38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
 | [zellij](//github.com/zellij-org/zellij)             | 0.45.1       | `zellij`       | Terminal, Multiplexer   | `0fb804072f767f780d695bbe993af17f1651b70ebd210075b7541be86e2893db` |
@@ -133,7 +133,7 @@ The categories are AI-generated so expect mistakes.
 | [Bed](//github.com/itchyny/bed)                  | 0.2.8      | `bed`        | Editor, Binary         | `deb39c90aca56c6e05afa409735b105938518154b32be90aef3d7a4e43b2ca4b` |
 | [bit](//github.com/chriswalz/bit)                | 1.1.2      | `bit`        | Git, CLI               | `1096a15dc6ad4fa3e7cd4bd1950b6eba4048e6459d2095a8b935e5f518db7584` |
 | [boringtun](//github.com/cloudflare/boringtun)   | 0.5.2      | `boringtun`  | VPN, Networking        | `80409b34bcf6db711e57a304071a76c8e3b16a5c1f0b9cc6b2d2443fe8ba41d2` |
-| [Brook](//github.com/txthinking/brook)           | 20260101.0 | `brook`      | Proxy, VPN             | `8f04cc18202f7f95352c81116e1666453a6f0459c2ffd668003be72a86e99eec` |
+| [Brook](//github.com/txthinking/brook)           | 20270101   | `brook`      | Proxy, VPN             | `27457843c53910e2774b19e93d24a7f8f5c25c202598a458247b6d1c947f24fb` |
 | [Busybox](//busybox.net)                         | 1.38.0     | `busybox`    | Utilities, System      | `e88e3e4ea068e249616f5fea6ed0d2eab497c39e148798fb9f5abf7e59d3465a` |
 | [Corkscrew](//github.com/bryanpkc/corkscrew)     | 2.0        | `corkscrew`  | Proxy, Networking      | `b2d077b7c4e879ca44d28b4178dd5b8241f86096da61aff9ecd042ca23e4fb08` |
 | [curl](//github.com/curl/curl)                   | 8.22.0 | `curl`       | Download, Networking   | `bff1af137c3a1dfff6fcc3046dc0d21a2eb7a04f21713004fdc2b23da1a60f95` |
@@ -146,11 +146,11 @@ The categories are AI-generated so expect mistakes.
 | [dnstt](//bamsoftware.com/software/dnstt/)       | 1.20260501.0 | `dnstt_*`    | DNS, Tunneling         | `e4d8329158e6991bf752f46e253a758a34c3bd3d21486b5796480ffc17105d04` |
 | [Dropbear](x64/dropbear/README.md)               | 2026.94    | `dropbear/*` | SSH, Server            | `d62fdef051f8712f58ea443636a2492af1335173bf50ac53ba6f2752714cb741` |
 | [fd](//github.com/sharkdp/fd)                    | 10.5.0     | `fd`         | Search, CLI            | `f543a0f241b5449bcb9af4bb019eee398f4160d5b780c1bc9d2c113bd2780cde` |
-| [ffuf](//github.com/ffuf/ffuf/)                  | 2.2.1      | `ffuf`       | Fuzzing, Web           | `5610b60989e26e9e9d531d1310fdce6c13e19098da9d026c438213f5ff8d664c` |
-| [fish](//github.com/fish-shell/fish-shell)       | 4.9.2      | `fish`       | Shell, CLI             | `73f33a66929a13987a35a20da4852f67f9fde1e3d4e4b4700ee230950ef614d2` |
+| [ffuf](//github.com/ffuf/ffuf/)                  | 2.3.0      | `ffuf`       | Fuzzing, Web           | `0de2f931911fd314450c7848d2a4e495289a89c5378a58aed80dace19b138df9` |
+| [fish](//github.com/fish-shell/fish-shell)       | 4.9.3      | `fish`       | Shell, CLI             | `73f33a66929a13987a35a20da4852f67f9fde1e3d4e4b4700ee230950ef614d2` |
 | [fq](//github.com/wader/fq)                      | 0.18.0     | `fq`         | JSON, CLI              | `80ea614b215100514e8bc8c4e79c473cd0a7d61efb2bb59de9c6085e2b763fa8` |
 | [frp](//github.com/fatedier/frp)                 | 0.71.0     | `frpc/frps`  | Proxy, Tunneling       | `c0c7c3c61c5a86dd016c072911c766b315fee0b90d7f4ae55ef6b37d680d12c3` |
-| [fzf](//github.com/junegunn/fzf)                 | 0.74.3     | `fzf`        | Search, CLI            | `aace68839c9dc9bb1a390f93e48e62147b7115d48524e66e88b94fcec71f91a0` |
+| [fzf](//github.com/junegunn/fzf)                 | 0.74.4     | `fzf`        | Search, CLI            | `a3c80cba283ccce0082d6be07d92136c0fb26c3560f0c232f38b5c6ae2cd0956` |
 | [ghfs](//github.com/mjpclab/go-http-file-server) | 1.22.0     | `ghfs`       | Fileserver, HTTP       | `1743c41c550e523800309faead7f717610d67af5402a5d64c91c6c433baf65a4` |
 | [gobuster](//github.com/OJ/gobuster)             | 3.8.2      | `gobuster`   | Fuzzing, Web           | `b1cc1de998e459a223e4bd847c4e4876a0090faf9e2f82417e1faa46e95b061e` |
 | [gojq](//github.com/itchyny/gojq)                | 0.12.19    | `gojq`       | JSON, CLI              | `a9552b1063691abf8058f4f75e62d2207d0148b7a30e490be4b4c07aaecb08cf` |
@@ -158,9 +158,9 @@ The categories are AI-generated so expect mistakes.
 | [goss](//github.com/cakturk/go-netstat)          | e5b49ef    | `goss`       | Networking, Monitoring | `6acf137ff77aa8cbdf5028646c0b481cd2c85d280c49baa71bee3c9117bc9088` |
 | [grex](//github.com/pemistahl/grex/)             | 1.4.6      | `grex`       | Regex, CLI             | `6c86c8a5db9be12c115c2f9ca99e553ad6d3896e7940d71bc717eba2244a668b` |
 | [gron](//github.com/tomnomnom/gron)              | 0.7.1      | `gron`       | JSON, CLI              | `d1e9dc2924b114f434a56fe6dde951e04c78b8e49a3b158dbe6ee765d83c0811` |
-| [gum](//github.com/charmbracelet/gum)            | 2.0.0      | `gum`        | CLI, UI                | `e703fc3a33fb6148a756a376b1d4fb7c7ae3da1ab91ef3664a0f12faa8f2e22b` |
+| [gum](//github.com/charmbracelet/gum)            | 2.0.1      | `gum`        | CLI, UI                | `22cad417601d5529745abd68dc5cf38b62a5d78f614a4c03f64808ab592fce52` |
 | [hex](//github.com/sitkevij/hex)                 | 0.7.0      | `hex`        | Editor, Binary         | `e72827b71cc106ac5cbc5ca0914747fee735362d7f238d2e26dd4afee8ff4d46` |
-| [httpx](//github.com/projectdiscovery/httpx)     | 1.11.0     | `httpx`      | HTTP, Recon            | `5f7bfbd47efbd053639aa3414506abfc60dd40b0596974e873691538ee5b180c` |
+| [httpx](//github.com/projectdiscovery/httpx)     | 1.12.0     | `httpx`      | HTTP, Recon            | `e25e4866de61eb59488afd601ab2c5c69422eb5ae42279ca102c7a264245002d` |
 | [ICMP Tunnel](//github.com/DhavalKapil/icmptunnel) | 1.0.0      | `icmptunnel` | Tunneling, Networking  | `4ab29004f20b6a1dd16f5a4748d5bbe4dc7d006a63323254af046503dc10a85a` |
 | [inlets](//github.com/inlets/inlets)             | 3.0        | `inlets`     | Proxy, Tunneling       | `5df047d1fbd1daaea0719df7bb124af16a812fb0ccc4769950baa139cf2defee` |
 | [IOPing](//github.com/koct9i/ioping)             | 1.3        | `ioping`     | Disk, Benchmark        | `4b52ee23bf4486a687d9cd3f3f24967b03fb73817656298ec78dd8df35e2e76e` |
@@ -168,7 +168,7 @@ The categories are AI-generated so expect mistakes.
 | [jq](//github.com/stedolan/jq)                   | 1.8.2      | `jq`         | JSON, CLI              | `4117164bab179d6cfe6547a6191a8f583212e7f62ff9b98973feb3bd3d03e998` |
 | [Kibi](//github.com/ilai-deutel/kibi)            | 0.3.3      | `kibi`       | Editor, Text           | `ce5ebbc1eee6181b1e7734ba9ee9b6f56fc99c75760fb57b42ec54ffb026626e` |
 | [kmon](//github.com/orhun/kmon)                  | 1.7.1      | `kmon`       | Kernel, Monitoring     | `e2e5f5e01e41b628436a412da89aaf66d3ad76b1c4ee51284decfc280420b958` |
-| [lazygit](//github.com/jesseduffield/lazygit)    | 0.65.0     | `lazygit`    | Git, CLI               | `eec39bb28bc4ba151077e924671b814788b7ef18b1bb9b08f82e32ea5111f82a` |
+| [lazygit](//github.com/jesseduffield/lazygit)    | 0.65.1     | `lazygit`    | Git, CLI               | `55ef527a7a582aede5fd77f67fad8e2aa4238f9121ca7de3e76f69b3d57ebfbd` |
 | [massren](//github.com/laurent22/massren)        | 1.5.7      | `massren`    | Rename, CLI            | `3d2a68884b0d3ed8e59e976ce7aaef7ad90013941fa5af9b92410e9c75f846e5` |
 | [memcached-util](//github.com/me-io/memcached-util) | 0.0.1      | `memcd-util` | Cache, Utilities       | `da6f1446e0435b77cc5474e42f1740d60a8aa390e86118f325d617f3c9dec694` |
 | [merino](//github.com/ajmwagar/merino)           | 0.1.3      | `merino`     | Proxy, Networking      | `5ad7584aa14b619ee09bb3ff6c81789248558ff7f38c0839ffb6601befd64acc` |
@@ -186,7 +186,7 @@ The categories are AI-generated so expect mistakes.
 | [sd](//github.com/chmln/sd)                      | 1.1.0      | `sd`         | CLI, Replace           | `faeb7572d50c987dde96f7d53e35e473acb1e5196625efedef01a0ee7979e449` |
 | [singbox](//github.com/SagerNet/sing-box)        | 1.14.0     | `singbox`    | Proxy, VPN             | `e7ab67d4d7293510e0f154a32b9bd0e09035315ad1637bdf1df89e87cc0aae19` |
 | [sniproxy](//github.com/mosajjal/sniproxy)       | 2.4.1      | `sniproxy`   | Proxy, Networking      | `cb2492759519856f19c986dd31b23b270c755874f2e2a0a21173edaa8fcbc970` |
-| [spp](//github.com/esrrhs/spp/)                  | 0.7        | `spp`        | Proxy, Networking      | `e9b7511dbbf01c1c153efee27efd9353f81d6960f65d4b5aecf4ec7238dc2ecd` |
+| [spp](//github.com/esrrhs/spp/)                  | 0.8.0      | `spp`        | Proxy, Networking      | `aa8a64ef0275cee345ba3531b7df044b9c7c0d175d2b14eb4c0afd0c09e2bf75` |
 | [superfile](//github.com/MHNightCat/superfile)   | 1.6.0      | `superfile`  | Files, CLI             | `55e2b5e63c8246e314ec795567dc678b9706050c1f15323c37901f82b6d12a04` |
 | [Strace](//github.com/strace/strace)             | 7.2        | `strace`     | Debugging, System      | `aeeb30479e3ff9049f9b9e769c732626c19c2923f943650c4e5cf987a9707bcb` |
 | [tang](//github.com/latchset/tang)               | 15         | `tangd`      | NBDE, Crypto           | `e081afd25935da7a85f2e5d90da1556ce9f44bb2ff032654355e95e540a2e124` |
@@ -195,7 +195,7 @@ The categories are AI-generated so expect mistakes.
 | [termsvg](//github.com/MrMarble/termsvg)         | 0.11.0     | `termsvg`     | SVG, CLI               | `997fb3fb9f79a713760604248012909945070800d9f86328e820f26bbde642bf` |
 | [tiny](//github.com/osa1/tiny)                   | 0.13.0     | `tiny`       | IRC, Chat              | `47c41daf553e2de616398fbccce32888d44c57074ddf410821fc94c40080e09a` |
 | [wg-go](//github.com/WireGuard/wireguard-go)     | 0.0.20250522 | `wg-go`      | VPN, Networking        | `e78d882e8b416ca2137ab3dfeb195de4d3e4af041faee51ce9e4be83e2e902be` |
-| [xxd](//linux.die.net/man/1/xxd)                 | 9.2.1037   | `xxd`        | Hex, CLI               | `860dee26eb6e740fb1b021e2f3baf2285e438943f3ac8379522f802f07992306` |
+| [xxd](//linux.die.net/man/1/xxd)                 | 9.2.1099   | `xxd`        | Hex, CLI               | `860dee26eb6e740fb1b021e2f3baf2285e438943f3ac8379522f802f07992306` |
 | [yq](//github.com/mikefarah/yq)                  | 4.53.6     | `yq`         | YAML, CLI              | `9e8877b5269fa11080b7c2017c6a5adf994badb38c690f49ac4a819c964b5b3e` |
 
 # Shortened URL
