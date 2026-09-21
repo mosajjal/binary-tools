@@ -594,7 +594,7 @@ tools:
     arm_frozen: no ARM rust target wired up
     test: "--version"
   - name: pv
-    version: "1.11.0"
+    version: "1.12.0"
     check:
       type: url
       url: https://www.ivarch.com/programs/pv.shtml
@@ -637,7 +637,7 @@ tools:
     arm_outputs: same
     test_cmd: "/out/x64/sd --version"
   - name: singbox
-    version: "1.14.0"
+    version: "1.14.1"
     check: {type: github-tag, slug: SagerNet/sing-box, prefix: v}
     lang: go
     outputs: [singbox]
@@ -660,7 +660,7 @@ tools:
     outputs: [socat]
     test: "-V"
   - name: spp
-    version: "0.8.0"
+    version: "0.13.1"
     check: {type: github-release, slug: esrrhs/spp}
     lang: go
     outputs: [spp]
@@ -693,7 +693,7 @@ tools:
     arm_outputs: [strace]
     test: "-V"
   - name: suricata
-    version: "8.0.6"
+    version: "8.0.7"
     check:
       type: url
       url: https://www.openinfosecfoundation.org/download/
@@ -771,7 +771,7 @@ tools:
     outputs: [tmux]
     test: "-V"
   - name: ugrep
-    version: "7.8.4"
+    version: "7.8.5"
     check: {type: github-tag, slug: Genivia/ugrep, prefix: v}
     lang: cxx
     outputs: [ugrep]
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1099"
+    version: "9.2.1122"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1099"
+    version: "9.2.1122"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
