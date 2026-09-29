@@ -211,7 +211,7 @@ tools:
     outputs: [es-dump]
     test: "--help"
   - name: evtx
-    version: "0.12.2"
+    version: "0.12.3"
     check: {type: github-release, slug: omerbenamram/evtx}
     lang: rust
     outputs: [evtx]
@@ -261,7 +261,7 @@ tools:
     arm_outputs: [fzf]
     test: "--version"
   - name: ghfs
-    version: "1.22.0"
+    version: "1.22.1"
     check: {type: github-release, slug: mjpclab/go-http-file-server}
     lang: go
     outputs: [ghfs]
@@ -310,7 +310,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: gum
-    version: "2.0.1"
+    version: "2.0.2"
     check: {type: github-release, slug: charmbracelet/gum}
     lang: go
     outputs: [gum]
@@ -637,7 +637,7 @@ tools:
     arm_outputs: same
     test_cmd: "/out/x64/sd --version"
   - name: singbox
-    version: "1.14.1"
+    version: "1.14.2"
     check: {type: github-tag, slug: SagerNet/sing-box, prefix: v}
     lang: go
     outputs: [singbox]
@@ -660,7 +660,7 @@ tools:
     outputs: [socat]
     test: "-V"
   - name: spp
-    version: "0.13.1"
+    version: "0.14.1"
     check: {type: github-release, slug: esrrhs/spp}
     lang: go
     outputs: [spp]
@@ -709,7 +709,7 @@ tools:
     outputs: [superfile]
     arm_outputs: [superfile]
   - name: tcpdump
-    version: "4.99.6"
+    version: "4.99.7"
     check:
       type: url
       url: https://www.tcpdump.org/release/
@@ -748,7 +748,7 @@ tools:
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.9.12"
+    version: "0.4.9.13"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1122"
+    version: "9.2.1135"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1122"
+    version: "9.2.1135"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
