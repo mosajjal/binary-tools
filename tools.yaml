@@ -644,7 +644,7 @@ tools:
     arm_outputs: [singbox]
     test: "version"
   - name: sniproxy
-    version: "2.4.1"
+    version: "2.4.2"
     check: {type: github-release, slug: mosajjal/sniproxy}
     lang: go
     outputs: [sniproxy]
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1135"
+    version: "9.2.1164"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,14 +821,14 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1135"
+    version: "9.2.1164"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
     arm_outputs: same
     test: "--version"
   - name: yq
-    version: "4.53.6"
+    version: "4.54.1"
     check: {type: github-release, slug: mikefarah/yq, prefix: v}
     lang: go
     outputs: [yq]
