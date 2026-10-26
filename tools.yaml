@@ -42,14 +42,14 @@
 tools:
   # ---------------------------------------------------------------- Go ------
   - name: 3proxy
-    version: "1.0.1"
+    version: "1.0.2"
     check: {type: github-tag, slug: 3proxy/3proxy}
     lang: c
     outputs: [3proxy]
     arm_outputs: same
     test_cmd: "timeout 2 /out/x64/3proxy; rc=$?; [ $rc -eq 124 ] || [ $rc -eq 0 ]"
   - name: amass
-    version: "5.1.1"
+    version: "5.1.3"
     check: {type: github-release, slug: owasp-amass/amass}
     lang: go
     outputs: [amass]
@@ -87,7 +87,7 @@ tools:
     outputs: [bbe]
     test: "-h"
   - name: bed
-    version: "0.2.8"
+    version: "0.2.9"
     check: {type: github-release, slug: itchyny/bed}
     lang: go
     outputs: [bed]
@@ -183,7 +183,7 @@ tools:
     arm_outputs: [{bin: dnstt_client, dst: dnstt_client}, {bin: dnstt_server, dst: dnstt_server}]
     test: "-h"
   - name: doggo
-    version: "1.4.1"
+    version: "1.4.2"
     check: {type: github-release, slug: mr-karan/doggo}
     lang: go
     outputs: [doggo]
@@ -211,7 +211,7 @@ tools:
     outputs: [es-dump]
     test: "--help"
   - name: evtx
-    version: "0.12.3"
+    version: "0.13.0"
     check: {type: github-release, slug: omerbenamram/evtx}
     lang: rust
     outputs: [evtx]
@@ -385,7 +385,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: jaq
-    version: "3.1.1"
+    version: "3.1.2"
     check: {type: github-release, slug: 01mf02/jaq}
     lang: rust
     outputs: [jaq]
@@ -481,7 +481,7 @@ tools:
     outputs: [mylg]
     test: "-h"
   - name: nano
-    version: "9.2"
+    version: "9.3"
     check:
       type: url
       url: https://www.nano-editor.org/dist/
@@ -501,7 +501,7 @@ tools:
     outputs: [ncdu]
     test: "--version"
   - name: nc
-    version: "1.238-1"
+    version: "1.239-1"
     # OpenBSD netcat via Debian's portable patchset; the binary this replaced
     # was glibc-linked with no recipe behind it
     check:
@@ -526,7 +526,7 @@ tools:
     outputs: [ngrep]
     test: "-V"
   - name: nmap
-    version: "7.991"
+    version: "7.992"
     check:
       type: url
       url: https://nmap.org/dist/
@@ -637,7 +637,7 @@ tools:
     arm_outputs: same
     test_cmd: "/out/x64/sd --version"
   - name: singbox
-    version: "1.14.3"
+    version: "1.14.4"
     check: {type: github-tag, slug: SagerNet/sing-box, prefix: v}
     lang: go
     outputs: [singbox]
@@ -686,7 +686,7 @@ tools:
     test: "-V"
     experimental: true
   - name: strace
-    version: "7.2"
+    version: "7.3"
     check: {type: github-release, slug: strace/strace, prefix: v}
     lang: c
     outputs: [strace]
@@ -777,14 +777,14 @@ tools:
     outputs: [ugrep]
     test_cmd: "echo hi | /out/x64/ugrep hi"
   - name: vi
-    version: "7.9.33"
+    version: "8.0.34"
     check: {type: github-release, slug: johnsonjh/OpenVi}
     lang: c
     outputs: [vi]
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1202"
+    version: "9.2.1241"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1202"
+    version: "9.2.1241"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
