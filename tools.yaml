@@ -42,7 +42,7 @@
 tools:
   # ---------------------------------------------------------------- Go ------
   - name: 3proxy
-    version: "1.0.2"
+    version: "1.0.3"
     check: {type: github-tag, slug: 3proxy/3proxy}
     lang: c
     outputs: [3proxy]
@@ -217,7 +217,7 @@ tools:
     outputs: [evtx]
     test: "--help"
   - name: fd
-    version: "10.5.0"
+    version: "10.5.2"
     check: {type: github-release, slug: sharkdp/fd}
     lang: rust
     outputs: [fd]
@@ -247,14 +247,14 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: frp
-    version: "0.71.1"
+    version: "0.72.0"
     check: {type: github-release, slug: fatedier/frp}
     lang: go
     outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     arm_outputs: [{bin: frpc, dst: frpc}, {bin: frps, dst: frps}]
     test: "--version"
   - name: fzf
-    version: "0.74.5"
+    version: "0.75.0"
     check: {type: github-release, slug: junegunn/fzf}
     lang: go
     outputs: [fzf]
@@ -419,7 +419,7 @@ tools:
     arm_outputs: same
     test: "--version"
   - name: lazygit
-    version: "0.66.2"
+    version: "0.66.3"
     check: {type: github-release, slug: jesseduffield/lazygit}
     lang: go
     outputs: [lazygit]
@@ -660,7 +660,7 @@ tools:
     outputs: [socat]
     test: "-V"
   - name: spp
-    version: "0.14.1"
+    version: "0.15.0"
     check: {type: github-release, slug: esrrhs/spp}
     lang: go
     outputs: [spp]
@@ -727,7 +727,7 @@ tools:
     arm_outputs: [termshark]
     test_cmd: "printf '#!/bin/sh\necho tshark-stub\n' > /usr/local/bin/tshark && chmod +x /usr/local/bin/tshark && TERM=tput /out/x64/termshark --version"
   - name: termsvg
-    version: "0.11.0"
+    version: "0.12.0"
     check: {type: github-release, slug: MrMarble/termsvg}
     lang: go
     outputs: [termsvg]
@@ -748,7 +748,7 @@ tools:
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.9.15"
+    version: "0.4.9.16"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1276"
+    version: "9.2.1310"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,14 +821,14 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1276"
+    version: "9.2.1310"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
     arm_outputs: same
     test: "--version"
   - name: yq
-    version: "4.54.1"
+    version: "4.54.3"
     check: {type: github-release, slug: mikefarah/yq, prefix: v}
     lang: go
     outputs: [yq]
