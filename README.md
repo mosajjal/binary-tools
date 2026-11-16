@@ -105,22 +105,22 @@ The categories are AI-generated so expect mistakes.
 | [superfile](//github.com/MHNightCat/superfile)       | 1.6.0        | `superfile`    | Files, CLI              | `d5a997fed5c8b72f56fa5a8a9ce6afcf7beb14fd2968406ef1dcb261415679e4` |
 | [TCPDump](//www.tcpdump.org/)                        | 4.99.7       | `tcpdump`      | Networking, Sniffing    | `881d7cbd6424ce4ec8ab5c40d7b87a813cff4b1de673db979e598b9b07c20f4f` |
 | [termshark](//github.com/gcla/termshark)             | 2.4.0        | `termshark`    | Networking, Sniffing    | `616a7b4b15463286a1cfcd61c22c944724df63c7a11532fab353a059dd29aa5f` |
-| [termsvg](//github.com/MrMarble/termsvg)             | 0.12.0       | `termsvg`       | SVG, CLI                | `70346b3894aede2a01859e3783fe582a3b3804110abbb7d36382056eae47fa9c` |
+| [termsvg](//github.com/MrMarble/termsvg)             | 0.13.0       | `termsvg`       | SVG, CLI                | `fd864a90619a48830f84deb6a04b449d36534cf2fc98722497e8900ba8de6b5e` |
 | [tiny](//github.com/osa1/tiny)                       | 0.13.0       | `tiny`         | IRC, Chat               | `cc13fa4b6be8fca8918a23ffe9bb8bc6b133797bfa7b55adb70dc7102af4e49d` |
 | [tinyproxy](//github.com/tinyproxy/tinyproxy)        | 1.11.3       | `tinyproxy`    | Proxy, Networking       | `b5951e272eb52282158dd564bcf58ea8f4048661a42338f0561aa7ef94fb9df5` |
-| [tor](x64/tor/README.md)                             | 0.4.9.16     | `tor/*`        | Tor, Privacy            | `8f4a31457e77ccb537012065d82a89ee1be687d36b8dc37ac8637e6549b04305` |
+| [tor](x64/tor/README.md)                             | 0.4.9.17     | `tor/*`        | Tor, Privacy            | `eabdab70dd44b52b351df7156d24287097776f8f841d437b4689e287785d7e1e` |
 | [tmux](//github.com/tmux/tmux)                       | 3.8  | `tmux`         | Terminal, Multiplexer   | `644a45aeb65e6c736b7f5844f8b775f917cb9fda319e5ad493abcfe4e90caa3f` |
 | [ugrep](//github.com/Genivia/ugrep)                  | 7.8.5        | `ugrep`        | Search, CLI             | `47d06229d35fb92fdca3748c55de8c2cf6ee595c73d8c7998796c21ffff08af6` |
 | [vi](//github.com/johnsonjh/OpenVi)                  | 8.0.34       | `vi`           | Editor, Text            | `12da9503aa9f95b4f98670e52b53922daafef98669099feb13ae45c022399bd1` |
-| [vim](//www.vim.org/)                                | 9.2.1310     | `vim`          | Editor, Text            | `e18cc08ba1b7243903a7caad4832b72eeeb584d09aaa3eb0ab54696864ecda05` |
+| [vim](//www.vim.org/)                                | 9.2.1355     | `vim`          | Editor, Text            | `26d3d1f51538adeadf6295c296ff7de7e1e552a9e4323fe91c90fc71e4e694ea` |
 | [Wireshark](x64/wireshark/README.md)                 | 2.6.17       | `wireshark/*`  | Networking, Sniffing    | `e491d43f621277ecd7a115c48f28ef7a4a2bfff44a9faca19e1ad28372acdb86` |
 | [wireguard](//github.com/WireGuard/wireguard-tools)  | 1.0.20260223 | `wg`           | VPN, Networking         | `8eb26b0a4d94e1f7c257ac98a5d439a73d27d840c18c7d2c8a23dd9a1f4fb062` |
 | [wireguard-go](//github.com/WireGuard/wireguard-go)  | 0.0.20250522 | `wg-go`        | VPN, Networking         | `daca6f2119894cadab8a16a86ffcc021356a2f153339841b85e2818bb43c4b91` |
 | [xsv](//github.com/BurntSushi/xsv)                   | 0.13.0       | `xsv`          | CSV, CLI                | `34d6dcf865e5e14c8b0c1d32f05cb1a6874750d4fd470d4069f94755968b9096` |
-| [xxd](//linux.die.net/man/1/xxd)                     | 9.2.1310     | `xxd`          | Hex, CLI                | `ef177642314f82c6a261ea75cfd60ff53027a507bd965287061ebe3a315b236d` |
+| [xxd](//linux.die.net/man/1/xxd)                     | 9.2.1355     | `xxd`          | Hex, CLI                | `ef177642314f82c6a261ea75cfd60ff53027a507bd965287061ebe3a315b236d` |
 | [yq](//github.com/mikefarah/yq)                      | 4.54.3       | `yq`           | YAML, CLI               | `80a0ccb4f2862147e8fec49056056794c5dd13326a3f7643a8d26193813cf35e` |
 | [zenith](//github.com/bvaisvil/zenith)               | 0.12.0       | `zenith`       | Monitoring, System      | `38ca3f72cd3c67301e463fb7bd7bd3ece50aaa0879d560768051a5ae4342d886` |
-| [zellij](//github.com/zellij-org/zellij)             | 0.45.1       | `zellij`       | Terminal, Multiplexer   | `0fb804072f767f780d695bbe993af17f1651b70ebd210075b7541be86e2893db` |
+| [zellij](//github.com/zellij-org/zellij)             | 0.46.0       | `zellij`       | Terminal, Multiplexer   | `143e6d5e6ce434d1651ab591a3fb59e36dfa3064c438c836070631b82f2bcab8` |
 | [Zmap](x64/zmap/README.md)                           | 4.4.0        | `zmap/*`       | Scanner, Networking     | `5c11f0b753aa7eb9a36f97da22105e1489d48a2582cd673c31926c600b8e8d10` |
 
 # Filename map (ARM5)
@@ -192,10 +192,10 @@ The categories are AI-generated so expect mistakes.
 | [tang](//github.com/latchset/tang)               | 15         | `tangd`      | NBDE, Crypto           | `e081afd25935da7a85f2e5d90da1556ce9f44bb2ff032654355e95e540a2e124` |
 | [TCPDump](//www.tcpdump.org/)                    | 4.99.7     | `tcpdump`    | Networking, Sniffing   | `f813f9a5448d80a9bda334b94769fb551053d53a679d17f8b4fc58bdb7e5fc7b` |
 | [termshark](//github.com/gcla/termshark)         | 2.4.0      | `termshark`  | Networking, Sniffing   | `73f9b3115379a372115ecd9b466861fd7e9b1f23f5bb000a8ea5171e6d07df14` |
-| [termsvg](//github.com/MrMarble/termsvg)         | 0.12.0     | `termsvg`     | SVG, CLI               | `25e163ea5bd0c1e8a56bf4f1dde750d4eacbf8df98d6911a622defeaa3127c6b` |
+| [termsvg](//github.com/MrMarble/termsvg)         | 0.13.0     | `termsvg`     | SVG, CLI               | `47cf4d4835816018ae35af4ef806dd89a1b1ebe8110ec0a2c6dcc19b86031268` |
 | [tiny](//github.com/osa1/tiny)                   | 0.13.0     | `tiny`       | IRC, Chat              | `47c41daf553e2de616398fbccce32888d44c57074ddf410821fc94c40080e09a` |
 | [wg-go](//github.com/WireGuard/wireguard-go)     | 0.0.20250522 | `wg-go`      | VPN, Networking        | `e78d882e8b416ca2137ab3dfeb195de4d3e4af041faee51ce9e4be83e2e902be` |
-| [xxd](//linux.die.net/man/1/xxd)                 | 9.2.1310   | `xxd`        | Hex, CLI               | `860dee26eb6e740fb1b021e2f3baf2285e438943f3ac8379522f802f07992306` |
+| [xxd](//linux.die.net/man/1/xxd)                 | 9.2.1355   | `xxd`        | Hex, CLI               | `860dee26eb6e740fb1b021e2f3baf2285e438943f3ac8379522f802f07992306` |
 | [yq](//github.com/mikefarah/yq)                  | 4.54.3     | `yq`         | YAML, CLI              | `93059496674010f3e5516ae16866adef4f0c4ee59963131730a3cd107809ca33` |
 
 # Shortened URL
