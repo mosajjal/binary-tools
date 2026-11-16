@@ -727,7 +727,7 @@ tools:
     arm_outputs: [termshark]
     test_cmd: "printf '#!/bin/sh\necho tshark-stub\n' > /usr/local/bin/tshark && chmod +x /usr/local/bin/tshark && TERM=tput /out/x64/termshark --version"
   - name: termsvg
-    version: "0.12.0"
+    version: "0.13.0"
     check: {type: github-release, slug: MrMarble/termsvg}
     lang: go
     outputs: [termsvg]
@@ -748,7 +748,7 @@ tools:
     outputs: [tinyproxy]
     test: "-h"
   - name: tor
-    version: "0.4.9.16"
+    version: "0.4.9.17"
     check:
       type: git-remote
       remote: https://gitlab.torproject.org/tpo/core/tor.git
@@ -784,7 +784,7 @@ tools:
     test_cmd: "/out/x64/vi -h 2>&1 | grep -qi 'usage\\|vi'"
     experimental: true
   - name: vim
-    version: "9.2.1310"
+    version: "9.2.1355"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+)\.(\d+)\.(\d+)$'}
     lang: c
     outputs: [vim]
@@ -821,7 +821,7 @@ tools:
     outputs: [xsv]
     test: "--version"
   - name: xxd
-    version: "9.2.1310"
+    version: "9.2.1355"
     check: {type: github-tag, slug: vim/vim, pattern: '^v(\d+\.\d+\.\d{4})$'}
     lang: c
     outputs: [xxd]
@@ -842,7 +842,7 @@ tools:
     outputs: [zenith]
     test: "--version"
   - name: zellij
-    version: "0.45.1"
+    version: "0.46.0"
     check: {type: github-release, slug: zellij-org/zellij}
     lang: rust
     outputs: [zellij]
