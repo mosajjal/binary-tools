@@ -87,7 +87,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: install yq + qemu (ARM smoke tests)
         run: |
-          sudo apt-get update -qq && sudo apt-get install -yqq qemu-user-static
+          sudo apt-get update -qq && sudo apt-get install -yqq qemu-user
           curl -fsSL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           chmod +x /usr/local/bin/yq
       - name: build + test ${{ matrix.name }} ${{ matrix.version }}

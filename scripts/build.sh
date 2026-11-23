@@ -83,6 +83,13 @@ fi
 if [[ $ARM_SHIPPED == 1 ]]; then
     QEMU=$(command -v qemu-arm-static || true)
     if [[ -z "$QEMU" && -x /usr/bin/qemu-arm-static ]]; then QEMU=/usr/bin/qemu-arm-static; fi
+
+    # Ubuntu 26.04+ dropped qemu-user-static; its qemu-user ships a static
+    # qemu-arm. Accept it only if static: a dynamic one can't run in the image.
+    if [[ -z "$QEMU" ]]; then
+        QEMU=$(command -v qemu-arm || true)
+        if [[ -n "$QEMU" ]] && ldd "$QEMU" 2>&1 | grep -q "=>"; then QEMU=""; fi
+    fi
     if [[ -n "$QEMU" ]]; then
         echo "==> smoke test (arm via qemu)"
         if [[ -n "$TEST_CMD" && "$TEST_CMD" != "null" ]]; then
